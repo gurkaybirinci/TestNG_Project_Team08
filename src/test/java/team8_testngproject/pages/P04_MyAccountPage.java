@@ -7,7 +7,6 @@ public class P04_MyAccountPage {
     public P04_MyAccountPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -18,6 +17,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +37,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -48,6 +47,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +67,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -78,6 +77,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +97,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -108,6 +107,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +127,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -138,6 +137,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +157,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -168,6 +167,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +187,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -198,6 +197,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +217,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -228,6 +227,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +247,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -258,6 +257,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +277,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -288,6 +287,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +307,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -318,6 +317,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +337,17 @@ public class P04_MyAccountPage {
 
 
 
-    // 340.Satır --> Zeliha
 
+
+
+
+
+
+
+
+
+
+    // 350.Satır --> Mustafa
 
 
 
