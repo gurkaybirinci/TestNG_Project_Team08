@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -198,6 +200,10 @@ public class P01_HomePage {
 
 
     // 200.Satır --> Meryem
+@FindBy(css = "a[class='register inline-type'")
+    public WebElement userRegisterButton;
+@FindBy(xpath = "(//a[@class='logo'])[1]")
+public WebElement homePageLogo;
 
 
 
@@ -221,13 +227,7 @@ public class P01_HomePage {
 
 
 
-
-
-
-
-
-
-    // 230.Satır --> Zeliha
+// 230.Satır --> Zeliha
 
 
 
