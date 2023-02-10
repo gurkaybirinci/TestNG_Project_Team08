@@ -24,6 +24,7 @@ public class TC08_AcceptionalPassword_Medium {
         registerPage.userSignUpButton.click();
 
         Assert.assertTrue(homePage.homePageLogo.isDisplayed());
+         Assert.assertTrue(registerPage.notification_Medium.isDisplayed());
 
     }
 }

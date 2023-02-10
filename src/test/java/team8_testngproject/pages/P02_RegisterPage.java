@@ -217,12 +217,12 @@ public class P02_RegisterPage {
     public WebElement notification_VeryWeak;
     @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
     public WebElement notification_Weak;
-
-
-
-
-
-
+    @FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
+    public WebElement notification_Medium;
+    @FindBy(xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement alreadyUsedEmailAccountStatement;
+    @FindBy (linkText = "An account is already registered with that username. Please choose another.")
+    public WebElement alreadyUsedUsernameStatement;
 
 
 

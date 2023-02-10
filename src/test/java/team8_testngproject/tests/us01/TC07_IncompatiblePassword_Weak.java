@@ -24,6 +24,7 @@ public class TC07_IncompatiblePassword_Weak {
         registerPage.userSignUpButton.click();
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
+         //Assert.assertTrue(registerPage.notification_Weak.isDisplayed());
 
 
 
