@@ -10,7 +10,7 @@ import team8_testngproject.utilities.Driver;
 public class TC04_Incompatible_email {
 
     @Test
-    public void UnsuccessfulRegisteration_wrongEmail() {
+    public void UnsuccessfulRegistration_wrongEmail() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();

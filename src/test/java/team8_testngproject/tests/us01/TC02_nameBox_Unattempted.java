@@ -10,7 +10,7 @@ import team8_testngproject.utilities.Driver;
 public class TC02_nameBox_Unattempted {
 
  @Test
- public void RegisterationUnsuccessful_NameUnspecified()  {
+ public void RegistrationUnsuccessful_NameUnspecified()  {
   Driver.getDriver().get(ConfigReader.getProperty("URL"));
   P01_HomePage homePage = new P01_HomePage();
   homePage.userRegisterButton.click();

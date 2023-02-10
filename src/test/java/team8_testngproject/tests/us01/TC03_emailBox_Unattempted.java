@@ -10,7 +10,7 @@ import team8_testngproject.utilities.Driver;
 public class TC03_emailBox_Unattempted {
 
     @Test
-    public void UnsuccessfulRegisteration_emailUnspecified(){
+    public void UnsuccessfulRegistration_emailUnspecified(){
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();

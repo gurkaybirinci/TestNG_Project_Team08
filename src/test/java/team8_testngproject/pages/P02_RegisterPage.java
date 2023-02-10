@@ -215,8 +215,8 @@ public class P02_RegisterPage {
     public WebElement userSignUpButton;
     @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
     public WebElement notification_VeryWeak;
-
-
+    @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
+    public WebElement notification_Weak;
 
 
 
