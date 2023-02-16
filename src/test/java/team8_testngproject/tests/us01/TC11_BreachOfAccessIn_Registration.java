@@ -8,26 +8,29 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
-public class TC08_AcceptionalPassword_Medium {
+public class TC11_BreachOfAccessIn_Registration {
 
     @Test
-    public void successfulRegistration_MediumPassward() {
+    public void Registergarion() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
-        Faker faker = new Faker();
-
+        Faker faker=new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(faker.name().username());
         registerPage.e_mailBox.sendKeys(faker.internet().emailAddress());
-        registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword4"));
+        registerPage.userPasswordBox.sendKeys("a");
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
 
-        //Assert.assertTrue(registerPage.notification_Medium.isDisplayed());
-        Assert.assertTrue(homePage.homePageLogo.isDisplayed());
+     Assert.assertFalse(registerPage.signOutButton.isEnabled());
 
 
     }
 }
+
+
+
+
+

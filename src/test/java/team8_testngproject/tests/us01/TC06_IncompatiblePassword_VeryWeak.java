@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us01;
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -12,18 +13,20 @@ public class TC06_IncompatiblePassword_VeryWeak {
     @Test
     public void UnsuccessfulRegistration_veryWeakPassword() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
+        Faker faker = new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
-        registerPage.userNameBox.sendKeys(ConfigReader.getProperty("generatedUsername2"));
-        registerPage.e_mailBox.sendKeys(ConfigReader.getProperty("generatedEmail2"));
+        registerPage.userNameBox.sendKeys(faker.name().username());
+        registerPage.e_mailBox.sendKeys(faker.internet().emailAddress());
         registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword2"));
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
 
-        Assert.assertTrue(homePage.homePageLogo.isDisplayed());
-       // Assert.assertTrue(registerPage.notification_VeryWeak.isDisplayed());
+        // Assert.assertTrue(registerPage.notification_VeryWeak.isDisplayed());
+        Assert.assertFalse(homePage.homePageLogo.isDisplayed());
+
     }
 
 

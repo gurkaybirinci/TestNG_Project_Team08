@@ -17,9 +17,6 @@ public class P02_RegisterPage {
 
 
 
-
-
-
     // 20.Satır --> Ali
 
 
@@ -221,8 +218,13 @@ public class P02_RegisterPage {
     public WebElement notification_Medium;
     @FindBy(xpath = "(//*[@class='submit-status'])[2]")
     public WebElement alreadyUsedEmailAccountStatement;
-    @FindBy (linkText = "An account is already registered with that username. Please choose another.")
+    @FindBy(xpath = "//*[.='An account is already registered with that username. Please choose another.']")
     public WebElement alreadyUsedUsernameStatement;
+    @FindBy (xpath ="//*[text()='Sign Out']" )
+    public  WebElement signOutButton;
+
+
+
 
 
 
