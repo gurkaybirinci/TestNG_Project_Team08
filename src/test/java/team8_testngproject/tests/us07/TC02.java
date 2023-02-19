@@ -1,6 +1,10 @@
 package team8_testngproject.tests.us07;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
@@ -8,21 +12,27 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class  TC01 {
+import java.io.File;
+import java.io.IOException;
+
+import static team8_testngproject.utilities.Driver.driver;
+
+public class TC02 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
 
     @Test
-    public void urunSecimi() {
+    public void compareProductsUrunCikarma() {
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
 
         ReusableMethods.waitFor(3);
         homePage.signIn.click();
-        loginPage.username.sendKeys(ConfigReader.getProperty("user_mail"));
-        loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
-        loginPage.login.click();
+        homePage.username.sendKeys(ConfigReader.getProperty("user_mail"));
+        homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
+        homePage.login.click();
         ReusableMethods.waitFor(3);
 
         loginPage.search.click();
@@ -42,6 +52,24 @@ public class  TC01 {
         loginPage.bosSayfa.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.cantaFash);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(7);
+        ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+                loginPage.silinenCanta);
+        ReusableMethods.waitFor(5);
+        ReusableMethods.getScreenshot("Silinen urun ekran goruntusu");
+        ReusableMethods.waitFor(2);
+        loginPage.bosSayfa.click();
+        loginPage.search.click();
+        String arananUrun = "coat";
+        loginPage.search.sendKeys(arananUrun);
+        loginPage.aramaTusu.click();
+        String coatDogrulama = "Coat Pool Comfort Jacket";
+        Assert.assertFalse(coatDogrulama.contains(arananUrun));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+                loginPage.coatUrunEkle);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.getScreenshot("Coat urunu ekleme");
+
     }
 }

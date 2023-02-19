@@ -1,15 +1,15 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 import team8_testngproject.utilities.Driver;
 
 public class P03_LoginPage {
     public P03_LoginPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -78,19 +78,19 @@ public class P03_LoginPage {
 
 
     // 80.Satır --> Gonca
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[@id='username']")    public WebElement username;
+    @FindBy(id="password")    public WebElement password;
+    @FindBy(name="login")    public WebElement login;
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
+    @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
+    @FindBy(xpath = "(//*[@data-product_id='19517'])[2]")    public WebElement cantaTheMono;
+    @FindBy(xpath = "//*[@class='compare-popup-overlay']")    public WebElement bosSayfa;
+    @FindBy(xpath = "(//*[@data-product_id='13249'])[2]")    public WebElement cantaWomen;
+    @FindBy(xpath = "(//*[@data-product_id='13172'])[2]")    public WebElement cantaBest;
+    @FindBy(xpath = "(//*[@data-product_id='13169'])[2]")    public WebElement cantaFash;
+    @FindBy(xpath = "(//*[@data-product_id='13172'])[3]")    public WebElement silinenCanta;
+    @FindBy(xpath = "(//*[@data-product_id='13171'])[2]")    public WebElement coatUrunEkle;
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded']")    public WebElement startCompareButonu;
 
 
 
