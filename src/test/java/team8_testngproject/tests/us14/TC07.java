@@ -7,10 +7,7 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class TC01 { // Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri olmalı (PASS)
+public class TC07 { // Description kutusuna metin girilebilmeli (PASS)
     @Test
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
@@ -30,10 +27,11 @@ public class TC01 { // Simple Product, Variable Product, Grouped Product, Extern
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.addNewButtonGur.click();
 
-        List<String> expectedOptions = Arrays.asList("Simple Product", "Variable Product", "Grouped Product", "External/Affiliate Product");
-        List<String> actualOptions = ReusableMethods.getOptionsFromSelect(vendorProductManagerPage.productMenuGur);
+        String productTitle = "Steteskop";
+        Driver.getDriver().switchTo().frame(vendorProductManagerPage.descriptionIframeGur);
+        vendorProductManagerPage.descIframe_P_TagGur.sendKeys(productTitle);
 
-        Assert.assertTrue(actualOptions.containsAll(expectedOptions));
+        Assert.assertEquals(vendorProductManagerPage.descriptionIframeGur.getText(), productTitle);
         Driver.closeDriver();
     }
 }

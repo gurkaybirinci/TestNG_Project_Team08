@@ -1,5 +1,8 @@
 package team8_testngproject.tests.us14;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -7,10 +10,10 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
-public class TC01 { // Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri olmalı (PASS)
+public class TC20 { // Product brands bölümüne yeni marka eklendiğinde, eklenen ürün Parent Taxonomy menüsünde görünmeli (FAIL)
     @Test
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
@@ -30,10 +33,23 @@ public class TC01 { // Simple Product, Variable Product, Grouped Product, Extern
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.addNewButtonGur.click();
 
-        List<String> expectedOptions = Arrays.asList("Simple Product", "Variable Product", "Grouped Product", "External/Affiliate Product");
-        List<String> actualOptions = ReusableMethods.getOptionsFromSelect(vendorProductManagerPage.productMenuGur);
+        String categoryName = "Avokado";
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addBrandLinkGur);
+        vendorProductManagerPage.brandNameGur.sendKeys(categoryName);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addBrandButtonGur);
+        List<WebElement> options = vendorProductManagerPage.brandTaxonomyGur.findElements(By.tagName("option"));
+        List<String> optionTexts = new ArrayList<>();
+        for (WebElement w : options){
+            optionTexts.add(w.getText());
+        }
 
-        Assert.assertTrue(actualOptions.containsAll(expectedOptions));
-        Driver.closeDriver();
+        try{
+            Assert.assertTrue(optionTexts.contains(categoryName));
+        }catch (AssertionError e){
+            System.out.println("Test failed: " + e.getMessage());
+            throw e;
+        }finally {
+            Driver.closeDriver();
+        }
     }
 }
