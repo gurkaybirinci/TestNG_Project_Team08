@@ -227,11 +227,9 @@ public class P02_RegisterPage {
 
 
 
-
-
     // 230.Satır --> Zeliha
-
-
+    @FindBy(linkText = "Become a Vendor")
+    public WebElement becomeVendorZb;
 
 
 

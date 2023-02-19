@@ -8,22 +8,23 @@ import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
-public class TC01 {
+public class TC02 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    //Kullanıcı url'e gider
-    //Kullanıcı registor butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı kayıtlı olduğu mail adresini girer
-    //Verification Code text kutusuna tıklar
-    //Kullanıcı Email kutusunu gelen kodu kopyalar
-    //Verification Code text kutusuna yapıştırır
-    //Kullanıcı password kısmına 6 karakterden küçük değer girer
-
 
     @Test
-    public void us10_Tc01() {
+    public void us10_Tc02() {
+
+        //Kullanıcı url'e gider
+        //Kullanıcı registor butonuna tıklar
+        //Kullanıcı Become a Vendor linkine tıklar
+        //Kullanıcı kayıtlı olduğu mail adresini girer
+        //Verification Code text kutusuna tıklar
+        //Kullanıcı Email kutusunu gelen kodu kopyalar
+        //Verification Code text kutusuna yapıştırır
+        //Kullanıcı  password kısmına 5 karakterden  büyük ve sadece rakam içeren şifre girer
+
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -36,21 +37,16 @@ public class TC01 {
         registerPage.becomeVendorZb.click();
 
         //Kullanıcı kayıtlı olduğu mail adresini girer
-         vendorRegisterPage=new P14_VendorRegisterPage();
-         vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
-
         //Verification Code text kutusuna tıklar
-        vendorRegisterPage.verificationCodeClick.click();
+        //Kullanıcı Email kutusunu gelen kodu kopyalar
+        //Verification Code text kutusuna yapıştırır
+        vendorRegisterPage=new P14_VendorRegisterPage();
+        vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
         vendorRegisterPage.verificationCodeClick.sendKeys(ConfigReader.getProperty("vendor_code"));
 
-        //Kullanıcı password kısmına 6 karakterden küçük değer girer
-        vendorRegisterPage.vendorPassowordZb.click();
-        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
-        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Too short");
-
+        //Kullanıcı  password kısmına 5 karakterden  büyük ve sadece rakam içeren şifre girer
+        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_weak_psw"));
+        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Weak");
     }
-
-
-
 
 }

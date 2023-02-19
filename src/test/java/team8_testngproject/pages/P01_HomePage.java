@@ -227,9 +227,9 @@ public WebElement homePageLogo;
 
 
 
-// 230.Satır --> Zeliha
-
-
+    // 230.Satır --> Zeliha
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButonZb;
 
 
 
