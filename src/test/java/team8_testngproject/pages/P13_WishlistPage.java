@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,8 +9,6 @@ public class P13_WishlistPage {
     public P13_WishlistPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 
 
 
@@ -79,26 +79,26 @@ public class P13_WishlistPage {
 
     // 80.Satır --> Gonca
 
+    @FindBy(xpath = "(//*[@data-title='Add to wishlist'])[5]")
+    public WebElement bisikletEFG16;
 
+    @FindBy(xpath = "(//*[@data-product-id='17504'])[2]")
+    public WebElement bisikletKizCocuk;
 
+    @FindBy(xpath = "//*[@class='w-icon-heart']")
+    public WebElement wishlistButton;
 
+    @FindBy(xpath = "//*[text()='EFG 16 Jant Cocuk Bisikleti']")
+    public WebElement bisikletEFG16IsimDogrulama;
 
+    @FindBy(xpath = "//*[@title='Quick View']")
+    public WebElement quickViewButton;
 
+    @FindBy(xpath = "//*[@title='Close (Esc)']")
+    public WebElement quickViewCikis;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm add_to_cart alt']")
+    public WebElement addToCartButton;
 
 
 

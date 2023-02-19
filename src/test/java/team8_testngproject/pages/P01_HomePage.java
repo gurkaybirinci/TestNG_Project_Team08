@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
 public class P01_HomePage {
-    public P01_HomePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+    public P01_HomePage() {PageFactory.initElements(Driver.getDriver(),this);
     }
+
 
 
 
@@ -79,10 +79,10 @@ public class P01_HomePage {
 
     // 80.Satır --> Gonca
 
-
-
-
-
+    @FindBy(xpath = "//*[@data-id='e9b716e']")    public WebElement signIn;
+    @FindBy(xpath = "//*[@id='username']")    public WebElement username;
+    @FindBy(id="password")    public WebElement password;
+    @FindBy(name="login")    public WebElement login;
 
 
 
@@ -108,8 +108,8 @@ public class P01_HomePage {
 
 
     // 110.Satır --> Gürkay
-
-
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInGur;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutGur;
 
 
 
@@ -198,6 +198,10 @@ public class P01_HomePage {
 
 
     // 200.Satır --> Meryem
+@FindBy(css = "a[class='register inline-type'")
+    public WebElement userRegisterButton;
+@FindBy(xpath = "(//a[@class='logo'])[1]")
+public WebElement homePageLogo;
 
 
 
@@ -215,12 +219,8 @@ public class P01_HomePage {
 
 
 
-
-
-
-
-
-
+    
+    
 
 
 
@@ -228,8 +228,8 @@ public class P01_HomePage {
 
 
     // 230.Satır --> Zeliha
-
-
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButonZb;
 
 
 

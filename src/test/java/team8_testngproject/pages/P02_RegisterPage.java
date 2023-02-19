@@ -1,15 +1,15 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import team8_testngproject.utilities.Driver;
 
 public class P02_RegisterPage {
     public P02_RegisterPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -198,38 +198,38 @@ public class P02_RegisterPage {
 
 
     // 200.Satır --> Meryem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(id = "customer_login")
+    public WebElement userRegisterPage;
+    @FindBy(id="reg_username")
+    public WebElement userNameBox;
+    @FindBy(id = "reg_email")
+    public WebElement e_mailBox;
+    @FindBy(id = "reg_password")
+    public WebElement userPasswordBox;
+    @FindBy(id="register-policy")
+    public WebElement policyAgreementBox;
+    @FindBy(xpath = "//button[@name='register']")
+    public WebElement userSignUpButton;
+    @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
+    public WebElement notification_VeryWeak;
+    @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
+    public WebElement notification_Weak;
+    @FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
+    public WebElement notification_Medium;
+    @FindBy(xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement alreadyUsedEmailAccountStatement;
+    @FindBy(xpath = "//*[.='An account is already registered with that username. Please choose another.']")
+    public WebElement alreadyUsedUsernameStatement;
+    @FindBy (xpath ="//*[text()='Sign Out']" )
+    public  WebElement signOutButton;
 
 
 
 
 
     // 230.Satır --> Zeliha
-
-
+    @FindBy(linkText = "Become a Vendor")
+    public WebElement becomeVendorZb;
 
 
 

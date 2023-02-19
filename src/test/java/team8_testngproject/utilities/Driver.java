@@ -16,9 +16,9 @@ public class Driver {
 
     public static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driver==null){
+        if (driver == null) {
 
             switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
@@ -28,7 +28,7 @@ public class Driver {
 
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
+                    driver = new FirefoxDriver();
                     break;
 
                 case "chrome-headless":
@@ -38,16 +38,19 @@ public class Driver {
 
                 case "edge":
                     WebDriverManager.edgedriver().setup();
-                    driver=new EdgeDriver();
+                    driver = new EdgeDriver();
                     break;
             }
+
 
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         return driver;
+
     }
+
     public static void closeDriver(){
 
         if (driver!=null){
