@@ -108,12 +108,12 @@ public class P03_LoginPage {
 
 
     // 110.Satır --> Gürkay
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement userNameGur;
+    @FindBy(id = "password")
+    public WebElement passwordGur;
+    @FindBy(name = "login")
+    public WebElement signInButtonGur;
 
 
 
