@@ -1,5 +1,8 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,9 +10,6 @@ public class P04_MyAccountPage {
     public P04_MyAccountPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -108,8 +108,8 @@ public class P04_MyAccountPage {
 
 
     // 110.Satır --> Gürkay
-
-
+    @FindBy(linkText = "Store Manager")
+    public WebElement storeManagerGur;
 
 
 

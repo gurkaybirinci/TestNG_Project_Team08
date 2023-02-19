@@ -17,8 +17,6 @@ public class P01_HomePage {
 
 
 
-
-
     // 20.Satır --> Ali
 
 
@@ -110,8 +108,8 @@ public class P01_HomePage {
 
 
     // 110.Satır --> Gürkay
-
-
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInGur;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutGur;
 
 
 
