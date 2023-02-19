@@ -48,10 +48,10 @@ public class P01_HomePage {
 
 
     // 50.Satır --> Esra
-
-
-
-
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn_Es;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement signOut_Es;
 
 
 

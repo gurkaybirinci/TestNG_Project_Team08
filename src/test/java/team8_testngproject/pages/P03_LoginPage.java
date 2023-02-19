@@ -48,12 +48,12 @@ public class P03_LoginPage {
 
 
     // 50.Satır --> Esra
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement userName_Es;
+    @FindBy(id = "password")
+    public WebElement password_Es;
+    @FindBy(name = "login")
+    public WebElement signInButon_Es;
 
 
 
