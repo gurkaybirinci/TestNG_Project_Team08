@@ -257,8 +257,6 @@ public class P01_HomePage {
 
 
 
-
-
     // 260.Satır --> Nurullah
 
 
