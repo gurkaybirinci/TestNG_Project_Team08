@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,8 +9,6 @@ public class P03_LoginPage {
     public P03_LoginPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 
 
 
@@ -166,7 +166,6 @@ public class P03_LoginPage {
 
 
 
-
     // 170.Satır --> Mehmet
 
 
@@ -198,6 +197,7 @@ public class P03_LoginPage {
 
 
     // 200.Satır --> Meryem
+
 
 
 

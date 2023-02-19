@@ -245,4 +245,8 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
+    public static void switchToWindow(int windowNumber){
+        List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(list.get(windowNumber));
+   }
 }
