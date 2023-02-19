@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us14;
 
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -7,10 +8,7 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class TC01 { // Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri olmalı (PASS)
+public class TC25 { // Catalog visibility; Shop and search results olarak seçilebilmeli (PASS)
     @Test
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
@@ -30,10 +28,12 @@ public class TC01 { // Simple Product, Variable Product, Grouped Product, Extern
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.addNewButtonGur.click();
 
-        List<String> expectedOptions = Arrays.asList("Simple Product", "Variable Product", "Grouped Product", "External/Affiliate Product");
-        List<String> actualOptions = ReusableMethods.getOptionsFromSelect(vendorProductManagerPage.productMenuGur);
+        Select select = new Select(vendorProductManagerPage.catalogSelectGur);
+        select.selectByIndex(0);
+        String expectedOption = "Shop and search results";
+        String actualOption = select.getFirstSelectedOption().getText();
 
-        Assert.assertTrue(actualOptions.containsAll(expectedOptions));
+        Assert.assertEquals(actualOption, expectedOption);
         Driver.closeDriver();
     }
 }
