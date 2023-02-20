@@ -247,10 +247,23 @@ public class ReusableMethods {
         }
     }
 
+    public static void jsClick(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
+        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].click();",elementName);
+    }
+    public static void jsClick(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
+        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
+        js.executeScript("arguments[0].click();",elementName);
+    }
+
     public static void switchToWindow(int windowNumber){
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowNumber));
-   }
+    }
 
     public static List<String> getOptionsFromSelect(WebElement selectElement) {
         Select select = new Select(selectElement);
@@ -261,9 +274,7 @@ public class ReusableMethods {
         }
         return optionValues;
     }
-
-    public static void switchToWindow(int windowNumber){
-        List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
-        Driver.getDriver().switchTo().window(list.get(windowNumber));
-    }
+    
+    
+    
 }

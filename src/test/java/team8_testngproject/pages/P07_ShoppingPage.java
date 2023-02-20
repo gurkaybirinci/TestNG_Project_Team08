@@ -349,13 +349,10 @@ public class P07_ShoppingPage {
 
     // 350.Satır --> Mustafa
 
-
-
-
-
-
-
-
+    @FindBy(css = "ul[class='breadcrumb']")
+    public WebElement resultTextLoc;
+    @FindBy(css = "li[class='product-wrap']")
+    public WebElement firstProductLoc;
 
 
 
@@ -378,4 +375,5 @@ public class P07_ShoppingPage {
 
 
 }
+
 

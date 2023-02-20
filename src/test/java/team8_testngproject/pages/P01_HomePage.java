@@ -3,14 +3,14 @@ package team8_testngproject.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P01_HomePage {
+
     public P01_HomePage() {PageFactory.initElements(Driver.getDriver(),this);
 }
-
-
-
 
 
 
@@ -348,7 +348,17 @@ public WebElement signInButtonsvd;
 
 
     // 350.Satır --> Mustafa
-
+    @FindBy(css = "a[class='login inline-type']")
+    public WebElement signInBtnLoc;
+    @FindBy (css = "input[aria-label='Search']")
+    public WebElement searchInpLoc;
+    @FindBy (css = "button[aria-label='Search Button']")
+    public WebElement searchBtnLoc;
+    public void searchProduct(){
+        ReusableMethods.waitFor(3);
+        searchInpLoc.sendKeys(ConfigReader.getProperty("urun_ismi_mustafa"));
+        searchBtnLoc.click();
+    }
 
 
 
