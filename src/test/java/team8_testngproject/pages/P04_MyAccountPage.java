@@ -198,6 +198,8 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 200.Satır --> Meryem
+@FindBy(xpath = "//a[@class='register inline-type']")
+public WebElement myAccountRegistrationBtn;
 @FindBy(xpath = "(//input[@id='reg_username'])[1]")
 public WebElement myAccountUserNameReg;
 @FindBy(xpath = "(//input[@id='reg_email'])[1]")
