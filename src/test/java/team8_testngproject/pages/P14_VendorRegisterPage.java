@@ -1,5 +1,6 @@
 package team8_testngproject.pages;
-
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +8,6 @@ public class P14_VendorRegisterPage {
     public P14_VendorRegisterPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -17,6 +17,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +38,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -47,6 +47,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +68,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -77,6 +77,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +98,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -107,6 +107,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +128,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -137,6 +137,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +158,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -167,6 +167,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +188,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -197,6 +197,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +218,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -227,6 +227,24 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 230.Satır --> Zeliha
+    //(hubcomfy locate)
+    @FindBy(id = "user_email") public WebElement emailzb;
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement vendorDogrulaZb;
+    @FindBy(xpath = "//*[@style='display: none;']") public WebElement emailUyariZb;
+    @FindBy(name = "wcfm_email_verified_input") public WebElement verificationCodeClick;
+    @FindBy(xpath = "//*[@id='wcfm_membership_register_button']") public WebElement vendorRegisterClickZb;
+    @FindBy(id = "passoword") public WebElement vendorPassowordZb;
+    @FindBy(id = "password_strength") public WebElement pswCommentZb;
+    //FAKE LOCATE
+    @FindBy(xpath = "//*[@class='animace']") public WebElement fakeMailKutuZb;
+    @FindBy(id = "schranka") public WebElement fakeMailTiklamaZb;
+    @FindBy(id = "predmet") public WebElement mailVerivacitonCode;
+    @FindBy(id = "confirm_pwd") public WebElement confirmPwd;
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;//AYNI OLAN KISIMLAR DÜZENLENECEK
+    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement eksikMailHataMesajiZb;
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
+    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement sadecePswUyari;
 
 
 
@@ -239,6 +257,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +266,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -269,6 +287,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +296,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -299,6 +317,7 @@ public class P14_VendorRegisterPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -307,7 +326,6 @@ public class P14_VendorRegisterPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -329,16 +347,7 @@ public class P14_VendorRegisterPage {
 
 
 
-
-
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,3 +378,4 @@ public class P14_VendorRegisterPage {
 
 
 }
+

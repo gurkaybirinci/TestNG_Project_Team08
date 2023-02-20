@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P16_VendorStoreManagerPage {
     public P16_VendorStoreManagerPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -16,6 +17,7 @@ public class P16_VendorStoreManagerPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,7 @@ public class P16_VendorStoreManagerPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +69,6 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -76,6 +77,7 @@ public class P16_VendorStoreManagerPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +99,6 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -106,6 +107,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
+    // 110.Satır --> Gürkay
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']")
+    public WebElement productButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products-manage/']")
+    public WebElement addNewButtonGur;
 
 
 
@@ -127,11 +133,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,11 +163,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,11 +193,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,11 +223,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,11 +253,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,11 +283,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,11 +313,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +343,11 @@ public class P16_VendorStoreManagerPage {
 
 
 
-    // 340.Satır --> Zeliha
 
+
+
+
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,3 +378,4 @@ public class P16_VendorStoreManagerPage {
 
 
 }
+

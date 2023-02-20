@@ -19,7 +19,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class ReusableMethods {
 
-    public static String getScreenshot(String name)  {
+    public static String getScreenshot()  {
 
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -27,7 +27,7 @@ public class ReusableMethods {
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + date + ".png";
+        String target = System.getProperty("user.dir") + "/src/test/java/screenshots/" + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
 
@@ -217,6 +217,7 @@ public class ReusableMethods {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -258,4 +259,22 @@ public class ReusableMethods {
         WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
         js.executeScript("arguments[0].click();",elementName);
     }
+
+    public static void switchToWindow(int windowNumber){
+        List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(list.get(windowNumber));
+    }
+
+    public static List<String> getOptionsFromSelect(WebElement selectElement) {
+        Select select = new Select(selectElement);
+        List<WebElement> options = select.getOptions();
+        List<String> optionValues = new ArrayList<>();
+        for (WebElement option : options) {
+            optionValues.add(option.getText());
+        }
+        return optionValues;
+    }
+    
+    
+    
 }
