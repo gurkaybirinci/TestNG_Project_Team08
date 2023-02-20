@@ -1,13 +1,15 @@
 package team8_testngproject.pages;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 import team8_testngproject.utilities.Driver;
+
 public class P03_LoginPage {
     public P03_LoginPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -15,6 +17,7 @@ public class P03_LoginPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +40,6 @@ public class P03_LoginPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -45,6 +47,13 @@ public class P03_LoginPage {
 
 
 
+    // 50.Satır --> Esra
+    @FindBy(id = "username")
+    public WebElement userName_Es;
+    @FindBy(id = "password")
+    public WebElement password_Es;
+    @FindBy(name = "login")
+    public WebElement signInButon_Es;
 
 
 
@@ -67,8 +76,21 @@ public class P03_LoginPage {
 
 
 
-    // 70.Satır --> Gonca
 
+    // 80.Satır --> Gonca
+    @FindBy(xpath = "//*[@id='username']")    public WebElement username;
+    @FindBy(id="password")    public WebElement password;
+    @FindBy(name="login")    public WebElement login;
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
+    @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
+    @FindBy(xpath = "(//*[@data-product_id='19517'])[2]")    public WebElement cantaTheMono;
+    @FindBy(xpath = "//*[@class='compare-popup-overlay']")    public WebElement bosSayfa;
+    @FindBy(xpath = "(//*[@data-product_id='13249'])[2]")    public WebElement cantaWomen;
+    @FindBy(xpath = "(//*[@data-product_id='13172'])[2]")    public WebElement cantaBest;
+    @FindBy(xpath = "(//*[@data-product_id='13169'])[2]")    public WebElement cantaFash;
+    @FindBy(xpath = "(//*[@data-product_id='13172'])[3]")    public WebElement silinenCanta;
+    @FindBy(xpath = "(//*[@data-product_id='13171'])[2]")    public WebElement coatUrunEkle;
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded']")    public WebElement startCompareButonu;
 
 
 
@@ -85,6 +107,13 @@ public class P03_LoginPage {
 
 
 
+    // 110.Satır --> Gürkay
+    @FindBy(id = "username")
+    public WebElement userNameGur;
+    @FindBy(id = "password")
+    public WebElement passwordGur;
+    @FindBy(name = "login")
+    public WebElement signInButtonGur;
 
 
 
@@ -97,7 +126,6 @@ public class P03_LoginPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -109,6 +137,7 @@ public class P03_LoginPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -127,7 +156,6 @@ public class P03_LoginPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -138,6 +166,7 @@ public class P03_LoginPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -157,7 +186,6 @@ public class P03_LoginPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -169,6 +197,7 @@ public class P03_LoginPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -187,7 +216,6 @@ public class P03_LoginPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -199,6 +227,7 @@ public class P03_LoginPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -217,7 +246,6 @@ public class P03_LoginPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -229,6 +257,7 @@ public class P03_LoginPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +276,6 @@ public class P03_LoginPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -259,6 +287,7 @@ public class P03_LoginPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +306,6 @@ public class P03_LoginPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -289,37 +317,17 @@ public class P03_LoginPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 310.Satır --> Sevda
+    // 320.Satır --> Sevda
     @FindBy(id = "username")
     public WebElement usernamesvd;
     @FindBy(id="password")
     public WebElement passwordsvd;
     @FindBy(xpath = "//*[@name='login']")
     public WebElement signinsvd;
-   @FindBy(xpath = "//*[text()='Sign Out']")
-   public WebElement singoutsvd;
-
-   @FindBy(xpath = "//*[@class='page-title']")
-   public WebElement myaccountsvd;
-
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement singoutsvd;
+    @FindBy(xpath = "//*[@class='page-title']")
+    public WebElement myaccountsvd;
 
 
 
@@ -337,7 +345,9 @@ public class P03_LoginPage {
 
 
 
-// 340.Satır --> Zeliha
+
+
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,3 +379,4 @@ public class P03_LoginPage {
 
 
 }
+

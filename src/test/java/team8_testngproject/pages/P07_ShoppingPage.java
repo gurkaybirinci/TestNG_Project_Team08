@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P07_ShoppingPage {
     public P07_ShoppingPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -16,6 +17,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +69,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -76,12 +77,25 @@ public class P07_ShoppingPage {
 
 
 
+    // 80.Satır --> Gonca
 
+    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[1]")
+    public WebElement urunTheMonogramXButonu;
 
+    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[2]")
+    public WebElement urunWomenWhiteXButonu;
 
+    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[1]")
+    public WebElement urunWomenFashionXButonu;
 
+    @FindBy(xpath = "//*[@class='w-icon-times-solid']")
+    public WebElement urunCoatPoolXButonu;
 
+    @FindBy(xpath = "//*[text()='No products added to the compare']")
+    public WebElement compareSilinenUrunler;
 
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
+    @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
 
 
 
@@ -93,11 +107,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -123,11 +137,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -153,11 +167,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -183,11 +197,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -213,11 +227,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -243,11 +257,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -273,11 +287,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -303,11 +317,11 @@ public class P07_ShoppingPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -333,12 +347,7 @@ public class P07_ShoppingPage {
 
 
 
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,3 +378,4 @@ public class P07_ShoppingPage {
 
 
 }
+

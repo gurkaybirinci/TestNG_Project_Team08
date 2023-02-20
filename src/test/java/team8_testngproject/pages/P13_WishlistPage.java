@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P13_WishlistPage {
     public P13_WishlistPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -16,6 +17,7 @@ public class P13_WishlistPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P13_WishlistPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,7 @@ public class P13_WishlistPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +69,6 @@ public class P13_WishlistPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -76,13 +77,28 @@ public class P13_WishlistPage {
 
 
 
+    // 80.Satır --> Gonca
 
+    @FindBy(xpath = "(//*[@data-title='Add to wishlist'])[5]")
+    public WebElement bisikletEFG16;
 
+    @FindBy(xpath = "(//*[@data-product-id='17504'])[2]")
+    public WebElement bisikletKizCocuk;
 
+    @FindBy(xpath = "//*[@class='w-icon-heart']")
+    public WebElement wishlistButton;
 
+    @FindBy(xpath = "//*[text()='EFG 16 Jant Cocuk Bisikleti']")
+    public WebElement bisikletEFG16IsimDogrulama;
 
+    @FindBy(xpath = "//*[@title='Quick View']")
+    public WebElement quickViewButton;
 
+    @FindBy(xpath = "//*[@title='Close (Esc)']")
+    public WebElement quickViewCikis;
 
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm add_to_cart alt']")
+    public WebElement addToCartButton;
 
 
 
@@ -91,13 +107,13 @@ public class P13_WishlistPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -121,13 +137,13 @@ public class P13_WishlistPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -151,13 +167,13 @@ public class P13_WishlistPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -181,13 +197,13 @@ public class P13_WishlistPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -211,13 +227,13 @@ public class P13_WishlistPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -241,13 +257,13 @@ public class P13_WishlistPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -271,13 +287,13 @@ public class P13_WishlistPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -301,13 +317,13 @@ public class P13_WishlistPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -331,14 +347,7 @@ public class P13_WishlistPage {
 
 
 
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 

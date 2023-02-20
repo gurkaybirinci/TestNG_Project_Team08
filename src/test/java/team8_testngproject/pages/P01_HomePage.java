@@ -4,11 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
-public class P01_HomePage { public P01_HomePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-    // 10.Satır --> Ali
 
+public class P01_HomePage {
+    public P01_HomePage() {PageFactory.initElements(Driver.getDriver(),this);
+}
 
 
 
@@ -18,6 +17,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +37,6 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -48,6 +47,11 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
+    // 50.Satır --> Esra
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn_Es;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement signOut_Es;
 
 
 
@@ -67,14 +71,18 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
 
 
 
+    // 80.Satır --> Gonca
 
+    @FindBy(xpath = "//*[@data-id='e9b716e']")    public WebElement signIn;
+    @FindBy(xpath = "//*[@id='username']")    public WebElement username;
+    @FindBy(id="password")    public WebElement password;
+    @FindBy(name="login")    public WebElement login;
 
 
 
@@ -97,9 +105,11 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 100.Satır --> Gürkay
 
 
+    // 110.Satır --> Gürkay
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInGur;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutGur;
 
 
 
@@ -127,7 +137,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 130.Satır --> Hüseyin
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +167,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 160.Satır --> Mehmet
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +197,11 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 190.Satır --> Meryem
+    // 200.Satır --> Meryem
+@FindBy(css = "a[class='register inline-type'")
+    public WebElement userRegisterButton;
+@FindBy(xpath = "(//a[@class='logo'])[1]")
+public WebElement homePageLogo;
 
 
 
@@ -205,19 +219,23 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
+    
+    
 
 
 
 
 
 
+    // 230.Satır --> Zeliha
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButonZb;
 
 
 
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -239,6 +257,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +266,6 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -269,6 +287,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +296,6 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -299,17 +317,9 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-
-
-
-
-
-
-
-
-    // 310.Satır --> Sevda
+    // 320.Satır --> Sevda
 @FindBy(xpath = "//*[text()='Sign In']")
-    public WebElement signInButtonsvd;
+public WebElement signInButtonsvd;
 
 
 
@@ -337,7 +347,7 @@ public class P01_HomePage { public P01_HomePage() {
 
 
 
-    // 340.Satır --> Zeliha
+    // 350.Satır --> Mustafa
 
 
 

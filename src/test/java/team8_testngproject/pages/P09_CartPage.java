@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P09_CartPage {
     public P09_CartPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -16,6 +17,7 @@ public class P09_CartPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P09_CartPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,7 @@ public class P09_CartPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +69,6 @@ public class P09_CartPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -76,10 +77,19 @@ public class P09_CartPage {
 
 
 
+    // 80.Satır --> Gonca
 
+    @FindBy(xpath = "//*[@class='w-icon-cart']")
+    public WebElement cartButton;
 
+    @FindBy(xpath = "//*[text()='Checkout']")
+    public WebElement checkOutButton;
 
+    @FindBy(id = "payment_method_cod")
+    public WebElement payAtTheDoorButton;
 
+    @FindBy(id = "place_order")
+    public WebElement placeOrderButton;
 
 
 
@@ -97,7 +107,7 @@ public class P09_CartPage {
 
 
 
-    // 100.Satır --> Gürkay
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +137,7 @@ public class P09_CartPage {
 
 
 
-    // 130.Satır --> Hüseyin
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +167,7 @@ public class P09_CartPage {
 
 
 
-    // 160.Satır --> Mehmet
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +197,7 @@ public class P09_CartPage {
 
 
 
-    // 190.Satır --> Meryem
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +227,7 @@ public class P09_CartPage {
 
 
 
-    // 220.Satır --> Mustafa
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +257,7 @@ public class P09_CartPage {
 
 
 
-    // 250.Satır --> Nurullah
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +287,7 @@ public class P09_CartPage {
 
 
 
-    // 280.Satır --> Ramazan
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +317,7 @@ public class P09_CartPage {
 
 
 
-    // 310.Satır --> Sevda
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +347,7 @@ public class P09_CartPage {
 
 
 
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 
