@@ -10,7 +10,6 @@ public class P10_CheckOutPage {
     public P10_CheckOutPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -18,6 +17,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -40,7 +40,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -48,6 +47,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -70,7 +70,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -78,6 +77,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -100,7 +100,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -108,6 +107,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -130,7 +130,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -138,6 +137,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -160,7 +160,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -168,6 +167,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -190,7 +190,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -198,9 +197,7 @@ public class P10_CheckOutPage {
 
 
 
-
-
-
+    // 200.Satır --> Meryem
 
 
 
@@ -250,7 +247,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -261,6 +257,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -280,7 +277,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -291,6 +287,7 @@ public class P10_CheckOutPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -310,7 +307,6 @@ public class P10_CheckOutPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -318,6 +314,10 @@ public class P10_CheckOutPage {
 
 
 
+
+
+
+    // 320.Satır --> Sevda
 
 
 
@@ -378,6 +378,16 @@ public class P10_CheckOutPage {
         ReusableMethods.jsClick(wireTransferEFTBtnLoc);
         ReusableMethods.waitFor(1);
     }
+
+
+
+
+
+
+
+
+
+
 
 
 

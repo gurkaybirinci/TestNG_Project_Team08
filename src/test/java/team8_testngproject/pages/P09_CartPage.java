@@ -17,8 +17,6 @@ public class P09_CartPage {
 
 
 
-
-
     // 20.Satır --> Ali
 
 
@@ -81,17 +79,17 @@ public class P09_CartPage {
 
     // 80.Satır --> Gonca
 
+    @FindBy(xpath = "//*[@class='w-icon-cart']")
+    public WebElement cartButton;
 
+    @FindBy(xpath = "//*[text()='Checkout']")
+    public WebElement checkOutButton;
 
+    @FindBy(id = "payment_method_cod")
+    public WebElement payAtTheDoorButton;
 
-
-
-
-
-
-
-
-
+    @FindBy(id = "place_order")
+    public WebElement placeOrderButton;
 
 
 
@@ -350,7 +348,6 @@ public class P09_CartPage {
 
 
     // 350.Satır --> Mustafa
-
     @FindBy (css = "td[class='product-thumbnail']")
     public  WebElement productDisplayLoc;
     @FindBy (css = "button[title='Plus']")

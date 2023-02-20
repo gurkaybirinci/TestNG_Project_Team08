@@ -7,7 +7,6 @@ public class P15_VendorAddressesPage {
     public P15_VendorAddressesPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -18,6 +17,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +37,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -48,6 +47,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +67,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -78,6 +77,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +97,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -108,6 +107,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +127,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -138,6 +137,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +157,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -168,6 +167,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +187,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -198,6 +197,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +217,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -228,6 +227,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +247,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -258,6 +257,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +277,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -288,6 +287,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +307,6 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -318,6 +317,7 @@ public class P15_VendorAddressesPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +337,17 @@ public class P15_VendorAddressesPage {
 
 
 
-    // 340.Satır --> Zeliha
 
+
+
+
+
+
+
+
+
+
+    // 350.Satır --> Mustafa
 
 
 

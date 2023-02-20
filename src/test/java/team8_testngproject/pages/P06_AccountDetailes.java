@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P06_AccountDetailes {
     public P06_AccountDetailes() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -18,6 +19,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,25 @@ public class P06_AccountDetailes {
 
 
 
+    // 50.Satır --> Esra
+    @FindBy(xpath = "//*[@class='icon-box-title text-normal']") public WebElement accountDetailsSayfasindamisin_Es;
+   @FindBy(id = "account_first_name") public WebElement firstName_Es;
+    @FindBy(id = "account_last_name") public WebElement lastName_Es;
+    @FindBy(id = "account_display_name") public WebElement displayName_Es;
+    @FindBy(id = "account_email") public WebElement emailAdress_Es;
+    @FindBy(id = "user_description_ifr") public WebElement biography_Es;
+    @FindBy(id = "password_current") public WebElement passwordAlani1_Es;
+    @FindBy(xpath = "//button[@value='Save changes']") public WebElement savePassword_Es;
+    @FindBy(xpath = "//*[text()='Account details changed successfully.']") public WebElement saveSuccessYazisi_Es;
+    @FindBy(xpath = "//*[@data-id='account_first_name']") public WebElement saveFailYazisi_Es;
+    @FindBy(xpath ="//*[@data-id='account_last_name']" ) public WebElement saveFailLastName_Es;
+    @FindBy(xpath = "//*[@data-id='account_display_name']") public WebElement saveFailDisplayName_Es;
+    @FindBy(xpath = "//*[@data-id='account_email']") public WebElement saveFailEmail_Es;
+    @FindBy(tagName = "p") public WebElement biographyPTag_Es;
+    @FindBy(id = "tinymce") public WebElement bodyID_Es;
+    @FindBy(id = "password_current") public WebElement currentPassword_Es;
+    @FindBy(id = "password_1") public WebElement newPassword_Es;
+    @FindBy(id = "password_2") public WebElement newPasswordTekrar_Es;
 
 
 
@@ -57,6 +77,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -67,7 +88,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -87,6 +107,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -97,7 +118,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -117,6 +137,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -127,7 +148,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -147,6 +167,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -157,7 +178,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -177,6 +197,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -187,7 +208,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -207,6 +227,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -217,7 +238,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -237,6 +257,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +268,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -267,6 +287,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +298,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -297,6 +317,7 @@ public class P06_AccountDetailes {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -307,7 +328,6 @@ public class P06_AccountDetailes {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -327,18 +347,7 @@ public class P06_AccountDetailes {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 

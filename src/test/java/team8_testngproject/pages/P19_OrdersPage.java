@@ -7,7 +7,6 @@ public class P19_OrdersPage {
     public P19_OrdersPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -18,6 +17,7 @@ public class P19_OrdersPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +37,6 @@ public class P19_OrdersPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -48,6 +47,7 @@ public class P19_OrdersPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +67,6 @@ public class P19_OrdersPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -78,6 +77,7 @@ public class P19_OrdersPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +97,6 @@ public class P19_OrdersPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -108,6 +107,7 @@ public class P19_OrdersPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +127,6 @@ public class P19_OrdersPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -138,6 +137,7 @@ public class P19_OrdersPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +157,6 @@ public class P19_OrdersPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -168,6 +167,7 @@ public class P19_OrdersPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +187,6 @@ public class P19_OrdersPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -198,6 +197,7 @@ public class P19_OrdersPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +217,6 @@ public class P19_OrdersPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -228,6 +227,7 @@ public class P19_OrdersPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +247,6 @@ public class P19_OrdersPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -258,6 +257,7 @@ public class P19_OrdersPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +277,6 @@ public class P19_OrdersPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -288,6 +287,7 @@ public class P19_OrdersPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +307,6 @@ public class P19_OrdersPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -318,6 +317,7 @@ public class P19_OrdersPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +337,17 @@ public class P19_OrdersPage {
 
 
 
-    // 340.Satır --> Zeliha
 
+
+
+
+
+
+
+
+
+
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,3 +378,4 @@ public class P19_OrdersPage {
 
 
 }
+

@@ -1,13 +1,15 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import team8_testngproject.utilities.Driver;
 
 public class P02_RegisterPage {
     public P02_RegisterPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -15,6 +17,7 @@ public class P02_RegisterPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +40,6 @@ public class P02_RegisterPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -45,6 +47,7 @@ public class P02_RegisterPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +70,6 @@ public class P02_RegisterPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -75,6 +77,7 @@ public class P02_RegisterPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +100,6 @@ public class P02_RegisterPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -105,6 +107,7 @@ public class P02_RegisterPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +130,6 @@ public class P02_RegisterPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -135,6 +137,7 @@ public class P02_RegisterPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +160,6 @@ public class P02_RegisterPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -165,6 +167,7 @@ public class P02_RegisterPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +190,6 @@ public class P02_RegisterPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -195,11 +197,39 @@ public class P02_RegisterPage {
 
 
 
+    // 200.Satır --> Meryem
+    @FindBy(id = "customer_login")
+    public WebElement userRegisterPage;
+    @FindBy(id="reg_username")
+    public WebElement userNameBox;
+    @FindBy(id = "reg_email")
+    public WebElement e_mailBox;
+    @FindBy(id = "reg_password")
+    public WebElement userPasswordBox;
+    @FindBy(id="register-policy")
+    public WebElement policyAgreementBox;
+    @FindBy(xpath = "//button[@name='register']")
+    public WebElement userSignUpButton;
+    @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
+    public WebElement notification_VeryWeak;
+    @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
+    public WebElement notification_Weak;
+    @FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
+    public WebElement notification_Medium;
+    @FindBy(xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement alreadyUsedEmailAccountStatement;
+    @FindBy(xpath = "//*[.='An account is already registered with that username. Please choose another.']")
+    public WebElement alreadyUsedUsernameStatement;
+    @FindBy (xpath ="//*[text()='Sign Out']" )
+    public  WebElement signOutButton;
 
 
 
 
 
+    // 230.Satır --> Zeliha
+    @FindBy(linkText = "Become a Vendor")
+    public WebElement becomeVendorZb;
 
 
 
@@ -217,7 +247,6 @@ public class P02_RegisterPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -228,6 +257,7 @@ public class P02_RegisterPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +277,6 @@ public class P02_RegisterPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -258,6 +287,7 @@ public class P02_RegisterPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +307,6 @@ public class P02_RegisterPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -288,6 +317,7 @@ public class P02_RegisterPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -307,7 +337,6 @@ public class P02_RegisterPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -318,27 +347,7 @@ public class P02_RegisterPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 
@@ -369,4 +378,3 @@ public class P02_RegisterPage {
 
 
 }
-

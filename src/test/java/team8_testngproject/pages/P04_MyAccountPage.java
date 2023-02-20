@@ -1,13 +1,15 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
-public class P04_MyAccountPage {
-    public P04_MyAccountPage() {
+public class P04_MyAccountPage { public P04_MyAccountPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -15,6 +17,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +40,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -45,6 +47,24 @@ public class P04_MyAccountPage {
 
 
 
+    // 50.Satır --> Esra
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement myAccountSayfasi_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/edit-account/'])[2]") public WebElement accountDetails_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/orders/'])[3]") public WebElement ordersVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/downloads/'])[2]") public WebElement downloadsVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/edit-address/'])[3]") public WebElement adressesVendor_Es;
+    @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetailsVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/wishlist/'])[3]") public WebElement wishlistVendor_Es;
+    @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[6]") public WebElement logoutVendor_Es;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/']") public WebElement dash_storeManagerVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/orders/'])[1]") public WebElement dash_ordersVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/downloads/'])[1]") public WebElement dash_downloadsVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/edit-address/'])[1]") public WebElement dash_adressesVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/my-account-2/edit-account/'])[1]") public WebElement dash_accountDetailsVendor_Es;
+    @FindBy(xpath = "(//*[@href='https://hubcomfy.com/wishlist/'])[2]") public WebElement dash_wishlistVendor_Es;
+    @FindBy(xpath = "//*[text()='Support Tickets']") public WebElement dash_supportTicketsVendor_Es;
+    @FindBy(xpath = "//*[text()='Followings']") public WebElement dash_followingsVendor_Es;
+    @FindBy(xpath = "(//*[text()='Logout'])[1]") public WebElement dash_logoutVendor_Es;
 
 
 
@@ -57,6 +77,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -67,7 +88,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -87,6 +107,9 @@ public class P04_MyAccountPage {
 
 
 
+    // 110.Satır --> Gürkay
+    @FindBy(linkText = "Store Manager")
+    public WebElement storeManagerGur;
 
 
 
@@ -97,7 +120,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -115,6 +137,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -127,7 +150,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -145,6 +167,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -157,7 +180,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -175,6 +197,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -187,7 +210,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -205,6 +227,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -217,7 +240,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -235,6 +257,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -247,7 +270,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -265,6 +287,7 @@ public class P04_MyAccountPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -277,7 +300,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -295,6 +317,9 @@ public class P04_MyAccountPage {
 
 
 
+    // 320.Satır --> Sevda
+    @FindBy(xpath="//*[@class='page-title']")
+    public WebElement myAccountsvd;
 
 
 
@@ -307,7 +332,6 @@ public class P04_MyAccountPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -323,22 +347,7 @@ public class P04_MyAccountPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
-
+    // 350.Satır --> Mustafa
 
 
 
