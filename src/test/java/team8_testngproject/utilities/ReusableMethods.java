@@ -217,6 +217,7 @@ public class ReusableMethods {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -245,4 +246,16 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
+
+    public static List<String> getOptionsFromSelect(WebElement selectElement) {
+        Select select = new Select(selectElement);
+        List<WebElement> options = select.getOptions();
+        List<String> optionValues = new ArrayList<>();
+        for (WebElement option : options) {
+            optionValues.add(option.getText());
+        }
+        return optionValues;
+
+    }
+
 }

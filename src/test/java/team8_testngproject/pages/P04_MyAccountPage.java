@@ -1,10 +1,10 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
-
-public class P04_MyAccountPage {
-    public P04_MyAccountPage() {
+public class P04_MyAccountPage { public P04_MyAccountPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
     // 10.Satır --> Ali
@@ -308,8 +308,8 @@ public class P04_MyAccountPage {
 
 
     // 310.Satır --> Sevda
-
-
+@FindBy(xpath="//*[@class='page-title']")
+    public WebElement myAccountsvd;
 
 
 

@@ -1,8 +1,8 @@
 package team8_testngproject.pages;
-
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
-
 public class P03_LoginPage {
     public P03_LoginPage() {
         PageFactory.initElements(Driver.getDriver(),this);
@@ -308,6 +308,17 @@ public class P03_LoginPage {
 
 
     // 310.Satır --> Sevda
+    @FindBy(id = "username")
+    public WebElement usernamesvd;
+    @FindBy(id="password")
+    public WebElement passwordsvd;
+    @FindBy(xpath = "//*[@name='login']")
+    public WebElement signinsvd;
+   @FindBy(xpath = "//*[text()='Sign Out']")
+   public WebElement singoutsvd;
+
+   @FindBy(xpath = "//*[@class='page-title']")
+   public WebElement myaccountsvd;
 
 
 
@@ -326,18 +337,7 @@ public class P03_LoginPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    // 340.Satır --> Zeliha
+// 340.Satır --> Zeliha
 
 
 
