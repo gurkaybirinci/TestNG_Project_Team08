@@ -42,11 +42,9 @@ public class Driver {
                     break;
             }
 
-   driver = WebDriverManager.chromedriver().create();
-
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         return driver;
     }

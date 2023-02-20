@@ -1,19 +1,23 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P01_HomePage {
     public P01_HomePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,13 +41,13 @@ public class P01_HomePage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,13 +71,13 @@ public class P01_HomePage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,13 +101,13 @@ public class P01_HomePage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,13 +131,13 @@ public class P01_HomePage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,13 +161,13 @@ public class P01_HomePage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,13 +191,13 @@ public class P01_HomePage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,13 +221,13 @@ public class P01_HomePage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,13 +251,13 @@ public class P01_HomePage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,13 +281,13 @@ public class P01_HomePage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,13 +311,13 @@ public class P01_HomePage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,8 +341,24 @@ public class P01_HomePage {
 
 
 
-    // 340.Satır --> Zeliha
 
+
+
+
+
+
+    // 350.Satır --> Mustafa
+    @FindBy(css = "a[class='login inline-type']")
+    public WebElement signInBtnLoc;
+    @FindBy (css = "input[aria-label='Search']")
+    public WebElement searchInpLoc;
+    @FindBy (css = "button[aria-label='Search Button']")
+    public WebElement searchBtnLoc;
+    public void searchProduct(){
+        ReusableMethods.waitFor(3);
+        searchInpLoc.sendKeys(ConfigReader.getProperty("urun_ismi_mustafa"));
+        searchBtnLoc.click();
+    }
 
 
 

@@ -1,13 +1,17 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P09_CartPage {
     public P09_CartPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -15,6 +19,7 @@ public class P09_CartPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +42,6 @@ public class P09_CartPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -45,6 +49,7 @@ public class P09_CartPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +72,6 @@ public class P09_CartPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -75,6 +79,7 @@ public class P09_CartPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +102,6 @@ public class P09_CartPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -105,6 +109,7 @@ public class P09_CartPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +132,6 @@ public class P09_CartPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -135,6 +139,7 @@ public class P09_CartPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +162,6 @@ public class P09_CartPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -165,6 +169,7 @@ public class P09_CartPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +192,6 @@ public class P09_CartPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -195,6 +199,7 @@ public class P09_CartPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +222,6 @@ public class P09_CartPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -225,6 +229,7 @@ public class P09_CartPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +252,6 @@ public class P09_CartPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -255,6 +259,7 @@ public class P09_CartPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +282,6 @@ public class P09_CartPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -285,6 +289,7 @@ public class P09_CartPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +312,6 @@ public class P09_CartPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -315,6 +319,7 @@ public class P09_CartPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,10 +342,38 @@ public class P09_CartPage {
 
 
 
-    // 340.Satır --> Zeliha
 
 
 
+
+
+
+
+    // 350.Satır --> Mustafa
+
+    @FindBy (css = "td[class='product-thumbnail']")
+    public  WebElement productDisplayLoc;
+    @FindBy (css = "button[title='Plus']")
+    public  WebElement plusBtnLoc;
+    @FindBy(css = "button[value='Update cart']")
+    public  WebElement updateCartBtnLoc;
+    @FindBy (css = "button[title='Minus']")
+    public  WebElement minusBtnLoc;
+    @FindBy (css = "div[role='alert']")
+    public  WebElement popupUpdateCartLoc;
+
+    public void checkPlusUpdate(){
+        plusBtnLoc.click();
+        ReusableMethods.jsClick(updateCartBtnLoc);
+    }
+    public void checkMinusUpdate(){
+        ReusableMethods.waitFor(3);
+        minusBtnLoc.click();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(updateCartBtnLoc);
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(popupUpdateCartLoc.isDisplayed());
+    }
 
 
 

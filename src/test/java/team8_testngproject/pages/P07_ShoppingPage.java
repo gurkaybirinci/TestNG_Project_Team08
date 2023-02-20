@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,7 +9,6 @@ public class P07_ShoppingPage {
     public P07_ShoppingPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -16,6 +17,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +39,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -46,6 +47,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +69,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -76,6 +77,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +99,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -106,6 +107,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +129,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -136,6 +137,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +159,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -166,6 +167,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +189,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -196,6 +197,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +219,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -226,6 +227,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +249,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -256,6 +257,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +279,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -286,6 +287,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +309,6 @@ public class P07_ShoppingPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -316,6 +317,7 @@ public class P07_ShoppingPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,10 +339,20 @@ public class P07_ShoppingPage {
 
 
 
-    // 340.Satır --> Zeliha
 
 
 
+
+
+
+
+
+    // 350.Satır --> Mustafa
+
+    @FindBy(css = "ul[class='breadcrumb']")
+    public WebElement resultTextLoc;
+    @FindBy(css = "li[class='product-wrap']")
+    public WebElement firstProductLoc;
 
 
 

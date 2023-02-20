@@ -1,13 +1,16 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P03_LoginPage {
     public P03_LoginPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // 10.Satır --> Ali
 
 
 
@@ -15,6 +18,7 @@ public class P03_LoginPage {
 
 
 
+    // 20.Satır --> Ali
 
 
 
@@ -37,7 +41,6 @@ public class P03_LoginPage {
 
 
 
-    // 40.Satır --> Esra
 
 
 
@@ -45,6 +48,7 @@ public class P03_LoginPage {
 
 
 
+    // 50.Satır --> Esra
 
 
 
@@ -67,7 +71,6 @@ public class P03_LoginPage {
 
 
 
-    // 70.Satır --> Gonca
 
 
 
@@ -75,6 +78,7 @@ public class P03_LoginPage {
 
 
 
+    // 80.Satır --> Gonca
 
 
 
@@ -97,7 +101,6 @@ public class P03_LoginPage {
 
 
 
-    // 100.Satır --> Gürkay
 
 
 
@@ -105,6 +108,7 @@ public class P03_LoginPage {
 
 
 
+    // 110.Satır --> Gürkay
 
 
 
@@ -127,7 +131,6 @@ public class P03_LoginPage {
 
 
 
-    // 130.Satır --> Hüseyin
 
 
 
@@ -135,6 +138,7 @@ public class P03_LoginPage {
 
 
 
+    // 140.Satır --> Hüseyin
 
 
 
@@ -157,7 +161,6 @@ public class P03_LoginPage {
 
 
 
-    // 160.Satır --> Mehmet
 
 
 
@@ -165,6 +168,7 @@ public class P03_LoginPage {
 
 
 
+    // 170.Satır --> Mehmet
 
 
 
@@ -187,7 +191,6 @@ public class P03_LoginPage {
 
 
 
-    // 190.Satır --> Meryem
 
 
 
@@ -195,6 +198,7 @@ public class P03_LoginPage {
 
 
 
+    // 200.Satır --> Meryem
 
 
 
@@ -217,7 +221,6 @@ public class P03_LoginPage {
 
 
 
-    // 220.Satır --> Mustafa
 
 
 
@@ -225,6 +228,7 @@ public class P03_LoginPage {
 
 
 
+    // 230.Satır --> Zeliha
 
 
 
@@ -247,7 +251,6 @@ public class P03_LoginPage {
 
 
 
-    // 250.Satır --> Nurullah
 
 
 
@@ -255,6 +258,7 @@ public class P03_LoginPage {
 
 
 
+    // 260.Satır --> Nurullah
 
 
 
@@ -277,7 +281,6 @@ public class P03_LoginPage {
 
 
 
-    // 280.Satır --> Ramazan
 
 
 
@@ -285,6 +288,7 @@ public class P03_LoginPage {
 
 
 
+    // 290.Satır --> Ramazan
 
 
 
@@ -307,7 +311,6 @@ public class P03_LoginPage {
 
 
 
-    // 310.Satır --> Sevda
 
 
 
@@ -315,6 +318,7 @@ public class P03_LoginPage {
 
 
 
+    // 320.Satır --> Sevda
 
 
 
@@ -337,9 +341,30 @@ public class P03_LoginPage {
 
 
 
-    // 340.Satır --> Zeliha
 
 
+
+
+
+
+
+    // 350.Satır --> Mustafa
+    @FindBy(id = "username")
+    public static WebElement usernameInpLoc;
+    @FindBy (id = "password")
+    public static WebElement passwordInpLoc;
+    @FindBy (css = "button[name='login']")
+    public static WebElement signInBtnLoc2;
+    P01_HomePage homePage = new P01_HomePage();
+    public void login (){
+        Driver.getDriver().get(ConfigReader.getProperty("URL"));
+
+        homePage.signInBtnLoc.click();
+        ReusableMethods.waitFor(1);
+        usernameInpLoc.sendKeys(ConfigReader.getProperty("user_name"));
+        passwordInpLoc.sendKeys(ConfigReader.getProperty("user_password"));
+        signInBtnLoc2.click();
+    }
 
 
 

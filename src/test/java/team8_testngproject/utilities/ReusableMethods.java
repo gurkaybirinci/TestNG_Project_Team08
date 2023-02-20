@@ -245,4 +245,17 @@ public class ReusableMethods {
             Assert.fail("Element not found: " + element);
         }
     }
+
+    public static void jsClick(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
+        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].click();",elementName);
+    }
+    public static void jsClick(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
+        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
+        js.executeScript("arguments[0].click();",elementName);
+    }
 }
