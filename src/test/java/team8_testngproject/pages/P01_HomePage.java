@@ -258,10 +258,10 @@ public WebElement homePageLogo;
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement registerButton_Nt;
+    @FindBy(xpath = "//div[.='Sign Out']")
+    public WebElement signOutButton_Nt;
 
 
 

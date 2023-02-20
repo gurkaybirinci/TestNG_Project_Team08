@@ -258,12 +258,12 @@ public class P03_LoginPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement emailBox_Nt;
+    @FindBy(id = "password")
+    public WebElement passwordBox_Nt;
+    @FindBy(xpath = "//button[.='Sign In']")
+    public WebElement signInButton_Nt;
 
 
 
