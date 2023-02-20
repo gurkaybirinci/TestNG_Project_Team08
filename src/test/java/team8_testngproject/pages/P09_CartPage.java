@@ -1,6 +1,5 @@
 package team8_testngproject.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +11,7 @@ public class P09_CartPage {
     public P09_CartPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
 
 
 
