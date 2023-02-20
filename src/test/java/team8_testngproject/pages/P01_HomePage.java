@@ -7,7 +7,7 @@ import team8_testngproject.utilities.Driver;
 
 public class P01_HomePage {
     public P01_HomePage() {PageFactory.initElements(Driver.getDriver(),this);
-    }
+}
 
 
 
@@ -318,8 +318,8 @@ public WebElement homePageLogo;
 
 
     // 320.Satır --> Sevda
-
-
+@FindBy(xpath = "//*[text()='Sign In']")
+public WebElement signInButtonsvd;
 
 
 

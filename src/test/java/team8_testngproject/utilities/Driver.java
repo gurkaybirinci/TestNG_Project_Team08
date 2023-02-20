@@ -42,7 +42,6 @@ public class Driver {
                     break;
             }
 
-
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));

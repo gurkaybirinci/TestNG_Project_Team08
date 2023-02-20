@@ -217,6 +217,7 @@ public class ReusableMethods {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -246,47 +247,6 @@ public class ReusableMethods {
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public static void switchToWindow(int windowNumber){
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowNumber));
@@ -306,5 +266,4 @@ public class ReusableMethods {
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowNumber));
     }
-
 }
