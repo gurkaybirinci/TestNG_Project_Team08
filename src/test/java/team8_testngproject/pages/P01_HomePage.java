@@ -202,6 +202,8 @@ public class P01_HomePage {
     public WebElement userRegisterButton;
 @FindBy(xpath = "(//a[@class='logo'])[1]")
 public WebElement homePageLogo;
+@FindBy(xpath = "//a[contains(text(),'My Account')]")
+public WebElement myAccountButton;
 
 
 

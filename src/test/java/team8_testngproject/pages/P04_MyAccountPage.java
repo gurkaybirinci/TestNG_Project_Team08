@@ -198,6 +198,16 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 200.Satır --> Meryem
+@FindBy(xpath = "(//input[@id='reg_username'])[1]")
+public WebElement myAccountUserNameReg;
+@FindBy(xpath = "(//input[@id='reg_email'])[1]")
+public WebElement myAccountUserEmailReg;
+@FindBy(xpath = "(//input[@id='reg_password'])[1]")
+public WebElement myAccountPasswordReg;
+@FindBy(xpath = "(//input[@id='register-policy'])[1]")
+public WebElement myAccountPolicyCheckReg;
+@FindBy(xpath = "(//button[.='Sign Up'])[1]")
+public WebElement myAccountSginUpReg;
 
 
 
@@ -217,17 +227,7 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    // 230.Satır --> Zeliha
+// 230.Satır --> Zeliha
 
 
 
