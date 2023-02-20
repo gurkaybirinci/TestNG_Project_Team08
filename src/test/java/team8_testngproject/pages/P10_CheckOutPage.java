@@ -10,17 +10,14 @@ public class P10_CheckOutPage {
     public P10_CheckOutPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
+
+
+
+
+
     // 10.Satır --> Ali
-
-
-
-
-
-
-
-
-
-
 
 
 
