@@ -18,8 +18,8 @@ public class P05_AddressesPage { public P05_AddressesPage() {
 
 
     // 20.Satır --> Ali
-
-
+@FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/billing/']")
+public WebElement editlinkAli;
 
 
 

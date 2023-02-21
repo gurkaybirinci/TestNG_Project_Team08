@@ -18,10 +18,10 @@ public class P01_HomePage {
 
 
     // 20.Satır --> Ali
-
-
-
-
+@FindBy (xpath = "//span[text()='Sign In']")
+public WebElement signInButtonAli;
+    @FindBy (xpath = "//span[text()='Sign Out']")
+    public WebElement signOutButtonAli;
 
 
 
