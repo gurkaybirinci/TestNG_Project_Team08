@@ -198,6 +198,8 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 200.Satır --> Meryem
+ @FindBy(xpath = "//a[text()='Sign Up']")
+ public WebElement myAccountSiginUpOnPopup;
 @FindBy(xpath = "//a[@class='register inline-type']")
 public WebElement myAccountRegistrationBtn;
 @FindBy(xpath = "(//input[@id='reg_username'])[1]")
@@ -206,28 +208,26 @@ public WebElement myAccountUserNameReg;
 public WebElement myAccountUserEmailReg;
 @FindBy(xpath = "(//input[@id='reg_password'])[1]")
 public WebElement myAccountPasswordReg;
-@FindBy(xpath = "(//input[@id='register-policy'])[1]")
+@FindBy(id = "register-policy")
 public WebElement myAccountPolicyCheckReg;
-@FindBy(xpath = "(//button[.='Sign Up'])[1]")
-public WebElement myAccountSginUpReg;
+@FindBy(xpath = "(//button[@type='submit'])[3]")
+public WebElement myAccountSignUpReg;
+ @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
+ public WebElement notification_VeryWeak;
+ @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
+ public WebElement notification_Weak;
+@FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
+public WebElement notification_Medium;
+ @FindBy(xpath = "//div[@class='woocommerce-password-strength strong']")
+public WebElement notification_Strong;
+ @FindBy(css="div[class='login-popup'")
+ public WebElement logIn_PopUp;
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// 230.Satır --> Zeliha
+ // 230.Satır --> Zeliha
 
 
 
