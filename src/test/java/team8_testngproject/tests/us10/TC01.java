@@ -16,9 +16,6 @@ public class TC01 {
     //Kullanıcı registor butonuna tıklar
     //Kullanıcı Become a Vendor linkine tıklar
     //Kullanıcı kayıtlı olduğu mail adresini girer
-    //Verification Code text kutusuna tıklar
-    //Kullanıcı Email kutusunu gelen kodu kopyalar
-    //Verification Code text kutusuna yapıştırır
     //Kullanıcı password kısmına 6 karakterden küçük değer girer
 
 
@@ -38,10 +35,6 @@ public class TC01 {
         //Kullanıcı kayıtlı olduğu mail adresini girer
          vendorRegisterPage=new P14_VendorRegisterPage();
          vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
-
-        //Verification Code text kutusuna tıklar
-        vendorRegisterPage.verificationCodeClick.click();
-        vendorRegisterPage.verificationCodeClick.sendKeys(ConfigReader.getProperty("vendor_code"));
 
         //Kullanıcı password kısmına 6 karakterden küçük değer girer
         vendorRegisterPage.vendorPassowordZb.click();

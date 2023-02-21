@@ -231,7 +231,7 @@ public class P14_VendorRegisterPage {
     //(hubcomfy locate)
     @FindBy(id = "user_email") public WebElement emailzb;
     @FindBy(xpath = "//*[@class='page-title']") public WebElement vendorDogrulaZb;
-    @FindBy(xpath = "//*[@style='display: none;']") public WebElement emailUyariZb;
+    @FindBy(xpath = "//div[@class='wcfm-message email_verification_message wcfm-error']") public WebElement emailUyariZb;
     @FindBy(name = "wcfm_email_verified_input") public WebElement verificationCodeClick;
     @FindBy(xpath = "//*[@id='wcfm_membership_register_button']") public WebElement vendorRegisterClickZb;
     @FindBy(id = "passoword") public WebElement vendorPassowordZb;
@@ -245,6 +245,7 @@ public class P14_VendorRegisterPage {
     @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement eksikMailHataMesajiZb;
     @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
     @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement sadecePswUyari;
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement kisaPwdMesaj;
 
 
 
