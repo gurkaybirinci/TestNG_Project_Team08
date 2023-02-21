@@ -19,15 +19,15 @@ public class P03_LoginPage {
 
     // 20.Satır --> Ali
 
+    @FindBy (id = "username")
+    public WebElement usernameAli;
 
 
+    @FindBy (id = "password")
+    public WebElement passwordAli;
 
-
-
-
-
-
-
+    @FindBy (name = "login")
+    public WebElement loginAli;
 
 
 

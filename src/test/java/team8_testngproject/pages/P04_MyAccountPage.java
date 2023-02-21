@@ -19,8 +19,8 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
     // 20.Satır --> Ali
 
-
-
+@FindBy (linkText = "Addresses")
+public WebElement addAddressesLinkAli;
 
 
 
