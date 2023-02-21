@@ -227,8 +227,6 @@ public WebElement myAccountSginUpReg;
 
 
 
-
-
 // 230.Satır --> Zeliha
 
 
