@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC18 { // Product brands bölümüne yeni marka eklerken Product brands Name bölümü boş bırakıldığında bu kutuda bir uyarı mesajı görüntülenmeli (FAIL)
     @Test

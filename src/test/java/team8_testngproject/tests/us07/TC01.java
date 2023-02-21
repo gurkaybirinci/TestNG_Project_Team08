@@ -6,6 +6,7 @@ import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class  TC01 {
     P01_HomePage homePage;

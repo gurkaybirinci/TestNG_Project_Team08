@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC25 { // Catalog visibility; Shop and search results olarak seçilebilmeli (PASS)
     @Test
