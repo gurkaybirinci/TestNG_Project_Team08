@@ -210,18 +210,18 @@ public class P02_RegisterPage {
     public WebElement policyAgreementBox;
     @FindBy(xpath = "//button[@name='register']")
     public WebElement userSignUpButton;
-    @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
-    public WebElement notification_VeryWeak;
-    @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
-    public WebElement notification_Weak;
-    @FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
-    public WebElement notification_Medium;
     @FindBy(xpath = "(//*[@class='submit-status'])[2]")
     public WebElement alreadyUsedEmailAccountStatement;
     @FindBy(xpath = "//*[.='An account is already registered with that username. Please choose another.']")
     public WebElement alreadyUsedUsernameStatement;
     @FindBy (xpath ="//*[text()='Sign Out']" )
     public  WebElement signOutButton;
+
+
+
+
+
+
 
 
 

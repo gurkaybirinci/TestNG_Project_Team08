@@ -7,6 +7,7 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
     P01_HomePage homePage;
@@ -42,6 +43,9 @@ public class TC03 {
 
         //Kullanıcı verificationCode kutusuna tıklar          !!!kontrol
         vendorRegisterPage.verificationCodeClick.click();
+        Assert.assertTrue(vendorRegisterPage.verivacitonInvalidMesajZb.getText().contains("Please provide a valid email address."));
+        ReusableMethods.waitFor(3);
+
         //Assert.assertEquals(vendorRegisterPage.eksikMailHataMesajiZb.getText(),"Please provide a valid email address.");
 
 

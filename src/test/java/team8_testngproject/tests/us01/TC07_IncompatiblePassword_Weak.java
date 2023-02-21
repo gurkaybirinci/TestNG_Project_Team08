@@ -4,29 +4,29 @@ import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
-import team8_testngproject.pages.P02_RegisterPage;
+import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07_IncompatiblePassword_Weak {
 
     @Test
     public void UnsuccessfulRegistration_weakPassword(){
-    Driver.getDriver().get(ConfigReader.getProperty("URL"));
+        Driver.getDriver().get("https://hubcomfy.com/my-account-2/");
         Faker faker = new Faker();
 
         P01_HomePage homePage = new P01_HomePage();
-        homePage.userRegisterButton.click();
+        ReusableMethods.jsClick(homePage.myAccountButton);
 
-        P02_RegisterPage registerPage = new P02_RegisterPage();
-        registerPage.userNameBox.sendKeys(faker.name().username());
-        registerPage.e_mailBox.sendKeys(faker.internet().emailAddress());
-        registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword3"));
-        registerPage.policyAgreementBox.click();
-        registerPage.userSignUpButton.click();
+        P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
+        myAccountPage.myAccountSiginUpOnPopup.click();
+        myAccountPage.myAccountUserNameReg.sendKeys(faker.name().username());
+        myAccountPage.myAccountUserEmailReg.sendKeys(faker.internet().emailAddress());
+        myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword3"));
 
-        //Assert.assertTrue(registerPage.notification_Weak.isDisplayed());
-        Assert.assertFalse(registerPage.userRegisterPage.isDisplayed());
+        Assert.assertTrue(myAccountPage.notification_Weak.isDisplayed());
+
 
 
 

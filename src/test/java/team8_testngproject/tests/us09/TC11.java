@@ -7,22 +7,19 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
-public class TC07 {
-
+public class TC11 {
     //Kullanıcı url'e gider
     //Kullanıcı Register butonuna tıklar
     //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı Email bilgileri girer
+    //Kullanıcı kayıtlı olduğu mail adresini girer
     //Verification Code girer
-    //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
-    //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
+    //Kullanıcı password kısmına valid bir değer girer
+    //Kullanıcı Confirm Password kutusuna aynı valid değeri girer
     //Kullanıcı Register butonuna tıklar
 
     @Test
-    public void us09_Tc07() {
-
+    public void us09_11() {
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -42,25 +39,13 @@ public class TC07 {
         vendorRegisterPage.verificationCodeClick.sendKeys(ConfigReader.getProperty("vendor_code"));
 
         //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
-        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
+        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
         //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
-        vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
+        vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
-        //Kullanıcı Register butonuna tıklar (Kullanıcı "Password strength should be atleast "Good". mesajını görmeli)
+        //Kullanıcı Register butonuna tıklar (This Email already exists. Please login to the site and apply as vendor.)
         vendorRegisterPage.vendorRegisterClickZb.click();
-        ReusableMethods.waitFor(5);
-        vendorRegisterPage.vendorRegisterClickZb.click();
-
-        //doğrulama sıkıntısııııı
-        Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password strength should be atleast \"Good\".");
-
-
-
-
-
-
-
-
+        Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"This Email already exists. Please login to the site and apply as vendor.");
     }
 }

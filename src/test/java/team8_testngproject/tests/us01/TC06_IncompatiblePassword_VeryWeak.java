@@ -12,20 +12,20 @@ public class TC06_IncompatiblePassword_VeryWeak {
 
     @Test
     public void UnsuccessfulRegistration_veryWeakPassword() {
-        Driver.getDriver().get(ConfigReader.getProperty("URL"));
-//        Faker faker = new Faker();
-        P01_HomePage homePage = new P01_HomePage();
-       ReusableMethods.jsClick(homePage.myAccountButton);
-        P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
-        myAccountPage.myAccountRegistrationBtn.click();
-        myAccountPage.myAccountUserNameReg.sendKeys(ConfigReader.getProperty("generatedMyAccountUsername"));
-        myAccountPage.myAccountUserEmailReg.sendKeys(ConfigReader.getProperty("generatedMyAccount"));
-       myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword2"));
-        myAccountPage.myAccountPolicyCheckReg.click();
-        myAccountPage.myAccountSginUpReg.click();
+        Driver.getDriver().get("https://hubcomfy.com/my-account-2/");
+       Faker faker = new Faker();
 
-        // Assert.assertTrue(registerPage.notification_VeryWeak.isDisplayed());
-        Assert.assertFalse(homePage.homePageLogo.isDisplayed());
+       P01_HomePage homePage = new P01_HomePage();
+       ReusableMethods.jsClick(homePage.myAccountButton);
+
+        P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
+        myAccountPage.myAccountSiginUpOnPopup.click();
+        myAccountPage.myAccountUserNameReg.sendKeys(faker.name().username());
+        myAccountPage.myAccountUserEmailReg.sendKeys(faker.internet().emailAddress());
+       myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword2"));
+
+        Assert.assertTrue(myAccountPage.notification_VeryWeak.isDisplayed());
+
 
     }
 
