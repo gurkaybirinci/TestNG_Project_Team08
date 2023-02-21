@@ -318,16 +318,16 @@ public class P03_LoginPage {
 
 
     // 320.Satır --> Sevda
-    @FindBy(id = "username")
-    public WebElement usernamesvd;
-    @FindBy(id="password")
-    public WebElement passwordsvd;
-    @FindBy(xpath = "//*[@name='login']")
-    public WebElement signinsvd;
-    @FindBy(xpath = "//*[text()='Sign Out']")
-    public WebElement singoutsvd;
-    @FindBy(xpath = "//*[@class='page-title']")
-    public WebElement myaccountsvd;
+    @FindBy(id = "username") public WebElement usernamesvd;
+    @FindBy(id="password") public WebElement passwordsvd;
+    @FindBy(xpath = "//*[@name='login']") public WebElement signinsvd;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement singoutsvd;
+
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement myaccountsvd;
+
+
+
+
 
 
 
