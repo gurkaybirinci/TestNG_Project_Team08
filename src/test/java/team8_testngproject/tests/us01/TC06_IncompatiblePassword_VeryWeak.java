@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us01;
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
