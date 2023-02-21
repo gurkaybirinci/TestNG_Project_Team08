@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 { // Ürün fotoğrafı (büyük olan-Featured Img) eklenebilmeli (PASS)
     @Test

@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us05;
 
 import com.github.javafaker.Faker;
-import org.apache.poi.ss.formula.atp.Switch;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,7 +10,6 @@ import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.pages.P06_AccountDetailes;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07 {
     @Test

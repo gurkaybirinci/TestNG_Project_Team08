@@ -4,9 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.ConfigReader;
-import org.w3c.dom.html.HTMLInputElement;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class P03_LoginPage {
     public P03_LoginPage() {
@@ -258,12 +256,12 @@ public class P03_LoginPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement emailBox_Nt;
+    @FindBy(id = "password")
+    public WebElement passwordBox_Nt;
+    @FindBy(xpath = "//button[.='Sign In']")
+    public WebElement signInButton_Nt;
 
 
 

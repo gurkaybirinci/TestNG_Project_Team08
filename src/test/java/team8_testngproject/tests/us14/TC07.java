@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07 { // Description kutusuna metin girilebilmeli (PASS)
     @Test

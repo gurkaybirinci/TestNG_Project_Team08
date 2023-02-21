@@ -2,7 +2,6 @@ package team8_testngproject.tests.us08;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -11,7 +10,6 @@ import team8_testngproject.pages.P07_ShoppingPage;
 import team8_testngproject.pages.P13_WishlistPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 {
 

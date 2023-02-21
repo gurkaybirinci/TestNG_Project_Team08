@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
-import team8_testngproject.utilities.ReusableMethods;
 
 public class P01_HomePage {
 
@@ -202,6 +201,8 @@ public class P01_HomePage {
     public WebElement userRegisterButton;
 @FindBy(xpath = "(//a[@class='logo'])[1]")
 public WebElement homePageLogo;
+@FindBy(xpath = "//a[contains(text(),'My Account')]")
+public WebElement myAccountButton;
 
 
 
@@ -258,10 +259,10 @@ public WebElement homePageLogo;
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement registerButton_Nt;
+    @FindBy(xpath = "//div[.='Sign Out']")
+    public WebElement signOutButton_Nt;
 
 
 
