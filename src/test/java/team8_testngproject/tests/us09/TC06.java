@@ -66,10 +66,10 @@ public class TC06 {
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod);
 
         //Kullanıcı geçerli Password girer
-        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_password"));
+        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
         //Kulanıcı geçerli Confirm Password girer
-        vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_password"));
+        vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
         //Kullanıcı Register butonuna tıklar (Kullaınıcı "Email verification code invalid." mesajını almalı)
         vendorRegisterPage.vendorRegisterClickZb.click();
