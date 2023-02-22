@@ -168,7 +168,8 @@ public WebElement signInButtonAli;
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonKoz;
+    @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonKoz;
 
 
 
