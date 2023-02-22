@@ -26,7 +26,7 @@ public class TC21 { // Product brands bölümünde sadece bir seçenek seçilebi
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.brandAdidasGur);
         Assert.assertTrue(vendorProductManagerPage.brandAdidasGur.isSelected());

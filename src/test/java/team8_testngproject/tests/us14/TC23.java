@@ -26,7 +26,7 @@ public class TC23 { // Tags bölümüne birden fazla tag eklenebilmeli (PASS)
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         String tagName = "Avokado, Ananas";
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].value='" + tagName + "';", vendorProductManagerPage.addTagGur);

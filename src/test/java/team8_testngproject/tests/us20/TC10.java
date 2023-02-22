@@ -1,6 +1,5 @@
-package team8_testngproject.tests.us14;
+package team8_testngproject.tests.us20;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -8,14 +7,16 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC16 { // Product brands metne tıklandığında seçilebilmeli (FAIL)
+import java.time.LocalDate;
+
+public class TC10 { // Coupon expiry date girilebilmeli (PASS)
     @Test
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P16_VendorStoreManagerPage vendorStoreManagerPage = new P16_VendorStoreManagerPage();
-        P18_VendorProductManagerPage vendorProductManagerPage = new P18_VendorProductManagerPage();
+        P20_VendorCouponsPage vendorCouponsPage = new P20_VendorCouponsPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage.signInGur.click();
@@ -25,14 +26,19 @@ public class TC16 { // Product brands metne tıklandığında seçilebilmeli (FA
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
-        ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.productAddNewButtonGur.click();
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.brandAdidasTextGur);
+        ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
+        vendorStoreManagerPage.couponsAddNewButtonGur.click();
+
+        String couponExpireDateData = "2022-01-01";
+        vendorCouponsPage.couponExpireDateBoxGur.sendKeys(couponExpireDateData);
+        String couponExpireDateValue = vendorCouponsPage.couponExpireDateBoxGur.getAttribute("value");
+        LocalDate expireDate = LocalDate.parse(couponExpireDateValue);
+        LocalDate currentDate = LocalDate.now();
 
         try {
-            Assert.assertTrue(vendorProductManagerPage.brandAdidasGur.isSelected());
+            Assert.assertFalse(expireDate.isBefore(currentDate));
         } catch (AssertionError e) {
-            System.out.println("Test failed: " + e.getMessage());
+            System.out.println("FAIL: Girilen tarih bugünden daha önceki bir tarih olamaz: " + e.getMessage());
             throw e;
         } finally {
             Driver.closeDriver();
