@@ -17,7 +17,6 @@ public class TC30 { // Catalog visibility; Hidden olarak seçilediğinde ürüne
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P16_VendorStoreManagerPage vendorStoreManagerPage = new P16_VendorStoreManagerPage();
         P18_VendorProductManagerPage vendorProductManagerPage = new P18_VendorProductManagerPage();
-        Select select = new Select(vendorProductManagerPage.catalogSelectGur);
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage.signInGur.click();
@@ -28,7 +27,7 @@ public class TC30 { // Catalog visibility; Hidden olarak seçilediğinde ürüne
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         vendorProductManagerPage.productTitleGur.sendKeys("Steteskop");
         vendorProductManagerPage.galleryImgGur.click();
@@ -39,6 +38,7 @@ public class TC30 { // Catalog visibility; Hidden olarak seçilediğinde ürüne
         vendorProductManagerPage.image2Gur.click();
         vendorProductManagerPage.selectButtonGur.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.categoryAccessoriesGur);
+        Select select = new Select(vendorProductManagerPage.catalogSelectGur);
         select.selectByIndex(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.submitButtonGur);
         vendorProductManagerPage.searchBoxGur.sendKeys("Steteskop");

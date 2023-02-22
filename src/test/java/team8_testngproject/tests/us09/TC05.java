@@ -1,5 +1,4 @@
 package team8_testngproject.tests.us09;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;

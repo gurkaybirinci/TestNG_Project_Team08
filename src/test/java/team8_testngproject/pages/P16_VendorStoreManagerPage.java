@@ -108,10 +108,10 @@ public class P16_VendorStoreManagerPage {
 
 
     // 110.Satır --> Gürkay
-    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']")
-    public WebElement productButtonGur;
-    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products-manage/']")
-    public WebElement addNewButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public WebElement productButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products-manage/']") public WebElement productAddNewButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/coupons/']") public WebElement couponsButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/coupons-manage/']") public WebElement couponsAddNewButtonGur;
 
 
 
