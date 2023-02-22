@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,8 +9,6 @@ public class P15_VendorAddressesPage {
     public P15_VendorAddressesPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 
 
 
@@ -258,12 +258,12 @@ public class P15_VendorAddressesPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
+    @FindBy(xpath = "//input[@id='billing_first_name']")
+    public WebElement firstNameBox_Nt;
+    @FindBy(id = "billing_country")
+    public WebElement countryBox_Nt;
+    @FindBy(id = "billing_state")
+    public WebElement provinceBox_Nt;
 
 
 
