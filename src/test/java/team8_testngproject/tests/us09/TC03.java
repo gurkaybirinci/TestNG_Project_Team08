@@ -22,7 +22,7 @@ public class TC03 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
         String yeniMail=fakeMail.replace(".com"," ");
-        System.out.println(yeniMail);
+
 
 
         //Kullanıcı URL gider
@@ -41,12 +41,13 @@ public class TC03 {
         vendorRegisterPage.emailzb.sendKeys(yeniMail);
 
 
-        //Kullanıcı verificationCode kutusuna tıklar          !!!kontrol
+        //Kullanıcı verificationCode kutusuna tıklar (Please provide a valid email address.)
         vendorRegisterPage.verificationCodeClick.click();
-        Assert.assertTrue(vendorRegisterPage.verivacitonInvalidMesajZb.getText().contains("Please provide a valid email address."));
         ReusableMethods.waitFor(3);
+        System.out.println(vendorRegisterPage.eksikMailHataMesajiZb.getText());
+        Assert.assertTrue(vendorRegisterPage.eksikMailHataMesajiZb.getText().contains("Please provide a valid email address."));
 
-        //Assert.assertEquals(vendorRegisterPage.eksikMailHataMesajiZb.getText(),"Please provide a valid email address.");
+
 
 
 
