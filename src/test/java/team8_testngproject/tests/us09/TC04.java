@@ -1,11 +1,13 @@
 package team8_testngproject.tests.us09;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC04 {
     //Kullanıcı url'e gider
@@ -42,12 +44,11 @@ public class TC04 {
         //Verification Code text kutsuna tıklar
          vendorRegisterPage.verificationCodeClick.click();
 
-
-         //==>bunu kontrol et??*??**?
-        //element.getAttribute("validationMessage"); bunu deneeeee
-
-
-         vendorRegisterPage.verificationCodeClick.isDisplayed();
+        //Verification Code text kutsuna tıklar( "Verification code sent to your email: abc@abc.com." mesajını görmeli)
+        ReusableMethods.waitFor(3);
+        String dogrulama=vendorRegisterPage.codeSuccess.getText();
+        System.out.println("Doğrulama:" +dogrulama);
+        Assert.assertTrue(vendorRegisterPage.codeSuccess.getText().contains(dogrulama));
 
 
 
