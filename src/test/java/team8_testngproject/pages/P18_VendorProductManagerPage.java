@@ -138,7 +138,8 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//li[text()='Adidas']") public WebElement brandAdidasTextGur;
     @FindBy(xpath = "//*[text()='+Add new Product brands']") public WebElement addBrandLinkGur;
     // 140.Satır --> Hüseyin
-
+    @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextHus;
+@FindBy(id = "product_type") public  WebElement dropdownHus;
 
 
 
