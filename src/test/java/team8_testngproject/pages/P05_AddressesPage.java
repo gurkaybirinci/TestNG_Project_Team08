@@ -329,6 +329,14 @@ public WebElement editlinkAli;
 
     @FindBy(id="select2-billing_state-container") public WebElement statesvd;
 
+    @FindBy(xpath = "//*[@class='select2-selection__placeholder']") public WebElement provincesvd;
+
+    @FindBy(id="billing_phone") public WebElement phonesvd;
+
+    @FindBy(id="billing_email") public WebElement emailsvd;
+
+@FindBy(name="save_address") public WebElement savesvd;
+@FindBy(xpath = "//*[text()='Province is a required field.']") public WebElement msjsvd;
 
 
 
@@ -339,15 +347,7 @@ public WebElement editlinkAli;
 
 
 
-
-
-
-
-
-
-
-
-    // 350.Satır --> Mustafa
+// 350.Satır --> Mustafa
 
 
 
