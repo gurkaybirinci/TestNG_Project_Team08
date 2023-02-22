@@ -25,7 +25,7 @@ public class TC05 { // Product Title kutusuna metin girilebilmeli (PASS)
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         String productTitle = "Steteskop";
         vendorProductManagerPage.productTitleGur.sendKeys(productTitle);

@@ -26,7 +26,7 @@ public class TC22 { // Tags eklenebilmeli (PASS)
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         String tagName = "Avokado";
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].value='" + tagName + "';", vendorProductManagerPage.addTagGur);

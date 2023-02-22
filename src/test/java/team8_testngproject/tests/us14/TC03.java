@@ -25,7 +25,7 @@ public class TC03 { // Ürün fotoğrafı (küçük olan-Gallery Images) ekleneb
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         vendorProductManagerPage.galleryImgGur.click();
         vendorProductManagerPage.mediaLibraryGur.click();

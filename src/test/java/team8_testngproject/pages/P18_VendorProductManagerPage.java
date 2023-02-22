@@ -59,8 +59,8 @@ public class P18_VendorProductManagerPage {
     @FindBy(id = "catalog_visibility") public WebElement catalogSelectGur;
     @FindBy(name = "s") public WebElement searchBoxGur;
     @FindBy(xpath = "//*[@class='search-name']") public WebElement liveSearchAreaGur;
-
-
+    @FindBy(id = "product_url") public WebElement urlBoxGur;
+    @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']") public WebElement productAddedSuccessGur;
 
 
 
