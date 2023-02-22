@@ -138,7 +138,7 @@ public WebElement addAddressesLinkAli;
 
 
     // 140.Satır --> Hüseyin
-
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement myAccountTextHus;
 
 
 
@@ -168,7 +168,7 @@ public WebElement addAddressesLinkAli;
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement myAccountTextKoz;
 
 
 
@@ -258,10 +258,10 @@ public WebElement notification_Strong;
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//h2[.='My Account']")
+    public WebElement myAccountPage_Nt;
+    @FindBy(linkText = "Orders")
+    public WebElement ordersLink_Nt;
 
 
 

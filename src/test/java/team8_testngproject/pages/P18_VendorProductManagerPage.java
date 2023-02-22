@@ -59,8 +59,8 @@ public class P18_VendorProductManagerPage {
     @FindBy(id = "catalog_visibility") public WebElement catalogSelectGur;
     @FindBy(name = "s") public WebElement searchBoxGur;
     @FindBy(xpath = "//*[@class='search-name']") public WebElement liveSearchAreaGur;
-
-
+    @FindBy(id = "product_url") public WebElement urlBoxGur;
+    @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']") public WebElement productAddedSuccessGur;
 
 
 
@@ -138,7 +138,8 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//li[text()='Adidas']") public WebElement brandAdidasTextGur;
     @FindBy(xpath = "//*[text()='+Add new Product brands']") public WebElement addBrandLinkGur;
     // 140.Satır --> Hüseyin
-
+    @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextHus;
+@FindBy(id = "product_type") public  WebElement dropdownHus;
 
 
 
@@ -168,8 +169,8 @@ public class P18_VendorProductManagerPage {
 
 
     // 170.Satır --> Mehmet
-
-
+    @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextKoz;
+    @FindBy(id = "product_type") public  WebElement dropdownKoz;
 
 
 

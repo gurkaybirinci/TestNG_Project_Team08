@@ -1,8 +1,7 @@
 package team8_testngproject.tests.us14;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -10,10 +9,7 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TC14 { // Categories bölümüne yeni kategori eklendiğinde, eklenen kategori Parent Category menüsünde görünmeli (FAIL)
+public class TC31 { // External/Affiliate Product seçeneği içindeki URL kutusuna URL formatı dışında veri girilememeli (FAIL)
     @Test
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
@@ -33,22 +29,27 @@ public class TC14 { // Categories bölümüne yeni kategori eklendiğinde, eklen
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.productAddNewButtonGur.click();
 
-        String categoryName = "Armut";
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addCategoryLinkGur);
-        vendorProductManagerPage.categoryNameGur.sendKeys(categoryName);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addButtonGur);
-        List<WebElement> options = vendorProductManagerPage.parentCategoryGur.findElements(By.tagName("option"));
-        List<String> optionTexts = new ArrayList<>();
-        for (WebElement w : options){
-            optionTexts.add(w.getText());
-        }
+        Select select = new Select(vendorProductManagerPage.productMenuGur);
+        select.selectByIndex(3);
+        vendorProductManagerPage.productTitleGur.sendKeys("Steteskop");
+        vendorProductManagerPage.urlBoxGur.sendKeys("Çok güzel bir steteskop...");
+        vendorProductManagerPage.galleryImgGur.click();
+        vendorProductManagerPage.mediaLibraryGur.click();
+        vendorProductManagerPage.image1Gur.click();
+        vendorProductManagerPage.addGalleryButtonGur.click();
+        vendorProductManagerPage.featuredImgGur.click();
+        vendorProductManagerPage.image2Gur.click();
+        vendorProductManagerPage.selectButtonGur.click();
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.categoryAccessoriesGur);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.submitButtonGur);
+        ReusableMethods.waitFor(1);
 
-        try{
-            Assert.assertTrue(optionTexts.contains(categoryName));
-        }catch (AssertionError e){
+        try {
+            Assert.assertFalse(vendorProductManagerPage.productAddedSuccessGur.isDisplayed());
+        } catch (AssertionError e) {
             System.out.println("Test failed: " + e.getMessage());
             throw e;
-        }finally {
+        } finally {
             Driver.closeDriver();
         }
     }

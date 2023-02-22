@@ -31,7 +31,7 @@ public class TC20 { // Product brands bölümüne yeni marka eklendiğinde, ekle
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         String categoryName = "Avokado";
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addBrandLinkGur);

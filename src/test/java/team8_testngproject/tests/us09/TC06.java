@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -61,6 +62,7 @@ public class TC06 {
         String sadeceKod = mailKod.split(" ")[5];
         sadeceKod=sadeceKod.substring(0,4);
         System.out.println(sadeceKod);
+        Actions actions=new Actions(Driver.getDriver());
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod);

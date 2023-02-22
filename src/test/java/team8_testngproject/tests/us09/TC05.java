@@ -1,5 +1,4 @@
 package team8_testngproject.tests.us09;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -60,16 +59,21 @@ public class TC05 {
 
         String mailKod=vendorRegisterPage.mailVerivacitonCode.getText();
         String[] sadeceKod=mailKod.split(" ");
-        System.out.println("KOD" + sadeceKod[5]);
+
 
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod[5]);
 
-        //Kullanıcı Register butonuna tıklar!!!!
+        //Kullanıcı Register butonuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
-        Assert.assertEquals(vendorRegisterPage.pswEksikMesaji.getText(),"Password: This field is required." +
-                "Confirm Password: This field is required.");
+
+        ReusableMethods.waitFor(3);
+        System.out.println(vendorRegisterPage.pswEksikMesaji.getText());
+        Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Password: This field is required."));
+        Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Confirm Password: This field is required."));
+
+
 
 
 

@@ -80,7 +80,7 @@ public class ReusableMethods {
         return elemTexts;
     }
 
-//   HARD WAIT WITH THREAD.SLEEP
+    //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
     public static void waitFor(int sec) {
         try {
@@ -285,7 +285,11 @@ public class ReusableMethods {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }    
+
+
+    }
+
     
     
 }
+

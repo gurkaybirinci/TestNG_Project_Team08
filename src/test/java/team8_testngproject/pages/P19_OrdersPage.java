@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,8 +9,6 @@ public class P19_OrdersPage {
     public P19_OrdersPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 
 
 
@@ -257,11 +257,11 @@ public class P19_OrdersPage {
 
 
 
-    // 260.Satır --> Nurullah
-
-
-
-
+    // 260.Satır -->
+    @FindBy(xpath = "//a[.='Browse products']")
+    public WebElement ordersDisplayed_Nt;
+    @FindBy(xpath = "//a[.='Browse products']")
+    public WebElement browseProductsLink_Nt;
 
 
 

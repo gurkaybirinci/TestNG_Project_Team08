@@ -1,16 +1,16 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
+
+import java.nio.file.Watchable;
 
 public class P20_VendorCouponsPage {
     public P20_VendorCouponsPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
-
 
 
 
@@ -108,15 +108,15 @@ public class P20_VendorCouponsPage {
 
 
     // 110.Satır --> Gürkay
-
-
-
-
-
-
-
-
-
+    @FindBy (id = "title") public WebElement codeBoxGur;
+    @FindBy (id = "description") public WebElement descriptionBoxGur;
+    @FindBy (id = "discount_type") public WebElement discountTypeMenuGur;
+    @FindBy (id = "coupon_amount") public WebElement couponAmountBoxGur;
+    @FindBy (id = "expiry_date") public WebElement couponExpireDateBoxGur;
+    @FindBy (id = "free_shipping") public WebElement allowFreeShipCheckboxGur;
+    @FindBy (id = "show_on_store") public WebElement shownOnStoreCheckboxGur;
+    @FindBy (id = "wcfm_coupon_manager_submit_button") public WebElement submitButtonGur;
+    @FindBy (xpath = "(//a[@class='wcfm_dashboard_item_title'])[1]" ) public WebElement couponTitleGur;
 
 
 

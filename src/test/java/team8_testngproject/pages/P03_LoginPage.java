@@ -138,7 +138,8 @@ public class P03_LoginPage {
 
 
     // 140.Satır --> Hüseyin
-
+    @FindBy(id = "username") public WebElement usernameHus;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonHus;
 
 
 
@@ -168,7 +169,8 @@ public class P03_LoginPage {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(id = "username") public WebElement usernameKoz;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonKoz;
 
 
 

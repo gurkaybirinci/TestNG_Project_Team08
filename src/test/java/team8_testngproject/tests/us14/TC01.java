@@ -28,7 +28,7 @@ public class TC01 { // Simple Product, Variable Product, Grouped Product, Extern
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         List<String> expectedOptions = Arrays.asList("Simple Product", "Variable Product", "Grouped Product", "External/Affiliate Product");
         List<String> actualOptions = ReusableMethods.getOptionsFromSelect(vendorProductManagerPage.productMenuGur);

@@ -26,7 +26,7 @@ public class TC24 { // Tags bölümüne kayıtlı taglardan biri seçilerek tag 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.usedTagsLinkGur);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.usedFirstTagGur);
