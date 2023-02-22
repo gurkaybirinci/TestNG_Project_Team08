@@ -258,10 +258,10 @@ public class P10_CheckOutPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(id = "order_review")
+    public WebElement yourOrderDisplayed_Nt;
+    @FindBy(id = "customer_details")
+    public WebElement billingDetailsDisplayed_Nt;
 
 
 

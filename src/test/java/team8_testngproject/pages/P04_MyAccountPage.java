@@ -258,10 +258,10 @@ public WebElement notification_Strong;
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//h2[.='My Account']")
+    public WebElement myAccountPage_Nt;
+    @FindBy(linkText = "Orders")
+    public WebElement ordersLink_Nt;
 
 
 
