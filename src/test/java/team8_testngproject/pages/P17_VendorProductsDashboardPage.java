@@ -170,7 +170,7 @@ public class P17_VendorProductsDashboardPage {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(id = "add_new_product_dashboard") public WebElement addNewButtonKoz;
 
 
 

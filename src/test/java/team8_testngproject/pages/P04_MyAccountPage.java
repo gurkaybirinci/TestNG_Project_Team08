@@ -168,7 +168,7 @@ public WebElement addAddressesLinkAli;
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement myAccountTextKoz;
 
 
 

@@ -169,8 +169,8 @@ public class P18_VendorProductManagerPage {
 
 
     // 170.Satır --> Mehmet
-
-
+    @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextKoz;
+    @FindBy(id = "product_type") public  WebElement dropdownKoz;
 
 
 
