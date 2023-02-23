@@ -139,7 +139,11 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//*[text()='+Add new Product brands']") public WebElement addBrandLinkGur;
     // 140.Satır --> Hüseyin
     @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextHus;
-@FindBy(id = "product_type") public  WebElement dropdownHus;
+    @FindBy(id = "product_type") public  WebElement dropdownHus;
+    @FindBy(id="is_virtual") public WebElement virtualCheckboxHus;
+    @FindBy(id="is_downloadable") public WebElement downabledCheckboxHus;
+    @FindBy(id="regular_price") public WebElement priceBoxHus;
+    @FindBy(id="sale_price") public WebElement salePriceBoxHus;
 
 
 
