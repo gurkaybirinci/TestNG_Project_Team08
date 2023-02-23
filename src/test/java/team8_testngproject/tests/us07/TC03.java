@@ -34,7 +34,7 @@ public class TC03 {
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                loginPage.cantaTheMono);
+                loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
         loginPage.bosSayfa.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
