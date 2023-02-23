@@ -173,7 +173,7 @@ public class P16_VendorStoreManagerPage {
     // 170.Satır --> Mehmet
     @FindBy(xpath = "//a[.='Store Manager']") public WebElement storeManagerButtonKoz;
     @FindBy(xpath = "//h2[.='Store Manager']") public  WebElement storeManagerTextKoz;
-    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public WebElement productButtonKoz;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public WebElement productsButtonKoz;
 
 
 
