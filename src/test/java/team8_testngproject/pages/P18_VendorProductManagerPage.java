@@ -175,7 +175,19 @@ public class P18_VendorProductManagerPage {
     // 170.Satır --> Mehmet
     @FindBy(xpath = "//h2[.='Add Product']") public WebElement addProductTextKoz;
     @FindBy(id = "product_type") public  WebElement dropdownKoz;
-
+    @FindBy(id = "regular_price") public WebElement priceInputKoz;
+    @FindBy(id = "sale_price") public WebElement salePriceInputKoz;
+    @FindBy(id="is_virtual") public WebElement virtualCheckKoz;
+    @FindBy(id = "pro_title") public WebElement productTitleInputKoz;
+    @FindBy(id = "excerpt_ifr") public WebElement shortDescriptionIframeKoz;
+    @FindBy(id = "tinymce") public WebElement shortDescriptionInputKoz;
+    @FindBy(id = "description_ifr") public WebElement descriptionIframeKoz;
+    @FindBy(id = "tinymce") public WebElement descriptionInputKoz;
+    @FindBy(xpath = "//input[@value='401']") public WebElement sportsCheckBoxKoz;
+    @FindBy(xpath = "//input[@data-super_parent='604']") public WebElement kozbulCheckBoxKoz;
+    @FindBy(xpath = "//*[.='Choose from the most used tags']") public WebElement chooseTagsKoz;
+    @FindBy(xpath = "//*[.='Futbol']") public WebElement futbolTagKoz;
+    @FindBy(id = "catalog_visibility") public WebElement catalogVisibilityKoz;
 
 
 
