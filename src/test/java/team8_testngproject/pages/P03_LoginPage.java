@@ -83,7 +83,7 @@ public class P03_LoginPage {
     @FindBy(name="login")    public WebElement login;
     @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
     @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
-    @FindBy(xpath = "(//*[@data-product_id='19517'])[2]")    public WebElement cantaTheMono;
+    @FindBy(xpath = "(//*[@data-product_id='16291'])[2]")    public WebElement cantaTheMono;
     @FindBy(xpath = "//*[@class='compare-popup-overlay']")    public WebElement bosSayfa;
     @FindBy(xpath = "(//*[@data-product_id='13249'])[2]")    public WebElement cantaWomen;
     @FindBy(xpath = "(//*[@data-product_id='13172'])[2]")    public WebElement cantaBest;
