@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -7,8 +9,6 @@ public class P16_VendorStoreManagerPage {
     public P16_VendorStoreManagerPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 
 
 
@@ -108,10 +108,10 @@ public class P16_VendorStoreManagerPage {
 
 
     // 110.Satır --> Gürkay
-
-
-
-
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public WebElement productButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products-manage/']") public WebElement productAddNewButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/coupons/']") public WebElement couponsButtonGur;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/coupons-manage/']") public WebElement couponsAddNewButtonGur;
 
 
 
@@ -138,6 +138,9 @@ public class P16_VendorStoreManagerPage {
 
 
     // 140.Satır --> Hüseyin
+@FindBy(xpath = "//a[.='Store Manager']") public WebElement storeManagerButtonHus;
+@FindBy(xpath = "//h2[.='Store Manager']") public  WebElement storeManagerTextHus;
+@FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public  WebElement productsButtonHus;
 
 
 
@@ -168,11 +171,9 @@ public class P16_VendorStoreManagerPage {
 
 
     // 170.Satır --> Mehmet
-
-
-
-
-
+    @FindBy(xpath = "//a[.='Store Manager']") public WebElement storeManagerButtonKoz;
+    @FindBy(xpath = "//h2[.='Store Manager']") public  WebElement storeManagerTextKoz;
+    @FindBy(xpath = "//*[@href='https://hubcomfy.com/store-manager/products/']") public WebElement productButtonKoz;
 
 
 

@@ -3,14 +3,14 @@ package team8_testngproject.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P01_HomePage {
+
     public P01_HomePage() {PageFactory.initElements(Driver.getDriver(),this);
-    }
-
-
-
+}
 
 
 
@@ -18,10 +18,10 @@ public class P01_HomePage {
 
 
     // 20.Satır --> Ali
-
-
-
-
+@FindBy (xpath = "//span[text()='Sign In']")
+public WebElement signInButtonAli;
+    @FindBy (xpath = "//span[text()='Sign Out']")
+    public WebElement signOutButtonAli;
 
 
 
@@ -48,10 +48,10 @@ public class P01_HomePage {
 
 
     // 50.Satır --> Esra
-
-
-
-
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn_Es;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement signOut_Es;
 
 
 
@@ -108,8 +108,8 @@ public class P01_HomePage {
 
 
     // 110.Satır --> Gürkay
-
-
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInGur;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutGur;
 
 
 
@@ -138,7 +138,8 @@ public class P01_HomePage {
 
 
     // 140.Satır --> Hüseyin
-
+    @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonHus;
+    @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonHus;
 
 
 
@@ -168,7 +169,8 @@ public class P01_HomePage {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonKoz;
+    @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonKoz;
 
 
 
@@ -198,6 +200,12 @@ public class P01_HomePage {
 
 
     // 200.Satır --> Meryem
+@FindBy(css = "a[class='register inline-type'")
+    public WebElement userRegisterButton;
+@FindBy(xpath = "(//a[@class='logo'])[1]")
+public WebElement homePageLogo;
+@FindBy(xpath = "//a[contains(text(),'My Account')]")
+public WebElement myAccountButton;
 
 
 
@@ -215,21 +223,15 @@ public class P01_HomePage {
 
 
 
-
-
-
-
-
-
-
-
+    
+    
 
 
 
 
     // 230.Satır --> Zeliha
-
-
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButonZb;
 
 
 
@@ -258,10 +260,10 @@ public class P01_HomePage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement registerButton_Nt;
+    @FindBy(xpath = "//div[.='Sign Out']")
+    public WebElement signOutButton_Nt;
 
 
 
@@ -318,8 +320,8 @@ public class P01_HomePage {
 
 
     // 320.Satır --> Sevda
-
-
+@FindBy(xpath = "//*[text()='Sign In']")
+public WebElement signInButtonsvd;
 
 
 
@@ -348,7 +350,17 @@ public class P01_HomePage {
 
 
     // 350.Satır --> Mustafa
-
+    @FindBy(css = "a[class='login inline-type']")
+    public WebElement signInBtnLoc;
+    @FindBy (css = "input[aria-label='Search']")
+    public WebElement searchInpLoc;
+    @FindBy (css = "button[aria-label='Search Button']")
+    public WebElement searchBtnLoc;
+    public void searchProduct(){
+        ReusableMethods.waitFor(3);
+        searchInpLoc.sendKeys(ConfigReader.getProperty("urun_ismi_mustafa"));
+        searchBtnLoc.click();
+    }
 
 
 

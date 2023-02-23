@@ -3,8 +3,10 @@ package team8_testngproject.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team8_testngproject.utilities.ConfigReader;
 import org.w3c.dom.html.HTMLInputElement;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P03_LoginPage {
     public P03_LoginPage() {
@@ -15,19 +17,17 @@ public class P03_LoginPage {
 
 
 
-
-
     // 20.Satır --> Ali
 
+    @FindBy (id = "username")
+    public WebElement usernameAli;
 
 
+    @FindBy (id = "password")
+    public WebElement passwordAli;
 
-
-
-
-
-
-
+    @FindBy (name = "login")
+    public WebElement loginAli;
 
 
 
@@ -48,12 +48,12 @@ public class P03_LoginPage {
 
 
     // 50.Satır --> Esra
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement userName_Es;
+    @FindBy(id = "password")
+    public WebElement password_Es;
+    @FindBy(name = "login")
+    public WebElement signInButon_Es;
 
 
 
@@ -108,12 +108,12 @@ public class P03_LoginPage {
 
 
     // 110.Satır --> Gürkay
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement userNameGur;
+    @FindBy(id = "password")
+    public WebElement passwordGur;
+    @FindBy(name = "login")
+    public WebElement signInButtonGur;
 
 
 
@@ -138,7 +138,8 @@ public class P03_LoginPage {
 
 
     // 140.Satır --> Hüseyin
-
+    @FindBy(id = "username") public WebElement usernameHus;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonHus;
 
 
 
@@ -168,7 +169,8 @@ public class P03_LoginPage {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(id = "username") public WebElement usernameKoz;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonKoz;
 
 
 
@@ -258,12 +260,12 @@ public class P03_LoginPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement emailBox_Nt;
+    @FindBy(id = "password")
+    public WebElement passwordBox_Nt;
+    @FindBy(xpath = "//button[.='Sign In']")
+    public WebElement signInButton_Nt;
 
 
 
@@ -318,12 +320,12 @@ public class P03_LoginPage {
 
 
     // 320.Satır --> Sevda
+    @FindBy(id = "username") public WebElement usernamesvd;
+    @FindBy(id="password") public WebElement passwordsvd;
+    @FindBy(xpath = "//*[@name='login']") public WebElement signinsvd;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement singoutsvd;
 
-
-
-
-
-
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement myaccountsvd;
 
 
 
@@ -348,6 +350,22 @@ public class P03_LoginPage {
 
 
     // 350.Satır --> Mustafa
+    @FindBy(id = "username")
+    public static WebElement usernameInpLoc;
+    @FindBy (id = "password")
+    public static WebElement passwordInpLoc;
+    @FindBy (css = "button[name='login']")
+    public static WebElement signInBtnLoc2;
+    P01_HomePage homePage = new P01_HomePage();
+    public void login (){
+        Driver.getDriver().get(ConfigReader.getProperty("URL"));
+
+        homePage.signInBtnLoc.click();
+        ReusableMethods.waitFor(1);
+        usernameInpLoc.sendKeys(ConfigReader.getProperty("user_name"));
+        passwordInpLoc.sendKeys(ConfigReader.getProperty("user_password"));
+        signInBtnLoc2.click();
+    }
 
 
 
@@ -378,4 +396,5 @@ public class P03_LoginPage {
 
 
 }
+
 

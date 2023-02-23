@@ -1,5 +1,7 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
@@ -138,7 +140,7 @@ public class P17_VendorProductsDashboardPage {
 
 
     // 140.Satır --> Hüseyin
-
+@FindBy(id = "add_new_product_dashboard") public WebElement addNewButtonHus;
 
 
 
@@ -168,7 +170,7 @@ public class P17_VendorProductsDashboardPage {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(id = "add_new_product_dashboard") public WebElement addNewButtonKoz;
 
 
 
