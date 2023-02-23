@@ -1,4 +1,4 @@
-package team8_testngproject.tests.us03;
+package team8_testngproject.tests.us04;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
@@ -12,12 +12,12 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC01 {
+public class TC02 {
 
     @Test
-    public void testTC01() {
+    public void testTC02() {
 
-//     1. Belirtilen URL'e gidilir.
+        //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
 //    2.  Sing in butonuna tıklanir.
@@ -31,7 +31,7 @@ public class TC01 {
 //     4.  Password inputuna veri girilir.
         loginPage.passwordsvd.sendKeys(ConfigReader.getProperty("user_passwordsvd"));
 
-//     5. Sing in butonuna tiklanir.
+//     5. SIGN IN butonuna tiklanir.
         loginPage.signinsvd.click();
         loginPage.singoutsvd.click();
 
@@ -39,58 +39,78 @@ public class TC01 {
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         Assert.assertEquals(myAccountPage.myAccountsvd.getText(), "My Account");
 
-//    7.   Addresses butonuna tiklanir.
+//    7. Addresses butonuna tiklanir.
         P05_AddressesPage adressPage = new P05_AddressesPage();
         adressPage.addressvd.click();
 
-//    8.  Billing Adress bolumundeki ADD butonuna tiklanir.
-        adressPage.addsvd.click();
+
+//    8. Shipping Adress bolumundeki ADD butonuna tiklanir.
+        adressPage.shippingsvd.click();
 
 //    9. 10 .  First name inputuna veri girilir. //Last name inputuna veri girilir.
-        adressPage.firstNamesvd.clear();
-        adressPage.firstNamesvd.sendKeys("Sevda",
-                Keys.TAB, "ISIK");
+        adressPage.shippingfirstnamesvd.clear();
+        adressPage.shippingfirstnamesvd.sendKeys("",
+              Keys.TAB, "ISIK");
 //    11.  Country/Region dropdown'indan secim yapilir.
-        Select select = new Select(adressPage.citysvd);
+        Select select = new Select(adressPage.shippingcountrysvd);
         select.selectByVisibleText("Turkey");
 
 //     12. Street adress alanina veri girilir.
-       adressPage.adreskutususvd.clear();
-       adressPage.adress2svd.clear();
-        adressPage.adreskutususvd.sendKeys("Fuzuli caddesi");
-        adressPage.adress2svd.sendKeys("Ela apt");
+        adressPage.shippingadressvd.clear();
+        adressPage.shipping2adrsssvd.clear();
+        adressPage.shippingadressvd.sendKeys("Fuzuli caddesi");
+        adressPage.shipping2adrsssvd.sendKeys("Ela apt");
 
 //     13.  Town/City alanina veri girilir.
-        adressPage.city2svd.clear();
-        adressPage.city2svd.sendKeys("Kayseri");
-
-//    14.  State dropdown'undan secim yapilir.
-
-         Select select1=new Select(adressPage.statessvd);
-         select1.selectByVisibleText("Kayseri");
-
-//    15.  Postcode / ZIP alanina veri girilir.
-        adressPage.kutu2svd.clear();
-        adressPage.kutu2svd.sendKeys("10");
-
-//    16. Phone alanina veri girilir.
-        adressPage.phonesvd.clear();
-        adressPage.phonesvd.sendKeys("05556545642");
-
-//     17. Email adresinin otomatik olarak geldigi dogrulanir.
-        Assert.assertTrue(adressPage.emailsvd.isDisplayed());
-
-//     18.Otomatik olarak gelen Email adresinin kayit olunan email adresiyle ayni oldugunu dogrulanir.
-     //    Assert.assertEquals(adressPage.emailsvd.getText(),"nevan.lamin@foundtoo.com");
+        adressPage.shippingcity4svd.clear();
+        adressPage.shippingcity4svd.sendKeys("Kayseri");
 
 
-//    19. SAVE ADDRESS butonuna tiklanir.
+//    14.  Postcode / ZIP alanina veri girilir.
+        adressPage.shippingpostcodesvd.clear();
+        adressPage.shippingpostcodesvd.sendKeys("10");
+
+//    15. Province  dropdown'undan secim yapilir.
+        Select select1 = new Select(adressPage.shippingdropdownsvd);
+        select1.selectByVisibleText("Kayseri");
+
+//    16. SAVE ADDRESS butonuna tiklanir.
         ReusableMethods.jsClick(adressPage.savesvd);
 
+//    Kaydedilen adresin Shipping address olarak kayit edildigi dogrulanir.
+      Assert.assertFalse(adressPage.savesvd.getText().contains("First name is a required field."));
 
-//    20. Kaydedilen adresin Billing Address olarak kayit edildigi dogrulanir
 
 
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

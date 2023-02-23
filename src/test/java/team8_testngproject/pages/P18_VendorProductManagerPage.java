@@ -213,7 +213,6 @@ public class P18_VendorProductManagerPage {
 
 
 
-
     // 200.Satır --> Meryem
 
 
