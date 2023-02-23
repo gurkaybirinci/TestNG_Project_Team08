@@ -12,17 +12,9 @@ public class TC03 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
+    @Test(testName = "US10 || TC03-Password seviyeleri", description = "good")
 
-
-    @Test
     public void us10_Tc03() {
-
-        //Kullanıcı url'e gider
-        //Kullanıcı registor butonuna tıklar
-        //Kullanıcı Become a Vendor linkine tıklar
-        //Kullanıcı kayıtlı olduğu mail adresini girer
-        //Kullanıcı  password kısmına 6 karakterli, küçük harf, rakam,özel karakter içeren bir şifre girer
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -41,6 +33,7 @@ public class TC03 {
         //Kullanıcı  password kısmına 6 karakterli, küçük harf, rakam,özel karakter içeren bir şifre girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_good_psw"));
         Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Good");
+        Driver.closeDriver();
     }
 
 }

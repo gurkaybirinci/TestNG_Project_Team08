@@ -242,12 +242,12 @@ public class P14_VendorRegisterPage {
     @FindBy(id = "schranka") public WebElement fakeMailTiklamaZb;
     @FindBy(id = "predmet") public WebElement mailVerivacitonCode;
     @FindBy(id = "confirm_pwd") public WebElement confirmPwd;
-    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;//AYNI OLAN KISIMLAR DÜZENLENECEK
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;
     @FindBy(xpath ="//*[text()='Please provide a valid email address.']") public WebElement eksikMailHataMesajiZb;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
     @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement kisaPwdMesaj;
-
-
+    @FindBy(xpath = "//*[text()='Registration']") public WebElement dogrulamaRegistrationZb;
+    @FindBy(xpath = "//*[text()='Registration Successfully Completed.']") public WebElement succesMesajZb;
 
 
 

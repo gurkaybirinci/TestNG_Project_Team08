@@ -11,18 +11,9 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC06 {
-    //Kullanıcı fake Url gider
-    //Kullanıcı fake mail adresi alır
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı fake Url den aldığı Email bilgilerini girer
-    //Verification Code text kutusuna tıklar
-    //Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna eksik girer
-    //Kullanıcı geçerli Password girer
-    //Kulanıcı geçerli Confirm Password girer
-    //Kullanıcı Register butonuna tıklar (Kullaınıcı "Email verification code invalid." mesajını almalı)
-    @Test
+
+    @Test(testName = "US09 || TC06-Vendor Verification Code", description = "Mail adresine gelen kodu Verification Code text kutusuna eksik data girmeli")
+
     public void us09_Tc06() {
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -31,11 +22,11 @@ public class TC06 {
         P14_VendorRegisterPage vendorRegisterPage = new P14_VendorRegisterPage();
         String fakeMail = vendorRegisterPage.fakeMailKutuZb.getText();
 
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open()"); //Yeni sekme açar
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open()");
 
         //Kullanıcı Url gider
         ReusableMethods.switchToWindow(1); // Yeni sekmeye geçer
-        Driver.getDriver().navigate().to("https://hubcomfy.com/vendor-register/"); // Yeni sekmede URL'yi açar
+        Driver.getDriver().navigate().to("https://hubcomfy.com/vendor-register/");
 
 
         //Kullanıcı Register butonuna tıklar
@@ -54,7 +45,7 @@ public class TC06 {
         ReusableMethods.waitFor(5);
 
         //Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna girer
-        ReusableMethods.switchToWindow(0); // Eski sekmeye geçer
+        ReusableMethods.switchToWindow(0);
         ReusableMethods.waitFor(10);
         vendorRegisterPage.fakeMailTiklamaZb.click();
 
@@ -77,9 +68,6 @@ public class TC06 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
         Assert.assertEquals(vendorRegisterPage.verivacitonInvalidMesajZb.getText(),"Email verification code invalid.");
-
-
-
-
+        Driver.closeDriver();
     }
 }

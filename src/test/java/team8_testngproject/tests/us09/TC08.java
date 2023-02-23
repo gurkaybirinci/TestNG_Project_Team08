@@ -11,22 +11,10 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC08 {
-    //Kullanıcı fake Url gider
-    //Kullanıcı fake mail adresi alır
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı fake Url den aldığı Email bilgilerini girer
-    //Verification Code text kutusuna tıklar
-    //Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna girer
-    //Kullanıcı Password kutusuna 8 karakterli özel karakter girer
-    //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
-    //Kullanıcı Register butonuna tıklar
+    @Test(testName = "US09 || TC08-Vendor Password", description = "Password kutusuna en az 8 karakter ve " +
+                     "sadece özel karakter içerdiğinde hata mesajı almalı ")
 
-
-    @Test
     public void us09_Tc08() {
-
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -39,7 +27,6 @@ public class TC08 {
         //Kullanıcı Url gider
         ReusableMethods.switchToWindow(1);
         Driver.getDriver().navigate().to("https://hubcomfy.com/vendor-register/");
-
 
         //Kullanıcı Register butonuna tıklar
         P01_HomePage homePage=new P01_HomePage();
@@ -77,9 +64,12 @@ public class TC08 {
 
         //Kullanıcı Register butonuna tıklar!!!!
         vendorRegisterPage.vendorRegisterClickZb.click();
+        ReusableMethods.waitFor(5);
+
+        Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
 
 
-        //DOĞRULMA KISMIIIII
+
 
 
     }
