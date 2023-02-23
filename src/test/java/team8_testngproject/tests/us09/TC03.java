@@ -14,7 +14,7 @@ public class TC03 {
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
 
-    @Test
+    @Test(testName = "US09 || TC03-Vendor Kayıt", description = "e-mail adresine invalid değer girmeli ")
     public void us09_Tc03() {
 
         //Kullanıcı fake Url gider
@@ -22,8 +22,6 @@ public class TC03 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
         String yeniMail=fakeMail.replace(".com"," ");
-
-
 
         //Kullanıcı URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -40,19 +38,11 @@ public class TC03 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         vendorRegisterPage.emailzb.sendKeys(yeniMail);
 
-
         //Kullanıcı verificationCode kutusuna tıklar (Please provide a valid email address.)
         vendorRegisterPage.verificationCodeClick.click();
         ReusableMethods.waitFor(3);
         System.out.println(vendorRegisterPage.eksikMailHataMesajiZb.getText());
         Assert.assertTrue(vendorRegisterPage.eksikMailHataMesajiZb.getText().contains("Please provide a valid email address."));
-
-
-
-
-
+        Driver.closeDriver();
     }
-
-
-
 }

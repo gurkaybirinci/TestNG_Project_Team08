@@ -12,14 +12,8 @@ public class TC01 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    //Kullanıcı url'e gider
-    //Kullanıcı registor butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı kayıtlı olduğu mail adresini girer
-    //Kullanıcı password kısmına 6 karakterden küçük değer girer
+    @Test(testName = "US10 || TC01-Password seviyeleri", description = "too short")
 
-
-    @Test
     public void us10_Tc01() {
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -40,10 +34,6 @@ public class TC01 {
         vendorRegisterPage.vendorPassowordZb.click();
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
         Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Too short");
-
+        Driver.closeDriver();
     }
-
-
-
-
 }

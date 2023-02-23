@@ -10,14 +10,9 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC04 {
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı valid Email bilgileri girer
-    //Verification Code text kutsuna tıklar( "Verification code sent to your email: abc@abc.com." mesajını görmeli)
 
-
-    @Test
+    @Test(testName = "US09 || TC04-Vendor Kayıt", description = "Verification Code text kutusuna geldiğinde " +
+                     "Verification code sent to your email: abc@abc.com. mesajını görmeli ")
     public void us09_Tc04() {
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -25,7 +20,6 @@ public class TC04 {
         //Kullanıcı fake mail adresi alır
         P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
-
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -49,8 +43,6 @@ public class TC04 {
         String dogrulama=vendorRegisterPage.codeSuccess.getText();
         System.out.println("Doğrulama:" +dogrulama);
         Assert.assertTrue(vendorRegisterPage.codeSuccess.getText().contains(dogrulama));
-
-
-
+        Driver.closeDriver();
     }
 }

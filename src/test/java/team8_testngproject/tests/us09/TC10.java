@@ -12,19 +12,9 @@ import team8_testngproject.utilities.ReusableMethods;
 
 public class TC10 {
 
-    //Kullanıcı fake Url gider
-// Kullanıcı fake mail adresi alır
-// Kullanıcı url'e gider
-// Kullanıcı Register butonuna tıklar
-// Kullanıcı Become a Vendor linkine tıklar
-// Kullanıcı fake Url den aldığı Email bilgilerini girer
-// Verification Code text kutusuna tıklar
-// Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna girer
-// Kullanıcı strong Password girer
-// Kullanıcı Password kutusuna girmiş olduğu password'u Confirm Password kutusuna tekrar girer
-// Kullanıcı Register butonuna tıklar
+    @Test(testName = "US09 || TC10-Vendor Register", description = "Register butonuna tıklayarak " +
+                     "vendor olarak kayıtı tamamlamalı ")
 
-    @Test
     public void us09_Tc10() {
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -73,12 +63,11 @@ public class TC10 {
         //Kullanıcı Password kutusuna girmiş olduğu password'u Confirm Password kutusuna tekrar girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
-
         //Kullanıcı Register butonuna tıklar?????***
         vendorRegisterPage.vendorRegisterClickZb.click();
-        ReusableMethods.waitFor(20);
+        ReusableMethods.waitFor(3);
 
-        Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Registration Successfully Completed.");
-
+        Assert.assertEquals(vendorRegisterPage.succesMesajZb.getText(),"Registration Successfully Completed.");
+        ReusableMethods.waitFor(3);
     }
 }

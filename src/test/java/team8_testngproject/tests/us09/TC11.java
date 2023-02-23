@@ -9,16 +9,9 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
 public class TC11 {
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı kayıtlı olduğu mail adresini girer
-    //Verification Code girer
-    //Kullanıcı password kısmına valid bir değer girer
-    //Kullanıcı Confirm Password kutusuna aynı valid değeri girer
-    //Kullanıcı Register butonuna tıklar
+    @Test(testName = "US09 || TC11-Vendor Register", description = "Kayıtlı bir e-mail adresi ile kayıt olmaya çalıştığında This Email already exists." +
+                     "Please login to the site and apply as vendor. mesajını almalı")
 
-    @Test
     public void us09_11() {
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -47,5 +40,6 @@ public class TC11 {
         //Kullanıcı Register butonuna tıklar (This Email already exists. Please login to the site and apply as vendor.)
         vendorRegisterPage.vendorRegisterClickZb.click();
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"This Email already exists. Please login to the site and apply as vendor.");
+        Driver.closeDriver();
     }
 }
