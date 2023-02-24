@@ -1,5 +1,4 @@
 package team8_testngproject.tests.us09;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,18 +10,9 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC05 {
-    //Kullanıcı fake Url gider
-    //Kullanıcı fake mail adresi alır
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı fake Url den aldığı Email bilgilerini girer
-    //Verification Code text kutusuna tıklar
-    //Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna girer
-    //Kullanıcı Register butonuna tıklar(Password: This field is required.
-                                        //Confirm Password: This field is required.)
 
-    @Test
+    @Test(testName = "US09 || TC05-Vendor Verification Code", description = "Mail adresine gelen kodu Verification Code text kutusuna girmeli")
+
     public void us09_Tc05() {
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -60,22 +50,17 @@ public class TC05 {
 
         String mailKod=vendorRegisterPage.mailVerivacitonCode.getText();
         String[] sadeceKod=mailKod.split(" ");
-        System.out.println("KOD" + sadeceKod[5]);
-
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod[5]);
 
-        //Kullanıcı Register butonuna tıklar!!!!
+        //Kullanıcı Register butonuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
-        Assert.assertEquals(vendorRegisterPage.pswEksikMesaji.getText(),"Password: This field is required." +
-                "Confirm Password: This field is required.");
 
-
-
-
-
-
+        ReusableMethods.waitFor(3);
+        System.out.println(vendorRegisterPage.pswEksikMesaji.getText());
+        Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Password: This field is required."));
+        Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Confirm Password: This field is required."));
+        Driver.closeDriver();
     }
-
 }

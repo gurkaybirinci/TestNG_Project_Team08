@@ -26,7 +26,7 @@ public class TC25 { // Catalog visibility; Shop and search results olarak seçil
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         Select select = new Select(vendorProductManagerPage.catalogSelectGur);
         select.selectByIndex(0);

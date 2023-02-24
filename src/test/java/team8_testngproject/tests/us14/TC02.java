@@ -25,7 +25,7 @@ public class TC02 { // Ürün fotoğrafı (büyük olan-Featured Img) eklenebilm
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         vendorProductManagerPage.featuredImgGur.click();
         vendorProductManagerPage.mediaLibraryGur.click();

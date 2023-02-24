@@ -1,9 +1,6 @@
 package team8_testngproject.tests.us07;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -11,11 +8,6 @@ import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
-
-import java.io.File;
-import java.io.IOException;
-
-import static team8_testngproject.utilities.Driver.driver;
 
 public class TC02 {
     P01_HomePage homePage;
@@ -39,7 +31,7 @@ public class TC02 {
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                loginPage.cantaTheMono);
+                loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
         loginPage.bosSayfa.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",

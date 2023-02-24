@@ -326,28 +326,28 @@ public WebElement editlinkAli;
     @FindBy(id="billing_address_2") public WebElement adress2svd;
     @FindBy(id="billing_postcode") public WebElement kutu2svd;
     @FindBy(id="billing_city") public WebElement city2svd;
-
     @FindBy(id="select2-billing_state-container") public WebElement statesvd;
+    @FindBy(xpath = "//*[@class='select2-selection__placeholder']") public WebElement provincesvd;
+    @FindBy(id="billing_phone") public WebElement phonesvd;
+    @FindBy(id="billing_email") public WebElement emailsvd;
+    @FindBy(name="save_address") public WebElement savesvd;
+    @FindBy(xpath = "//*[text()='Province is a required field.']") public WebElement msjsvd;
+@FindBy(id="billing_state") public WebElement statessvd;
+@FindBy(xpath ="//*[@href='https://hubcomfy.com/my-account-2/edit-address/shipping/']") public WebElement shippingsvd;
+@FindBy(name = "shipping_first_name") public WebElement shippingfirstnamesvd;
+@FindBy(id="shipping_country") public WebElement shippingcountrysvd;
+@FindBy(id="shipping_address_1") public WebElement shippingadressvd;
+@FindBy(id="shipping_address_2") public WebElement shipping2adrsssvd;
+@FindBy(name = "shipping_city") public WebElement shippingcity3svd;
+@FindBy(id="shipping_postcode") public WebElement shippingpostcodesvd;
+@FindBy(id="shipping_city") public WebElement shippingcity4svd;
+
+@FindBy(id="shipping_state") public WebElement shippingdropdownsvd;
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 350.Satır --> Mustafa
+// 350.Satır --> Mustafa
 
 
 

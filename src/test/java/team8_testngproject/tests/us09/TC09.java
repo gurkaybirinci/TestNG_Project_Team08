@@ -12,23 +12,9 @@ import team8_testngproject.utilities.ReusableMethods;
 
 public class TC09 {
 
-//Kullanıcı fake Url gider
-// Kullanıcı fake mail adresi alır
-// Kullanıcı url'e gider
-// Kullanıcı Register butonuna tıklar
-// Kullanıcı Become a Vendor linkine tıklar
-// Kullanıcı fake Url den aldığı Email bilgilerini girer
-// Verification Code text kutusuna tıklar
-// Kullanıcı Fake Email kutusunu gelen kodu alır, Verification Code text kutusuna girer
-//Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
-//Kullanıcı Confirm Password alanına, eksik password girer
-//Kullanıcı Register butonuna tıklar
+    @Test(testName = "US09 || TC09-Vendor Password", description = "Password'ü tekrar yazmalı ")
 
-
-    @Test
     public void us09_Tc09() {
-
-
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -67,7 +53,6 @@ public class TC09 {
         String[] sadeceKod=mailKod.split(" ");
         System.out.println("KOD" + sadeceKod[5]);
 
-
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod[5]);
 
@@ -80,7 +65,7 @@ public class TC09 {
         //Kullanıcı Register butonuna tıklar (Kullanıcı "Password and Confirm-password are not same."mesajını görmeli)
         vendorRegisterPage.vendorRegisterClickZb.click();
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password and Confirm-password are not same.");
-
+        Driver.closeDriver();
 
     }
 }

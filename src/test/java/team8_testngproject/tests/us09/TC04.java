@@ -1,21 +1,18 @@
 package team8_testngproject.tests.us09;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC04 {
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı valid Email bilgileri girer
-    //Verification Code text kutsuna tıklar( "Verification code sent to your email: abc@abc.com." mesajını görmeli)
 
-
-    @Test
+    @Test(testName = "US09 || TC04-Vendor Kayıt", description = "Verification Code text kutusuna geldiğinde " +
+                     "Verification code sent to your email: abc@abc.com. mesajını görmeli ")
     public void us09_Tc04() {
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -23,7 +20,6 @@ public class TC04 {
         //Kullanıcı fake mail adresi alır
         P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
-
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -42,14 +38,11 @@ public class TC04 {
         //Verification Code text kutsuna tıklar
          vendorRegisterPage.verificationCodeClick.click();
 
-
-         //==>bunu kontrol et??*??**?
-        //element.getAttribute("validationMessage"); bunu deneeeee
-
-
-         vendorRegisterPage.verificationCodeClick.isDisplayed();
-
-
-
+        //Verification Code text kutsuna tıklar( "Verification code sent to your email: abc@abc.com." mesajını görmeli)
+        ReusableMethods.waitFor(3);
+        String dogrulama=vendorRegisterPage.codeSuccess.getText();
+        System.out.println("Doğrulama:" +dogrulama);
+        Assert.assertTrue(vendorRegisterPage.codeSuccess.getText().contains(dogrulama));
+        Driver.closeDriver();
     }
 }

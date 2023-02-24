@@ -17,9 +17,9 @@ public class P06_AccountDetailes {
 
 
 
-
-
     // 20.Satır --> Ali
+
+
 
 
 
