@@ -144,7 +144,18 @@ public class P18_VendorProductManagerPage {
     @FindBy(id="is_downloadable") public WebElement downabledCheckboxHus;
     @FindBy(id="regular_price") public WebElement priceBoxHus;
     @FindBy(id="sale_price") public WebElement salePriceBoxHus;
-
+    @FindBy(id = "product_url") public WebElement urlBoxHus;
+    @FindBy(id = "button_text") public WebElement buttonTextBoxHus;
+    @FindBy(id="wcfm_products_simple_submit_button") public WebElement submitButtonHus;
+    @FindBy(id="product_tags") public WebElement tagsHus;
+    @FindBy(id="featured_img_display") public WebElement imgButtonHus;
+    @FindBy(id="gallery_img_gimage_0_display") public WebElement galleryImgButtonHus;
+    @FindBy(id="__wp-uploader-id-1") public WebElement selectButtonHus;
+    @FindBy(id="__wp-uploader-id-4") public WebElement addSelectButtonHus;
+    @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]") public WebElement addToGalleryButtonHus;
+    @FindBy(xpath = "//button[@type='button'and@class='button media-button button-primary button-large media-button-select']") public WebElement select2ButtonHus;
+    @FindBy(xpath = "(//button[@id='menu-item-upload'])[2]") public WebElement uploadFilesButtonHus;
+    @FindBy(xpath = "//*[@class='product-status product-status-publish']") public WebElement publishedTextHus;
 
 
 
