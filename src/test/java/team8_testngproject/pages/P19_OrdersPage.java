@@ -258,7 +258,7 @@ public class P19_OrdersPage {
 
 
     // 260.Satır -->
-    @FindBy(xpath = "//a[.='Browse products']")
+    @FindBy(xpath = "//li[.='Orders']")
     public WebElement ordersDisplayed_Nt;
     @FindBy(xpath = "//a[.='Browse products']")
     public WebElement browseProductsLink_Nt;
