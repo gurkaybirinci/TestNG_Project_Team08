@@ -1,15 +1,15 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import team8_testngproject.utilities.Driver;
 
 public class P11_OrderCompletePage {
     public P11_OrderCompletePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -349,6 +349,12 @@ public class P11_OrderCompletePage {
 
     // 350.Satır --> Mustafa
 
+    @FindBy (xpath = "//*[text()='Thank you. Your order has been received.']")
+    public WebElement shoppingAndText;
+
+    public void checkShoopingEnd(){
+        Assert.assertEquals(shoppingAndText.getText(), "Thank you. Your order has been received.");
+    }
 
 
 

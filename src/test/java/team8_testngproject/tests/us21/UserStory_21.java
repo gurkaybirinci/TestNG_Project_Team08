@@ -1,4 +1,4 @@
-package team8_testngproject.tests.us06;
+package team8_testngproject.tests.us21;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.Driver;
 
-public class UserStory_06 {
+public class UserStory_21 {
     P01_HomePage homePage;
     P07_ShoppingPage shoppingPage;
     P03_LoginPage loginPage;
@@ -18,18 +18,18 @@ public class UserStory_06 {
 
     @BeforeMethod
     public void beforeMethod() {
-         homePage = new P01_HomePage();
-         shoppingPage = new P07_ShoppingPage();
-         loginPage = new P03_LoginPage();
-         productPage = new P08_ProductPage();
-         cartPage = new P09_CartPage();
-         checkOutPage = new P10_CheckOutPage();
-         orderCompletePage=new P11_OrderCompletePage();
+        homePage = new P01_HomePage();
+        shoppingPage = new P07_ShoppingPage();
+        loginPage = new P03_LoginPage();
+        productPage = new P08_ProductPage();
+        cartPage = new P09_CartPage();
+        checkOutPage = new P10_CheckOutPage();
+        orderCompletePage = new P11_OrderCompletePage();
     }
 
 
     @Test
-    public void us06_Tc01() {
+    public void us21_Tc01() {
 
         //Belirtilen URL'e gidilir.
         //Sign in butonuna tiklanir.
@@ -44,11 +44,10 @@ public class UserStory_06 {
 
         //Istenen urune ait arama yapildigi dogrulanir.
         shoppingPage.checkSearchProduct();
-
     }
 
     @Test
-    public void us06_Tc02() {
+    public void us21_Tc02() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
@@ -68,7 +67,7 @@ public class UserStory_06 {
     }
 
     @Test
-    public void us06_Tc03() {
+    public void us21_Tc03() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
@@ -88,7 +87,7 @@ public class UserStory_06 {
     }
 
     @Test
-    public void us06_Tc04() {
+    public void us21_Tc04() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
@@ -113,7 +112,7 @@ public class UserStory_06 {
     }
 
     @Test
-    public void us06_Tc05() {
+    public void us21_Tc05() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
@@ -128,21 +127,22 @@ public class UserStory_06 {
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
 
-        //PROCEED TO CHECKOUT butonuna tiklanir.
-        productPage.goToProceedToCheckOut();
+        //Enter coupon cod here... inputuna kupon kodu girilir.
+        //APPLY COUPON butonu tiklanir
+        productPage.useCouponCode();
 
-        //BILLING DETAILS bolumunde zorunlu alanlar bos bırakilir.
-        checkOutPage.firstNameInputClear();
+        //Kupon ile urune indirim tanimlandigi dogrulanir.
+        productPage.checkCouponCodeUse();
 
-        //PLACE ORDER butonu tiklanir.
-        checkOutPage.goToPlaceOrder();
+        //Tanımlanan kupon silinir ve silindiği kontrol edilir.
+        productPage.removeCoupon();
 
-        //Popup - uyari mesaji goruntulendigi dogrulanir.
-        Assert.assertTrue(checkOutPage.placeOrderPopupMessages.isDisplayed());
+
+
     }
 
     @Test
-    public void us06_Tc06() {
+    public void us21_Tc06() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
@@ -157,41 +157,12 @@ public class UserStory_06 {
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
 
-        //PROCEED TO CHECKOUT butonuna tiklanir.
-        productPage.goToProceedToCheckOut();
+        //Enter coupon cod here... inputuna kupon kodu girilir.
+        //APPLY COUPON butonu tiklanir
+        productPage.useCouponCode();
 
-        //Payment Methods bolumunde 2 ödeme seceneginin oldugu dogrulanir.
-        checkOutPage.checkVisibleWireTransferEFT();
-        checkOutPage.checkVisiblePayAtTheDoorBtn();
-
-        //Pay at the door secenegi secilir.
-        checkOutPage.selectPayAtTheDoor();
-
-        //Pay at the door seceneginin secilebildigi dogrulanir
-        checkOutPage.checkSelectPayAtTheDoor();
-
-        //Wire transfer/EFT secenegi secillir.
-        checkOutPage.selectWireTransferEft();
-
-        //Wire transfer/EFT seceneginin secilebildigi dogrulanir.
-        checkOutPage.checkSelectWireTransferEFT();
-    }
-
-    @Test
-    public void us06_Tc07() {
-
-        //Belirtilen URL'e gidilir.
-        //Login islemi yapilir.
-        loginPage.login();
-
-        //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
-        homePage.searchProduct();
-
-        //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
-        productPage.firstProductAddCart();
-
-        //Cart > VIEW CART sayfasina gidilir.
-        productPage.goToViewCart();
+        //Kupon ile urune indirim tanimlandigi dogrulanir.
+        productPage.checkCouponCodeUse();
 
         //PROCEED TO CHECKOUT butonuna tiklanir.
         productPage.goToProceedToCheckOut();
@@ -224,7 +195,7 @@ public class UserStory_06 {
     }
 
     @AfterMethod
-    public void afterTest(){
+    public void afterTest() {
         Driver.closeDriver();
     }
 

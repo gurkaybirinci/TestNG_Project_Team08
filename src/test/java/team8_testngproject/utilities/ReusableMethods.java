@@ -19,7 +19,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class ReusableMethods {
 
-    public static String getScreenshot()  {
+    public static String getScreenshot(String str)  {
 
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -274,7 +274,25 @@ public class ReusableMethods {
         }
         return optionValues;
     }
-    
+
+
+    //   Js Executer Scroll Locator
+    public static void jsScroll(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+    }
+
+    //   Js Executer Scroll WebElement
+    public static void jsScroll(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
+        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+    }
+
+
     
     
 }
