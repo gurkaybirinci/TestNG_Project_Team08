@@ -188,12 +188,14 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//*[.='Choose from the most used tags']") public WebElement chooseTagsKoz;
     @FindBy(xpath = "//*[.='Futbol']") public WebElement futbolTagKoz;
     @FindBy(id = "catalog_visibility") public WebElement catalogVisibilityKoz;
-
-
-
-
-
-
+    @FindBy(xpath= "(//div[contains(text(),'Attributes')])[1]") public WebElement attributesButtonKoz;
+    @FindBy(id = "attributes_is_active_1") public WebElement colorCheckBoxKoz;
+    @FindBy(id = "attributes_is_active_2") public WebElement sizeCheckBoxKoz;
+    @FindBy(xpath = "(//button[.='Add New'])[1]") public WebElement addNewColorButtonKoz;
+    @FindBy(xpath = "//*[@value='481']") public WebElement eklenenYeniRenk;
+    @FindBy(xpath = "(//button[.='Add New'])[2]") public WebElement addNewSizeButtonKoz;
+    @FindBy(id = "attributes_value_1") public WebElement colorTextBoxKoz;
+    @FindBy(id = "attributes_value_2") public WebElement sizeTextBoxKoz;
 
 
 
