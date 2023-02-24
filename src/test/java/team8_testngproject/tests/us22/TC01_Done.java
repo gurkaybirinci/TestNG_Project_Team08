@@ -1,4 +1,4 @@
-package team8_testngproject.tests.us19;
+package team8_testngproject.tests.us22;
 
 
 import org.openqa.selenium.Keys;
@@ -19,7 +19,7 @@ public class TC01_Done {
     P08_ProductPage p08ProductPage;
 
     @Test
-    public void us19_tc01() {
+    public void us22_tc01() {
 
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
