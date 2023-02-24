@@ -71,7 +71,7 @@ public class TC04 {
         Assert.assertTrue(compareBaslik.contains("Compare"));
 
         String urunTheMonogram = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[1]")).getText();
-        Assert.assertTrue(urunTheMonogram.contains("THE MONOGRAM J MARC SHOULDER BAG"));
+        Assert.assertTrue(urunTheMonogram.contains("Sunny Baby Bebek Arabasıuytr"));
         String urunWomenWhite = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[2]")).getText();
         Assert.assertTrue(urunWomenWhite.contains("Women’s White Handbag"));
         String urunWomenFashion = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[3]")).getText();
