@@ -44,6 +44,8 @@ public class TC02 {
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Password: This field is required."));
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Confirm Password: This field is required."));
         ReusableMethods.waitFor(3);
+        //Driver.closeDriver();
+        Driver.closeDriver();
         Driver.closeDriver();
     }
 }
