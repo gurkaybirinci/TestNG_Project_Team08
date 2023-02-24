@@ -357,19 +357,20 @@ public class P09_CartPage {
     @FindBy (css = "button[title='Minus']")
     public  WebElement minusBtnLoc;
     @FindBy (css = "div[role='alert']")
-    public  WebElement popupUpdateCartLoc;
+    public  WebElement updateCartPopupLoc;
 
     public void checkPlusUpdate(){
         plusBtnLoc.click();
         ReusableMethods.jsClick(updateCartBtnLoc);
+        Assert.assertTrue(updateCartPopupLoc.isDisplayed());
     }
     public void checkMinusUpdate(){
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         minusBtnLoc.click();
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(updateCartBtnLoc);
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(popupUpdateCartLoc.isDisplayed());
+        Assert.assertTrue(updateCartPopupLoc.isDisplayed());
     }
 
 

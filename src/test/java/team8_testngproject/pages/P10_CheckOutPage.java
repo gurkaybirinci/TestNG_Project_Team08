@@ -1,8 +1,11 @@
 package team8_testngproject.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
@@ -10,9 +13,6 @@ public class P10_CheckOutPage {
     public P10_CheckOutPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -350,17 +350,30 @@ public class P10_CheckOutPage {
     // 350.Satır --> Mustafa
     @FindBy (id = "place_order")
     public  WebElement placeOrderBtnLoc;
-    @FindBy (css = "input[name='billing_first_name']")
-    public  WebElement firstNameInputLoc;
     @FindBy (css = "li[data-id='billing_first_name']")
     public WebElement placeOrderPopupMessages;
     @FindBy (id = "payment_method_bacs")
     public WebElement wireTransferEFTBtnLoc;
     @FindBy (id = "payment_method_cod")
     public WebElement payAtTheDoorBtnLoc;
-
-//    @FindBy (css = "div[class='payment_box payment_method_bacs']>p")
-//    public WebElement wireTranserText;
+    @FindBy (css = "input[name='billing_first_name']")
+    public  WebElement firstNameInputLoc;
+    @FindBy (id = "billing_last_name")
+    public  WebElement lastNameInputLoc;
+    @FindBy (css = "span[aria-label='Country / Region']")
+    public  WebElement countryRegionDropdownLoc;
+    @FindBy (css = "input[class='select2-search__field']")
+    public  WebElement dropdownTurkeyLoc;
+    @FindBy (id = "billing_address_1")
+    public  WebElement streetAddresInputLoc;
+    @FindBy (id = "billing_postcode")
+    public  WebElement postcodeZipInputLoc;
+    @FindBy (id = "billing_city")
+    public  WebElement townCityInputLoc;
+    @FindBy (id = "billing_phone")
+    public  WebElement phoneInputLoc;
+    @FindBy (id = "billing_email")
+    public  WebElement emailAddressInputLoc;
 
     public void firstNameInputClear(){
         ReusableMethods.jsClick(firstNameInputLoc);
@@ -378,6 +391,66 @@ public class P10_CheckOutPage {
         ReusableMethods.jsClick(wireTransferEFTBtnLoc);
         ReusableMethods.waitFor(1);
     }
+    public void firstAndLastNameRead(){
+        firstNameInputLoc.clear();
+        firstNameInputLoc.sendKeys(ConfigReader.getProperty("firstnameMU"));
+
+        lastNameInputLoc.clear();
+        lastNameInputLoc.sendKeys(ConfigReader.getProperty("lastnameMU"));
+    }
+    public void countrySelect(){
+        ReusableMethods.jsScroll(countryRegionDropdownLoc);
+        countryRegionDropdownLoc.click();
+        ReusableMethods.waitFor(3);
+
+        dropdownTurkeyLoc.sendKeys(ConfigReader.getProperty("countryMU")+ Keys.ENTER);
+    }
+
+    public void streetPostcodeAndTownCityRead(){
+        streetAddresInputLoc.clear();
+        streetAddresInputLoc.sendKeys(ConfigReader.getProperty("streetMU"));
+
+        postcodeZipInputLoc.clear();
+        postcodeZipInputLoc.sendKeys(ConfigReader.getProperty("postcodeMU"));
+
+        townCityInputLoc.clear();
+        townCityInputLoc.sendKeys(ConfigReader.getProperty("townMU"));
+    }
+
+    public void provinceSelect(){
+    townCityInputLoc.sendKeys(Keys.TAB, Keys.ENTER,ConfigReader.getProperty("provinceMU"),Keys.ENTER);
+
+    }
+
+    public void phoneAndMailRead(){
+
+        phoneInputLoc.clear();
+        phoneInputLoc.sendKeys(ConfigReader.getProperty("phoneMU"));
+
+        emailAddressInputLoc.clear();
+        emailAddressInputLoc.sendKeys(ConfigReader.getProperty("emailMU"));
+    }
+
+    public void payAtTheDoorAndPlaceOrder(){
+        payAtTheDoorBtnLoc.click();
+        ReusableMethods.waitFor(2);
+        placeOrderBtnLoc.click();
+
+    }
+
+    public void checkVisibleWireTransferEFT(){
+        Assert.assertTrue(wireTransferEFTBtnLoc.isDisplayed());
+    }
+  public void checkVisiblePayAtTheDoorBtn(){
+        Assert.assertTrue(wireTransferEFTBtnLoc.isDisplayed());
+    }
+    public void checkSelectWireTransferEFT(){
+        Assert.assertTrue(wireTransferEFTBtnLoc.isSelected());
+    }
+    public void checkSelectPayAtTheDoor(){
+        Assert.assertTrue(payAtTheDoorBtnLoc.isSelected());
+    }
+
 
 
 
