@@ -19,8 +19,8 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
     // 20.Satır --> Ali
 
-
-
+@FindBy (linkText = "Addresses")
+public WebElement addAddressesLinkAli;
 
 
 
@@ -138,7 +138,7 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 140.Satır --> Hüseyin
-
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement myAccountTextHus;
 
 
 
@@ -168,7 +168,7 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 170.Satır --> Mehmet
-
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement myAccountTextKoz;
 
 
 
@@ -198,36 +198,36 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 200.Satır --> Meryem
+ @FindBy(xpath = "//a[text()='Sign Up']")
+ public WebElement myAccountSiginUpOnPopup;
+@FindBy(xpath = "//a[@class='register inline-type']")
+public WebElement myAccountRegistrationBtn;
+@FindBy(xpath = "(//input[@id='reg_username'])[1]")
+public WebElement myAccountUserNameReg;
+@FindBy(xpath = "(//input[@id='reg_email'])[1]")
+public WebElement myAccountUserEmailReg;
+@FindBy(xpath = "(//input[@id='reg_password'])[1]")
+public WebElement myAccountPasswordReg;
+@FindBy(id = "register-policy")
+public WebElement myAccountPolicyCheckReg;
+@FindBy(xpath = "(//button[@type='submit'])[3]")
+public WebElement myAccountSignUpReg;
+ @FindBy(xpath = "//div[@class='woocommerce-password-strength short']")
+ public WebElement notification_VeryWeak;
+ @FindBy(xpath ="//div[@class='woocommerce-password-strength bad']" )
+ public WebElement notification_Weak;
+@FindBy(xpath = "//div[@class='woocommerce-password-strength good']")
+public WebElement notification_Medium;
+ @FindBy(xpath = "//div[@class='woocommerce-password-strength strong']")
+public WebElement notification_Strong;
+ @FindBy(css="div[class='login-popup'")
+ public WebElement logIn_PopUp;
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 230.Satır --> Zeliha
+ // 230.Satır --> Zeliha
 
 
 
@@ -258,10 +258,10 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//h2[.='My Account']")
+    public WebElement myAccountPage_Nt;
+    @FindBy(linkText = "Orders")
+    public WebElement ordersLink_Nt;
 
 
 

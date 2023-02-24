@@ -231,8 +231,9 @@ public class P14_VendorRegisterPage {
     //(hubcomfy locate)
     @FindBy(id = "user_email") public WebElement emailzb;
     @FindBy(xpath = "//*[@class='page-title']") public WebElement vendorDogrulaZb;
-    @FindBy(xpath = "//*[@style='display: none;']") public WebElement emailUyariZb;
+    @FindBy(xpath = "//div[@class='wcfm-message email_verification_message wcfm-error']") public WebElement emailUyariZb;
     @FindBy(name = "wcfm_email_verified_input") public WebElement verificationCodeClick;
+    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-success']") public WebElement codeSuccess;
     @FindBy(xpath = "//*[@id='wcfm_membership_register_button']") public WebElement vendorRegisterClickZb;
     @FindBy(id = "passoword") public WebElement vendorPassowordZb;
     @FindBy(id = "password_strength") public WebElement pswCommentZb;
@@ -241,13 +242,12 @@ public class P14_VendorRegisterPage {
     @FindBy(id = "schranka") public WebElement fakeMailTiklamaZb;
     @FindBy(id = "predmet") public WebElement mailVerivacitonCode;
     @FindBy(id = "confirm_pwd") public WebElement confirmPwd;
-    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;//AYNI OLAN KISIMLAR DÜZENLENECEK
-    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement eksikMailHataMesajiZb;
-    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
-    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-error']") public WebElement sadecePswUyari;
-
-
-
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;
+    @FindBy(xpath ="//*[text()='Please provide a valid email address.']") public WebElement eksikMailHataMesajiZb;
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement kisaPwdMesaj;
+    @FindBy(xpath = "//*[text()='Registration']") public WebElement dogrulamaRegistrationZb;
+    @FindBy(xpath = "//*[text()='Registration Successfully Completed.']") public WebElement succesMesajZb;
 
 
 

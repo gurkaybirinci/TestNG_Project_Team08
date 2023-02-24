@@ -80,7 +80,7 @@ public class ReusableMethods {
         return elemTexts;
     }
 
-//   HARD WAIT WITH THREAD.SLEEP
+    //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
     public static void waitFor(int sec) {
         try {
@@ -275,7 +275,6 @@ public class ReusableMethods {
         return optionValues;
     }
 
-
     //   Js Executer Scroll Locator
     public static void jsScroll(By locator){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
@@ -292,7 +291,22 @@ public class ReusableMethods {
         js.executeScript("arguments[0].scrollIntoView(true);",elementName);
     }
 
+    public static void getScreenshot() {
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String target = System.getProperty("user.dir") + "/src/test/java/screenshots/" + date + ".png";
+        File finalDestination = new File(target);
+        try {
+            FileUtils.copyFile(source, finalDestination);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-    
-    
+
+    }
+
+
+  
 }
+

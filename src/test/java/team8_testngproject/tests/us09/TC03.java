@@ -7,13 +7,14 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
 
-    @Test
+    @Test(testName = "US09 || TC03-Vendor Kayıt", description = "e-mail adresine invalid değer girmeli ")
     public void us09_Tc03() {
 
         //Kullanıcı fake Url gider
@@ -21,8 +22,6 @@ public class TC03 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
         String yeniMail=fakeMail.replace(".com"," ");
-        System.out.println(yeniMail);
-
 
         //Kullanıcı URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -39,15 +38,11 @@ public class TC03 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         vendorRegisterPage.emailzb.sendKeys(yeniMail);
 
-
-        //Kullanıcı verificationCode kutusuna tıklar          !!!kontrol
+        //Kullanıcı verificationCode kutusuna tıklar (Please provide a valid email address.)
         vendorRegisterPage.verificationCodeClick.click();
-        //Assert.assertEquals(vendorRegisterPage.eksikMailHataMesajiZb.getText(),"Please provide a valid email address.");
-
-
-
+        ReusableMethods.waitFor(3);
+        System.out.println(vendorRegisterPage.eksikMailHataMesajiZb.getText());
+        Assert.assertTrue(vendorRegisterPage.eksikMailHataMesajiZb.getText().contains("Please provide a valid email address."));
+        Driver.closeDriver();
     }
-
-
-
 }

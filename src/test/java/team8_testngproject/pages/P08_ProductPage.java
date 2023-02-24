@@ -258,14 +258,14 @@ public class P08_ProductPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
-
-
+    @FindBy(name = "add-to-cart")
+    public WebElement addToCartButton_Nt;
+    @FindBy(xpath = "//span[@class='cart-label']")
+    public WebElement cartButton_Nt;
+    @FindBy(css = "button[name='add-to-cart']")
+    public  WebElement cartPopUp_Nt;
+    @FindBy(xpath = "//*[.='Checkout']")
+    public WebElement checkoutButton_Nt;
 
 
 

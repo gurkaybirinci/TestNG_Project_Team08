@@ -18,10 +18,10 @@ public class P01_HomePage {
 
 
     // 20.Satır --> Ali
-
-
-
-
+@FindBy (xpath = "//span[text()='Sign In']")
+public WebElement signInButtonAli;
+    @FindBy (xpath = "//span[text()='Sign Out']")
+    public WebElement signOutButtonAli;
 
 
 
@@ -138,8 +138,8 @@ public class P01_HomePage {
 
 
     // 140.Satır --> Hüseyin
-
-
+    @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonHus;
+    @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonHus;
 
 
 
@@ -168,8 +168,8 @@ public class P01_HomePage {
 
 
     // 170.Satır --> Mehmet
-
-
+    @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonKoz;
+    @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonKoz;
 
 
 
@@ -202,6 +202,8 @@ public class P01_HomePage {
     public WebElement userRegisterButton;
 @FindBy(xpath = "(//a[@class='logo'])[1]")
 public WebElement homePageLogo;
+@FindBy(xpath = "//a[contains(text(),'My Account')]")
+public WebElement myAccountButton;
 
 
 
@@ -221,8 +223,6 @@ public WebElement homePageLogo;
 
     
     
-
-
 
 
 
@@ -258,10 +258,10 @@ public WebElement homePageLogo;
 
 
     // 260.Satır --> Nurullah
-
-
-
-
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement registerButton_Nt;
+    @FindBy(xpath = "//div[.='Sign Out']")
+    public WebElement signOutButton_Nt;
 
 
 

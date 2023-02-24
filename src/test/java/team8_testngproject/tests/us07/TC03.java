@@ -2,7 +2,6 @@ package team8_testngproject.tests.us07;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -34,7 +33,7 @@ public class TC03 {
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                loginPage.cantaTheMono);
+                loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
         loginPage.bosSayfa.click();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",

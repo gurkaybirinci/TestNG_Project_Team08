@@ -30,7 +30,7 @@ public class TC04 { // Ürüne ait bir tane küçük (Gallery Images) resim ekle
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         vendorProductManagerPage.productTitleGur.sendKeys("Steteskop");
         vendorProductManagerPage.galleryImgGur.click();

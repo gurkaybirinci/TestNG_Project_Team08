@@ -13,18 +13,9 @@ public class TC04 {
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
 
-    @Test
+    @Test(testName = "US10 || TC04-Password seviyeleri", description = "strong")
+
     public void us10_Tc04() {
-
-        //Kullanıcı url'e gider
-        //Kullanıcı registor butonuna tıklar
-        //Kullanıcı Become a Vendor linkine tıklar
-        //Kullanıcı kayıtlı olduğu mail adresini girer
-        //Verification Code text kutusuna tıklar
-        //Kullanıcı Email kutusunu gelen kodu kopyalar
-        //Verification Code text kutusuna yapıştırır
-        //Kullanıcı password kısmına 5 karakterden büyük, rakam, özel karakter,küçük ve büyük harf içeren karakterler girmeli
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -40,12 +31,9 @@ public class TC04 {
         vendorRegisterPage=new P14_VendorRegisterPage();
         vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
 
-        //Verification Code text kutusuna tıklar
-        vendorRegisterPage.verificationCodeClick.sendKeys(ConfigReader.getProperty("vendor_code"));
-
         //Kullanıcı password kısmına 5 karakterden büyük, rakam, özel karakter,küçük ve büyük harf içeren karakterler girmeli
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
         Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Strong");
-
+        Driver.closeDriver();
     }
 }

@@ -258,14 +258,14 @@ public class P07_ShoppingPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//li[.='Shop']")
+    public WebElement shoppingPageDisplayed_Nt;
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement shoppingSearchBox_Nt;
+    @FindBy(xpath = "//div[@data-product-id='19321']")
+    public WebElement urunSecimi01_Nt;
+    @FindBy(xpath = "//div[@data-product-id='19329']")
+    public WebElement urunSecimi02_Nt;
 
 
 

@@ -19,15 +19,15 @@ public class P03_LoginPage {
 
     // 20.Satır --> Ali
 
+    @FindBy (id = "username")
+    public WebElement usernameAli;
 
 
+    @FindBy (id = "password")
+    public WebElement passwordAli;
 
-
-
-
-
-
-
+    @FindBy (name = "login")
+    public WebElement loginAli;
 
 
 
@@ -83,7 +83,7 @@ public class P03_LoginPage {
     @FindBy(name="login")    public WebElement login;
     @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
     @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
-    @FindBy(xpath = "(//*[@data-product_id='19517'])[2]")    public WebElement cantaTheMono;
+    @FindBy(xpath = "(//*[@data-product_id='16291'])[2]")    public WebElement sunnyBaby;
     @FindBy(xpath = "//*[@class='compare-popup-overlay']")    public WebElement bosSayfa;
     @FindBy(xpath = "(//*[@data-product_id='13249'])[2]")    public WebElement cantaWomen;
     @FindBy(xpath = "(//*[@data-product_id='13172'])[2]")    public WebElement cantaBest;
@@ -138,8 +138,8 @@ public class P03_LoginPage {
 
 
     // 140.Satır --> Hüseyin
-
-
+    @FindBy(id = "username") public WebElement usernameHus;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonHus;
 
 
 
@@ -168,8 +168,8 @@ public class P03_LoginPage {
 
 
     // 170.Satır --> Mehmet
-
-
+    @FindBy(id = "username") public WebElement usernameKoz;
+    @FindBy(xpath = "//button[@name='login']")public WebElement signInButtonKoz;
 
 
 
@@ -258,12 +258,12 @@ public class P03_LoginPage {
 
 
     // 260.Satır --> Nurullah
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement emailBox_Nt;
+    @FindBy(id = "password")
+    public WebElement passwordBox_Nt;
+    @FindBy(xpath = "//button[.='Sign In']")
+    public WebElement signInButton_Nt;
 
 
 
@@ -318,16 +318,16 @@ public class P03_LoginPage {
 
 
     // 320.Satır --> Sevda
-    @FindBy(id = "username")
-    public WebElement usernamesvd;
-    @FindBy(id="password")
-    public WebElement passwordsvd;
-    @FindBy(xpath = "//*[@name='login']")
-    public WebElement signinsvd;
-    @FindBy(xpath = "//*[text()='Sign Out']")
-    public WebElement singoutsvd;
-    @FindBy(xpath = "//*[@class='page-title']")
-    public WebElement myaccountsvd;
+    @FindBy(id = "username") public WebElement usernamesvd;
+    @FindBy(id="password") public WebElement passwordsvd;
+    @FindBy(xpath = "//*[@name='login']") public WebElement signinsvd;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement singoutsvd;
+
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement myaccountsvd;
+
+
+
+
 
 
 

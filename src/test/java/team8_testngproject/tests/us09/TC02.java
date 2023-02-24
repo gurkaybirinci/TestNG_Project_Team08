@@ -6,13 +6,15 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 
 public class TC02 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    @Test
+    @Test(testName = "US09 || TC02-Vendor Kayıt", description = "e-mail adresi girmeli ")
+
     public void us09_Tc02() throws InterruptedException {
 
         //Kullanıcı fake url gider
@@ -37,11 +39,11 @@ public class TC02 {
 
         //Register  kutusuna tıklar !!!!! tekrar kontrol et
         vendorRegisterPage.vendorRegisterClickZb.click();
-        Assert.assertEquals(vendorRegisterPage.emailUyariZb.
-                getText(),"Email Verification Code: This field is required." +
-                        "Password: This field is required." +
-                        "Confirm Password: This field is required.");
-
-
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Email Verification Code: This field is required."));
+        Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Password: This field is required."));
+        Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Confirm Password: This field is required."));
+        ReusableMethods.waitFor(3);
+        Driver.closeDriver();
     }
 }

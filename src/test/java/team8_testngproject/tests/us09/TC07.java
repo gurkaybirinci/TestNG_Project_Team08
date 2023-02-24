@@ -7,19 +7,14 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07 {
 
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
-    //Kullanıcı Register butonuna tıklar
 
+    @Test(testName = "US09 || TC07-Vendor Password", description = "Password yazmalı. Password: kucuk harf, büyük harf, rakam ve special karakter içermeli")
 
-    @Test
     public void us09_Tc07() {
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -31,20 +26,24 @@ public class TC07 {
         P02_RegisterPage registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
 
-        //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
+        //Kullanıcı Email bilgileri girer
         P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
-        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
+        vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
 
-        //Kullanıcı Register butonuna tıklar!!!!!
+        //Verification Code girer
+        vendorRegisterPage.verificationCodeClick.sendKeys(ConfigReader.getProperty("vendor_code"));
+
+        //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
+        vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
+
+        //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
+        vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
+
+        //Kullanıcı Register butonuna tıklar (Kullanıcı "Password strength should be atleast "Good". mesajını görmeli)
         vendorRegisterPage.vendorRegisterClickZb.click();
-        Assert.assertEquals(vendorRegisterPage.sadecePswUyari.getText(),"Email: This field is required." +
-                "Email Verification Code: This field is required." +
-                "Confirm Password: This field is required.");
-
-
-
-
-
-
+        ReusableMethods.waitFor(5);
+        vendorRegisterPage.vendorRegisterClickZb.click();
+        Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password strength should be atleast \"Good\".");
+        Driver.closeDriver();
     }
 }

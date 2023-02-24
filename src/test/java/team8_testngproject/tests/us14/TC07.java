@@ -25,7 +25,7 @@ public class TC07 { // Description kutusuna metin girilebilmeli (PASS)
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
-        vendorStoreManagerPage.addNewButtonGur.click();
+        vendorStoreManagerPage.productAddNewButtonGur.click();
 
         String productTitle = "Steteskop";
         Driver.getDriver().switchTo().frame(vendorProductManagerPage.descriptionIframeGur);

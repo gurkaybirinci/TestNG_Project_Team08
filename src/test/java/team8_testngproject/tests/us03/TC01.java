@@ -10,6 +10,7 @@ import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.pages.P05_AddressesPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC01 {
 
@@ -25,10 +26,10 @@ public class TC01 {
 
 //     3. Username ya da Email inputuna veri girilir.
         P03_LoginPage loginPage = new P03_LoginPage();
-        loginPage.usernamesvd.sendKeys(ConfigReader.getProperty("user_name"));
+        loginPage.usernamesvd.sendKeys(ConfigReader.getProperty("user_namesvd"));
 
 //     4.  Password inputuna veri girilir.
-        loginPage.passwordsvd.sendKeys(ConfigReader.getProperty("user_password"));
+        loginPage.passwordsvd.sendKeys(ConfigReader.getProperty("user_passwordsvd"));
 
 //     5. Sing in butonuna tiklanir.
         loginPage.signinsvd.click();
@@ -46,6 +47,7 @@ public class TC01 {
         adressPage.addsvd.click();
 
 //    9. 10 .  First name inputuna veri girilir. //Last name inputuna veri girilir.
+        adressPage.firstNamesvd.clear();
         adressPage.firstNamesvd.sendKeys("Sevda",
                 Keys.TAB, "ISIK");
 //    11.  Country/Region dropdown'indan secim yapilir.
@@ -53,28 +55,37 @@ public class TC01 {
         select.selectByVisibleText("Turkey");
 
 //     12. Street adress alanina veri girilir.
+       adressPage.adreskutususvd.clear();
+       adressPage.adress2svd.clear();
         adressPage.adreskutususvd.sendKeys("Fuzuli caddesi");
         adressPage.adress2svd.sendKeys("Ela apt");
 
 //     13.  Town/City alanina veri girilir.
+        adressPage.city2svd.clear();
         adressPage.city2svd.sendKeys("Kayseri");
 
 //    14.  State dropdown'undan secim yapilir.
 
+         Select select1=new Select(adressPage.statessvd);
+         select1.selectByVisibleText("Kayseri");
 
 //    15.  Postcode / ZIP alanina veri girilir.
+        adressPage.kutu2svd.clear();
         adressPage.kutu2svd.sendKeys("10");
 
 //    16. Phone alanina veri girilir.
-
+        adressPage.phonesvd.clear();
+        adressPage.phonesvd.sendKeys("05556545642");
 
 //     17. Email adresinin otomatik olarak geldigi dogrulanir.
-
+        Assert.assertTrue(adressPage.emailsvd.isDisplayed());
 
 //     18.Otomatik olarak gelen Email adresinin kayit olunan email adresiyle ayni oldugunu dogrulanir.
+     //    Assert.assertEquals(adressPage.emailsvd.getText(),"nevan.lamin@foundtoo.com");
 
 
 //    19. SAVE ADDRESS butonuna tiklanir.
+        ReusableMethods.jsClick(adressPage.savesvd);
 
 
 //    20. Kaydedilen adresin Billing Address olarak kayit edildigi dogrulanir
