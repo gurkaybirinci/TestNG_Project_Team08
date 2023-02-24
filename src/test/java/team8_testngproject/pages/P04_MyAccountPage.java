@@ -288,8 +288,8 @@ public WebElement notification_Strong;
 
 
     // 290.Satır --> Ramazan
-
-
+    @FindBy(linkText = "Store Manager")
+    public WebElement storeManagerRs;
 
 
 
