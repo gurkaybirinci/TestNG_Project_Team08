@@ -1,14 +1,20 @@
-package team8_testngproject.tests.us22;
+package team8_testngproject.tests.us19;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC05_Done {
+public class TC05 {
+
+    private final String testName = "US19 || TC05-Ödeme Seçenekleri";
+    private final String description = "Wire transfer/EFT veya Pay at the door seçenekleri seçilebilmeli";
+    private final String raporMesaji = "Wire transfer/EFT veya Pay at the door seçeneklerinin seçilebildiği doğrulandı";
 
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
@@ -19,8 +25,10 @@ public class TC05_Done {
     P10_CheckOutPage p10CheckOutPage;
     P15_VendorAddressesPage p15VendorAddressesPage;
 
-    @Test
-    public void us22_tc05() {
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    public void us19_tc05() {
+
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
@@ -41,6 +49,7 @@ public class TC05_Done {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
+        extentTest.info("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -60,6 +69,7 @@ public class TC05_Done {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
+        extentTest.info("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -88,8 +98,10 @@ public class TC05_Done {
 
         //Pay at the door butonu tıklanır
         ReusableMethods.jsClick(p10CheckOutPage.radioButton2_Nt);
+        extentTest.info("Vendor olarak Wire transfer/EFT veya Pay at the door seçeneklerinin seçilebilir olması kontrol edildi");
 
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }
