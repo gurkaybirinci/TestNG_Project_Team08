@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us08;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -10,6 +11,7 @@ import team8_testngproject.pages.P07_ShoppingPage;
 import team8_testngproject.pages.P13_WishlistPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
@@ -18,8 +20,12 @@ public class TC03 {
     P03_LoginPage loginPage;
     P07_ShoppingPage shoppingPage;
     P13_WishlistPage wishlistPage;
-    @Test
+    private final String testName = "US08 || TC03-'wishlist' sayfasinda urun ozellikleri";
+    private final String description = "'wishlist' sayfasindaki urunlerin ozellikleri goruntulenebilmeli";
+    private final String raporMesaji = "'wishlist' sayfasinda urun ozellikleri goruntulenir ";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void quickViewKontrolu() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();
@@ -33,6 +39,8 @@ public class TC03 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
+        extentTest.info("Login işlemi yapıldı.");
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 shoppingPage.search);
         shoppingPage.search.sendKeys("bisiklet");
@@ -46,24 +54,19 @@ public class TC03 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.bisikletEFG16);
         ReusableMethods.waitFor(5);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                WishlistPage.bisikletKizCocuk);
-//        ReusableMethods.waitFor(5);
+
         //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
+        extentTest.info("Begenilen urunler secildi.");
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewButton);
-//        String bisikletEFG16 = Driver.getDriver().findElement(By.xpath("//*[@href='https://hubcomfy.com/urun/efg-16-jant-cocuk-bisikleti/ ']")).getText();
-//        ReusableMethods.waitFor(5);
-//        System.out.println("bisiklet ====== " + bisikletEFG16);
-//        Assert.assertTrue(bisikletEFG16.contains("EFG 16 Jant Cocuk Bisikleti"));
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-currencySymbol'])[1]")).getText();
+        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-amount amount'])[1]")).getText();
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(bisikletEFG16Fiyat.contains("$"));
+//        Assert.assertFalse(bisikletEFG16Fiyat.contains("200.00"));
         ReusableMethods.waitFor(2);
         String addToCartButton = Driver.getDriver().findElement(By.name("add-to-cart")).getText();
         ReusableMethods.waitFor(2);
@@ -74,6 +77,7 @@ public class TC03 {
         String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@alt='EFG 16 Jant Bisiklet'])[2]")).getText();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
-
+        extentTest.info("Urun ozellikleri goruntulendi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 }

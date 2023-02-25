@@ -5,6 +5,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -274,6 +278,23 @@ public class ReusableMethods {
         }
         return optionValues;
     }
+
+    //   Js Executer Scroll Locator
+    public static void jsScroll(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+    }
+
+    //   Js Executer Scroll WebElement
+    public static void jsScroll(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
+        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+    }
+
     public static void getScreenshot() {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
@@ -289,7 +310,40 @@ public class ReusableMethods {
 
     }
 
+    public static void uploadFilePath(String filePath){
+        try{
+            ReusableMethods.waitFor(3);
+            StringSelection stringSelection = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Robot robot = new Robot();
+            //pressing ctrl+v
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            ReusableMethods.waitFor(3);
+            robot.keyPress(KeyEvent.VK_V);
+            ReusableMethods.waitFor(3);
+            //releasing ctrl+v
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            ReusableMethods.waitFor(3);
+            robot.keyRelease(KeyEvent.VK_V);
+            ReusableMethods.waitFor(3);
+            System.out.println("PASSED");
+            //pressing enter
+            ReusableMethods.waitFor(3);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            ReusableMethods.waitFor(3);
+            //releasing enter
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            ReusableMethods.waitFor(3);
+            System.out.println("ENTER");
+        }catch (Exception e){
+        }
+    }
+
     
     
+
+
+  
+
 }
 

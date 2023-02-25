@@ -5,7 +5,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
-import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
 public class UserStory_06 {
@@ -15,6 +14,7 @@ public class UserStory_06 {
     P08_ProductPage productPage;
     P09_CartPage cartPage;
     P10_CheckOutPage checkOutPage;
+    P11_OrderCompletePage orderCompletePage;
 
     @BeforeMethod
     public void beforeMethod() {
@@ -24,6 +24,7 @@ public class UserStory_06 {
          productPage = new P08_ProductPage();
          cartPage = new P09_CartPage();
          checkOutPage = new P10_CheckOutPage();
+         orderCompletePage=new P11_OrderCompletePage();
     }
 
 
@@ -42,9 +43,7 @@ public class UserStory_06 {
         homePage.searchProduct();
 
         //Istenen urune ait arama yapildigi dogrulanir.
-        String resultText=shoppingPage.resultTextLoc.getText();
-
-        Assert.assertTrue(resultText.contains(ConfigReader.getProperty("urun_ismi_mustafa")));
+        shoppingPage.checkSearchProduct();
 
     }
 
@@ -162,20 +161,20 @@ public class UserStory_06 {
         productPage.goToProceedToCheckOut();
 
         //Payment Methods bolumunde 2 ödeme seceneginin oldugu dogrulanir.
-        Assert.assertTrue(checkOutPage.wireTransferEFTBtnLoc.isDisplayed());
-        Assert.assertTrue(checkOutPage.payAtTheDoorBtnLoc.isDisplayed());
+        checkOutPage.checkVisibleWireTransferEFT();
+        checkOutPage.checkVisiblePayAtTheDoorBtn();
 
         //Pay at the door secenegi secilir.
         checkOutPage.selectPayAtTheDoor();
 
         //Pay at the door seceneginin secilebildigi dogrulanir
-        Assert.assertTrue(checkOutPage.payAtTheDoorBtnLoc.isSelected());
+        checkOutPage.checkSelectPayAtTheDoor();
 
         //Wire transfer/EFT secenegi secillir.
         checkOutPage.selectWireTransferEft();
 
         //Wire transfer/EFT seceneginin secilebildigi dogrulanir.
-        Assert.assertTrue(checkOutPage.wireTransferEFTBtnLoc.isSelected());
+        checkOutPage.checkSelectWireTransferEFT();
     }
 
     @Test
@@ -199,16 +198,29 @@ public class UserStory_06 {
 
         //First name * inputu doldurulur.
         //Last name * inputu doldurulur.
+        checkOutPage.firstAndLastNameRead();
+
         //Country / Region * dropdown'undan secim yapilir.
+        checkOutPage.countrySelect();
+
         //Street address * inputu doldurulur.
         //Postcode / ZIP * inputu doldurulur.
         //Town / City * inputu doldurulur.
+        checkOutPage.streetPostcodeAndTownCityRead();
+
         //Province * dropdown'undan secim yapilir.
+        checkOutPage.provinceSelect();
+
         //Phone * inputu doldurulur.
         //Email address * inputu doldurulur.
+        checkOutPage.phoneAndMailRead();
+
         //Odeme seceneklerinden secim yapilir.
         //PLACE ORDER butonu tılklanir.
+        checkOutPage.payAtTheDoorAndPlaceOrder();
+
         //"Thank you. Your order has been received." mesaji goruntulendigi dogrulanir.
+        orderCompletePage.checkShoopingEnd();
     }
 
     @AfterMethod

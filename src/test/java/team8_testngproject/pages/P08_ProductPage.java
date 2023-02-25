@@ -3,15 +3,15 @@ package team8_testngproject.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class P08_ProductPage {
     public P08_ProductPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -359,6 +359,14 @@ public class P08_ProductPage {
     public  WebElement viewCartBtnLoc;
     @FindBy(css = "a[class='checkout-button button alt wc-forward']")
     public  WebElement proceedToCheckOutBtnLoc;
+    @FindBy(id = "coupon_code")
+    public  WebElement couponCodeInpLoc;
+    @FindBy(css = "button[name='apply_coupon']")
+    public  WebElement applyCouponBtnLoc;
+    @FindBy(css = "div[role='alert'] ")
+    public  WebElement popupMessagesLoc;
+    @FindBy(css = "a[class='woocommerce-remove-coupon']")
+    public  WebElement removeBtnLoc;
 
     P07_ShoppingPage shoppingPage =new P07_ShoppingPage();
     public void firstProductAddCart(){
@@ -371,7 +379,22 @@ public class P08_ProductPage {
     }
 
     public void goToProceedToCheckOut(){
-        proceedToCheckOutBtnLoc.click();
+        ReusableMethods.jsClick(proceedToCheckOutBtnLoc);
+        ReusableMethods.waitFor(2);
+    }
+
+    public void useCouponCode(){
+        couponCodeInpLoc.sendKeys(ConfigReader.getProperty("couponMu"));
+        ReusableMethods.jsClick(applyCouponBtnLoc);
+    }
+    public void checkCouponCodeUse(){
+        Assert.assertTrue(popupMessagesLoc.isDisplayed());
+        ReusableMethods.waitFor(1);
+    }
+
+    public void removeCoupon(){
+        removeBtnLoc.click();
+        Assert.assertTrue(popupMessagesLoc.isDisplayed());
     }
 
 

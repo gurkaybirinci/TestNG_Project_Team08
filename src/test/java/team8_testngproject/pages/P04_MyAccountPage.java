@@ -262,14 +262,14 @@ public WebElement notification_Strong;
     public WebElement myAccountPage_Nt;
     @FindBy(linkText = "Orders")
     public WebElement ordersLink_Nt;
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//tr//td//a)[1]")
+    public WebElement viewButton_Nt;
+    @FindBy(xpath = "//h2[.='Order details']")
+    public WebElement orderDetailsDisplayed_Nt;
+    @FindBy(xpath = "//h4[.='Orders']")
+    public WebElement ordersPageDisplayed_Nt;
+    @FindBy(xpath = "//a[@class='btn btn-dark btn-rounded btn-icon-right continue-shopping mb-4 mt-6']")
+    public WebElement goShopLink_Nt;
 
 
 
@@ -288,8 +288,8 @@ public WebElement notification_Strong;
 
 
     // 290.Satır --> Ramazan
-
-
+    @FindBy(linkText = "Store Manager")
+    public WebElement storeManagerRs;
 
 
 

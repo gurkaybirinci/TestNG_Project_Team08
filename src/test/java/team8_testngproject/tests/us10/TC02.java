@@ -13,15 +13,9 @@ public class TC02 {
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
 
-    @Test
+    @Test(testName = "US10 || TC02-Password seviyeleri", description = "weak")
+
     public void us10_Tc02() {
-
-        //Kullanıcı url'e gider
-        //Kullanıcı registor butonuna tıklar
-        //Kullanıcı Become a Vendor linkine tıklar
-        //Kullanıcı kayıtlı olduğu mail adresini girer
-        //Kullanıcı  password kısmına 5 karakterden  büyük ve sadece rakam içeren şifre girer
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -40,6 +34,6 @@ public class TC02 {
         //Kullanıcı  password kısmına 5 karakterden  büyük ve sadece rakam içeren şifre girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_weak_psw"));
         Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Weak");
+        Driver.closeDriver();
     }
-
 }

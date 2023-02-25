@@ -11,18 +11,10 @@ import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07 {
 
-    //Kullanıcı url'e gider
-    //Kullanıcı Register butonuna tıklar
-    //Kullanıcı Become a Vendor linkine tıklar
-    //Kullanıcı Email bilgileri girer
-    //Verification Code girer
-    //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
-    //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
-    //Kullanıcı Register butonuna tıklar
 
-    @Test
+    @Test(testName = "US09 || TC07-Vendor Password", description = "Password yazmalı. Password: kucuk harf, büyük harf, rakam ve special karakter içermeli")
+
     public void us09_Tc07() {
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -51,16 +43,7 @@ public class TC07 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(5);
         vendorRegisterPage.vendorRegisterClickZb.click();
-
-        //doğrulama sıkıntısııııı
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password strength should be atleast \"Good\".");
-
-
-
-
-
-
-
-
+        Driver.closeDriver();
     }
 }

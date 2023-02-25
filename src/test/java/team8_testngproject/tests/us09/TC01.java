@@ -1,6 +1,4 @@
 package team8_testngproject.tests.us09;
-
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -14,9 +12,9 @@ public class TC01 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    @Test
-    public void us09_Tc01() {
+    @Test(testName = "US09 || TC01-Become a Vendor", description = "Sign Up ekranından Become a Vendor linki ile giriş yapılabilmeli ")
 
+    public void us09_Tc01() {
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -31,10 +29,9 @@ public class TC01 {
         //Vendor Registration sayfasının erişildiğini dogrular
          vendorRegisterPage = new P14_VendorRegisterPage();
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
+        Driver.closeDriver();
     }
-
-
-    }
+}
 
 
         

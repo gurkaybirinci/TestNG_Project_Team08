@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us07;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -9,15 +10,20 @@ import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.pages.P07_ShoppingPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
     P07_ShoppingPage ShoppingPage;
+    private final String testName = "US07 || TC03-Secilen urunlerin karsilastirilmasi";
+    private final String description = "Compare sayfasinda urun karsilastirilmasi";
+    private final String raporMesaji = "Karsilastirilan urun ozelliklerinin gorunmesi.";
 
-    @Test
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void startCompareKarsilastirma() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -28,6 +34,7 @@ public class TC03 {
         homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
         homePage.login.click();
         ReusableMethods.waitFor(3);
+        extentTest.info("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
@@ -64,6 +71,7 @@ public class TC03 {
                 loginPage.coatUrunEkle);
         ReusableMethods.waitFor(2);
         ReusableMethods.getScreenshot("Coat urunu ekleme");
+        extentTest.info("Urun silinip yeni urun ekleme islemi yapildi.");
         //*************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.startCompareButonu);
@@ -93,6 +101,8 @@ public class TC03 {
         Assert.assertTrue(sKU.contains("SKU"));
         String size = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[7]")).getText();
         Assert.assertTrue(size.contains("Size"));
+        extentTest.info("Urunlerin ozellikleri goruntulendi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }
 }

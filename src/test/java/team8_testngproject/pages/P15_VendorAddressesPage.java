@@ -165,8 +165,6 @@ public class P15_VendorAddressesPage {
 
 
 
-
-
     // 170.Satır --> Mehmet
 
 

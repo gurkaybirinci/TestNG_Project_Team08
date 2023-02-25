@@ -167,11 +167,9 @@ public WebElement signInButtonAli;
 
 
 
-
     // 170.Satır --> Mehmet
     @FindBy(xpath = "//span[text()='Sign In']")public WebElement signInButtonKoz;
     @FindBy(xpath = "//span[text()='Sign Out']")public WebElement signOutButtonKoz;
-
 
 
 
@@ -290,8 +288,8 @@ public WebElement myAccountButton;
 
 
     // 290.Satır --> Ramazan
-
-
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInRs;
+    @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutRs;
 
 
 

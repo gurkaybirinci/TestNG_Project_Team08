@@ -13,7 +13,8 @@ public class TC02 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    @Test
+    @Test(testName = "US09 || TC02-Vendor Kayıt", description = "e-mail adresi girmeli ")
+
     public void us09_Tc02() throws InterruptedException {
 
         //Kullanıcı fake url gider
@@ -43,6 +44,8 @@ public class TC02 {
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Password: This field is required."));
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Confirm Password: This field is required."));
         ReusableMethods.waitFor(3);
-
+        //Driver.closeDriver();
+        Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

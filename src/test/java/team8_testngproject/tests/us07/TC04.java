@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us07;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.pages.P07_ShoppingPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 import java.util.ArrayList;
@@ -19,9 +21,12 @@ public class TC04 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
     P07_ShoppingPage ShoppingPage;
-
-    @Test
+    private final String testName = "US07 || TC04-Secilen urunlerin karsilastirilmasi";
+    private final String description = "Compare sayfasinda urun karsilastirilmasi";
+    private final String raporMesaji = "Compare sayfasinda urun silme.";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void compareUrunSilme() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -32,10 +37,12 @@ public class TC04 {
         homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
         homePage.login.click();
         ReusableMethods.waitFor(3);
+        extentTest.info("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
@@ -52,10 +59,12 @@ public class TC04 {
                 loginPage.cantaFash);
         ReusableMethods.waitFor(7);
         ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.silinenCanta);
         ReusableMethods.waitFor(5);
         ReusableMethods.getScreenshot("Silinen urun ekran goruntusu");
+
         ReusableMethods.waitFor(2);
         loginPage.bosSayfa.click();
         loginPage.search.click();
@@ -68,6 +77,7 @@ public class TC04 {
                 loginPage.coatUrunEkle);
         ReusableMethods.waitFor(2);
         ReusableMethods.getScreenshot("Coat urunu ekleme");
+
         //*************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.startCompareButonu);
@@ -108,6 +118,7 @@ public class TC04 {
 
 
         silinenCoatPoolXButon.click();
+        extentTest.info("Urun silme islemi yapildi.");
 
         List<String> kalanUrunler = new ArrayList<>();
         kalanUrunler.add(sunBabyXButonu);
@@ -119,42 +130,10 @@ public class TC04 {
             if (kalanUrunler.contains(urunKontrol)){
             Assert.assertTrue(kalanUrunler.contains(urunKontrol));
             }else {
-                System.out.println("Aranan urun silinmistir");
+                System.out.println(kalanUrunler + " adli urun silinmistir");
             }
         }
-
-
-
-
-
-//
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                click2);
-//        ReusableMethods.waitFor(2);
-//        WebElement click3 = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[3]"));
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                click3);
-//        ReusableMethods.waitFor(2);
-//        WebElement click4 = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[4]"));
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                click4);
-
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                ShoppingPage.urunWomenWhiteXButonu);
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                ShoppingPage.urunSunnyBabyXButonu);
-//
-//        ReusableMethods.waitFor(3);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                ShoppingPage.urunWomenFashionXButonu);
-//        ReusableMethods.waitFor(3);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                ShoppingPage.urunCoatPoolXButonu);
-//        ReusableMethods.waitFor(3);
-//        String compareUrunSilme = ShoppingPage.compareSilinenUrunler.getText();
-//        Assert.assertEquals(compareUrunSilme, "No products added to the compare");
-//        ReusableMethods.waitFor(2);
-//        ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
+        extentTest.info("Urun sildikten sonra kalan urunler kontrol edildi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 }
