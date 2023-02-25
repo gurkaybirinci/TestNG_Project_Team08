@@ -5,13 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team8_testngproject.utilities.Driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class P07_ShoppingPage {
     public P07_ShoppingPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
 
 
 
@@ -79,16 +79,16 @@ public class P07_ShoppingPage {
 
     // 80.Satır --> Gonca
 
-    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[1]")
-    public WebElement urunTheMonogramXButonu;
+    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[1]")
+    public WebElement urunSunnyBabyXButonu;
 
-    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[2]")
+    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[2]")
     public WebElement urunWomenWhiteXButonu;
 
-    @FindBy(xpath = "(//*[@class='w-icon-times-solid'])[1]")
+    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[3]")
     public WebElement urunWomenFashionXButonu;
 
-    @FindBy(xpath = "//*[@class='w-icon-times-solid']")
+    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[4]")
     public WebElement urunCoatPoolXButonu;
 
     @FindBy(xpath = "//*[text()='No products added to the compare']")

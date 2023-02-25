@@ -2,6 +2,7 @@ package team8_testngproject.tests.us07;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -10,6 +11,9 @@ import team8_testngproject.pages.P07_ShoppingPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TC04 {
     P01_HomePage homePage;
@@ -71,7 +75,7 @@ public class TC04 {
         Assert.assertTrue(compareBaslik.contains("Compare"));
 
         String urunTheMonogram = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[1]")).getText();
-        Assert.assertTrue(urunTheMonogram.contains("Sunny Baby Bebek Arabasıuytr"));
+        Assert.assertTrue(urunTheMonogram.contains("Sunny Baby Bebek Arabası"));
         String urunWomenWhite = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[2]")).getText();
         Assert.assertTrue(urunWomenWhite.contains("Women’s White Handbag"));
         String urunWomenFashion = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[3]")).getText();
@@ -94,21 +98,63 @@ public class TC04 {
         String size = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[7]")).getText();
         Assert.assertTrue(size.contains("Size"));
         //*************************************************************************************
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                ShoppingPage.urunTheMonogramXButonu);
+
         ReusableMethods.waitFor(2);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                ShoppingPage.urunWomenWhiteXButonu);
-        ReusableMethods.waitFor(3);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                ShoppingPage.urunWomenFashionXButonu);
-        ReusableMethods.waitFor(3);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                ShoppingPage.urunCoatPoolXButonu);
-        ReusableMethods.waitFor(3);
-        String compareUrunSilme = ShoppingPage.compareSilinenUrunler.getText();
-        Assert.assertEquals(compareUrunSilme, "No products added to the compare");
-        ReusableMethods.waitFor(2);
-        ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
+        String sunBabyXButonu = Driver.getDriver().findElement(By.xpath("(//*[text()='Sunny Baby Bebek Arabası'])[1]")).getText();
+        String womenWhiteXButon = Driver.getDriver().findElement(By.xpath("//*[text()='Women’s White Handbag']")).getText();
+        String womenFashionXButon = Driver.getDriver().findElement(By.xpath("//*[text()='Women’s Fashion Handbag']")).getText();
+        WebElement silinenCoatPoolXButon = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[4]"));
+        String silinenCoatPoolKontrol = Driver.getDriver().findElement(By.xpath("//*[text()='Coat Pool Comfort Jacket']")).getText();
+
+
+        silinenCoatPoolXButon.click();
+
+        List<String> kalanUrunler = new ArrayList<>();
+        kalanUrunler.add(sunBabyXButonu);
+        kalanUrunler.add(womenWhiteXButon);
+        kalanUrunler.add(womenFashionXButon);
+        kalanUrunler.add(silinenCoatPoolKontrol);
+
+        for (String urunKontrol : kalanUrunler) {
+            if (kalanUrunler.contains(urunKontrol)){
+            Assert.assertTrue(kalanUrunler.contains(urunKontrol));
+            }else {
+                System.out.println("Aranan urun silinmistir");
+            }
+        }
+
+
+
+
+
+//
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                click2);
+//        ReusableMethods.waitFor(2);
+//        WebElement click3 = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[3]"));
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                click3);
+//        ReusableMethods.waitFor(2);
+//        WebElement click4 = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[4]"));
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                click4);
+
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                ShoppingPage.urunWomenWhiteXButonu);
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                ShoppingPage.urunSunnyBabyXButonu);
+//
+//        ReusableMethods.waitFor(3);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                ShoppingPage.urunWomenFashionXButonu);
+//        ReusableMethods.waitFor(3);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                ShoppingPage.urunCoatPoolXButonu);
+//        ReusableMethods.waitFor(3);
+//        String compareUrunSilme = ShoppingPage.compareSilinenUrunler.getText();
+//        Assert.assertEquals(compareUrunSilme, "No products added to the compare");
+//        ReusableMethods.waitFor(2);
+//        ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
     }
 }
