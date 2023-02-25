@@ -144,7 +144,18 @@ public class P18_VendorProductManagerPage {
     @FindBy(id="is_downloadable") public WebElement downabledCheckboxHus;
     @FindBy(id="regular_price") public WebElement priceBoxHus;
     @FindBy(id="sale_price") public WebElement salePriceBoxHus;
-
+    @FindBy(id = "product_url") public WebElement urlBoxHus;
+    @FindBy(id = "button_text") public WebElement buttonTextBoxHus;
+    @FindBy(id="wcfm_products_simple_submit_button") public WebElement submitButtonHus;
+    @FindBy(id="product_tags") public WebElement tagsHus;
+    @FindBy(id="featured_img_display") public WebElement imgButtonHus;
+    @FindBy(id="gallery_img_gimage_0_display") public WebElement galleryImgButtonHus;
+    @FindBy(id="__wp-uploader-id-1") public WebElement selectButtonHus;
+    @FindBy(id="__wp-uploader-id-4") public WebElement addSelectButtonHus;
+    @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]") public WebElement addToGalleryButtonHus;
+    @FindBy(xpath = "//button[@type='button'and@class='button media-button button-primary button-large media-button-select']") public WebElement select2ButtonHus;
+    @FindBy(xpath = "(//button[@id='menu-item-upload'])[2]") public WebElement uploadFilesButtonHus;
+    @FindBy(xpath = "//*[@class='product-status product-status-publish']") public WebElement publishedTextHus;
 
 
 
@@ -188,12 +199,14 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//*[.='Choose from the most used tags']") public WebElement chooseTagsKoz;
     @FindBy(xpath = "//*[.='Futbol']") public WebElement futbolTagKoz;
     @FindBy(id = "catalog_visibility") public WebElement catalogVisibilityKoz;
-
-
-
-
-
-
+    @FindBy(xpath= "(//div[contains(text(),'Attributes')])[1]") public WebElement attributesButtonKoz;
+    @FindBy(id = "attributes_is_active_1") public WebElement colorCheckBoxKoz;
+    @FindBy(id = "attributes_is_active_2") public WebElement sizeCheckBoxKoz;
+    @FindBy(xpath = "(//button[.='Add New'])[1]") public WebElement addNewColorButtonKoz;
+    @FindBy(xpath = "//*[@value='481']") public WebElement eklenenYeniRenk;
+    @FindBy(xpath = "(//button[.='Add New'])[2]") public WebElement addNewSizeButtonKoz;
+    @FindBy(id = "attributes_value_1") public WebElement colorTextBoxKoz;
+    @FindBy(id = "attributes_value_2") public WebElement sizeTextBoxKoz;
 
 
 
@@ -304,6 +317,47 @@ public class P18_VendorProductManagerPage {
 
 
     // 290.Satır --> Ramazan
+    @FindBy(id = "pro_title") public WebElement productTitleInputRs;
+    @FindBy(xpath = "//input[@value='507']") public WebElement artsCheckBoxRs;
+    @FindBy(xpath = "//*[text()='Inventory']") public WebElement inventoryMenuRs;
+    @FindBy(xpath = "//*[@id='sku']") public WebElement skuTextboxRs;
+    @FindBy(xpath = "//*[@id='stock_qty']") public WebElement stockQtyTextboxRs;
+    @FindBy(xpath = "//*[@id='manage_stock']") public WebElement manageStockCheckboxRs;
+    @FindBy(xpath = "//*[@id='sold_individually']") public WebElement soldIndividuallyCheckboxRs;
+    @FindBy(xpath = "//*[@id='backorders']") public WebElement allowBackordersDropdownRs;
+    @FindBy(xpath = "//*[text()='Shipping']") public WebElement shippingMenuRs;
+    @FindBy(xpath = "//*[@id='weight']") public WebElement weightTextboxRs;
+    @FindBy(xpath = "//*[@id='length']") public WebElement lengthTextboxRs;
+    @FindBy(xpath = "//*[@id='width']") public WebElement widthTextboxRs;
+    @FindBy(xpath = "//*[@id='height']") public WebElement heightTextboxRs;
+    @FindBy(xpath = "//*[@id='shipping_class']") public WebElement shippingClassDropdownRs;
+    @FindBy(xpath = "//*[@id='_wcfmmp_processing_time']") public WebElement processingTimeDropdownRs;
+    @FindBy(xpath = "//*[text()='Attributes']") public WebElement attributesMenuRs;
+    @FindBy(xpath = "//*[@id='attributes_is_active_1']") public WebElement colorCheckboxRs;
+    @FindBy(xpath = "//*[@id='attributes_is_active_2']") public WebElement sizeCheckboxRs;
+    @FindBy(xpath = "(//*[text()='Add New'])[2]") public WebElement colorAddNewButonRs;
+    @FindBy(xpath = "(//*[text()='Select none'])[1]") public WebElement colorSelectNoneButonRs;
+    @FindBy(xpath = "(//*[text()='Select all'])[1]") public WebElement colorSelectAllButonRs;
+    @FindBy(xpath = "//*[@id='attributes_is_visible_1']") public WebElement colorVisibleCheckboxRs;
+    @FindBy(xpath = "(//*[@title='Toggle Block'])[2]") public WebElement colorKucultmeOkuButonRs;
+    @FindBy(xpath = "(//*[text()='Add New'])[3]") public WebElement sizeAddNewButonRs;
+    @FindBy(xpath = "(//*[text()='Select none'])[2]") public WebElement sizeSelectNoneButonRs;
+    @FindBy(xpath = "(//*[text()='Select all'])[2]") public WebElement sizeSelectAllButonRs;
+    @FindBy(xpath = "//*[@id='attributes_is_visible_3']") public WebElement addAttributeVisibleCheckboxRs;
+    @FindBy(xpath = "(//*[@title='Toggle Block'])[3]") public WebElement sizeKucultmeOkuButonRs;
+    @FindBy(xpath = "(//*[text()='Add'])[3]") public WebElement addAttributeADDButonRs;
+    @FindBy(xpath = "//*[@id='attributes_is_visible_2']") public WebElement sizeVisibleCheckboxRs;
+    @FindBy(xpath = "//*[@id='attributes_is_active_3']") public WebElement addAttributeActiveCheckboxRs;
+    @FindBy(xpath = "//*[@id='attributes_name_3']") public WebElement addAttributeNameTextboxRs;
+    @FindBy(xpath = "//*[@id='attributes_value_3']") public WebElement addAttributeValueTextboxRs;
+
+    @FindBy(xpath = "(//*[@title='Toggle Block'])[4]") public WebElement addAttributeKucultmeOkuButonRs;
+
+    @FindBy(xpath = "//*[text()='Linked']") public WebElement linkedMenuRs;
+    @FindBy(xpath = "//*[text()=' SEO']") public WebElement seoMenuRs;
+    @FindBy(xpath = "//*[text()='Toptan Ürün Gösterme Ayarları']") public WebElement toptanurunGostermeAyarlariMenuRs;
+    @FindBy(xpath = "//*[text()='Advanced']") public WebElement advancedMenuRs;
+    @FindBy(xpath = "//*[@id='wcfm_products_simple_submit_button']") public WebElement submitButtonMangProdRs;
 
 
 
@@ -333,7 +387,10 @@ public class P18_VendorProductManagerPage {
 
 
 
-    // 320.Satır --> Sevda
+
+
+
+    // 380.Satır --> Sevda
 
 
 
@@ -363,7 +420,7 @@ public class P18_VendorProductManagerPage {
 
 
 
-    // 350.Satır --> Mustafa
+    // 410.Satır --> Mustafa
 
 
 

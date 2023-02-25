@@ -18,7 +18,7 @@ public class TC06 {
 
 
     @Test
-    public void US16_TC01(){
+    public void US16_TC06(){
         p01_homePage=new P01_HomePage();
         p03_loginPage=new P03_LoginPage();
         p04_MyAccountPage=new P04_MyAccountPage();

@@ -262,22 +262,22 @@ public class P10_CheckOutPage {
     public WebElement yourOrderDisplayed_Nt;
     @FindBy(id = "customer_details")
     public WebElement billingDetailsDisplayed_Nt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[@class='order-total']")
+    public WebElement totalAmountDisplayed_Nt;
+    @FindBy(xpath = "//input[@id='payment_method_bacs']")
+    public WebElement radioButton1_Nt;
+    @FindBy(id = "payment_method_cod")
+    public WebElement radioButton2_Nt;
+    @FindBy(id = "place_order")
+    public WebElement placeOrderButton_Nt;
+    @FindBy(xpath = "//*[@class='showcoupon']")
+    public WebElement enterCodeButton_Nt;
+    @FindBy(id = "coupon_code")
+    public WebElement couponCodeBox_Nt;
+    @FindBy(name = "apply_coupon")
+    public WebElement applyCouponBox_Nt;
+    @FindBy(xpath = "//*[.='Thank you. Your order has been received.']")
+    public WebElement thankYouMessage_Nt;
 
 
 

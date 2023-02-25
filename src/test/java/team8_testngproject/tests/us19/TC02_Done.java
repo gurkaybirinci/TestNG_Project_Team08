@@ -53,7 +53,11 @@ public class TC02_Done {
         ReusableMethods.verifyElementDisplayed(p19OrdersPage.ordersDisplayed_Nt);
 
         //Browse Products linkine tıklanır
-        p19OrdersPage.browseProductsLink_Nt.click();
+        try {
+            ReusableMethods.jsClick(p04MyAccountPage.goShopLink_Nt);
+        } catch (Exception e) {
+            p19OrdersPage.browseProductsLink_Nt.click();
+        }
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);

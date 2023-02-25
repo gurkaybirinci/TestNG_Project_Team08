@@ -288,12 +288,12 @@ public class P03_LoginPage {
 
 
     // 290.Satır --> Ramazan
-
-
-
-
-
-
+    @FindBy(id = "username")
+    public WebElement userNameRs;
+    @FindBy(id = "password")
+    public WebElement passwordRs;
+    @FindBy(name = "login")
+    public WebElement signInButtonRs;
 
 
 

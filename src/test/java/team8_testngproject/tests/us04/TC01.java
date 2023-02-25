@@ -77,7 +77,7 @@ public class TC01 {
         ReusableMethods.jsClick(adressPage.savesvd);
 
 //    Kaydedilen adresin Shipping address olarak kayit edildigi dogrulanir.
-// Assert.assertTrue(adressPage.savesvd.getText().contains("Address changed successfully."));
+ Assert.assertTrue(adressPage.savesvd.getText().contains("Address changed successfully."));
 
     }
 

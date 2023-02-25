@@ -138,6 +138,7 @@ public class P17_VendorProductsDashboardPage {
     // 140.Satır --> Hüseyin
     @FindBy(id = "add_new_product_dashboard") public WebElement addNewButtonHus;
     @FindBy(xpath = "//a[.='Harika Şapka']") public WebElement harikaSapkaHus;
+    @FindBy(xpath = "(//a[text()='Futbol Topu2'])[1]") public WebElement futbolTopu2Hus;
 
 
 
