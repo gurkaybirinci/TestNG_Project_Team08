@@ -9,6 +9,8 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC06_IncompatiblePassword_VeryWeak {
 
     @Test
@@ -26,6 +28,9 @@ public class TC06_IncompatiblePassword_VeryWeak {
        myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword2"));
 
         Assert.assertTrue(myAccountPage.notification_VeryWeak.isDisplayed());
+
+        waitFor(3);
+        Driver.closeDriver();
 
 
     }

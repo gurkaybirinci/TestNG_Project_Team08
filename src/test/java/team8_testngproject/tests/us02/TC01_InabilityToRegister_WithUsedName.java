@@ -9,6 +9,8 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC01_InabilityToRegister_WithUsedName {
 @Test
     public void cannotSignUpWithUsedData1(){
@@ -25,6 +27,9 @@ public class TC01_InabilityToRegister_WithUsedName {
 
     Assert.assertTrue(registerPage.alreadyUsedUsernameStatement.isDisplayed());
     Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
+
+    waitFor(3);
+    Driver.closeDriver();
 }
 
 }

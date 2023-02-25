@@ -8,6 +8,8 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC01_AllAreasFilled {
 
   @Test
@@ -24,6 +26,8 @@ Faker faker=new Faker();
       registerPage.userSignUpButton.click();
 
       Assert.assertTrue(homePage.homePageLogo.isDisplayed());
+      waitFor(3);
+      Driver.closeDriver();
 
   }
 

@@ -8,6 +8,8 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC10_PolicyAgreement_UnClicked {
     @Test
     public void RegistrationUnsuccessful_NameUnspecified() {
@@ -23,5 +25,7 @@ public class TC10_PolicyAgreement_UnClicked {
         registerPage.userSignUpButton.click();
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
+        waitFor(3);
+        Driver.closeDriver();
     }
 }

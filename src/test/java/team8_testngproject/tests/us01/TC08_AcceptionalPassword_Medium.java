@@ -9,6 +9,8 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC08_AcceptionalPassword_Medium {
 
     @Test
@@ -28,6 +30,8 @@ public class TC08_AcceptionalPassword_Medium {
         //myAccountPage.myAccountSignUpReg.click();
 
         Assert.assertTrue(myAccountPage.notification_Medium.isDisplayed());
+        waitFor(3);
+        Driver.closeDriver();
 
 
 

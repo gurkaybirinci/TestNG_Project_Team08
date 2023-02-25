@@ -7,6 +7,8 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
+
 public class TC05_PasswordBox_Unattempted {
     @Test
     public void UnsuccessfulRegistration_passwordUnspecified() {
@@ -21,5 +23,7 @@ public class TC05_PasswordBox_Unattempted {
         registerPage.userSignUpButton.click();
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
+        waitFor(3);
+        Driver.closeDriver();
     }
 }

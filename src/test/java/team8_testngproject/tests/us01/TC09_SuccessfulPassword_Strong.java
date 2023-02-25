@@ -11,6 +11,7 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
 import static team8_testngproject.utilities.Driver.driver;
+import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC09_SuccessfulPassword_Strong {
 @Test
@@ -32,6 +33,9 @@ public class TC09_SuccessfulPassword_Strong {
 
    Actions actions = new Actions(driver);
     actions.doubleClick(myAccountPage.myAccountSiginUpOnPopup);
+
+    waitFor(3);
+    Driver.closeDriver();
 
     }
 }
