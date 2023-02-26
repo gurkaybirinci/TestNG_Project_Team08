@@ -20,13 +20,13 @@ public class TC08_AcceptionalPassword_Medium {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void successfulRegistration_MediumPassward() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get("https://hubcomfy.com/my-account-2/");
         Faker faker = new Faker();
 
         P01_HomePage homePage = new P01_HomePage();
         ReusableMethods.jsClick(homePage.myAccountButton);
-        extentTest.info("Home page sayfasindan My Account sayfasina gidilir");
+       RaporlamaUtil.extentTestInfo("Home page sayfasindan My Account sayfasina gidilir");
 
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         myAccountPage.myAccountSiginUpOnPopup.click();
@@ -35,7 +35,7 @@ public class TC08_AcceptionalPassword_Medium {
         myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword4"));
         myAccountPage.myAccountPolicyCheckReg.click();
         //myAccountPage.myAccountSignUpReg.click();
-        extentTest.info("Kullanici password alani altinda 'Medium' mesajini gormustur ve  kayid isleminde basarmistir");
+        RaporlamaUtil.extentTestInfo("Kullanici password alani altinda 'Medium' mesajini gormustur ve  kayid isleminde basarmistir");
 
 
         Assert.assertTrue(myAccountPage.notification_Medium.isDisplayed());

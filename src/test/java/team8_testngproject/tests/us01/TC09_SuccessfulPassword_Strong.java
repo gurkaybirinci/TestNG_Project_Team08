@@ -22,13 +22,13 @@ public class TC09_SuccessfulPassword_Strong {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void successfulRegistration_StrongPassward() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
     Driver.getDriver().get("https://hubcomfy.com/my-account-2/");
         Faker faker = new Faker();
 
      P01_HomePage homePage = new P01_HomePage();
     ReusableMethods.jsClick(homePage.myAccountButton);
-        extentTest.info("Home page sayfasindan My Account sayfasina gidilir");
+       RaporlamaUtil.extentTestInfo("Home page sayfasindan My Account sayfasina gidilir");
 
     P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
     myAccountPage.myAccountSiginUpOnPopup.click();
@@ -36,7 +36,7 @@ public class TC09_SuccessfulPassword_Strong {
     myAccountPage.myAccountUserEmailReg.sendKeys(faker.internet().emailAddress());
     myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword5"));
     myAccountPage.myAccountPolicyCheckReg.click();
-    extentTest.info("Kullanici password alani altinda 'Strong' mesajini gormustur ve  kayit isleminde basarmistir");
+      RaporlamaUtil.extentTestInfo("Kullanici password alani altinda 'Strong' mesajini gormustur ve  kayit isleminde basarmistir");
 
     Assert.assertTrue(myAccountPage.notification_Strong.isDisplayed());
 

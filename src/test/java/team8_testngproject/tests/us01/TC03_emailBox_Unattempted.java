@@ -19,19 +19,19 @@ public class TC03_emailBox_Unattempted {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void UnsuccessfulRegistration_emailUnspecified(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         Faker faker = new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+       RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(faker.name().username());
         registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword"));
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
-        extentTest.info("e-mail alani bos birakildiginda, SignUp işlemi yapılmamali.");
+       RaporlamaUtil.extentTestInfo("e-mail alani bos birakildiginda, SignUp işlemi yapılmamali.");
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
         waitFor(3);
