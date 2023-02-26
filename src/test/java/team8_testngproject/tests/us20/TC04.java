@@ -28,19 +28,19 @@ public class TC04 { // Discount Type menüsünden Fixed Product Discount seçene
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Coupon ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Coupon ekleme sayfasına girildi.");
 
         Select select = new Select(vendorCouponsPage.discountTypeMenuGur);
         select.selectByIndex(1);
         String expectedOption = "Fixed Product Discount";
         String actualOption = select.getFirstSelectedOption().getText();
-        extentTest.info("Discount Type menüsünden Fixed Product Discount seçeneğinin seçilebilirliği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Discount Type menüsünden Fixed Product Discount seçeneğinin seçilebilirliği kontrol edildi.");
 
         Assert.assertEquals(actualOption, expectedOption);
         Driver.closeDriver();

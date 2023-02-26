@@ -6,10 +6,14 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC25 { // Catalog visibility; Shop and search results olarak seçilebilmeli (PASS)
-    @Test
+    private final String testName = "US14 || TC25-Catalog Visibility Menüsü";
+    private final String description = "Catalog visibility; Shop and search results olarak seçilebilmeli";
+    private final String raporMesaji = "Catalog visibility; Shop and search results olarak seçilebildiği doğrulanmıştır.";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
@@ -22,18 +26,23 @@ public class TC25 { // Catalog visibility; Shop and search results olarak seçil
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.productAddNewButtonGur.click();
+        RaporlamaUtil.extentTestInfo("Product Manager sayfasına girildi.");
 
         Select select = new Select(vendorProductManagerPage.catalogSelectGur);
         select.selectByIndex(0);
         String expectedOption = "Shop and search results";
         String actualOption = select.getFirstSelectedOption().getText();
+        RaporlamaUtil.extentTestInfo("Catalog visibility; Shop and search results olarak seçilip seçilemediği kontrol edilmiştir.");
 
         Assert.assertEquals(actualOption, expectedOption);
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }

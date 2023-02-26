@@ -15,14 +15,14 @@ public class RaporlamaUtil {
     // Raporlama nesneleri oluşturulur
     public static void extentRaporOlustur() {
         if (extentReports == null) { // ExtentReports nesnesi oluşturulmamış ise
-            String raporAdi = "us22_html_report.html"; // Rapor dosyasının adı
+            String raporAdi = "us14_html_report.html"; // Rapor dosyasının adı
             extentHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/src/test/java/reports/"+raporAdi); // raporun HTML dosyası oluşturulur
             extentReports = new ExtentReports(); // ExtentReports nesnesi oluşturulur
             extentReports.attachReporter(extentHtmlReporter); // Rapor dosyası ExtentHtmlReporter'a bağlanır
 
             // HTML raporu yapılandırılır
             extentHtmlReporter.config().setDocumentTitle("TEAM-8 TestNG Otomasyon Raporu");
-            extentHtmlReporter.config().setReportName("US22 | Vendor olarak ürün ekleme seçeneklerini görebilmeli");
+            extentHtmlReporter.config().setReportName("US14 | Vendor olarak ürün ekleme seçeneklerini görebilmeli 1");
 
             // Raporlama bilgileri girilir
             extentReports.setSystemInfo("Uygulama","TestNG Projesi");
@@ -31,7 +31,7 @@ public class RaporlamaUtil {
             extentReports.setSystemInfo("Takım","TEAM-8");
 
             // Raporlama bilgileri girilir (User Story ve QA kişisi bilgileri burada girilir)
-            extentReports.setSystemInfo("User Story","US22 | Vendor olarak ürün ekleme seçeneklerini görebilmeli");
+            extentReports.setSystemInfo("User Story","US14 | Vendor olarak ürün ekleme seçeneklerini görebilmeli 1");
             extentReports.setSystemInfo("QA","Gürkay Birinci");
 
             // Ekran görüntüleri için klasör oluşturulur
@@ -40,14 +40,25 @@ public class RaporlamaUtil {
         }
     }
 
-    // Test başarısız olduğunda çalışacak metod
-    public static void extentTestFail(String message) {
-        extentTest.fail(message);
-    }
     // Test başarılı olduğunda çalışacak metod
     public static void extentTestPass(String message) {
-        extentTest.pass(message);
+        if (extentTest != null) {
+            extentTest.pass(message);
+        }
     }
+    // Test başarısız olduğunda çalışacak metod
+
+    public static void extentTestFail(String message) {
+        if (extentTest != null) {
+            extentTest.fail(message);
+        }
+    }
+    public static void extentTestInfo(String message) {
+        if (extentTest != null) {
+            extentTest.info(message);
+        }
+    }
+
     // Yeni bir test için extentTest nesnesi oluşturulur
     public static void extentTestOlustur(String testName, String testDesc) {
         extentTest = extentReports.createTest(testName, testDesc);

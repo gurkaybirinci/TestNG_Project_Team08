@@ -8,12 +8,18 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 import java.util.List;
 
 public class TC04 { // Ürüne ait bir tane küçük (Gallery Images) resim eklendiğinde, bu resimden ürün sayfasında bir tane olmalı (FAIL)
-    @Test
+    private final String testName = "US14 || TC04-Ürün Fotoğrafı Ekleme";
+    private final String description = "Ürüne ait bir tane küçük (Gallery Images) resim eklendiğinde, bu resimden ürün sayfasında bir tane olmalı";
+    private final String raporMesaji = "Ürüne ait Featured image ve Gallery image eklendiğinde, ürün sayfasında gallery image'a ait resim iki kez gösteriliyor. " +
+            "Gallery image bölümüne Featured image'dan farklı bir resim eklenince sorun olmuyor, " +
+            "ama sadece bir resim eklemek isteyen birisinin ürün sayfası düzgün görüntülenmemiş oluyor";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
@@ -26,11 +32,13 @@ public class TC04 { // Ürüne ait bir tane küçük (Gallery Images) resim ekle
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonGur);
         vendorStoreManagerPage.productAddNewButtonGur.click();
+        RaporlamaUtil.extentTestInfo("Product Manager sayfasına girildi.");
 
         vendorProductManagerPage.productTitleGur.sendKeys("Steteskop");
         vendorProductManagerPage.galleryImgGur.click();
@@ -46,14 +54,14 @@ public class TC04 { // Ürüne ait bir tane küçük (Gallery Images) resim ekle
 
         ReusableMethods.switchToWindow(1);
         List<WebElement> imgElements = vendorProductManagerPage.galleryImgDivGur.findElements(By.tagName("img"));
+        RaporlamaUtil.extentTestInfo("Ürüne ait bir tane küçük (Gallery Images) resim eklendiğinde, bu resimden ürün sayfasında bir tane olup olmadığı kontrol edilmiştir.");
 
-        try {
+        try{
             Assert.assertEquals(imgElements.size(), 1);
-        } catch (AssertionError e) {
-            System.out.println("Test failed: " + e.getMessage());
+        }catch (AssertionError e){
             throw e;
         } finally {
-            Driver.closeDriver();
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
         }
     }
 }
