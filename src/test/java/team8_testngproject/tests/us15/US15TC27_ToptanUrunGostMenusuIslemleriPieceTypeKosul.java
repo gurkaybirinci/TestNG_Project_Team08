@@ -1,9 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,13 +9,13 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde Size işlemleri (PASS)
+public class US15TC27_ToptanUrunGostMenusuIslemleriPieceTypeKosul {// Toptan Ürün Gösterme Ayarları menusunde Units Per Piece ve Min Order Quantity işlemleri (PASS)
 
-    private final String testName = "US15 || TC15-Attributes menusunde Size işlemleri";
-    private final String description = "Vendor Attributes menusunde Size işlemleri yapabilmeli";
-    private final String raporMesaji = "Vendor olarak Attributes menusunde Size işlemleri yapabildiği doğrulanmıştır.";
+    private final String testName = "US15 || TC27-Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri";
+    private final String description = "Vendor Toptan Ürün Gösterme menusunde Piece type alanı zorunlu olarak doldurulmalı veUnits Per Piece ve Min Order Quantity işlemleri yapabilmeli";
+    private final String raporMesaji = "Vendor olarak Toptan Ürün Gösterme menusunde Piece type alanı zorunlu olarak doldurulmalı doğrulanamamıştır. İyileştirmeye dönüt bug ve düzetme önerisidir.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void attributesMenuColorIslemleri() {
+    public void toptanUrunGostMenusuIslemleriPieceTypeKosulu() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -49,24 +45,19 @@ public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde 
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.sizeCheckboxRs.click();
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectAllButonRs);
+        ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunGostAyrMenuRs);
         ReusableMethods.waitFor(2);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectNoneButonRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeAddNewButonRs);
-        Driver.driver.switchTo().alert().sendKeys("10XL");
+        ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs);
+        vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs.clear();
+        vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs.sendKeys("10");
+        ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs);
+        vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs.clear();
+        vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs.sendKeys("10");
         ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.sizeVisibleCheckboxRs.click();
-        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
-
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
