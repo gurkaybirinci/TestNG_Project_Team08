@@ -20,29 +20,23 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
     private final String raporMesaji = "Vendor olarak Attributes menusunde Color işlemleri yapabildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void attributesMenuColorIslemleri() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P16_VendorStoreManagerPage vendorStoreManagerPage = new P16_VendorStoreManagerPage();
         P18_VendorProductManagerPage vendorProductManagerPage = new P18_VendorProductManagerPage();
-        Actions actions =new Actions(Driver.getDriver());
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage.signInRs.click();
         loginPage.userNameRs.sendKeys(ConfigReader.getProperty("usernameRs"));
         loginPage.passwordRs.sendKeys(ConfigReader.getProperty("passwordRs"));
         loginPage.signInButtonRs.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-        //homePage.myAccountButtonRs.click();
-        homePage.signOutRs.click();
-        myAccountPage.storeManagerRs.click();
-        actions.keyDown(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.jsClick(homePage.myAccountButtonRs);
+        ReusableMethods.jsClick(myAccountPage.storeManagerRs);
         ReusableMethods.hover(vendorStoreManagerPage.productButtonRs);
         vendorStoreManagerPage.productAddNewButtonRs.click();
-        extentTest.info("Add Product sayfasına gidildi.");
 
         Select select = new Select(vendorProductManagerPage.productMenuRs);
         select.selectByIndex(0);
@@ -52,11 +46,10 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         vendorProductManagerPage.imageOyleRs.click();
         vendorProductManagerPage.addGalleryButtonRs.click();
         vendorProductManagerPage.featuredBigImgRs.click();
-        vendorProductManagerPage.imageOyle2Rs.click();
-        vendorProductManagerPage.selectButtonForImgRs.click();
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.artsCheckBoxRs);
-        actions.keyDown(Keys.PAGE_DOWN).perform();
-        vendorProductManagerPage.attributesMenuRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
+        ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
+        ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
+        ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
         vendorProductManagerPage.colorCheckboxRs.click();
         ReusableMethods.jsClick(vendorProductManagerPage.colorSelectAllButonRs);
         ReusableMethods.waitFor(2);
@@ -68,7 +61,7 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         ReusableMethods.waitFor(2);
         Driver.driver.switchTo().alert().accept();
         vendorProductManagerPage.colorVisibleCheckboxRs.click();
-        extentTest.info("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);

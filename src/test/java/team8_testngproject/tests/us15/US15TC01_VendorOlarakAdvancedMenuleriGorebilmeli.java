@@ -20,7 +20,6 @@ public class US15TC01_VendorOlarakAdvancedMenuleriGorebilmeli { //Vendor olarak,
     private final String raporMesaji = "Vendor olarak Advanced menüleri görülebildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void vendorOlarakAdvancedMenuleriGorebilmeli(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -33,14 +32,14 @@ public class US15TC01_VendorOlarakAdvancedMenuleriGorebilmeli { //Vendor olarak,
         loginPage.userNameRs.sendKeys(ConfigReader.getProperty("usernameRs"));
         loginPage.passwordRs.sendKeys(ConfigReader.getProperty("passwordRs"));
         loginPage.signInButtonRs.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //homePage.myAccountButtonRs.click();
         homePage.signOutRs.click();
         myAccountPage.storeManagerRs.click();
         ReusableMethods.hover(vendorStoreManagerPage.productButtonRs);
         vendorStoreManagerPage.productAddNewButtonRs.click();
-        extentTest.info("Add Product sayfasına gidildi.");
+        RaporlamaUtil.extentTestInfo("Add Product sayfasına gidildi.");
 
         Assert.assertTrue(vendorProductManagerPage.inventoryMenuRs.isDisplayed());
         Assert.assertTrue(vendorProductManagerPage.shippingMenuRs.isDisplayed());
