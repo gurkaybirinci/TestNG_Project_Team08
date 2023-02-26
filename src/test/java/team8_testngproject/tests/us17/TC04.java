@@ -11,18 +11,19 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC01 {
+public class TC04 {
     P01_HomePage p01_homePage;
     P03_LoginPage p03_loginPage;
     P04_MyAccountPage p04_myAccountPage;
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-    private final String testName = "US17 || TC01-Variable Product";
-    private final String description = "Variable Product'i seçilebilir olmalidir";
-    private final String raporMesaji = "Variable Product'i seçilebilir olduğu doğrulanmıştır";
+    private final String testName = "US17 || TC04-Eklenen Attribute'ün Variations'ta Görünmesi";
+    private final String description = "Attribute eklenebilmeli, Variations'a tıklanarak eklenen Atributes görülebilmelidir";
+    private final String raporMesaji = "Eklenen Attribute'ün Variations'a tıklanarak görülebildiği doğrulanmıştır";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void US17_TC01(){
+    public void US17_TC04(){
         ExtentTest extentTest = RaporlamaUtil.extentTest;
         p01_homePage=new P01_HomePage();
         p03_loginPage=new P03_LoginPage();
@@ -46,9 +47,17 @@ public class TC01 {
         assert p18_vendorProductManagerPage.addProductTextKoz.isDisplayed();
         extentTest.info("Ürün ekleme sayfasına girildi.");
         Select select=new Select(p18_vendorProductManagerPage.dropdownKoz);
-        String firstOptionText=select.getFirstSelectedOption().getText();
         select.selectByVisibleText("Variable Product");
-        Assert.assertNotEquals(firstOptionText,p18_vendorProductManagerPage.dropdownKoz.getText());
+        extentTest.info("Dropdown içerisinde Variable Products seçildi.");
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(p18_vendorProductManagerPage.attributesButtonKoz);
+        ReusableMethods.waitFor(5);
+        ReusableMethods.jsClick(p18_vendorProductManagerPage.addAttributeButtonKoz);
+        p18_vendorProductManagerPage.attributeNameKoz.sendKeys("Made in");
+        p18_vendorProductManagerPage.attributeValueKoz.sendKeys("Turkey | Usa | China | Germany | Paraguay");
+        ReusableMethods.jsClick(p18_vendorProductManagerPage.variatonsButtonKoz);
+        Select select1=new Select(p18_vendorProductManagerPage.defaultFormValuesKoz);
+        Assert.assertTrue(select1.getFirstSelectedOption().getText().contains("Made in"));
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
