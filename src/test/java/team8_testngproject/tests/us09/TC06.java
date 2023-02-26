@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -8,13 +9,18 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC06 {
+    private final String testName = "US09 || TC06-Verification Code text kutusu";
+    private final String description = "Verification Code text kutusuna code girilebilmeli";
+    private final String raporMesaji = "Verification Code text kutusuna eksik code girildiğinde hata mesajı alındığı doğrulanmıştır";
 
-    @Test(testName = "US09 || TC06-Vendor Verification Code", description = "Mail adresine gelen kodu Verification Code text kutusuna eksik data girmeli")
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc06() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -57,6 +63,8 @@ public class TC06 {
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod);
+        extentTest.info("Kullanıcı Verification Code kısmına eksik  veri girdiği doğrulanmışır");
+
 
         //Kullanıcı geçerli Password girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
@@ -69,5 +77,7 @@ public class TC06 {
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
         Assert.assertEquals(vendorRegisterPage.verivacitonInvalidMesajZb.getText(),"Email verification code invalid.");
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }

@@ -15,7 +15,6 @@ public class TC07 { // Allow free shipping checkbox kutusu seçilebilmeli (PASS)
     private final String raporMesaji = "Allow free shipping checkbox kutusunun seçilebildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -27,16 +26,16 @@ public class TC07 { // Allow free shipping checkbox kutusu seçilebilmeli (PASS)
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Coupon ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Coupon ekleme sayfasına girildi.");
 
         ReusableMethods.jsClick(vendorCouponsPage.allowFreeShipCheckboxGur);
-        extentTest.info("Allow free shipping checkbox kutusunun seçilebildiği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Allow free shipping checkbox kutusunun seçilebildiği kontrol edildi.");
 
         Assert.assertTrue(vendorCouponsPage.allowFreeShipCheckboxGur.isSelected());
         Driver.closeDriver();

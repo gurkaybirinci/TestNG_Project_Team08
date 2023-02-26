@@ -27,14 +27,14 @@ public class ExtentReportsListener implements ITestListener {
         String testName = result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(Test.class).testName();
         String testDescription = result.getMethod().getDescription();
         RaporlamaUtil.extentTestOlustur(testName, testDescription);
-        RaporlamaUtil.extentTest.info(" Test başladı.");
+        RaporlamaUtil.extentTestInfo("Test başladı.");
     }
 
     // Test başarılı olduğunda, başarılı mesajı eklenir
     @Override
     public void onTestSuccess(ITestResult result) {
         String passIsareti = "&#9989";
-        RaporlamaUtil.extentTestPass("<span style='color:green; font-weight:bold'> Test başarıyla tamamlandı. </span>"+passIsareti);
+        RaporlamaUtil.extentTestPass("<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>"+passIsareti);
         RaporlamaUtil.extentTestPass(RaporlamaUtil.message);
     }
 
@@ -55,7 +55,7 @@ public class ExtentReportsListener implements ITestListener {
 
         // Fail mesajı ekleme
         String failIsareti = "&#10060";
-        RaporlamaUtil.extentTestFail("<span style='color:red; font-weight:bold'> Test başarısız oldu! </span>"+failIsareti);
+        RaporlamaUtil.extentTestFail("<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>"+failIsareti);
         RaporlamaUtil.extentTestFail(RaporlamaUtil.message);
         // Raporlama
         try {
