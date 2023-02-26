@@ -16,7 +16,6 @@ public class TC03 { // Discount Type menüsünden Percentage discount seçeneği
     private final String raporMesaji = "Discount Type menüsünden Percentage discount seçeneğinin seçilebildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -28,19 +27,19 @@ public class TC03 { // Discount Type menüsünden Percentage discount seçeneği
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Coupon ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Coupon ekleme sayfasına girildi.");
 
         Select select = new Select(vendorCouponsPage.discountTypeMenuGur);
         select.selectByIndex(0);
         String expectedOption = "Percentage discount";
         String actualOption = select.getFirstSelectedOption().getText();
-        extentTest.info("Discount Type menüsünden Percentage discount seçeneğinin seçilebilirliği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Discount Type menüsünden Percentage discount seçeneğinin seçilebilirliği kontrol edildi.");
 
         Assert.assertEquals(actualOption, expectedOption);
         Driver.closeDriver();
