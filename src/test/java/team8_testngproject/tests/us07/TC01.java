@@ -1,19 +1,25 @@
 package team8_testngproject.tests.us07;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class  TC01 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
+    private final String testName = "US07 || TC01-Karsilastirma icin urun secimi";
+    private final String description = "Karsilastirma icin urunler secilebilmeli";
+    private final String raporMesaji = "Karsilastirma icin urunler secilmistir.";
 
-    @Test
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void urunSecimi() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -24,10 +30,13 @@ public class  TC01 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
+        extentTest.info("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
+        extentTest.info("Urun karsilastirma icin sayfaya gidildi.");
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
@@ -43,5 +52,7 @@ public class  TC01 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.cantaFash);
         ReusableMethods.waitFor(3);
+        extentTest.info("Urunler secildi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 }

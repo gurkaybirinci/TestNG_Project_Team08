@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -6,15 +7,20 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 
 
 public class TC01 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    @Test(testName = "US09 || TC01-Become a Vendor", description = "Sign Up ekranından Become a Vendor linki ile giriş yapılabilmeli ")
+    private final String testName = "US09 || TC01- Become a Vendor girişi";
+    private final String description = "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli." + "(Vendor Registration)";
+    private final String raporMesaji = "Kullanıcı Become a Vendor sayfasına giriş yapabildiği doğrulanmışır";
 
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us09_Tc01() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -25,11 +31,14 @@ public class TC01 {
         //Kullanıcı Sign Up ekranından Become a Vendor linkine tıklar
         registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        extentTest.info("Become a Vendor linki ile giriş yapabildi.");
 
         //Vendor Registration sayfasının erişildiğini dogrular
          vendorRegisterPage = new P14_VendorRegisterPage();
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }
 

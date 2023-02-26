@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -7,14 +8,19 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC07 {
+    private final String testName = "US09 || TC07-Password Metin Kutusu";
+    private final String description = "Password kutusuna veri girilebilmeli";
+    private final String raporMesaji = "Password metin kutusuna veri girilebildiği doğrulanmıştır.";
 
-
-    @Test(testName = "US09 || TC07-Vendor Password", description = "Password yazmalı. Password: kucuk harf, büyük harf, rakam ve special karakter içermeli")
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc07() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -35,6 +41,7 @@ public class TC07 {
 
         //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
+        extentTest.info("Kullanıcı Password kısmına veri girdiği doğrulanmışır");
 
         //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
@@ -45,5 +52,7 @@ public class TC07 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password strength should be atleast \"Good\".");
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }

@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -7,12 +8,18 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 
 public class TC11 {
-    @Test(testName = "US09 || TC11-Vendor Register", description = "Kayıtlı bir e-mail adresi ile kayıt olmaya çalıştığında This Email already exists." +
-                     "Please login to the site and apply as vendor. mesajını almalı")
+    private final String testName = "US09 || TC11-Kayıtlı e mail ile giriş";
+    private final String description = "Daha önce kayıtlı olunan bilgilerin girişi yapılmalı";
+    private final String raporMesaji = "Kayıtlı e mail ile girişe izin verilmediği doğrulanmıştır";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+
 
     public void us09_11() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -41,5 +48,7 @@ public class TC11 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"This Email already exists. Please login to the site and apply as vendor.");
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }

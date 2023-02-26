@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,14 +9,20 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC10 {
+    private final String testName = "US09 || TC10- vendor olarak kayıt olunmalı";
+    private final String description = "Tüm kutular eksiksiz doldurulmalı";
+    private final String raporMesaji = "Register butonuna tıklandığında Successfully mesajı alınmalı";
 
-    @Test(testName = "US09 || TC10-Vendor Register", description = "Register butonuna tıklayarak " +
-                     "vendor olarak kayıtı tamamlamalı ")
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+
 
     public void us09_Tc10() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -69,5 +76,7 @@ public class TC10 {
 
         Assert.assertEquals(vendorRegisterPage.succesMesajZb.getText(),"Registration Successfully Completed.");
         ReusableMethods.waitFor(3);
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 }
