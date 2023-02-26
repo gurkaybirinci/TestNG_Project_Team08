@@ -348,32 +348,19 @@ public class P10_CheckOutPage {
 
 
     // 350.Satır --> Mustafa
-    @FindBy (id = "place_order")
-    public  WebElement placeOrderBtnLoc;
-    @FindBy (css = "li[data-id='billing_first_name']")
-    public WebElement placeOrderPopupMessages;
-    @FindBy (id = "payment_method_bacs")
-    public WebElement wireTransferEFTBtnLoc;
-    @FindBy (id = "payment_method_cod")
-    public WebElement payAtTheDoorBtnLoc;
-    @FindBy (css = "input[name='billing_first_name']")
-    public  WebElement firstNameInputLoc;
-    @FindBy (id = "billing_last_name")
-    public  WebElement lastNameInputLoc;
-    @FindBy (css = "span[aria-label='Country / Region']")
-    public  WebElement countryRegionDropdownLoc;
-    @FindBy (css = "input[class='select2-search__field']")
-    public  WebElement dropdownTurkeyLoc;
-    @FindBy (id = "billing_address_1")
-    public  WebElement streetAddresInputLoc;
-    @FindBy (id = "billing_postcode")
-    public  WebElement postcodeZipInputLoc;
-    @FindBy (id = "billing_city")
-    public  WebElement townCityInputLoc;
-    @FindBy (id = "billing_phone")
-    public  WebElement phoneInputLoc;
-    @FindBy (id = "billing_email")
-    public  WebElement emailAddressInputLoc;
+    @FindBy (id = "place_order") public  WebElement placeOrderBtnLoc;
+    @FindBy (css = "li[data-id='billing_first_name']") public WebElement placeOrderPopupMessages;
+    @FindBy (id = "payment_method_bacs") public WebElement wireTransferEFTBtnLoc;
+    @FindBy (id = "payment_method_cod") public WebElement payAtTheDoorBtnLoc;
+    @FindBy (css = "input[name='billing_first_name']") public  WebElement firstNameInputLoc;
+    @FindBy (id = "billing_last_name") public  WebElement lastNameInputLoc;
+    @FindBy (css = "span[aria-label='Country / Region']") public  WebElement countryRegionDropdownLoc;
+    @FindBy (css = "input[class='select2-search__field']") public  WebElement dropdownTurkeyLoc;
+    @FindBy (id = "billing_address_1") public  WebElement streetAddresInputLoc;
+    @FindBy (id = "billing_postcode") public  WebElement postcodeZipInputLoc;
+    @FindBy (id = "billing_city") public  WebElement townCityInputLoc;
+    @FindBy (id = "billing_phone") public  WebElement phoneInputLoc;
+    @FindBy (id = "billing_email") public  WebElement emailAddressInputLoc;
 
     public void firstNameInputClear(){
         ReusableMethods.jsClick(firstNameInputLoc);
@@ -419,7 +406,6 @@ public class P10_CheckOutPage {
 
     public void provinceSelect(){
     townCityInputLoc.sendKeys(Keys.TAB, Keys.ENTER,ConfigReader.getProperty("provinceMU"),Keys.ENTER);
-
     }
 
     public void phoneAndMailRead(){
@@ -432,16 +418,16 @@ public class P10_CheckOutPage {
     }
 
     public void payAtTheDoorAndPlaceOrder(){
-        payAtTheDoorBtnLoc.click();
         ReusableMethods.waitFor(2);
+        payAtTheDoorBtnLoc.click();
+        ReusableMethods.waitFor(3);
         placeOrderBtnLoc.click();
-
     }
 
     public void checkVisibleWireTransferEFT(){
         Assert.assertTrue(wireTransferEFTBtnLoc.isDisplayed());
     }
-  public void checkVisiblePayAtTheDoorBtn(){
+    public void checkVisiblePayAtTheDoorBtn(){
         Assert.assertTrue(wireTransferEFTBtnLoc.isDisplayed());
     }
     public void checkSelectWireTransferEFT(){

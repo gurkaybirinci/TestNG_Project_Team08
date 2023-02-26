@@ -348,12 +348,9 @@ public class P03_LoginPage {
 
 
     // 350.Satır --> Mustafa
-    @FindBy(id = "username")
-    public static WebElement usernameInpLoc;
-    @FindBy (id = "password")
-    public static WebElement passwordInpLoc;
-    @FindBy (css = "button[name='login']")
-    public static WebElement signInBtnLoc2;
+    @FindBy(id = "username") public static WebElement usernameInpLoc;
+    @FindBy (id = "password") public static WebElement passwordInpLoc;
+    @FindBy (css = "button[name='login']") public static WebElement signInBtnLoc2;
     P01_HomePage homePage = new P01_HomePage();
     public void login (){
         Driver.getDriver().get(ConfigReader.getProperty("URL"));

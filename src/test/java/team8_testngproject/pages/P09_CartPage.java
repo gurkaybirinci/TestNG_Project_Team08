@@ -348,16 +348,11 @@ public class P09_CartPage {
 
 
     // 350.Satır --> Mustafa
-    @FindBy (css = "td[class='product-thumbnail']")
-    public  WebElement productDisplayLoc;
-    @FindBy (css = "button[title='Plus']")
-    public  WebElement plusBtnLoc;
-    @FindBy(css = "button[value='Update cart']")
-    public  WebElement updateCartBtnLoc;
-    @FindBy (css = "button[title='Minus']")
-    public  WebElement minusBtnLoc;
-    @FindBy (css = "div[role='alert']")
-    public  WebElement updateCartPopupLoc;
+    @FindBy (css = "td[class='product-thumbnail']") public  WebElement productDisplayLoc;
+    @FindBy (css = "button[title='Plus']") public  WebElement plusBtnLoc;
+    @FindBy(css = "button[value='Update cart']") public  WebElement updateCartBtnLoc;
+    @FindBy (css = "button[title='Minus']") public  WebElement minusBtnLoc;
+    @FindBy (css = "div[role='alert']") public  WebElement updateCartPopupLoc;
 
     public void checkPlusUpdate(){
         plusBtnLoc.click();
