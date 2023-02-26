@@ -1,14 +1,20 @@
 package team8_testngproject.tests.us19;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC05_Done {
+public class TC06 {
+
+    private final String testName = "US19 || TC06-Alışveriş Tamamlandı Bilgisi";
+    private final String description = "Place Order'a tıklanarak alışverişin tamamlandığı görülebilmeli";
+    private final String raporMesaji = "Place Order'a tıklanarak alışverişin tamamlandığının görülebildiği doğrulandı";
 
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
@@ -19,8 +25,10 @@ public class TC05_Done {
     P10_CheckOutPage p10CheckOutPage;
     P15_VendorAddressesPage p15VendorAddressesPage;
 
-    @Test
-    public void us19_tc05() {
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    public void us19_tc06() {
+
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
@@ -41,6 +49,7 @@ public class TC05_Done {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
+        extentTest.info("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -60,6 +69,7 @@ public class TC05_Done {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
+        extentTest.info("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -80,16 +90,35 @@ public class TC05_Done {
         //Checkout butonuna tıklanır
         p08ProductPage.checkoutButton_Nt.click();
 
-        //Your order yazısının görünür olduğu doğrulanmalıdır
-        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.yourOrderDisplayed_Nt);
+        //Bilings Details yazısının görünür olduğu doğrulanmalıdır
+        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.billingDetailsDisplayed_Nt);
 
-        //Wire transfer/EFT butonu tıklanır
-        Assert.assertTrue(p10CheckOutPage.radioButton1_Nt.isSelected());
+        //Billing Details bölümüne değerler girilir
+        p15VendorAddressesPage.firstNameBox_Nt.
+                sendKeys(ConfigReader.getProperty("billingFirstName_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingLastName_Nt"), Keys.TAB, Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingStreet_Nt"), Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingZipCode_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingCity_Nt"), Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingPhone_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingEmail_Nt"), Keys.TAB);
+        ReusableMethods.waitFor(3);
 
-        //Pay at the door butonu tıklanır
-        ReusableMethods.jsClick(p10CheckOutPage.radioButton2_Nt);
+        Select country = new Select(p15VendorAddressesPage.countryBox_Nt);
+        country.selectByVisibleText(ConfigReader.getProperty("billingCountry_Nt"));
+
+        Select province = new Select(p15VendorAddressesPage.provinceBox_Nt);
+        province.selectByVisibleText(ConfigReader.getProperty("billingProvince_Nt"));
+
+        //Place Order butonuna tıklanır
+        p10CheckOutPage.placeOrderButton_Nt.click();
+        extentTest.info("Vendor olarak alışverişin tamamlandığının görüntülenmesi kontrol edildi");
+
+        //Thank you.Your order has been received yazısının görünür olduğu doğrulanmalıdır
+        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.thankYouMessage_Nt);
 
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }

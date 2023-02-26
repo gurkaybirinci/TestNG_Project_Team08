@@ -1,13 +1,19 @@
 package team8_testngproject.tests.us19;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC02_Done {
+public class TC04 {
+
+    private final String testName = "US19 || TC04-Toplam Ödenecek Rakam";
+    private final String description = "Toplam ödenecek rakam görüntülebilmeli";
+    private final String raporMesaji = "Toplam ödenecek rakamın görüntülendiği doğrulandı";
 
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
@@ -16,9 +22,12 @@ public class TC02_Done {
     P07_ShoppingPage p07ShoppingPage;
     P08_ProductPage p08ProductPage;
     P10_CheckOutPage p10CheckOutPage;
+    P15_VendorAddressesPage p15VendorAddressesPage;
 
-    @Test
-    public void us19_tc02() {
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    public void us19_tc04() {
+
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
@@ -27,7 +36,7 @@ public class TC02_Done {
         p07ShoppingPage = new P07_ShoppingPage();
         p08ProductPage = new P08_ProductPage();
         p10CheckOutPage = new P10_CheckOutPage();
-
+        p15VendorAddressesPage = new P15_VendorAddressesPage();
 
         //Url'ye gidilir
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -39,6 +48,7 @@ public class TC02_Done {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
+        extentTest.info("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -58,6 +68,7 @@ public class TC02_Done {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
+        extentTest.info("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -77,12 +88,14 @@ public class TC02_Done {
 
         //Checkout butonuna tıklanır
         p08ProductPage.checkoutButton_Nt.click();
+        extentTest.info("Vendor olarak toplam ödenecek rakamın görünürlüğü kontrol edildi");
 
-        //Your order yazısının görünür olduğu doğrulanmalıdır
-        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.yourOrderDisplayed_Nt);
+        //Toplam ödemecek rakamın  görünür olduğu doğrulanmalıdır
+        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.totalAmountDisplayed_Nt);
+
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }
-
 }

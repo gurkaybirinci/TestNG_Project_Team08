@@ -1,13 +1,20 @@
-package team8_testngproject.tests.us22;
+package team8_testngproject.tests.us19;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC04_Done {
+public class TC03 {
+
+    private final String testName = "US19 || TC03-Fatura Ayrıntıları";
+    private final String description = "Fatura ayrıntıları (BILLING DETAILS) doldurulabilmeli";
+    private final String raporMesaji = "Fatura ayrıntılarının (BILLING DETAILS) doldurulabildiği doğrulandı";
 
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
@@ -18,8 +25,10 @@ public class TC04_Done {
     P10_CheckOutPage p10CheckOutPage;
     P15_VendorAddressesPage p15VendorAddressesPage;
 
-    @Test
-    public void us22_tc04() {
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    public void us19_tc03() {
+
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
@@ -40,6 +49,7 @@ public class TC04_Done {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
+        extentTest.info("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -59,6 +69,7 @@ public class TC04_Done {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
+        extentTest.info("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -79,11 +90,32 @@ public class TC04_Done {
         //Checkout butonuna tıklanır
         p08ProductPage.checkoutButton_Nt.click();
 
-        //Toplam ödemecek rakamın  görünür olduğu doğrulanmalıdır
-        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.totalAmountDisplayed_Nt);
+        //Bilings Details yazısının görünür olduğu doğrulanmalıdır
+        ReusableMethods.verifyElementDisplayed(p10CheckOutPage.billingDetailsDisplayed_Nt);
+
+        //Billing Details bölümüne değerler girilir
+        p15VendorAddressesPage.firstNameBox_Nt.
+                sendKeys(ConfigReader.getProperty("billingFirstName_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingLastName_Nt"), Keys.TAB, Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingStreet_Nt"), Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingZipCode_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingCity_Nt"), Keys.TAB, Keys.TAB,
+                        ConfigReader.getProperty("billingPhone_Nt"), Keys.TAB,
+                        ConfigReader.getProperty("billingEmail_Nt"), Keys.TAB);
+        ReusableMethods.waitFor(3);
+
+        Select country = new Select(p15VendorAddressesPage.countryBox_Nt);
+        country.selectByVisibleText(ConfigReader.getProperty("billingCountry_Nt"));
+
+        Select province = new Select(p15VendorAddressesPage.provinceBox_Nt);
+        province.selectByVisibleText(ConfigReader.getProperty("billingProvince_Nt"));
+        extentTest.info("Vendor olarak fatura ayrıntılarının doldurulabilirliği kontrol edildi");
 
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }
+
+
 }
