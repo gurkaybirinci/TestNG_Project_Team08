@@ -14,6 +14,7 @@ public class TC01 { // Code alanına veri girilebilmeli (PASS)
     private final String description = "Code metin kutusuna veri girilebilmeli";
     private final String raporMesaji = "Code metin kutusuna veri girilebildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+
     public void tc01(){
         ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();

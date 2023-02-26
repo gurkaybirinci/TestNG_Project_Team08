@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us10;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -7,14 +8,20 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 
 public class TC03 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    @Test(testName = "US10 || TC03-Password seviyeleri", description = "good")
+    private final String testName = "US10 || TC03-Password Metin Kutusu";
+    private final String description = "Password Metin Kutusuna veri girildiğinde uyarı mesajı almalı";
+    private final String raporMesaji = "Password Metin Kutusuna metin girildiğinde good yazısının görünürlüğü doğrulandı";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us10_Tc03() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -33,7 +40,11 @@ public class TC03 {
         //Kullanıcı  password kısmına 6 karakterli, küçük harf, rakam,özel karakter içeren bir şifre girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_good_psw"));
         Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Good");
+        extentTest.info("Kullanıcı password kısmına  veri girdiği doğrulanmışır");
+
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
     }
 
 }
