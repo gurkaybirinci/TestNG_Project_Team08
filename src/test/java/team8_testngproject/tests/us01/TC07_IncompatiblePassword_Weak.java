@@ -20,20 +20,20 @@ public class TC07_IncompatiblePassword_Weak {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void UnsuccessfulRegistration_weakPassword(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get("https://hubcomfy.com/my-account-2/");
         Faker faker = new Faker();
 
         P01_HomePage homePage = new P01_HomePage();
         ReusableMethods.jsClick(homePage.myAccountButton);
-        extentTest.info("Home page sayfasindan My Account sayfasina gidilir");
+        RaporlamaUtil.extentTestInfo("Home page sayfasindan My Account sayfasina gidilir");
 
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         myAccountPage.myAccountSiginUpOnPopup.click();
         myAccountPage.myAccountUserNameReg.sendKeys(faker.name().username());
         myAccountPage.myAccountUserEmailReg.sendKeys(faker.internet().emailAddress());
         myAccountPage.myAccountPasswordReg.sendKeys(ConfigReader.getProperty("generatedPassword3"));
-        extentTest.info("kullanici password alani altinda 'Weak - Please enter a stronger password' uyarisini gorur");
+        RaporlamaUtil.extentTestInfo("kullanici password alani altinda 'Weak - Please enter a stronger password' uyarisini gorur");
 
         Assert.assertTrue(myAccountPage.notification_Weak.isDisplayed());
 

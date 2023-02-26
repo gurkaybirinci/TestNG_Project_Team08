@@ -19,11 +19,11 @@ public class TC04_Incompatible_email {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void UnsuccessfulRegistration_wrongEmail() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+        RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(ConfigReader.getProperty("generatedUsername1"));
@@ -31,7 +31,7 @@ public class TC04_Incompatible_email {
         registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword1"));
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
-        extentTest.info("Yanlis e-mail giridiginde, SignUp islemi olmamali");
+        RaporlamaUtil.extentTestInfo("Yanlis e-mail giridiginde, SignUp islemi olmamali");
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
         waitFor(3);
