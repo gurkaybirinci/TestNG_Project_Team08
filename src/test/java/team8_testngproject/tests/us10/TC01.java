@@ -16,11 +16,10 @@ public class TC01 {
     P14_VendorRegisterPage vendorRegisterPage;
     private final String testName = "US10 || TC01-Password Metin Kutusu";
     private final String description = "Password Metin Kutusuna veri girildiğinde uyarı mesajı almalı";
-    private final String raporMesaji = "Password Metin Kutusuna metin girildiğinde too short yazısının görünürlüğü doğrulandı";
+    private final String raporMesaji = "Password Metin Kutusuna metin girildiğinde -too short- yazısının görünürlüğü doğrulandı";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us10_Tc01() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -32,17 +31,23 @@ public class TC01 {
         //Kullanıcı Become a Vendor linkine tıklar
         registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
+
 
         //Kullanıcı kayıtlı olduğu mail adresini girer
          vendorRegisterPage=new P14_VendorRegisterPage();
          vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
+        RaporlamaUtil.extentTestInfo("Kullanıcı mail adresini girebildi.");
+
 
         //Kullanıcı password kısmına 6 karakterden küçük değer girer
         vendorRegisterPage.vendorPassowordZb.click();
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
-        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Too short");
-        extentTest.info("Kullanıcı password kısmına  veri girdiği doğrulanmışır");
+        RaporlamaUtil.extentTestInfo("Kullanıcı şifre girebildi.");
 
+
+        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Too short");
+        RaporlamaUtil.extentTestInfo("Kullanıcı girdiği şifrenin derecesinin too short olduğunu belirten yazının görünürlüğü kontrol edildi");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 

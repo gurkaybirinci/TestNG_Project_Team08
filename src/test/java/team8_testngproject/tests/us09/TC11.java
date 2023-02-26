@@ -12,13 +12,13 @@ import team8_testngproject.utilities.RaporlamaUtil;
 
 public class TC11 {
     private final String testName = "US09 || TC11-Kayıtlı e mail ile giriş";
-    private final String description = "Daha önce kayıtlı olunan bilgilerin girişi yapılmalı";
+    private final String description = "Kayıtlı bir e-mail adresi ile kayıt olmaya çalıştığında \"" +
+            "This Email already exists. Please login to the site and apply as vendor.\"" + "mesajını almalı";
     private final String raporMesaji = "Kayıtlı e mail ile girişe izin verilmediği doğrulanmıştır";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
 
     public void us09_11() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -46,6 +46,8 @@ public class TC11 {
 
         //Kullanıcı Register butonuna tıklar (This Email already exists. Please login to the site and apply as vendor.)
         vendorRegisterPage.vendorRegisterClickZb.click();
+        RaporlamaUtil.extentTestInfo("Kullanıcı kayıtlı e-mail giriş yapmaya çalıştığında uyarı mesajı alma durumu kontrol edildi ");
+
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"This Email already exists. Please login to the site and apply as vendor.");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

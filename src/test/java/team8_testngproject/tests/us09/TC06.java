@@ -14,13 +14,13 @@ import team8_testngproject.utilities.ReusableMethods;
 
 public class TC06 {
     private final String testName = "US09 || TC06-Verification Code text kutusu";
-    private final String description = "Verification Code text kutusuna code girilebilmeli";
+    private final String description = "Mail adresine gelen kodu Verification Code text kutusuna eksik data girmeli";
     private final String raporMesaji = "Verification Code text kutusuna eksik code girildiğinde hata mesajı alındığı doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc06() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -42,6 +42,8 @@ public class TC06 {
         //Kullanıcı Become a Vendor linkine tıklar
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
+
 
         //Kullanıcı fake Url den aldığı  Email bilgileri girer
         vendorRegisterPage.emailzb.sendKeys(fakeMail);
@@ -63,7 +65,7 @@ public class TC06 {
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod);
-        extentTest.info("Kullanıcı Verification Code kısmına eksik  veri girdiği doğrulanmışır");
+       RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına eksik  veri girdiği doğrulanmışır");
 
 
         //Kullanıcı geçerli Password girer
@@ -74,6 +76,8 @@ public class TC06 {
 
         //Kullanıcı Register butonuna tıklar (Kullaınıcı "Email verification code invalid." mesajını almalı)
         vendorRegisterPage.vendorRegisterClickZb.click();
+        RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına eksik veri girdiğinde hata mesajı aldığı görüntülendi.");
+
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
         Assert.assertEquals(vendorRegisterPage.verivacitonInvalidMesajZb.getText(),"Email verification code invalid.");
         Driver.closeDriver();
