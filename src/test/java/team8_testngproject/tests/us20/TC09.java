@@ -15,7 +15,6 @@ public class TC09 { // Coupons oluşturulduğu görülmeli (PASS)
     private final String raporMesaji = "Coupons oluşturulabildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -27,20 +26,20 @@ public class TC09 { // Coupons oluşturulduğu görülmeli (PASS)
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         String codeData = "Armut";
         vendorCouponsPage.codeBoxGur.sendKeys(codeData);
         ReusableMethods.jsClick(vendorCouponsPage.submitButtonGur);
         ReusableMethods.waitFor(3);
         ReusableMethods.jsClick(vendorStoreManagerPage.couponsButtonGur);
-        extentTest.info("Coupons oluşturulabilirliği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Coupons oluşturulabilirliği kontrol edildi.");
 
         ReusableMethods.waitForClickablility(vendorCouponsPage.couponTitleGur, 10);
         Assert.assertEquals(vendorCouponsPage.couponTitleGur.getText(), codeData);

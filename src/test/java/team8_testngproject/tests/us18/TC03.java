@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us18;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -9,19 +10,24 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 import java.awt.*;
 import java.time.Duration;
 
 public class TC03 {
+    private final String testName = "US18 || TC03-Urun Ekleme Kontrolü";
+    private final String description = "External/Affiliate Product türünde bir ürün eklenebilmelidir";
+    private final String raporMesaji = "External/Affiliate Product türünde bir ürün eklenebildiği doğrulanmıştır";
     P01_HomePage p01_homePage;
     P03_LoginPage p03_loginPage;
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-    @Test
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US18_TC03() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         p01_homePage=new P01_HomePage();
         p03_loginPage=new P03_LoginPage();
         p16VendorStoreManagerPage=new P16_VendorStoreManagerPage();
@@ -31,10 +37,12 @@ public class TC03 {
         p01_homePage.signInButtonKoz.click();
         p03_loginPage.usernameKoz.sendKeys("mehmetkozak46@gmail.com", Keys.TAB,"Koz.ak46");
         p03_loginPage.signInButtonKoz.click();
+        extentTest.info("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
         p16VendorStoreManagerPage.storeManagerButtonKoz.click();
         ReusableMethods.jsClick(p16VendorStoreManagerPage.productsButtonKoz);
         ReusableMethods.jsClick(p17_vendorProductsDashboardPage.addNewButtonKoz);
+        extentTest.info("Product ekleme sayfasına girildi.");
         Select select = new Select(p18_vendorProductManagerPage.dropdownHus);
         select.selectByVisibleText("External/Affiliate Product");
         ReusableMethods.waitFor(2);
@@ -83,6 +91,9 @@ public class TC03 {
         ReusableMethods.jsClick(p18_vendorProductManagerPage.submitButtonHus);
         ReusableMethods.waitFor(2);
         assert p18_vendorProductManagerPage.publishedTextHus.isDisplayed();
+        extentTest.info("External/Affiliate Product türünde bir ürün eklenebildiği kontrol edildi");
+        Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }
 }

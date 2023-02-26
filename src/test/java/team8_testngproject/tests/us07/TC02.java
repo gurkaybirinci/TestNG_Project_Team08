@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us07;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,15 +8,19 @@ import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
+    private final String testName = "US07 || TC02-Karsilastirma icin urun secimi";
+    private final String description = "Karsilastirma icin urun silme ve yeni urun ekleme";
+    private final String raporMesaji = "Urun silme ve yeni urun ekleme islemi yapilmistir.";
 
-    @Test
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void compareProductsUrunCikarma() {
-
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -26,10 +31,12 @@ public class TC02 {
         homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
         homePage.login.click();
         ReusableMethods.waitFor(3);
+        extentTest.info("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.sunnyBaby);
         ReusableMethods.waitFor(2);
@@ -46,10 +53,13 @@ public class TC02 {
                 loginPage.cantaFash);
         ReusableMethods.waitFor(7);
         ReusableMethods.getScreenshot("Secili urun ekran goruntusu");
+
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.silinenCanta);
         ReusableMethods.waitFor(5);
         ReusableMethods.getScreenshot("Silinen urun ekran goruntusu");
+        extentTest.info("Urun silme islemi yapildi.");
+
         ReusableMethods.waitFor(2);
         loginPage.bosSayfa.click();
         loginPage.search.click();
@@ -62,6 +72,8 @@ public class TC02 {
                 loginPage.coatUrunEkle);
         ReusableMethods.waitFor(2);
         ReusableMethods.getScreenshot("Coat urunu ekleme");
+        extentTest.info("Yeni urun ekleme islemi yapildi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }
 }

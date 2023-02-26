@@ -207,23 +207,24 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "(//button[.='Add New'])[2]") public WebElement addNewSizeButtonKoz;
     @FindBy(id = "attributes_value_1") public WebElement colorTextBoxKoz;
     @FindBy(id = "attributes_value_2") public WebElement sizeTextBoxKoz;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//button[.='Add'])[3]") public WebElement addAttributeButtonKoz;
+    @FindBy(id = "attributes_name_3") public WebElement attributeNameKoz;
+    @FindBy(id = "attributes_value_3") public WebElement attributeValueKoz;
+    @FindBy(xpath = "//*[.='Variations']") public WebElement variatonsButtonKoz;
+    @FindBy(id = "variations_attribute_made-in_0") public WebElement defaultFormValuesKoz;
+    @FindBy(id = "variations_regular_price_0") public WebElement regularPriceKoz;
+    @FindBy(id = "variations_sale_price_0") public WebElement salePriceKoz;
+    @FindBy(id = "variations_description_0") public WebElement descriptionVariationKoz;
+    @FindBy(id = "wcfm_products_simple_submit_button") public WebElement submitButtonKoz;
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement errorMessageKoz;
+    @FindBy(id = "featured_img_display") public WebElement imageAddButtonKoz;
+    @FindBy(id = "__wp-uploader-id-1") public WebElement imageSendZoneKoz;
+    @FindBy(xpath = "//button[@class='button media-button button-primary button-large media-button-select']") public WebElement selectKoz;
+    @FindBy(id="gallery_img_gimage_0_display") public WebElement galleryImgKoz;
+    @FindBy(xpath = "(//button[@id='menu-item-upload'])[2]") public WebElement uploadFilesButtonKoz;
+    @FindBy(id = "__wp-uploader-id-4") public WebElement imageSendZoneGalleryKoz;
+    @FindBy(xpath = "(//button[.='Add to Gallery'])[2]") public WebElement addToGalleryButtonKoz;
+    @FindBy(xpath = "//span[@class='product-status product-status-publish']") public WebElement publishedKoz;
 
 
     // 200.Satır --> Meryem
