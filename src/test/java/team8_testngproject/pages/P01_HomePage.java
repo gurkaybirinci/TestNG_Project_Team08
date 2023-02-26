@@ -290,7 +290,7 @@ public WebElement myAccountButton;
     // 290.Satır --> Ramazan
     @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInRs;
     @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutRs;
-
+    @FindBy(xpath = "//a[contains(text(),'My Account')]") public WebElement myAccountButtonRs;
 
 
 

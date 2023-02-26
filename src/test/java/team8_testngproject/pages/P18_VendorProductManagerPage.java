@@ -340,6 +340,7 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "(//*[text()='Select all'])[1]") public WebElement colorSelectAllButonRs;
     @FindBy(xpath = "//*[@id='attributes_is_visible_1']") public WebElement colorVisibleCheckboxRs;
     @FindBy(xpath = "(//*[@title='Toggle Block'])[2]") public WebElement colorKucultmeOkuButonRs;
+    //@FindBy(xpath = "(//*[@title='ALERT'])[4]") public WebElement colorAddAlertTextboxRs; //bunu yapamadımmmmm
     @FindBy(xpath = "(//*[text()='Add New'])[3]") public WebElement sizeAddNewButonRs;
     @FindBy(xpath = "(//*[text()='Select none'])[2]") public WebElement sizeSelectNoneButonRs;
     @FindBy(xpath = "(//*[text()='Select all'])[2]") public WebElement sizeSelectAllButonRs;
@@ -347,17 +348,50 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "(//*[@title='Toggle Block'])[3]") public WebElement sizeKucultmeOkuButonRs;
     @FindBy(xpath = "(//*[text()='Add'])[3]") public WebElement addAttributeADDButonRs;
     @FindBy(xpath = "//*[@id='attributes_is_visible_2']") public WebElement sizeVisibleCheckboxRs;
-    @FindBy(xpath = "//*[@id='attributes_is_active_3']") public WebElement addAttributeActiveCheckboxRs;
-    @FindBy(xpath = "//*[@id='attributes_name_3']") public WebElement addAttributeNameTextboxRs;
-    @FindBy(xpath = "//*[@id='attributes_value_3']") public WebElement addAttributeValueTextboxRs;
-
-    @FindBy(xpath = "(//*[@title='Toggle Block'])[4]") public WebElement addAttributeKucultmeOkuButonRs;
-
+    //@FindBy(xpath = "(//*[@title='ALERT'])[4]") public WebElement sizeAddAlertTextboxRs; //bunu yapamadımmmmm
+    @FindBy(xpath = "//*[@id='attributes_is_active_3']") public WebElement attributeAddAttributeActiveCheckboxRs;
+    @FindBy(xpath = "//*[@id='attributes_name_3']") public WebElement attributeAddAttributeNameTextboxRs;
+    @FindBy(xpath = "//*[@id='attributes_value_3']") public WebElement attributeAddAttributeValueTextboxRs;
+    @FindBy(xpath = "(//*[@title='Toggle Block'])[4]") public WebElement attributeAddAttributeKucultmeOkuButonRs;
     @FindBy(xpath = "//*[text()='Linked']") public WebElement linkedMenuRs;
-    @FindBy(xpath = "//*[text()=' SEO']") public WebElement seoMenuRs;
-    @FindBy(xpath = "//*[text()='Toptan Ürün Gösterme Ayarları']") public WebElement toptanurunGostermeAyarlariMenuRs;
+    @FindBy(xpath = "(//*[@placeholder=\"Filter by product ...\"])[2]") public WebElement linkedUpCellsTexboxRs;
+    @FindBy(xpath = "//*[@id='upsell_ids']") public WebElement linkedUpCellsDropdownRs;
+    @FindBy(xpath = "//*[@id='crosssell_ids']") public WebElement linkedCrossCellsDropdownRs;
+    @FindBy(xpath = "(//*[@placeholder=\"Filter by product ...\"])[2]") public WebElement linkedCrossCellsTexboxRs;
+    @FindBy(xpath = "//*[contains(text(), 'SEO')]") public WebElement seoMenuRs;
+    @FindBy(xpath = "//*[@id='yoast_wpseo_focuskw_text_input']") public WebElement seoEnterAFocusKewordTexboxRs;
+    @FindBy(xpath = "//*[@id='yoast_wpseo_metadesc']") public WebElement seoMetaDescriptionTexboxRs;
+    @FindBy(xpath = "//*[text()='Toptan Ürün Gösterme Ayarları']") public WebElement toptanUrunGostAyrMenuRs;
+    @FindBy(xpath = "//*[@id='piecetype']") public WebElement toptanUrunPieceTypeDropdownRs;
+    @FindBy(xpath = "//*[@id='unitpercart']") public WebElement toptanUrunUnitPerPieceTextboxRs;
+    @FindBy(xpath = "//*[@id='minorderqtytr']") public WebElement toptanUrunMinOrderQuantityTextboxRs;
     @FindBy(xpath = "//*[text()='Advanced']") public WebElement advancedMenuRs;
+    @FindBy(xpath = "//*[@id='enable_reviews']") public WebElement enableReviewsCheckboxRs;
+    @FindBy(xpath = "//*[@id='menu_order']") public WebElement advencedMenuOrderTextboxRs;
+    @FindBy(xpath = "//*[@id='purchase_note']") public WebElement advencedPurchaseNoteTextboxRs;
     @FindBy(xpath = "//*[@id='wcfm_products_simple_submit_button']") public WebElement submitButtonMangProdRs;
+    @FindBy(xpath = "//*[@id='wcfm_products_simple_draft_button']") public WebElement draftButtonMangProdRs;
+    @FindBy(xpath = "//input[@value='View']") public WebElement viewButtonMangProdRs;
+    @FindBy(id = "featured_img_display") public WebElement featuredBigImgRs;
+    @FindBy(id = "gallery_img_gimage_0_display") public WebElement gallerySmallImgRs;
+    @FindBy(id = "menu-item-browse") public WebElement mediaLibraryRs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[1]") public WebElement imageOyleRs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[2]") public WebElement imageSoyleRs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[3]") public WebElement imageBoyleRs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[4]") public WebElement imageOyle2Rs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[5]") public WebElement imageSoyle2Rs;
+    @FindBy(xpath = "(//*[@class='thumbnail'])[6]") public WebElement imageBoyle2Rs;
+    @FindBy(xpath = "//*[@id='__wp-uploader-id-0']/div[4]/div/div[2]/button") public WebElement addGalleryButtonRs;
+    @FindBy(xpath = "//*[text()='Select']") public WebElement selectButtonForImgRs;
+    @FindBy(id = "wcfm_new_cat") public WebElement categoryNameRs;
+    @FindBy(xpath = "//ul[@id='product_cats_checklist']/li") public List<WebElement> categoryListRs;
+    @FindBy(id = "product_type") public WebElement productMenuRs;
+    @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']") public WebElement productAddedSuccessRs;
+    @FindBy(xpath = "//*[@id='stock_status']") public WebElement stockStatusDropdownRs;
+    @FindBy(xpath = "(//div[@class='wcfm-message wcfm-error'])[1]") public WebElement skuErrorMessageRs;
+    @FindBy(xpath = "(//li[@title='Morcivert'])[1]") public WebElement colorMorcivertRs;
+
+
 
 
 
