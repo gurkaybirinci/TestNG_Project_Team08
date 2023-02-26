@@ -6,7 +6,7 @@
     <parameter name="reportTitle" value="TEAM-8 TestNG Otomasyon Raporu" />
     <test name="US20 Test Suite">
         <packages>
-            <package name="team8_testngproject.tests.us01.*" />
+            <package name="team8_testngproject.tests.us22.*" />
         </packages>
     </test>
 </suite>
