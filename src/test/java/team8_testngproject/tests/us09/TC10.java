@@ -15,7 +15,7 @@ import team8_testngproject.utilities.ReusableMethods;
 public class TC10 {
     private final String testName = "US09 || TC10- vendor olarak kayıt olunmalı";
     private final String description = "Tüm kutular eksiksiz doldurulmalı";
-    private final String raporMesaji = "Register butonuna tıklandığında Successfully mesajı alınmalı";
+    private final String raporMesaji = "Register butonuna tıklandığında Successfully mesajı aldığı doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
@@ -70,12 +70,13 @@ public class TC10 {
         //Kullanıcı Password kutusuna girmiş olduğu password'u Confirm Password kutusuna tekrar girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
 
-        //Kullanıcı Register butonuna tıklar?????***
+        //Kullanıcı Register butonuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(3);
-
+        RaporlamaUtil.extentTestInfo("Kullanıcı tüm alanları eksiksiz ve doğru doldurduğunda Register olma durumu kontrol edildi ");
         Assert.assertEquals(vendorRegisterPage.succesMesajZb.getText(),"Registration Successfully Completed.");
         ReusableMethods.waitFor(3);
+        Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }

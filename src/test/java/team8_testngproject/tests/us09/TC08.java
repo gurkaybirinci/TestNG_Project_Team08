@@ -15,11 +15,11 @@ import team8_testngproject.utilities.ReusableMethods;
 public class TC08 {
     private final String testName = "US09 || TC08-Password Metin Kutusu";
     private final String description = "Password kutusuna veri girilebilmeli";
-    private final String raporMesaji = "Password kutusuna gecersiz şifre girdiğinde şifre kabul edilmemeli";
+    private final String raporMesaji = "Kullanıcı Password kutusuna kriterler dışında gecersiz şifre girdiğinde şifre geçersiz olduğu " +
+                                       " halde, şifrenin kabul edildiği doğrulanmıştır ";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc08() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -67,12 +67,18 @@ public class TC08 {
 
         //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_psw"));
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına kriter dışında şifre girilebilirliği kontrol edilmiştir");
 
-        //Kullanıcı Register butonuna tıklar!!!!
+        //Kullanıcı Register butonuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(5);
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına kriter dışında şifre girdiğinde Register olduğu doğrulanmıştır");
 
         Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
+        Driver.closeDriver();
+
+        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
 
 
 

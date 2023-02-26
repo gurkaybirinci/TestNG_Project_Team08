@@ -19,7 +19,6 @@ public class TC07 {
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc07() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -31,6 +30,8 @@ public class TC07 {
         //Kullanıcı Become a Vendor linkine tıklar
         P02_RegisterPage registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
+
 
         //Kullanıcı Email bilgileri girer
         P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
@@ -41,7 +42,6 @@ public class TC07 {
 
         //Kullanıcı Password kutusuna kucuk harf, büyük harf, rakam ve special karakter girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
-        extentTest.info("Kullanıcı Password kısmına veri girdiği doğrulanmışır");
 
         //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_tooShort_psw"));
@@ -50,9 +50,10 @@ public class TC07 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(5);
         vendorRegisterPage.vendorRegisterClickZb.click();
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına veri girdiğinde uyarı mesajı gördüğü doğrulanmışır");
+
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password strength should be atleast \"Good\".");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
     }
 }

@@ -21,7 +21,6 @@ public class TC09 {
 
     public void us09_Tc09() {
 
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -72,6 +71,8 @@ public class TC09 {
 
         //Kullanıcı Register butonuna tıklar (Kullanıcı "Password and Confirm-password are not same."mesajını görmeli)
         vendorRegisterPage.vendorRegisterClickZb.click();
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kutusua girmiş olduğu verinin aynısını Confirm-password kutusuna girmediğinde uyarı mesajı alma durumu kontrol edilmiştir");
+
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password and Confirm-password are not same.");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
