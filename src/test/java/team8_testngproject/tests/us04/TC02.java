@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us04;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -10,13 +11,17 @@ import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.pages.P05_AddressesPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 {
+    private final String testName = "US04 || TC02-Shipping address kaydetme NEGATIVE senaryo";
+    private final String description = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
+    private final String raporMesaji = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
-    @Test
     public void testTC02() {
-
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -34,6 +39,7 @@ public class TC02 {
 //     5. SIGN IN butonuna tiklanir.
         loginPage.signinsvd.click();
         loginPage.singoutsvd.click();
+        extentTest.info("Login işlemi yapıldı.");
 
 //      6. My Account sayfasına erişildiğini dogrulanir.
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -76,14 +82,16 @@ public class TC02 {
 
 //    16. SAVE ADDRESS butonuna tiklanir.
         ReusableMethods.jsClick(adressPage.savesvd);
+        extentTest.info("Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli");
 
-//    Kaydedilen adresin Shipping address olarak kayit edildigi dogrulanir.
+
+        //    Kaydedilen adresin Shipping address olarak kayit edildigi dogrulanir.
       Assert.assertFalse(adressPage.savesvd.getText().contains("First name is a required field."));
-
+        Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }
-
 
 }
 
