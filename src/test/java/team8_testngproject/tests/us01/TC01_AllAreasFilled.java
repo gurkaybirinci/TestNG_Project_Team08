@@ -37,6 +37,7 @@ public class TC01_AllAreasFilled {
 
       extentTest.info("Username dahil, butun alanlara veri girilebildigi kontrol edildi.");
       Assert.assertTrue(homePage.homePageLogo.isDisplayed());
+
       waitFor(3);
       Driver.closeDriver();
       RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
