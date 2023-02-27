@@ -19,7 +19,6 @@ public class TC10 { // Coupon expiry date alanına bugünden daha önceki bir ta
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -31,25 +30,24 @@ public class TC10 { // Coupon expiry date alanına bugünden daha önceki bir ta
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Coupon ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Coupon ekleme sayfasına girildi.");
 
         String couponExpireDateData = "2022-01-01";
         vendorCouponsPage.couponExpireDateBoxGur.sendKeys(couponExpireDateData);
         String couponExpireDateValue = vendorCouponsPage.couponExpireDateBoxGur.getAttribute("value");
         LocalDate expireDate = LocalDate.parse(couponExpireDateValue);
         LocalDate currentDate = LocalDate.now();
-        extentTest.info("Coupon expiry date alanına bugünden daha önceki bir tarih girilebilirliği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Coupon expiry date alanına bugünden daha önceki bir tarih girilebilirliği kontrol edildi.");
 
-        try {
+        try{
             Assert.assertFalse(expireDate.isBefore(currentDate));
-        } catch (AssertionError e) {
-            System.out.println("FAIL: Girilen tarih bugünden daha önceki bir tarih olamaz: " + e.getMessage());
+        }catch (AssertionError e){
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

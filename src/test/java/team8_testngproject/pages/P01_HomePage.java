@@ -290,7 +290,7 @@ public WebElement myAccountButton;
     // 290.Satır --> Ramazan
     @FindBy(xpath = "//*[text()='Sign In']") public WebElement signInRs;
     @FindBy(xpath = "//*[text()='Sign Out']") public WebElement signOutRs;
-
+    @FindBy(xpath = "//a[contains(text(),'My Account')]") public WebElement myAccountButtonRs;
 
 
 
@@ -348,12 +348,10 @@ public WebElement signInButtonsvd;
 
 
     // 350.Satır --> Mustafa
-    @FindBy(css = "a[class='login inline-type']")
-    public WebElement signInBtnLoc;
-    @FindBy (css = "input[aria-label='Search']")
-    public WebElement searchInpLoc;
-    @FindBy (css = "button[aria-label='Search Button']")
-    public WebElement searchBtnLoc;
+    @FindBy(css = "a[class='login inline-type']") public WebElement signInBtnLoc;
+    @FindBy (css = "input[aria-label='Search']") public WebElement searchInpLoc;
+    @FindBy (css = "button[aria-label='Search Button']") public WebElement searchBtnLoc;
+
     public void searchProduct(){
         ReusableMethods.waitFor(3);
         searchInpLoc.sendKeys(ConfigReader.getProperty("urun_ismi_mustafa"));

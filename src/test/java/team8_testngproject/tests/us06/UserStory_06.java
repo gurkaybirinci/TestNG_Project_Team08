@@ -6,8 +6,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 
 public class UserStory_06 {
+    private final String raporMesaji = "Gereksinimlerin sağlandığı görüntülendi";
+
     P01_HomePage homePage;
     P07_ShoppingPage shoppingPage;
     P03_LoginPage loginPage;
@@ -26,9 +29,8 @@ public class UserStory_06 {
          checkOutPage = new P10_CheckOutPage();
          orderCompletePage=new P11_OrderCompletePage();
     }
-
-
-    @Test
+    
+    @Test (testName = "Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
     public void us06_Tc01() {
 
         //Belirtilen URL'e gidilir.
@@ -37,6 +39,7 @@ public class UserStory_06 {
         //Password bilgileri girilir.
         //Sign in butonuna tiklanir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search cubuguna tiklanir.Arama yapilmak istenen urunun ismi girilir.
         //Arama butonuna tiklanir.
@@ -44,15 +47,18 @@ public class UserStory_06 {
 
         //Istenen urune ait arama yapildigi dogrulanir.
         shoppingPage.checkSearchProduct();
+        RaporlamaUtil.extentTestInfo("Istenen urune ait arama yapildigi dogrulandı.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }
 
-    @Test
+    @Test (testName = "ADD TO CART Buton Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "ADD TO CART butonunun islevsel kontrolu")
     public void us06_Tc02() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
@@ -62,43 +68,51 @@ public class UserStory_06 {
 
         //ADD TO CART butonunun tiklanir.
         productPage.addToCartBtnLoc.click();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Popup mesajının görüntülendigi dogrulanir.
         Assert.assertTrue(productPage.popupViewCartLoc.isDisplayed());
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklemesine dair popup mesajı görüntülendi.");
+
     }
 
-    @Test
+    @Test (testName = "Product Add to Cart Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepete eklenen urunlerin goruntulenmesi")
     public void us06_Tc03() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
 
         //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
         productPage.firstProductAddCart();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
 
         //Sepete eklenen urunlerin goruntulendigi dogrulanir.
         Assert.assertTrue(cartPage.productDisplayLoc.isDisplayed());
+        RaporlamaUtil.extentTestInfo("Sepete eklenen ürünler görüntülendi.");
     }
 
-    @Test
+    @Test (testName = "Product Plus and Minus Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepetteki urun mıktarında artirma ve azaltma yapilabilmesi")
     public void us06_Tc04() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
 
         //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
         productPage.firstProductAddCart();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
@@ -110,20 +124,23 @@ public class UserStory_06 {
         //Quantity alaninda urun miktari azaltilir.
         //UPDATE CART butonuna tiklanir ve azaltma yapildigi dogrulanir.
         cartPage.checkMinusUpdate();
+        RaporlamaUtil.extentTestInfo("Sepete eklenen ürünleri artırma ve azaltma durumları kontrol edildi.");
     }
 
-    @Test
+    @Test (testName = "Billing Address Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Urun satin alabilmek icin fatura adresinin eksiksiz girilmesi")
     public void us06_Tc05() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
 
         //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
         productPage.firstProductAddCart();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
@@ -139,20 +156,23 @@ public class UserStory_06 {
 
         //Popup - uyari mesaji goruntulendigi dogrulanir.
         Assert.assertTrue(checkOutPage.placeOrderPopupMessages.isDisplayed());
+        RaporlamaUtil.extentTestInfo("Biling Detailes bolumunda zorunlu alanlar boş bırakıldığında hata mesajı görüntülendi");
     }
 
-    @Test
+    @Test (testName = "Payment Options Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Odeme seceneklerinin islevsel kontrolu")
     public void us06_Tc06() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
 
         //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
         productPage.firstProductAddCart();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
@@ -163,6 +183,7 @@ public class UserStory_06 {
         //Payment Methods bolumunde 2 ödeme seceneginin oldugu dogrulanir.
         checkOutPage.checkVisibleWireTransferEFT();
         checkOutPage.checkVisiblePayAtTheDoorBtn();
+        RaporlamaUtil.extentTestInfo("Ödeme seçeneklerinin görünürlüğü kontrol edildi");
 
         //Pay at the door secenegi secilir.
         checkOutPage.selectPayAtTheDoor();
@@ -175,20 +196,23 @@ public class UserStory_06 {
 
         //Wire transfer/EFT seceneginin secilebildigi dogrulanir.
         checkOutPage.checkSelectWireTransferEFT();
+        RaporlamaUtil.extentTestInfo("Ödeme seçeneklerinin seçilebilirliği kontrol edildi");
     }
 
-    @Test
+    @Test(testName = "End to Shopping Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Fatura adresi eksiksiz girilerek alisverisin tamamlanmasi ")
     public void us06_Tc07() {
 
         //Belirtilen URL'e gidilir.
         //Login islemi yapilir.
         loginPage.login();
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //Search inputuna urun ismi girilir ve arama butonuna tiklanir.
         homePage.searchProduct();
 
         //Sayfada ki ilk urune tiklanilir ve urun sepete eklenir.
         productPage.firstProductAddCart();
+        RaporlamaUtil.extentTestInfo("Sepete ürün eklendi");
 
         //Cart > VIEW CART sayfasina gidilir.
         productPage.goToViewCart();
@@ -214,6 +238,7 @@ public class UserStory_06 {
         //Phone * inputu doldurulur.
         //Email address * inputu doldurulur.
         checkOutPage.phoneAndMailRead();
+        RaporlamaUtil.extentTestInfo("Biling Detailes bölümünde zorunlu alanlar eksiksiz dolduruldu ");
 
         //Odeme seceneklerinden secim yapilir.
         //PLACE ORDER butonu tılklanir.
@@ -221,11 +246,13 @@ public class UserStory_06 {
 
         //"Thank you. Your order has been received." mesaji goruntulendigi dogrulanir.
         orderCompletePage.checkShoopingEnd();
+        RaporlamaUtil.extentTestInfo("Alışveriş'in tamamlandığı görüntülendi ");
     }
 
     @AfterMethod
     public void afterTest(){
         Driver.closeDriver();
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 
 }

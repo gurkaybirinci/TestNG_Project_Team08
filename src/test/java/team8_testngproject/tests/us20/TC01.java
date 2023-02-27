@@ -14,8 +14,8 @@ public class TC01 { // Code alanına veri girilebilmeli (PASS)
     private final String description = "Code metin kutusuna veri girilebilmeli";
     private final String raporMesaji = "Code metin kutusuna veri girilebildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+
     public void tc01(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -27,17 +27,17 @@ public class TC01 { // Code alanına veri girilebilmeli (PASS)
         loginPage.userNameGur.sendKeys(ConfigReader.getProperty("usernameGur"));
         loginPage.passwordGur.sendKeys(ConfigReader.getProperty("passwordGur"));
         loginPage.signInButtonGur.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         homePage.signOutGur.click();
         myAccountPage.storeManagerGur.click();
         ReusableMethods.hover(vendorStoreManagerPage.couponsButtonGur);
         vendorStoreManagerPage.couponsAddNewButtonGur.click();
-        extentTest.info("Coupon ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Coupon ekleme sayfasına girildi.");
 
         String codeData = "123456";
         vendorCouponsPage.codeBoxGur.sendKeys(codeData);
-        extentTest.info("Code metin kutusuna veri girilebilirliği kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         Assert.assertEquals(vendorCouponsPage.codeBoxGur.getAttribute("value"), codeData);
         Driver.closeDriver();

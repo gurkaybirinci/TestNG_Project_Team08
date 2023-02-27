@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,13 +9,18 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC08 {
-    @Test(testName = "US09 || TC08-Vendor Password", description = "Password kutusuna en az 8 karakter ve " +
-                     "sadece özel karakter içerdiğinde hata mesajı almalı ")
+    private final String testName = "US09 || TC08-Password Metin Kutusu";
+    private final String description = "Password kutusuna veri girilebilmeli";
+    private final String raporMesaji = "Kullanıcı Password kutusuna kriterler dışında gecersiz şifre girdiğinde şifre geçersiz olduğu " +
+                                       " halde, şifrenin kabul edildiği doğrulanmıştır ";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc08() {
+
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -61,16 +67,19 @@ public class TC08 {
 
         //Kullanıcı Confirm Password alanına, Password kutusuna girmiş olduğu bilgileri girer
         vendorRegisterPage.confirmPwd.sendKeys(ConfigReader.getProperty("vendor_psw"));
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına kriter dışında şifre girilebilirliği kontrol edilmiştir");
 
-        //Kullanıcı Register butonuna tıklar!!!!
+        //Kullanıcı Register butonuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(5);
-
-        Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
-
-
-
-
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına kriter dışında şifre girdiğinde Register olduğu doğrulanmıştır");
+        try{
+            Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
 
     }
 }

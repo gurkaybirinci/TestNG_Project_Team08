@@ -349,24 +349,15 @@ public class P08_ProductPage {
 
     // 350.Satır --> Mustafa
 
-    @FindBy(css = "button[name='add-to-cart']")
-    public  WebElement addToCartBtnLoc;
-    @FindBy(css = "button[name='add-to-cart']")
-    public  WebElement popupViewCartLoc;
-    @FindBy(css = "span[class='cart-name']")
-    public  WebElement cartBtnLoc;
-    @FindBy(css = "a[class='button wc-forward']")
-    public  WebElement viewCartBtnLoc;
-    @FindBy(css = "a[class='checkout-button button alt wc-forward']")
-    public  WebElement proceedToCheckOutBtnLoc;
-    @FindBy(id = "coupon_code")
-    public  WebElement couponCodeInpLoc;
-    @FindBy(css = "button[name='apply_coupon']")
-    public  WebElement applyCouponBtnLoc;
-    @FindBy(css = "div[role='alert'] ")
-    public  WebElement popupMessagesLoc;
-    @FindBy(css = "a[class='woocommerce-remove-coupon']")
-    public  WebElement removeBtnLoc;
+    @FindBy(css = "button[name='add-to-cart']") public  WebElement addToCartBtnLoc;
+    @FindBy(css = "button[name='add-to-cart']") public  WebElement popupViewCartLoc;
+    @FindBy(css = "span[class='cart-name']") public  WebElement cartBtnLoc;
+    @FindBy(css = "a[class='button wc-forward']") public  WebElement viewCartBtnLoc;
+    @FindBy(css = "a[class='checkout-button button alt wc-forward']") public  WebElement proceedToCheckOutBtnLoc;
+    @FindBy(id = "coupon_code") public  WebElement couponCodeInpLoc;
+    @FindBy(css = "button[name='apply_coupon']") public  WebElement applyCouponBtnLoc;
+    @FindBy(css = "div[role='alert'] ") public  WebElement popupMessagesLoc;
+    @FindBy(css = "a[class='woocommerce-remove-coupon']") public  WebElement removeBtnLoc;
 
     P07_ShoppingPage shoppingPage =new P07_ShoppingPage();
     public void firstProductAddCart(){

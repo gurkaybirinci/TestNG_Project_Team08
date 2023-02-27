@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us09;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,13 +9,19 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC09 {
+    private final String testName = "US09 || TC09-Confirm Password Kutusu";
+    private final String description = "Confirm Password kutusuna veri girilebilmeli";
+    private final String raporMesaji = "Confirm Password  kutusuna  eksik veri girilebildiğinde uyarı mesajı alındığı doğrulanmıştır.";
 
-    @Test(testName = "US09 || TC09-Vendor Password", description = "Password'ü tekrar yazmalı ")
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc09() {
+
+
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -64,8 +71,10 @@ public class TC09 {
 
         //Kullanıcı Register butonuna tıklar (Kullanıcı "Password and Confirm-password are not same."mesajını görmeli)
         vendorRegisterPage.vendorRegisterClickZb.click();
+        RaporlamaUtil.extentTestInfo("Kullanıcının Password kutusua girmiş olduğu verinin aynısını Confirm-password kutusuna girmediğinde uyarı mesajı alma durumu kontrol edilmiştir");
+
         Assert.assertEquals(vendorRegisterPage.kisaPwdMesaj.getText(),"Password and Confirm-password are not same.");
         Driver.closeDriver();
-
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 }
