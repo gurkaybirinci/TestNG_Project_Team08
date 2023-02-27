@@ -57,9 +57,10 @@ public class US15TC18_LinkedMenusundeCrossSellsIslemleri {// Linked menusunde Cr
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(1);
-//        WebElement dropdown1= vendorProductManagerPage.linkedCrossCellsTexboxRs;
+//        WebElement dropdown1= vendorProductManagerPage.linkedCrossCellsTexbox2Rs;
 //        String actual = ((JavascriptExecutor) Driver.getDriver()).executeScript("return arguments[0].value;", dropdown1).toString();
-//        Assert.assertTrue(actual.contains("oyle"));
+//        Assert.assertTrue(actual.contains("Oyle"));
+
         RaporlamaUtil.extentTestInfo("Metin kutularına veri göndrilebildiği ve dropdown menuden seçim yapılabildiği doğrulandı.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
