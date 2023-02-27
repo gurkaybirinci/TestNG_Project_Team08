@@ -23,7 +23,6 @@ public class TC03 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void startCompareKarsilastirma() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -34,7 +33,7 @@ public class TC03 {
         homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
         homePage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
@@ -71,7 +70,7 @@ public class TC03 {
                 loginPage.coatUrunEkle);
         ReusableMethods.waitFor(2);
         ReusableMethods.getScreenshot("Coat urunu ekleme");
-        extentTest.info("Urun silinip yeni urun ekleme islemi yapildi.");
+        RaporlamaUtil.extentTestInfo("Urun silinip yeni urun ekleme islemi yapildi.");
         //*************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.startCompareButonu);
@@ -101,8 +100,8 @@ public class TC03 {
         Assert.assertTrue(sKU.contains("SKU"));
         String size = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[7]")).getText();
         Assert.assertTrue(size.contains("Size"));
-        extentTest.info("Urunlerin ozellikleri goruntulendi.");
+        RaporlamaUtil.extentTestInfo("Urunlerin ozellikleri goruntulendi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
+        Driver.closeDriver();
     }
 }

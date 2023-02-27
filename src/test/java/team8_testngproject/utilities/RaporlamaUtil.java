@@ -15,27 +15,27 @@ public class RaporlamaUtil {
     // Raporlama nesneleri oluşturulur
     public static void extentRaporOlustur() {
         if (extentReports == null) { // ExtentReports nesnesi oluşturulmamış ise
-            String raporAdi = "us14_html_report.html"; // Rapor dosyasının adı
-            extentHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/src/test/java/reports/"+raporAdi); // raporun HTML dosyası oluşturulur
+            String raporAdi = "us22_html_report.html"; // Rapor dosyasının adı
+            extentHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/src/test/java/reports/" + raporAdi); // raporun HTML dosyası oluşturulur
             extentReports = new ExtentReports(); // ExtentReports nesnesi oluşturulur
             extentReports.attachReporter(extentHtmlReporter); // Rapor dosyası ExtentHtmlReporter'a bağlanır
 
             // HTML raporu yapılandırılır
             extentHtmlReporter.config().setDocumentTitle("TEAM-8 TestNG Otomasyon Raporu");
-            extentHtmlReporter.config().setReportName("US14 | Vendor olarak ürün ekleme seçeneklerini görebilmeli 1");
+            extentHtmlReporter.config().setReportName("US22 | Olusturulan Coupon ile Vendor olarak alışveriş yapılabilmeli.");
 
             // Raporlama bilgileri girilir
-            extentReports.setSystemInfo("Uygulama","TestNG Projesi");
-            extentReports.setSystemInfo("Test Türü","Regression");
-            extentReports.setSystemInfo("Grup","Batch103");
-            extentReports.setSystemInfo("Takım","TEAM-8");
+            extentReports.setSystemInfo("Uygulama", "TestNG Projesi");
+            extentReports.setSystemInfo("Test Türü", "Regression");
+            extentReports.setSystemInfo("Grup", "Batch103");
+            extentReports.setSystemInfo("Takım", "TEAM-8");
 
             // Raporlama bilgileri girilir (User Story ve QA kişisi bilgileri burada girilir)
-            extentReports.setSystemInfo("User Story","US14 | Vendor olarak ürün ekleme seçeneklerini görebilmeli 1");
-            extentReports.setSystemInfo("QA","Gürkay Birinci");
+            extentReports.setSystemInfo("User Story", "US22 | Olusturulan Coupon ile Vendor olarak alışveriş yapılabilmeli.");
+            extentReports.setSystemInfo("QA", "Nurullah Taşkan");
 
             // Ekran görüntüleri için klasör oluşturulur
-            File ekranGoruntuleriKlasoru = new File(System.getProperty("user.dir")+"/src/test/java/reports/screenshots");
+            File ekranGoruntuleriKlasoru = new File(System.getProperty("user.dir") + "/src/test/java/reports/screenshots");
             ekranGoruntuleriKlasoru.mkdir();
         }
     }
@@ -53,6 +53,7 @@ public class RaporlamaUtil {
             extentTest.fail(message);
         }
     }
+
     public static void extentTestInfo(String message) {
         if (extentTest != null) {
             extentTest.info(message);
@@ -63,6 +64,7 @@ public class RaporlamaUtil {
     public static void extentTestOlustur(String testName, String testDesc) {
         extentTest = extentReports.createTest(testName, testDesc);
     }
+
     // ExtentReports nesnesinin flush() metodunu çağırarak rapor dosyasını oluşturur ve kaydeder.
     public static void extentRaporBitir() {
         if (extentReports != null) {
@@ -70,3 +72,7 @@ public class RaporlamaUtil {
         }
     }
 }
+
+
+
+

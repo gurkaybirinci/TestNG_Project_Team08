@@ -51,7 +51,7 @@ public class TC03 {
         p18_vendorProductManagerPage.selectButtonHus.click();
         ReusableMethods.waitFor(2);
         String userHome =System.getProperty("user.home");
-        String dosyaYolu = userHome +"\\OneDrive - hbv.edu.tr\\Masaüstü\\top3.webp";
+        String dosyaYolu = System.getProperty("user.home")+ "\\Desktop\\top.jpg";
         ReusableMethods.uploadFilePath(dosyaYolu);
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.select2ButtonHus.click();
@@ -62,7 +62,7 @@ public class TC03 {
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addSelectButtonHus.click();
         ReusableMethods.waitFor(2);
-        String dosyaYolu2="C:\\Users\\HACI HÜSEYİN\\OneDrive - hbv.edu.tr\\Masaüstü\\top4.webp";
+        String dosyaYolu2=System.getProperty("user.home")+ "\\Desktop\\top2.jpg";
         ReusableMethods.uploadFilePath(dosyaYolu2);
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addToGalleryButtonHus.click();

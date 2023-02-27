@@ -13,9 +13,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC02_nameBox_Unattempted {
- private final String testName = "US01 || TC02-Username girmediginde ";
+ private final String testName = "US01 || TC02-Username Girmediginde";
  private final String description = "Username girilmediginde kayid islemi olmamali";
- private final String raporMesaji = "Kullanıcı kayıd olamamalı";
+ private final String raporMesaji = "Kullanıcı kayıt olamamalı";
 
  @Test  (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
  public void RegistrationUnsuccessful_NameUnspecified()  {

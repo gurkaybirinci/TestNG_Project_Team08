@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us01;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,9 +10,9 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 
 public class TC11_BreachToSuccessIn_Registration {
-    private final String testName = "US01 || TC11- Tek Karakterle Password olmaz ";
-    private final String description = "Tek karakterlik password'le kayıd işlemi gerçeklesemez";
-    private final String raporMesaji = "Password alani altinda uyarı mesajı çıkmalı ve kayıt işlemi gerçekleşmemeli";
+    private final String testName = "US01 || TC11- Tek Karakterli Password";
+    private final String description = "Password alani altinda uyarı mesajı çıkmalı ve kayıt işlemi gerçekleşmemeli.";
+    private final String raporMesaji = "Home pagedeki Register sayfasinda, Password alani test edildiginde beklenen sonuc karsilanmamakta ve test fail olmaktadır";
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void Registergarion() {
@@ -30,12 +29,15 @@ public class TC11_BreachToSuccessIn_Registration {
         registerPage.userPasswordBox.sendKeys("a");
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
-        RaporlamaUtil.extentTestInfo("Home pagedeki Register sayfasinda, Password alani test edildiginde beklenen sonuc karsilanmamakta ve test fail olmakta");
+        RaporlamaUtil.extentTestInfo("Password alani altinda uyarı mesajı çıkmalı ve kayıt işlemi gerçekleşmemeli.");
 
-
-     Assert.assertFalse(registerPage.signOutButton.isEnabled());
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
+        try{
+            Assert.assertFalse(registerPage.signOutButton.isEnabled());
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
 
     }
 }

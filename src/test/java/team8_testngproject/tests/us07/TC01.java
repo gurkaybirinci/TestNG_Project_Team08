@@ -19,7 +19,6 @@ public class  TC01 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void urunSecimi() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -30,12 +29,12 @@ public class  TC01 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
         loginPage.aramaTusu.click();
-        extentTest.info("Urun karsilastirma icin sayfaya gidildi.");
+        RaporlamaUtil.extentTestInfo("Urun karsilastirma icin sayfaya gidildi.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.sunnyBaby);
@@ -52,7 +51,8 @@ public class  TC01 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 loginPage.cantaFash);
         ReusableMethods.waitFor(3);
-        extentTest.info("Urunler secildi.");
+        RaporlamaUtil.extentTestInfo("Urunler secildi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        Driver.closeDriver();
     }
 }

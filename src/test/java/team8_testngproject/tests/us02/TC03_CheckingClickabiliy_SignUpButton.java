@@ -39,7 +39,7 @@ public class TC03_CheckingClickabiliy_SignUpButton { ExtentTest extentTest = Rap
 
         waitFor(3);
         Driver.closeDriver();
-        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 
 

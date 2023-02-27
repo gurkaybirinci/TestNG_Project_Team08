@@ -13,7 +13,7 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC10_PolicyAgreement_UnClicked {
-    private final String testName = "US01 || TC10- policy agreement Onaylanmadiginda ";
+    private final String testName = "US01 || TC10-Policy Agreement Onaylanmadiginda ";
     private final String description = "policy agreement kutusuna tiklamadan kayid olunamamali";
     private final String raporMesaji = "Kullanıcı kayıd işlemini gerçekleştirememeli ve uyari mesaji almalı";
 

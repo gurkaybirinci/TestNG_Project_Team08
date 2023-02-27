@@ -45,8 +45,12 @@ public class TC10 { // Coupon expiry date alanına bugünden daha önceki bir ta
         LocalDate currentDate = LocalDate.now();
         RaporlamaUtil.extentTestInfo("Coupon expiry date alanına bugünden daha önceki bir tarih girilebilirliği kontrol edildi.");
 
-        Assert.assertFalse(expireDate.isBefore(currentDate));
-        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
+        try{
+            Assert.assertFalse(expireDate.isBefore(currentDate));
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
     }
 }

@@ -26,7 +26,6 @@ public class TC04 {
     private final String raporMesaji = "Compare sayfasinda urun silme.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void compareUrunSilme() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
@@ -37,7 +36,7 @@ public class TC04 {
         homePage.password.sendKeys(ConfigReader.getProperty("user_password"));
         homePage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         loginPage.search.click();
         loginPage.search.sendKeys("bag");
@@ -118,7 +117,7 @@ public class TC04 {
 
 
         silinenCoatPoolXButon.click();
-        extentTest.info("Urun silme islemi yapildi.");
+        RaporlamaUtil.extentTestInfo("Urun silme islemi yapildi.");
 
         List<String> kalanUrunler = new ArrayList<>();
         kalanUrunler.add(sunBabyXButonu);
@@ -133,7 +132,8 @@ public class TC04 {
                 System.out.println(kalanUrunler + " adli urun silinmistir");
             }
         }
-        extentTest.info("Urun sildikten sonra kalan urunler kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("Urun sildikten sonra kalan urunler kontrol edildi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        Driver.closeDriver();
     }
 }

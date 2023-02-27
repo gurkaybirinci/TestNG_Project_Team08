@@ -14,7 +14,7 @@ import team8_testngproject.utilities.ReusableMethods;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC06_IncompatiblePassword_VeryWeak {
-    private final String testName = "US01 || TC06-Very Weak Password mesaji ";
+    private final String testName = "US01 || TC06-Very Weak Password Mesaji ";
     private final String description = "Very weak aldiginda kayit islemi basarisizdir";
     private final String raporMesaji = "kullanici password alani altinda 'Very weak - Please enter a stronger password' mesajini gormeli";
 

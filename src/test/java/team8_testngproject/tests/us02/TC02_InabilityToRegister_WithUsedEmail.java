@@ -12,7 +12,7 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC02_InabilityToRegister_WithUsedEmail {
-    private final String testName = "US02 || TC02-Kayitli  e-mail Girildiginde ";
+    private final String testName = "US02 || TC02-Kayitli  E-mail Girildiginde ";
     private final String description = "Onceden kullanilmis email ile kayid islemi";
     private final String raporMesaji = "Sigin in butonu altinda 'An account is already registered with your email address'  mesajını görmeli";
 

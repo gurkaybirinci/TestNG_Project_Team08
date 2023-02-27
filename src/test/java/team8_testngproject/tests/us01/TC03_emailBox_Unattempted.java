@@ -13,7 +13,7 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC03_emailBox_Unattempted {
-    private final String testName = "US01 || TC03- e-mail alani bos birakildiginda";
+    private final String testName = "US01 || TC03-E-mail Alani Bos Birakildiginda";
     private final String description = "e-mail alani bos birakildiginda, kayid islemi basarisiz olmali";
     private final String raporMesaji = "Kullanıcı kayid olmamali";
 

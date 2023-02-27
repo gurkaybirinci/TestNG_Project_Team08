@@ -23,7 +23,6 @@ public class TC01 {
     private final String raporMesaji = "Karsilastirma icin urunler secilmistir.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void homePage(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         homePageomePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();
@@ -37,7 +36,7 @@ public class TC01 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 shoppingPage.search);
@@ -53,8 +52,8 @@ public class TC01 {
         ReusableMethods.waitFor(2);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.bisikletKizCocuk);
-        extentTest.info("Begenilen urunler 'wishlist'e eklendi.");
+        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
+        Driver.closeDriver();
     }
 }
