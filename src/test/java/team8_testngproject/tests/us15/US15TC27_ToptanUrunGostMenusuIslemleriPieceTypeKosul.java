@@ -64,8 +64,12 @@ public class US15TC27_ToptanUrunGostMenusuIslemleriPieceTypeKosul {// Toptan Ür
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        Driver.closeDriver();
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        try{
+            Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
     }
 }

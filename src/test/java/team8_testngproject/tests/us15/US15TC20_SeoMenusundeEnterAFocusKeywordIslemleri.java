@@ -51,7 +51,7 @@ public class US15TC20_SeoMenusundeEnterAFocusKeywordIslemleri {// SEO menusunde 
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        vendorProductManagerPage.seoEnterAFocusKewordTexboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.seoEnterAFocusKewordTexboxRs);
         vendorProductManagerPage.seoEnterAFocusKewordTexboxRs.sendKeys("Oyle123");
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
