@@ -30,7 +30,7 @@ public class UserStory_06 {
          orderCompletePage=new P11_OrderCompletePage();
     }
     
-    @Test (testName = "Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
+    @Test (testName = "US06 || TC01-Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
     public void us06_Tc01() {
 
         //Belirtilen URL'e gidilir.
@@ -52,7 +52,7 @@ public class UserStory_06 {
 
     }
 
-    @Test (testName = "ADD TO CART Buton Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "ADD TO CART butonunun islevsel kontrolu")
+    @Test (testName = "US06 || TC02-ADD TO CART Buton Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "ADD TO CART butonunun islevsel kontrolu")
     public void us06_Tc02() {
 
         //Belirtilen URL'e gidilir.
@@ -76,7 +76,7 @@ public class UserStory_06 {
 
     }
 
-    @Test (testName = "Product Add to Cart Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepete eklenen urunlerin goruntulenmesi")
+    @Test (testName = "US06 || TC03-Product Add to Cart Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepete eklenen urunlerin goruntulenmesi")
     public void us06_Tc03() {
 
         //Belirtilen URL'e gidilir.
@@ -99,7 +99,7 @@ public class UserStory_06 {
         RaporlamaUtil.extentTestInfo("Sepete eklenen ürünler görüntülendi.");
     }
 
-    @Test (testName = "Product Plus and Minus Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepetteki urun mıktarında artirma ve azaltma yapilabilmesi")
+    @Test (testName = "US06 || TC04-Product Plus and Minus Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepetteki urun mıktarında artirma ve azaltma yapilabilmesi")
     public void us06_Tc04() {
 
         //Belirtilen URL'e gidilir.
@@ -127,7 +127,7 @@ public class UserStory_06 {
         RaporlamaUtil.extentTestInfo("Sepete eklenen ürünleri artırma ve azaltma durumları kontrol edildi.");
     }
 
-    @Test (testName = "Billing Address Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Urun satin alabilmek icin fatura adresinin eksiksiz girilmesi")
+    @Test (testName = "US06 || TC05-Billing Address Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Urun satin alabilmek icin fatura adresinin eksiksiz girilmesi")
     public void us06_Tc05() {
 
         //Belirtilen URL'e gidilir.
@@ -159,7 +159,7 @@ public class UserStory_06 {
         RaporlamaUtil.extentTestInfo("Biling Detailes bolumunda zorunlu alanlar boş bırakıldığında hata mesajı görüntülendi");
     }
 
-    @Test (testName = "Payment Options Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Odeme seceneklerinin islevsel kontrolu")
+    @Test (testName = "US06 || TC06-Payment Options Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Odeme seceneklerinin islevsel kontrolu")
     public void us06_Tc06() {
 
         //Belirtilen URL'e gidilir.
@@ -199,7 +199,7 @@ public class UserStory_06 {
         RaporlamaUtil.extentTestInfo("Ödeme seçeneklerinin seçilebilirliği kontrol edildi");
     }
 
-    @Test(testName = "End to Shopping Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Fatura adresi eksiksiz girilerek alisverisin tamamlanmasi ")
+    @Test(testName = "US06 || TC07-End to Shopping Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Fatura adresi eksiksiz girilerek alisverisin tamamlanmasi ")
     public void us06_Tc07() {
 
         //Belirtilen URL'e gidilir.

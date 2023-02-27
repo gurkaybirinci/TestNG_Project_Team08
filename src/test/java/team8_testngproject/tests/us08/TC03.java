@@ -25,7 +25,6 @@ public class TC03 {
     private final String raporMesaji = "'wishlist' sayfasinda urun ozellikleri goruntulenir ";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void quickViewKontrolu() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();
