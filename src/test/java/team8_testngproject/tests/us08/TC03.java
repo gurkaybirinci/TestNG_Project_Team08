@@ -39,7 +39,7 @@ public class TC03 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+//        extentTest.info("Login işlemi yapıldı.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 shoppingPage.search);
@@ -59,7 +59,7 @@ public class TC03 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
-        extentTest.info("Begenilen urunler secildi.");
+
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewButton);
@@ -77,7 +77,8 @@ public class TC03 {
         String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@alt='EFG 16 Jant Bisiklet'])[2]")).getText();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
-        extentTest.info("Urun ozellikleri goruntulendi.");
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+//        extentTest.info("Urun ozellikleri goruntulendi.");
+//        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+//    }
     }
 }
