@@ -24,7 +24,6 @@ public class TC05 {
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void US16_TC05(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         p01_homePage=new P01_HomePage();
         p03_loginPage=new P03_LoginPage();
         p16VendorStoreManagerPage=new P16_VendorStoreManagerPage();
@@ -34,13 +33,13 @@ public class TC05 {
         p01_homePage.signInButtonKoz.click();
         p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"),Keys.TAB,ConfigReader.getProperty("passwordkoz"));
         p03_loginPage.signInButtonKoz.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
         p16VendorStoreManagerPage.storeManagerButtonKoz.click();
-        extentTest.info("Store Manager sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Store Manager sayfasına girildi.");
         ReusableMethods.jsClick(p16VendorStoreManagerPage.productsButtonKoz);
         ReusableMethods.jsClick(p17_vendorProductsDashboardPage.addNewButtonKoz);
-        extentTest.info("Ürün ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Ürün ekleme sayfasına girildi.");
         Select select = new Select(p18_vendorProductManagerPage.dropdownKoz);
         Assert.assertEquals(select.getFirstSelectedOption().getText(),"Simple Product");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.virtualCheckKoz);
@@ -53,7 +52,7 @@ public class TC05 {
         Driver.getDriver().switchTo().frame(p18_vendorProductManagerPage.descriptionIframeKoz);
         p18_vendorProductManagerPage.descriptionInputKoz.sendKeys("Profesyonel olarak tasarlanmış ve imal edilmiş olan ürünümüz %90 olarak deri ve %10 olarak da polyester içermektedir. Çim zemine uygundur.");
         Driver.getDriver().switchTo().parentFrame();
-        extentTest.info("Product Title, Short Description ve Description kısımları doldurulmuştur.");
+        RaporlamaUtil.extentTestInfo("Product Title, Short Description ve Description kısımları doldurulmuştur.");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.sportsCheckBoxKoz);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.kozbulCheckBoxKoz);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.chooseTagsKoz);
@@ -61,7 +60,7 @@ public class TC05 {
         select=new Select(p18_vendorProductManagerPage.catalogVisibilityKoz);
         Assert.assertEquals(select.getFirstSelectedOption().getText(),"Shop and search results");
         p18_vendorProductManagerPage.imageAddButtonKoz.click();
-        String path=System.getProperty("user.home")+ "\\Desktop\\top.jpeg";
+        String path=System.getProperty("user.home")+ "\\Desktop\\top.jpg";
         p18_vendorProductManagerPage.imageSendZoneKoz.click();
         ReusableMethods.waitFor(2);
         ReusableMethods.uploadFilePath(path);
@@ -79,7 +78,7 @@ public class TC05 {
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addToGalleryButtonKoz.click();
         ReusableMethods.waitFor(2);
-        extentTest.info("Ürün resimleri eklendi");
+        RaporlamaUtil.extentTestInfo("Ürün resimleri eklendi");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.submitButtonKoz);
         ReusableMethods.waitFor(2);
         Assert.assertTrue(p18_vendorProductManagerPage.publishedKoz.isDisplayed());

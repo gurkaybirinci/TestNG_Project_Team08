@@ -15,7 +15,7 @@ import static team8_testngproject.utilities.ReusableMethods.waitFor;
 public class TC01_AllAreasFilled {
     private final String testName = "US01 || TC01-Gecerli Veri Girme ";
     private final String description = "Username dahil butun alanlara valid veri girilmeli";
-   private final String raporMesaji = "Kullanıcı başarılı bir şekilde kayıd olmalı";
+   private final String raporMesaji = "Kullanıcı başarılı bir şekilde kayıd olabilmiştir.";
 
   @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
   public void successfuCustomerRegisterationl(){

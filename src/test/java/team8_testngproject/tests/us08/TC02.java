@@ -25,7 +25,6 @@ public class TC02 {
     private final String raporMesaji = "'wishlist' sayfasinda begenilen urunler eklenmistir ";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void wishlistKontrolu() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();
@@ -39,7 +38,7 @@ public class TC02 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 shoppingPage.search);
@@ -57,7 +56,7 @@ public class TC02 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.bisikletKizCocuk);
         ReusableMethods.waitFor(2);
-        extentTest.info("Begenilen urunler 'wishlist'e eklendi");
+        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi");
 
         //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
@@ -69,7 +68,8 @@ public class TC02 {
 
         String bisikletKizCocukIsimKontrol = Driver.getDriver().findElement(By.xpath("(//*[text()='Kız Çocuk Bisikleti'])[3]")).getText();
         Assert.assertEquals(bisikletKizCocukIsimKontrol, "Kız Çocuk Bisikleti");
-        extentTest.info("'wishlist'e eklenen urunler kontrol edildi.");
+        RaporlamaUtil.extentTestInfo("'wishlist'e eklenen urunler kontrol edildi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        Driver.closeDriver();
     }
 }

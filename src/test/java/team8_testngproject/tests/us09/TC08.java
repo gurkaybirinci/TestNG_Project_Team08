@@ -73,16 +73,13 @@ public class TC08 {
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(5);
         RaporlamaUtil.extentTestInfo("Kullanıcının Password kısmına kriter dışında şifre girdiğinde Register olduğu doğrulanmıştır");
-
-        Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
-        Driver.closeDriver();
-
-        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
-
-
-
-
+        try{
+            Assert.assertEquals(vendorRegisterPage.dogrulamaRegistrationZb.getText(),"Registration");
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
 
     }
 }

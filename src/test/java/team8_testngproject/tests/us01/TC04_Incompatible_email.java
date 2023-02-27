@@ -12,7 +12,7 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC04_Incompatible_email {
-    private final String testName = "US01 || TC04-Valid Olmayan e-mail ";
+    private final String testName = "US01 || TC04-Valid Olmayan E-mail ";
     private final String description = "e-mail alanina valid olmayan e-mail girilmediginde, kayit islemi basarisiz olmali ";
     private final String raporMesaji = "Kullanıcı kayit olmamali ve uyari mesaji gormeli";
 

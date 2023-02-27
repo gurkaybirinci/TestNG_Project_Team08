@@ -22,7 +22,6 @@ public class TC04 {
     private final String raporMesaji = "Sepete eklenen urunler satin alinmistir ";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void quickViewKontrolu() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         homePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();
@@ -37,7 +36,7 @@ public class TC04 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 shoppingPage.search);
@@ -58,7 +57,7 @@ public class TC04 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.addToCartButton);
         ReusableMethods.waitFor(3);
-        extentTest.info("Urun sepete eklendi.");
+        RaporlamaUtil.extentTestInfo("Urun sepete eklendi.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 cartPage.cartButton);
@@ -72,7 +71,8 @@ public class TC04 {
         ReusableMethods.waitFor(2);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 cartPage.placeOrderButton);
-        extentTest.info("Satin alma islemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Satin alma islemi yapıldı.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        Driver.closeDriver();
     }
 }

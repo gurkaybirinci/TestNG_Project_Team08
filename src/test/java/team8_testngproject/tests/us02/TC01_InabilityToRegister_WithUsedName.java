@@ -14,7 +14,7 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import static team8_testngproject.utilities.ReusableMethods.waitFor;
 
 public class TC01_InabilityToRegister_WithUsedName {
-    private final String testName = "US02 || TC01- Kayitli Username Girildiginde ";
+    private final String testName = "US02 || TC01-Kayitli Username Girildiginde";
     private final String description = "Onceden kullanilmis bir Username ile kayid islemi ";
     private final String raporMesaji = "Sigin in butonu altinda 'An account is already registered with that username. Please choose another' uyari mesajini görmeli";
 
