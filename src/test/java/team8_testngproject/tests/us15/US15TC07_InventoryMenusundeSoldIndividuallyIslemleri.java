@@ -49,10 +49,13 @@ public class US15TC07_InventoryMenusundeSoldIndividuallyIslemleri { // Inventory
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        vendorProductManagerPage.inventoryMenuRs.click();
-        vendorProductManagerPage.soldIndividuallyCheckboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.inventoryMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.soldIndividuallyCheckboxRs);
+        Assert.assertTrue(vendorProductManagerPage.soldIndividuallyCheckboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Checkbox kontrol edildi.");
-
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);

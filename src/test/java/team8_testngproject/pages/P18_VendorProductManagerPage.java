@@ -349,7 +349,6 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "(//*[@title='Toggle Block'])[3]") public WebElement sizeKucultmeOkuButonRs;
     @FindBy(xpath = "(//*[text()='Add'])[3]") public WebElement addAttributeADDButonRs;
     @FindBy(xpath = "//*[@id='attributes_is_visible_2']") public WebElement sizeVisibleCheckboxRs;
-    //@FindBy(xpath = "(//*[@title='ALERT'])[4]") public WebElement sizeAddAlertTextboxRs; //bunu yapamadımmmmm
     @FindBy(xpath = "//*[@id='attributes_is_active_3']") public WebElement attributeAddAttributeActiveCheckboxRs;
     @FindBy(xpath = "//*[@id='attributes_name_3']") public WebElement attributeAddAttributeNameTextboxRs;
     @FindBy(xpath = "//*[@id='attributes_value_3']") public WebElement attributeAddAttributeValueTextboxRs;
@@ -391,7 +390,8 @@ public class P18_VendorProductManagerPage {
     @FindBy (xpath = "//div[@class='wcfm-message wcfm-success']") public WebElement productAddedSuccessRs;
     @FindBy(xpath = "//*[@id='stock_status']") public WebElement stockStatusDropdownRs;
     @FindBy(xpath = "(//div[@class='wcfm-message wcfm-error'])[1]") public WebElement skuErrorMessageRs;
-    @FindBy(xpath = "(//li[@title='Morcivert'])[1]") public WebElement colorMorcivertRs;
+    @FindBy(xpath = "//*[@value='527']") public WebElement colorMorcivertRs;
+    @FindBy(xpath = "//*[@value='529']") public WebElement size10XLRs;
 
 
 

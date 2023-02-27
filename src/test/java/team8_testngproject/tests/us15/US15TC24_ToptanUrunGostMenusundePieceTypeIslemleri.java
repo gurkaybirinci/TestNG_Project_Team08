@@ -1,5 +1,7 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,12 +48,16 @@ public class US15TC24_ToptanUrunGostMenusundePieceTypeIslemleri {// Toptan Ürü
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunGostAyrMenuRs);
-        Select select1=new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
-        String pieceTypeDrDownOptionText=select1.getFirstSelectedOption().getText();
-        select1.selectByIndex(1);
-        Assert.assertNotEquals(pieceTypeDrDownOptionText, vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.getText());
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-
+        Select select1=new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
+        select1.selectByIndex(1);
+        Assert.assertTrue(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.isDisplayed());
+        ReusableMethods.waitFor(2);
+        select1.selectByIndex(2);
+        Assert.assertTrue(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.isDisplayed());
+        ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 

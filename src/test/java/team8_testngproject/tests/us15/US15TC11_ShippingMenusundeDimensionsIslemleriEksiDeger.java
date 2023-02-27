@@ -50,12 +50,19 @@ public class US15TC11_ShippingMenusundeDimensionsIslemleriEksiDeger {// Shipping
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.shippingMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.lengthTextboxRs);
         vendorProductManagerPage.lengthTextboxRs.sendKeys("-10");
+        Assert.assertTrue(vendorProductManagerPage.lengthTextboxRs.isDisplayed());
         ReusableMethods.jsClick(vendorProductManagerPage.widthTextboxRs);
         vendorProductManagerPage.widthTextboxRs.sendKeys("-10");
+        Assert.assertTrue(vendorProductManagerPage.lengthTextboxRs.isDisplayed());
         ReusableMethods.jsClick(vendorProductManagerPage.heightTextboxRs);
         vendorProductManagerPage.heightTextboxRs.sendKeys("-10");
+        Assert.assertTrue(vendorProductManagerPage.lengthTextboxRs.isDisplayed());
+        ReusableMethods.waitFor(2);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

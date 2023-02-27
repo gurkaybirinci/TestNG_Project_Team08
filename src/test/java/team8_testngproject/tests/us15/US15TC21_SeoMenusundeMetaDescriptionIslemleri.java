@@ -1,5 +1,7 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,8 +48,12 @@ public class US15TC21_SeoMenusundeMetaDescriptionIslemleri {// SEO menusunde Met
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.seoMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLESOYLEBOYLE");
+        Assert.assertTrue(vendorProductManagerPage.seoMetaDescriptionTexboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

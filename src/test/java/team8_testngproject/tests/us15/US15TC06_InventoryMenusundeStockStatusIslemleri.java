@@ -49,9 +49,20 @@ public class US15TC06_InventoryMenusundeStockStatusIslemleri { // Inventory menu
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        vendorProductManagerPage.inventoryMenuRs.click();
-        select = new Select(vendorProductManagerPage.stockStatusDropdownRs);
-        select.selectByIndex(0);
+        ReusableMethods.jsClick(vendorProductManagerPage.inventoryMenuRs);
+        ReusableMethods.waitFor(2);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).release().perform();
+        Select select1 = new Select(vendorProductManagerPage.stockStatusDropdownRs);
+        select1.selectByIndex(0);
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorProductManagerPage.stockStatusDropdownRs.isDisplayed());
+        select1.selectByIndex(1);
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorProductManagerPage.stockStatusDropdownRs.isDisplayed());
+        select1.selectByIndex(2);
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorProductManagerPage.stockStatusDropdownRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Dropdown menu kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

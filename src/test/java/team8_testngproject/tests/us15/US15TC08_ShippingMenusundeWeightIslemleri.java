@@ -50,8 +50,13 @@ public class US15TC08_ShippingMenusundeWeightIslemleri {// Shipping  menusunde W
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.shippingMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.weightTextboxRs);
         vendorProductManagerPage.weightTextboxRs.sendKeys("10");
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(vendorProductManagerPage.weightTextboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
