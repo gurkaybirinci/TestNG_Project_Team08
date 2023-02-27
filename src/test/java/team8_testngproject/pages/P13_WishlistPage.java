@@ -79,7 +79,7 @@ public class P13_WishlistPage {
 
     // 80.Satır --> Gonca
 
-    @FindBy(xpath = "(//*[@data-title='Add to wishlist'])[5]")
+    @FindBy(xpath = "(//*[@data-title='Browse wishlist...'])[2]")
     public WebElement bisikletEFG16;
 
     @FindBy(xpath = "(//*[@data-product-id='17504'])[2]")

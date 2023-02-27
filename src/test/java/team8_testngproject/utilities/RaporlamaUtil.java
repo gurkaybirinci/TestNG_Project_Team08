@@ -15,14 +15,14 @@ public class RaporlamaUtil {
     // Raporlama nesneleri oluşturulur
     public static void extentRaporOlustur() {
         if (extentReports == null) { // ExtentReports nesnesi oluşturulmamış ise
-            String raporAdi = "us22_html_report.html"; // Rapor dosyasının adı
+            String raporAdi = "us21_html_report.html"; // Rapor dosyasının adı
             extentHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/src/test/java/reports/" + raporAdi); // raporun HTML dosyası oluşturulur
             extentReports = new ExtentReports(); // ExtentReports nesnesi oluşturulur
             extentReports.attachReporter(extentHtmlReporter); // Rapor dosyası ExtentHtmlReporter'a bağlanır
 
             // HTML raporu yapılandırılır
             extentHtmlReporter.config().setDocumentTitle("TEAM-8 TestNG Otomasyon Raporu");
-            extentHtmlReporter.config().setReportName("US22 | Olusturulan Coupon ile Vendor olarak alışveriş yapılabilmeli.");
+            extentHtmlReporter.config().setReportName("US21 | Olusturulan Coupon ile müşteri olarak alışveriş yapılabilmeli.");
 
             // Raporlama bilgileri girilir
             extentReports.setSystemInfo("Uygulama", "TestNG Projesi");
@@ -31,8 +31,8 @@ public class RaporlamaUtil {
             extentReports.setSystemInfo("Takım", "TEAM-8");
 
             // Raporlama bilgileri girilir (User Story ve QA kişisi bilgileri burada girilir)
-            extentReports.setSystemInfo("User Story", "US22 | Olusturulan Coupon ile Vendor olarak alışveriş yapılabilmeli.");
-            extentReports.setSystemInfo("QA", "Nurullah Taşkan");
+            extentReports.setSystemInfo("User Story", "US21 | Olusturulan Coupon ile müşteri olarak alışveriş yapılabilmeli.");
+            extentReports.setSystemInfo("QA", "Mustafa Bacanak");
 
             // Ekran görüntüleri için klasör oluşturulur
             File ekranGoruntuleriKlasoru = new File(System.getProperty("user.dir") + "/src/test/java/reports/screenshots");
