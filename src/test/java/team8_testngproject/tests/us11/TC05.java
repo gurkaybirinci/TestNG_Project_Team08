@@ -1,5 +1,6 @@
 package team8_testngproject.tests.us11;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -7,10 +8,15 @@ import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.RaporlamaUtil;
 
 public class TC05 {
-    @Test
+    private final String testName = "US11 || TC05 account details seçeneğini gör.";
+    private final String description = "My Account Sayfasında account details seçeneği görülmeli";
+    private final String raporMesaji = "My Account sayfasında account details değil, ACCOUNT DETAILS şeklinde görülmektedir";
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test05() {
+        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
 
@@ -21,6 +27,7 @@ public class TC05 {
         p03_loginPage.userName_Es.sendKeys(ConfigReader.getProperty("vendorUserNameEs"));
         p03_loginPage.password_Es.sendKeys(ConfigReader.getProperty("vendorPasswordEs"));
         p03_loginPage.signInButon_Es.click();
+        RaporlamaUtil.extentTestInfo("Login işlemi vendor olarak yapıldı.");
         p01_homePage.signOut_Es.click();
 
 
@@ -28,6 +35,11 @@ public class TC05 {
 
 
         Assert.assertEquals(p04_myAccountPage.accountDetailsVendor_Es.getText(),"account details");
+        Driver.closeDriver();
+
+        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
+
 
     }
 }
