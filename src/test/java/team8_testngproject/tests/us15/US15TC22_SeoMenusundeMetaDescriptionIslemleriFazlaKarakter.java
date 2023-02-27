@@ -1,9 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,13 +9,13 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde Size işlemleri (PASS)
+public class US15TC22_SeoMenusundeMetaDescriptionIslemleriFazlaKarakter {// SEO menusunde Meta description işlemleri (FAIL)
 
-    private final String testName = "US15 || TC15-Attributes menusunde Size işlemleri";
-    private final String description = "Vendor Attributes menusunde Size işlemleri yapabilmeli";
-    private final String raporMesaji = "Vendor olarak Attributes menusunde Size işlemleri yapabildiği doğrulanmıştır.";
+    private final String testName = "US15 || TC22-SEO menusunde Meta description işlemleri";
+    private final String description = "Vendor SEO menusunde Meta description işlemleri yapabilmeli";
+    private final String raporMesaji = "Vendor olarak SEO menusunde Meta description işlemleri yapabildiği doğrulanmıştır. 156 karakterden fazlası girilmemesi gerektiği şartı aşılmıştır";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void attributesMenuColorIslemleri() {
+    public void seoMenusundeMetaDescriptionIslemleriFazlaKAraktarSayisi() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -49,24 +45,15 @@ public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde 
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.sizeCheckboxRs.click();
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectAllButonRs);
-        ReusableMethods.waitFor(2);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectNoneButonRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeAddNewButonRs);
-        Driver.driver.switchTo().alert().sendKeys("10XL");
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.sizeVisibleCheckboxRs.click();
-        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
+        ReusableMethods.jsClick(vendorProductManagerPage.seoMenuRs);
+        vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
+        vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE ");
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri 156 karakterden fazlası girilmemesi gerektiği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }

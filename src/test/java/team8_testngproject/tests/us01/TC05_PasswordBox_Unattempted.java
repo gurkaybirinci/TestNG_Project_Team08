@@ -18,18 +18,18 @@ public class TC05_PasswordBox_Unattempted {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void UnsuccessfulRegistration_passwordUnspecified() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+        RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(ConfigReader.getProperty("generatedUsername2"));
         registerPage.e_mailBox.sendKeys(ConfigReader.getProperty("generatedEmail2"));
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
-        extentTest.info("Password alani bos birakildiginda, SignUp islemi olmamali");
+        RaporlamaUtil.extentTestInfo("Password alani bos birakildiginda, SignUp islemi olmamali");
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
         waitFor(3);

@@ -13,13 +13,12 @@ import team8_testngproject.utilities.ReusableMethods;
 
 public class TC05 {
     private final String testName = "US09 || TC05-Verification Code text kutusu";
-    private final String description = "Verification Code text kutusuna code girilebilmeli";
-    private final String raporMesaji = "Verification Code text kutusuna code girildiği doğrulanmıştır";
+    private final String description = "Mail adresine gelen kodu Verification Code text kutusuna girmeli";
+    private final String raporMesaji = "Mail adresine gelen Verification Code, code text kutusuna girildiği doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc05() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
@@ -42,6 +41,8 @@ public class TC05 {
         //Kullanıcı Become a Vendor linkine tıklar
         P02_RegisterPage registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
+
 
         //Kullanıcı fake Url den aldığı  Email bilgileri girer
         vendorRegisterPage.emailzb.sendKeys(fakeMail);
@@ -57,7 +58,7 @@ public class TC05 {
 
         String mailKod=vendorRegisterPage.mailVerivacitonCode.getText();
         String[] sadeceKod=mailKod.split(" ");
-        extentTest.info("Kullanıcı Verification Code kısmına  veri girdiği doğrulanmışır");
+        RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına veri girdiği doğrulanmışır");
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod[5]);
@@ -67,6 +68,8 @@ public class TC05 {
 
         ReusableMethods.waitFor(3);
         System.out.println(vendorRegisterPage.pswEksikMesaji.getText());
+        RaporlamaUtil.extentTestInfo("Kullanıcı E-mail ve Verification Code verilerini hatasız girdiğinde bu alanlardan uyarı mesajı almadığı doğrulandı ");
+
         Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Password: This field is required."));
         Assert.assertTrue(vendorRegisterPage.pswEksikMesaji.getText().contains("Confirm Password: This field is required."));
         Driver.closeDriver();

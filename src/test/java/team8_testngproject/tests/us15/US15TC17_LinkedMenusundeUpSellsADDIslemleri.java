@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -13,13 +12,16 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde Size işlemleri (PASS)
+import java.util.Arrays;
+import java.util.List;
 
-    private final String testName = "US15 || TC15-Attributes menusunde Size işlemleri";
-    private final String description = "Vendor Attributes menusunde Size işlemleri yapabilmeli";
-    private final String raporMesaji = "Vendor olarak Attributes menusunde Size işlemleri yapabildiği doğrulanmıştır.";
+public class US15TC17_LinkedMenusundeUpSellsADDIslemleri {// Linked menusunde Up-Sells işlemleri (PASS)
+
+    private final String testName = "US15 || TC17-Linked menusunde Up-Sells işlemleri";
+    private final String description = "Vendor Linked menusunde Up-Sells işlemleri yapabilmeli";
+    private final String raporMesaji = "Vendor olarak Linked menusunde Up-Sells işlemleri yapabildiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void attributesMenuColorIslemleri() {
+    public void linkedMenuUpSellsIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -49,20 +51,38 @@ public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde 
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.sizeCheckboxRs.click();
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectAllButonRs);
-        ReusableMethods.waitFor(2);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectNoneButonRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.sizeAddNewButonRs);
-        Driver.driver.switchTo().alert().sendKeys("10XL");
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.sizeVisibleCheckboxRs.click();
-        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
+        ReusableMethods.jsClick(vendorProductManagerPage.linkedMenuRs);
+        ReusableMethods.jsClick(vendorProductManagerPage.linkedUpCellsTexboxRs);
+        //((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].value = arguments[1];", vendorProductManagerPage.linkedUpCellsTexboxRs, "soyle");
 
+        vendorProductManagerPage.linkedUpCellsTexboxRs.sendKeys("soyle");
+        ReusableMethods.waitFor(5);
+        vendorProductManagerPage.linkedUpCellsTexboxRs.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowDown'}))");
+//        ReusableMethods.waitFor(1);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowDown'}))");
+//        ReusableMethods.waitFor(1);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'}))", vendorProductManagerPage.linkedUpCellsTexboxRs);
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'}))", vendorProductManagerPage.linkedUpCellsTexboxRs);
+
+//        Actions actions =new Actions(Driver.getDriver());
+//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+        //ReusableMethods.jsClick(vendorProductManagerPage.boyleElementInUpcellsDropdownRs);
+        //Select select1=new Select(vendorProductManagerPage.linkedUpCellsDropdownRs);
+        //select1.selectByValue("Art-123");
+        /*
+        ReusableMethods.waitForClickablility(vendorProductManagerPage.boyleElementInUpcellsDropdownRs, 30);
+        ReusableMethods.jsClick(vendorProductManagerPage.boyleElementInUpcellsDropdownRs);
+
+        String actualOptions = ReusableMethods.getOptionsFromSelect(vendorProductManagerPage.linkedUpCellsDropdownRs).toString();
+        Assert.assertEquals(actualOptions.contains("oyle"),"OYLEBOYLESOYLE");
+
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve checkbox seçim yapılabildiği kontrol edildi.");
+*/
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 

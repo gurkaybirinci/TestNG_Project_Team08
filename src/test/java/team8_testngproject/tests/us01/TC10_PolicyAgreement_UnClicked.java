@@ -19,19 +19,19 @@ public class TC10_PolicyAgreement_UnClicked {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void RegistrationUnsuccessful_NameUnspecified() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         Faker faker = new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+       RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(faker.name().username());
         registerPage.e_mailBox.sendKeys(faker.internet().emailAddress());
         registerPage.userPasswordBox.sendKeys(faker.internet().password());
         registerPage.userSignUpButton.click();
-        extentTest.info("Kullanıcı kayıd işlemini gerçekleştiremedi ve uyari mesaji alir");
+        RaporlamaUtil.extentTestInfo("Kullanıcı kayıd işlemini gerçekleştiremedi ve uyari mesaji alir");
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
         waitFor(3);

@@ -26,7 +26,7 @@ public class TC01_InabilityToRegister_WithUsedName {
 
     P01_HomePage homePage=new P01_HomePage();
     homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+        RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
     P02_RegisterPage registerPage = new P02_RegisterPage();
     registerPage.userNameBox.sendKeys(ConfigReader.getProperty("generatedUsername1"));
@@ -34,7 +34,7 @@ public class TC01_InabilityToRegister_WithUsedName {
     registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword"));
     registerPage.policyAgreementBox.click();
     registerPage.userSignUpButton.click();
-        extentTest.info("Onceden girilimis Username ile kayid islemi gerceklesmemistir ve uyari mesaji gorunmustur");
+        RaporlamaUtil.extentTestInfo("Onceden girilimis Username ile kayid islemi gerceklesmemistir ve uyari mesaji gorunmustur");
 
     Assert.assertTrue(registerPage.alreadyUsedUsernameStatement.isDisplayed());
     Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());

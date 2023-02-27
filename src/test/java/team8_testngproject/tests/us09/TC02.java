@@ -1,5 +1,4 @@
 package team8_testngproject.tests.us09;
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -15,18 +14,18 @@ public class TC02 {
     P01_HomePage homePage;
     P02_RegisterPage registerPage;
     P14_VendorRegisterPage vendorRegisterPage;
-    private final String testName = "US09 || TC02-e-mail Kutusu ";
-    private final String description = "e mail kutusuna veri girilebilmeli";
-    private final String raporMesaji = "Kullanıcı sadece e mail bilgilerini girdiğinde hata mesajı almalı";
+    private final String testName = "US09 || TC02-E-mail Kutusu ";
+    private final String description = "e-mail adresi girmeli ";
+    private final String raporMesaji = "Kullanıcı sadece e-mail bilgilerini girdiğinde e-mail ile ilgili hata mesajı almadığı doğrulandı";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc02() throws InterruptedException {
 
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         //Kullanıcı fake url gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
         vendorRegisterPage=new P14_VendorRegisterPage();
         String mailAdresi=vendorRegisterPage.fakeMailKutuZb.getText();
+        RaporlamaUtil.extentTestInfo("Kullanıcının fake mail adresi alabilirliği kontrol edildi");
         System.out.println(mailAdresi);
 
         //Kullanıcı url'e gider
@@ -39,15 +38,17 @@ public class TC02 {
         //Kullanıcı Sign Up ekranından Become a Vendor linkine tıklar
         registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
 
         //Kullanıcı fake url'den almış olduğu valid Email adresini girer
         vendorRegisterPage.emailzb.sendKeys(mailAdresi);
-        extentTest.info("Kullanıcı mail kutusuna veri girdiği doğrulanmışır");
+        RaporlamaUtil.extentTestInfo("Kullanıcının mail kutusuna veri girdiği doğrulanmışır");
 
-
-        //Register  kutusuna tıklar !!!!! tekrar kontrol et
+        //Register  kutusuna tıklar
         vendorRegisterPage.vendorRegisterClickZb.click();
         ReusableMethods.waitFor(1);
+        RaporlamaUtil.extentTestInfo("Kullanıcı e-mail dışında diğer boş alanlardan hata mesajı alma durumu kontrol edildi");
+
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Email Verification Code: This field is required."));
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Password: This field is required."));
         Assert.assertTrue(vendorRegisterPage.emailUyariZb.getText().contains("Confirm Password: This field is required."));

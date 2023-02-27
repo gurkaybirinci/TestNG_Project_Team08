@@ -17,12 +17,12 @@ public class TC11_BreachToSuccessIn_Registration {
 
     @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void Registergarion() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         Faker faker=new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
-        extentTest.info("Home page'den Register sayfasina gidildi.");
+        RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
         P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.userNameBox.sendKeys(faker.name().username());
@@ -30,7 +30,7 @@ public class TC11_BreachToSuccessIn_Registration {
         registerPage.userPasswordBox.sendKeys("a");
         registerPage.policyAgreementBox.click();
         registerPage.userSignUpButton.click();
-        extentTest.info("Home pagedeki Register sayfasinda, Password alani test edildiginde beklenen sonuc karsilanmamakta ve test fail olmakta");
+        RaporlamaUtil.extentTestInfo("Home pagedeki Register sayfasinda, Password alani test edildiginde beklenen sonuc karsilanmamakta ve test fail olmakta");
 
 
      Assert.assertFalse(registerPage.signOutButton.isEnabled());

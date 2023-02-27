@@ -19,19 +19,19 @@ public class TC02_nameBox_Unattempted {
 
  @Test  (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
  public void RegistrationUnsuccessful_NameUnspecified()  {
-  ExtentTest extentTest = RaporlamaUtil.extentTest;
+
   Driver.getDriver().get(ConfigReader.getProperty("URL"));
   Faker faker = new Faker();
   P01_HomePage homePage = new P01_HomePage();
   homePage.userRegisterButton.click();
-  extentTest.info("Home page'den Register sayfasina gidildi.");
+  RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
   P02_RegisterPage registerPage = new P02_RegisterPage();
   registerPage.e_mailBox.sendKeys(faker.internet().emailAddress());
   registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword"));
   registerPage.policyAgreementBox.click();
   registerPage.userSignUpButton.click();
-  extentTest.info("Isim alani bos birakildiginda, SignUp işlemi yapılmamali.");
+  RaporlamaUtil.extentTestInfo("Isim alani bos birakildiginda, SignUp işlemi yapılmamali.");
 
  Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
  waitFor(3);

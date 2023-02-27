@@ -29,7 +29,7 @@ public class UserStory_06 {
          checkOutPage = new P10_CheckOutPage();
          orderCompletePage=new P11_OrderCompletePage();
     }
-
+    
     @Test (testName = "Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
     public void us06_Tc01() {
 

@@ -19,13 +19,12 @@ public class TC01_AllAreasFilled {
 
   @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
   public void successfuCustomerRegisterationl(){
-      ExtentTest extentTest = RaporlamaUtil.extentTest;
       Driver.getDriver().get(ConfigReader.getProperty("URL"));
       Faker faker=new Faker();
 
       P01_HomePage homePage=new P01_HomePage();
       homePage.userRegisterButton.click();
-     extentTest.info("Home page'den Register sayfasina gidildi.");
+    RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
 
       P02_RegisterPage registerPage = new P02_RegisterPage();
       registerPage.userNameBox.sendKeys(faker.name().username());
@@ -33,9 +32,9 @@ public class TC01_AllAreasFilled {
       registerPage.userPasswordBox.sendKeys(ConfigReader.getProperty("generatedPassword"));
       registerPage.policyAgreementBox.click();
       registerPage.userSignUpButton.click();
-     extentTest.info("SignUp işlemi yapıldı.");
+      RaporlamaUtil.extentTestInfo("SignUp işlemi yapıldı.");
 
-      extentTest.info("Username dahil, butun alanlara veri girilebildigi kontrol edildi.");
+      RaporlamaUtil.extentTestInfo("Username dahil, butun alanlara veri girilebildigi kontrol edildi.");
       Assert.assertTrue(homePage.homePageLogo.isDisplayed());
 
       waitFor(3);

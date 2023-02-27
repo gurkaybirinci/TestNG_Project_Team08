@@ -19,13 +19,15 @@ public class TC04 {
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc04() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
+
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
         //Kullanıcı fake mail adresi alır
         P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
         String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
+        RaporlamaUtil.extentTestInfo("Kullanıcının fake mail adresi alabilirliği kontrol edildi");
+
 
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -37,9 +39,13 @@ public class TC04 {
         //Kullanıcı Become a Vendor linkine tıklar
         P02_RegisterPage registerPage=new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
+        RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
+
 
         //Kullanıcı valid Email bilgileri girer
         vendorRegisterPage.emailzb.sendKeys(fakeMail);
+        RaporlamaUtil.extentTestInfo("Kullanıcı email kutusuna  valid değer girdiği doğrulanmışır");
+
 
         //Verification Code text kutsuna tıklar
          vendorRegisterPage.verificationCodeClick.click();
@@ -47,9 +53,10 @@ public class TC04 {
         //Verification Code text kutsuna tıklar( "Verification code sent to your email: abc@abc.com." mesajını görmeli)
         ReusableMethods.waitFor(3);
         String dogrulama=vendorRegisterPage.codeSuccess.getText();
-        extentTest.info("Kullanıcı mail kutusuna veri girdiği doğrulanmışır");
 
         System.out.println("Doğrulama:" +dogrulama);
+        RaporlamaUtil.extentTestInfo("Kullanıcı mail adresini girdiğinde, mail adresine gönderilen Verification code olduğu mesajının görünürlüğünü kontrol eder");
+
         Assert.assertTrue(vendorRegisterPage.codeSuccess.getText().contains(dogrulama));
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
