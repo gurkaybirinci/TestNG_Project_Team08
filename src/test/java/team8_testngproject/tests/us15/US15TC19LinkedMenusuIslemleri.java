@@ -56,12 +56,12 @@ public class US15TC19LinkedMenusuIslemleri {// Linked menusunde Cross-Sells işl
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
         Assert.assertFalse(vendorProductManagerPage.linkedUpCellsTexboxRs.getText().contains("SoyleBoyleOyle"));
-        ReusableMethods.jsClick(vendorProductManagerPage.linkedCrossCellsDropdownRs);
-        vendorProductManagerPage.linkedCrossCellsDropdownRs.sendKeys("soyle");
+//        ReusableMethods.jsClick(vendorProductManagerPage.linkedCrossCellsDropdownRs);
+        vendorProductManagerPage.linkedCrossCellsDropdown2Rs.sendKeys("soyle");
         ReusableMethods.waitFor(4);
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        Assert.assertFalse(vendorProductManagerPage.linkedCrossCellsDropdownRs.getText().contains("SoyleBoyleOyle"));
+        Assert.assertFalse(vendorProductManagerPage.linkedCrossCellsDropdown2Rs.getText().contains("SoyleBoyleOyle"));
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
         RaporlamaUtil.extentTestInfo("Metin kutularına veri göndrilebildiği ve dropdown menuden seçim yapılabildiği doğrulandı.");

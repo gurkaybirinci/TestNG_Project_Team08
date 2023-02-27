@@ -51,7 +51,7 @@ public class US15TC22_SeoMenusundeMetaDescriptionIslemleriFazlaKarakter {// SEO 
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.seoMetaDescriptionTexboxRs);
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE ");
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri 156 karakterden fazlası girilmemesi gerektiği kontrol edildi.");
         Assert.assertTrue(vendorProductManagerPage.seoMetaDescriptionTexboxRs.isDisplayed());
@@ -59,8 +59,12 @@ public class US15TC22_SeoMenusundeMetaDescriptionIslemleriFazlaKarakter {// SEO 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        Driver.closeDriver();
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        try {
+            Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        } catch (AssertionError e) {
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
     }
 }

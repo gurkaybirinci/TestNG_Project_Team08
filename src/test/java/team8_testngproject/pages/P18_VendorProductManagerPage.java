@@ -356,6 +356,7 @@ public class P18_VendorProductManagerPage {
     @FindBy(xpath = "//*[text()='Linked']") public WebElement linkedMenuRs;
     @FindBy(xpath = "(//input[@placeholder='Filter by product ...'])[2]") public WebElement linkedUpCellsTexboxRs;
     @FindBy(id = "upsell_ids") public WebElement linkedUpCellsDropdownRs;
+    @FindBy(xpath = "(//*[@class='select2-search__field'])[5]") public WebElement linkedCrossCellsDropdown2Rs;
     @FindBy(xpath = "(//input[@placeholder='Filter by product ...'])[3]") public WebElement linkedCrossCellsTexboxRs;
     @FindBy(xpath = "//*[@id='select2-crosssell_ids-results']") public WebElement linkedCrossCellsDropdownRs;
     @FindBy(xpath = "//*[text()='SOYLEOYLEBOYLE (Art-123)']") public WebElement boyleElementInUpcellsDropdownRs;
