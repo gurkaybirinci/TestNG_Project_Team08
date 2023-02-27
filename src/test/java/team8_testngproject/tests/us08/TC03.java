@@ -39,6 +39,7 @@ public class TC03 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
+//        extentTest.info("Login işlemi yapıldı.");
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
@@ -59,26 +60,31 @@ public class TC03 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
-        RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
+
+//        RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
+
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewButton);
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-amount amount'])[1]")).getText();
+        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-currencySymbol'])[1]")).getText();
         ReusableMethods.waitFor(2);
+        System.out.println("**************************" + bisikletEFG16Fiyat);
 //        Assert.assertFalse(bisikletEFG16Fiyat.contains("200.00"));
         ReusableMethods.waitFor(2);
         String addToCartButton = Driver.getDriver().findElement(By.name("add-to-cart")).getText();
         ReusableMethods.waitFor(2);
         Assert.assertTrue(addToCartButton.contains("ADD TO CART"));
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto1 = Driver.getDriver().findElement(By.xpath("(//*[@alt='EFG 16 Jant Bisiklet'])[1]")).getText();
+        String bisikletEFG16Foto1 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[1]")).getText();
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@alt='EFG 16 Jant Bisiklet'])[2]")).getText();
+        String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[2]")).getText();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
-        RaporlamaUtil.extentTestInfo("Urun ozellikleri goruntulendi.");
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+
+//        RaporlamaUtil.extentTestInfo("Urun ozellikleri goruntulendi.");
+//        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
         Driver.closeDriver();
+
     }
 }

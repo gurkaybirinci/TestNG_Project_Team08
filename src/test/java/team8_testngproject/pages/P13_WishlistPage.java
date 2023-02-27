@@ -79,7 +79,7 @@ public class P13_WishlistPage {
 
     // 80.Satır --> Gonca
 
-    @FindBy(xpath = "(//*[@data-title='Add to wishlist'])[5]")
+    @FindBy(xpath = "(//*[@data-title='Browse wishlist...'])[2]")
     public WebElement bisikletEFG16;
 
     @FindBy(xpath = "(//*[@data-product-id='17504'])[2]")
@@ -91,7 +91,7 @@ public class P13_WishlistPage {
     @FindBy(xpath = "//*[text()='EFG 16 Jant Cocuk Bisikleti']")
     public WebElement bisikletEFG16IsimDogrulama;
 
-    @FindBy(xpath = "//*[@title='Quick View']")
+    @FindBy(xpath = "//*[@data-product='14256']")
     public WebElement quickViewButton;
 
     @FindBy(xpath = "//*[@title='Close (Esc)']")
