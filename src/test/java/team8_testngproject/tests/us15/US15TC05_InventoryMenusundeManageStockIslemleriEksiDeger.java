@@ -17,7 +17,7 @@ public class US15TC05_InventoryMenusundeManageStockIslemleriEksiDeger { // Inven
 
     private final String testName = "US15 || TC05-Inventory menusunde Manage Stock işlemleri";
     private final String description = "Vendor Inventory menusunde Manage Stock işlemleri Eksi Değer Amamali";
-    private final String raporMesaji = "Inventory menusunde Manage Stock işlemleri Eksi Değer Amadiği doğrulanamamıştır.";
+    private final String raporMesaji = "Inventory menusunde Manage Stock işlemleri eksi değer almaması gerektiği doğrulanamamıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void inventoryMenuManageStockIslemleriEksiDeger() {
         P01_HomePage homePage = new P01_HomePage();
@@ -49,9 +49,15 @@ public class US15TC05_InventoryMenusundeManageStockIslemleriEksiDeger { // Inven
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        vendorProductManagerPage.inventoryMenuRs.click();
-        vendorProductManagerPage.manageStockCheckboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.inventoryMenuRs);
+        ReusableMethods.jsClick(vendorProductManagerPage.manageStockCheckboxRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        vendorProductManagerPage.stockQtyTextboxRs.clear();
         vendorProductManagerPage.stockQtyTextboxRs.sendKeys("-50");
+        Assert.assertTrue(vendorProductManagerPage.stockQtyTextboxRs.isDisplayed());
+        ReusableMethods.waitFor(2);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         select = new Select(vendorProductManagerPage.allowBackordersDropdownRs);
@@ -59,7 +65,7 @@ public class US15TC05_InventoryMenusundeManageStockIslemleriEksiDeger { // Inven
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(0);
 
-        Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 

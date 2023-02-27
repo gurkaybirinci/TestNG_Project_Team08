@@ -50,14 +50,21 @@ public class US15TC13_ShippingMenusundeProcessingTimeIslemleri { // Shipping  me
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.shippingMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         select = new Select(vendorProductManagerPage.processingTimeDropdownRs);
-        select.selectByIndex(0);
+        for (int i = 0; i < 9; i++) {
+            select.selectByIndex(i);
+            Assert.assertTrue(vendorProductManagerPage.processingTimeDropdownRs.isDisplayed());
+            ReusableMethods.waitFor(1);
+        }
         RaporlamaUtil.extentTestInfo("Dropdown menu kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(1);
 
-        Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }

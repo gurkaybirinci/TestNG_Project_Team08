@@ -36,7 +36,7 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         ReusableMethods.jsClick(homePage.myAccountButtonRs);
         ReusableMethods.jsClick(myAccountPage.storeManagerRs);
         ReusableMethods.hover(vendorStoreManagerPage.productButtonRs);
-        vendorStoreManagerPage.productAddNewButtonRs.click();
+        ReusableMethods.jsClick(vendorStoreManagerPage.productAddNewButtonRs);
 
         Select select = new Select(vendorProductManagerPage.productMenuRs);
         select.selectByIndex(0);
@@ -50,7 +50,12 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.colorCheckboxRs.click();
+        RaporlamaUtil.extentTestInfo("Attribute menu işlemi seçildi new color işlemi başladı.");
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.colorCheckboxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.colorSelectAllButonRs);
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.colorSelectNoneButonRs);
@@ -60,11 +65,15 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         Driver.driver.switchTo().alert().accept();
         ReusableMethods.waitFor(2);
         Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.colorVisibleCheckboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.colorVisibleCheckboxRs);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
 
-        ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
+        Select select1=new Select(vendorProductManagerPage.colorTextBoxKoz);
+        select1.selectByVisibleText("Morcivert");
+        Assert.assertEquals(select1.getAllSelectedOptions().get(0).getText(),vendorProductManagerPage.colorMorcivertRs.getText());
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
         ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
 
         Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();

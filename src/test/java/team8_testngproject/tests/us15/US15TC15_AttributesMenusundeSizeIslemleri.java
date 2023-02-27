@@ -36,7 +36,7 @@ public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde 
         ReusableMethods.jsClick(homePage.myAccountButtonRs);
         ReusableMethods.jsClick(myAccountPage.storeManagerRs);
         ReusableMethods.hover(vendorStoreManagerPage.productButtonRs);
-        vendorStoreManagerPage.productAddNewButtonRs.click();
+        ReusableMethods.jsClick(vendorStoreManagerPage.productAddNewButtonRs);
 
         Select select = new Select(vendorProductManagerPage.productMenuRs);
         select.selectByIndex(0);
@@ -50,21 +50,30 @@ public class US15TC15_AttributesMenusundeSizeIslemleri {// Attributes menusunde 
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.sizeCheckboxRs.click();
+        RaporlamaUtil.extentTestInfo("Attribute menu işlemi seçildi new size işlemi başladı.");
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.sizeCheckboxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectAllButonRs);
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.sizeSelectNoneButonRs);
         ReusableMethods.jsClick(vendorProductManagerPage.sizeAddNewButonRs);
+        ReusableMethods.waitFor(5);
         Driver.driver.switchTo().alert().sendKeys("10XL");
         ReusableMethods.waitFor(2);
         Driver.driver.switchTo().alert().accept();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.sizeVisibleCheckboxRs.click();
-        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
+        ReusableMethods.jsClick(vendorProductManagerPage.sizeVisibleCheckboxRs);
 
-        ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
+        Select select1=new Select(vendorProductManagerPage.sizeTextBoxKoz);
+        select1.selectByVisibleText("10XL");
+        Assert.assertEquals(select1.getAllSelectedOptions().get(0).getText(),vendorProductManagerPage.size10XLRs.getText());
+        RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
         ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
 
         Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
         Driver.closeDriver();

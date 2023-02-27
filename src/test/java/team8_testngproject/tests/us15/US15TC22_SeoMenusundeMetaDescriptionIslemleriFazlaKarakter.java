@@ -1,5 +1,7 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,9 +48,13 @@ public class US15TC22_SeoMenusundeMetaDescriptionIslemleriFazlaKarakter {// SEO 
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.seoMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE OYLEBOYLESOYLE ");
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri 156 karakterden fazlası girilmemesi gerektiği kontrol edildi.");
+        Assert.assertTrue(vendorProductManagerPage.seoMetaDescriptionTexboxRs.isDisplayed());
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);

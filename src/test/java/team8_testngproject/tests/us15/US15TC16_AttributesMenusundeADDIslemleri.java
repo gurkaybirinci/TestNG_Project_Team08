@@ -50,18 +50,20 @@ public class US15TC16_AttributesMenusundeADDIslemleri {// Attributes menusunde A
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.attributesMenuRs);
-        vendorProductManagerPage.addAttributeADDButonRs.click();
+        RaporlamaUtil.extentTestInfo("Attribute menu işlemi seçildi new attribute işlemi başladı.");
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.addAttributeADDButonRs);
         ReusableMethods.jsClick(vendorProductManagerPage.attributeAddAttributeActiveCheckboxRs);
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.attributeAddAttributeNameTextboxRs);
-        Driver.driver.switchTo().alert().sendKeys("Shapes");
+        vendorProductManagerPage.attributeAddAttributeNameTextboxRs.sendKeys("Shapes");
         ReusableMethods.jsClick(vendorProductManagerPage.attributeAddAttributeValueTextboxRs);
-        Driver.driver.switchTo().alert().sendKeys("oyle | boyle");
+        vendorProductManagerPage.attributeAddAttributeValueTextboxRs.sendKeys("oyle | boyle");
         ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        ReusableMethods.waitFor(2);
-        Driver.driver.switchTo().alert().accept();
-        vendorProductManagerPage.addAttributeVisibleCheckboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.addAttributeVisibleCheckboxRs);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve checkbox seçim yapılabildiği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

@@ -49,9 +49,13 @@ public class US15TC04_InventoryMenusundeManageStockIslemleri { // Inventory menu
         ReusableMethods.jsClick(vendorProductManagerPage.imageOyle2Rs);
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
-        vendorProductManagerPage.inventoryMenuRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.inventoryMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         vendorProductManagerPage.manageStockCheckboxRs.click();
         vendorProductManagerPage.stockQtyTextboxRs.sendKeys("50");
+        Assert.assertTrue(vendorProductManagerPage.stockQtyTextboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         select = new Select(vendorProductManagerPage.allowBackordersDropdownRs);

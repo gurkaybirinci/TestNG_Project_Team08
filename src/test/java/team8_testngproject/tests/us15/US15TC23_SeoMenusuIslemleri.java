@@ -1,5 +1,7 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,10 +48,16 @@ public class US15TC23_SeoMenusuIslemleri {// SEO menusunde Enter a focus keyword
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.seoMenuRs);
-        vendorProductManagerPage.seoEnterAFocusKewordTexboxRs.click();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
+        ReusableMethods.jsClick(vendorProductManagerPage.seoEnterAFocusKewordTexboxRs);
         vendorProductManagerPage.seoEnterAFocusKewordTexboxRs.sendKeys("Oyle123");
-        vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
+        Assert.assertTrue(vendorProductManagerPage.seoEnterAFocusKewordTexboxRs.isDisplayed());
+        ReusableMethods.jsClick(vendorProductManagerPage.seoMetaDescriptionTexboxRs);
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLESOYLEBOYLE");
+        Assert.assertTrue(vendorProductManagerPage.seoMetaDescriptionTexboxRs.isDisplayed());
+        ReusableMethods.waitFor(2);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

@@ -1,5 +1,7 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -46,13 +48,18 @@ public class US15TC27_ToptanUrunGostMenusuIslemleriPieceTypeKosul {// Toptan Ür
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunGostAyrMenuRs);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(2);
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs);
         vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs.clear();
         vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs.sendKeys("10");
+        Assert.assertTrue(vendorProductManagerPage.toptanUrunUnitPerPieceTextboxRs.isDisplayed());
         ReusableMethods.jsClick(vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs);
         vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs.clear();
         vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs.sendKeys("10");
+        Assert.assertTrue(vendorProductManagerPage.toptanUrunMinOrderQuantityTextboxRs.isDisplayed());
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
