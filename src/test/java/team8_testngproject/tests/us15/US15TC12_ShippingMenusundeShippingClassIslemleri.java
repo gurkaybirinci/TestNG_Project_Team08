@@ -18,6 +18,7 @@ public class US15TC12_ShippingMenusundeShippingClassIslemleri { // Shipping  men
     private final String testName = "US15 || TC12-Shipping menusunde Shipping Class işlemleri";
     private final String description = "Vendor Shipping menusunde Shipping Class işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Shipping menusunde Shipping Class işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void shippingMenuShippingClassIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -65,8 +66,13 @@ public class US15TC12_ShippingMenusundeShippingClassIslemleri { // Shipping  men
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        //Driver.closeDriver();
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        try {
+            Assert.assertTrue(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
+        } catch (AssertionError e) {
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
     }
 }
+

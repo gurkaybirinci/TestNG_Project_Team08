@@ -51,7 +51,7 @@ public class US15TC21_SeoMenusundeMetaDescriptionIslemleri {// SEO menusunde Met
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        vendorProductManagerPage.seoMetaDescriptionTexboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.seoMetaDescriptionTexboxRs);
         vendorProductManagerPage.seoMetaDescriptionTexboxRs.sendKeys("OYLESOYLEBOYLE");
         Assert.assertTrue(vendorProductManagerPage.seoMetaDescriptionTexboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
