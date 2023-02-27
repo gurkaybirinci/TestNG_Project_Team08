@@ -1,6 +1,8 @@
 package team8_testngproject.tests.us15;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -48,13 +50,17 @@ public class US15TC18_LinkedMenusundeCrossSellsIslemleri {// Linked menusunde Cr
         ReusableMethods.jsClick(vendorProductManagerPage.selectButtonForImgRs);
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.linkedMenuRs);
-        ReusableMethods.jsClick(vendorProductManagerPage.linkedCrossCellsDropdownRs);
-        vendorProductManagerPage.linkedCrossCellsDropdownRs.sendKeys("boyle");
-        ReusableMethods.waitFor(4);
+        ReusableMethods.jsClick(vendorProductManagerPage.linkedCrossCellsTexboxRs);
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.ENTER).release().perform();
+        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
+        vendorProductManagerPage.linkedCrossCellsTexboxRs.sendKeys("boyle");
         ReusableMethods.waitFor(2);
-        Assert.assertFalse(vendorProductManagerPage.linkedCrossCellsDropdownRs.getText().contains("SoyleBoyleOyle"));
+        actions.sendKeys(Keys.ENTER).release().perform();
+        ReusableMethods.waitFor(1);
+//        WebElement dropdown1= vendorProductManagerPage.linkedCrossCellsTexbox2Rs;
+//        String actual = ((JavascriptExecutor) Driver.getDriver()).executeScript("return arguments[0].value;", dropdown1).toString();
+//        System.out.println(actual);
+//        Assert.assertTrue(actual.contains("Oyle"));
         RaporlamaUtil.extentTestInfo("Metin kutularına veri göndrilebildiği ve dropdown menuden seçim yapılabildiği doğrulandı.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

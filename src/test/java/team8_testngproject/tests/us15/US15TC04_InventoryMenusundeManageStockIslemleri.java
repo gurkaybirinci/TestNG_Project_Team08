@@ -53,7 +53,7 @@ public class US15TC04_InventoryMenusundeManageStockIslemleri { // Inventory menu
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        vendorProductManagerPage.manageStockCheckboxRs.click();
+        ReusableMethods.jsClick(vendorProductManagerPage.manageStockCheckboxRs);
         vendorProductManagerPage.stockQtyTextboxRs.sendKeys("50");
         Assert.assertTrue(vendorProductManagerPage.stockQtyTextboxRs.isDisplayed());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");

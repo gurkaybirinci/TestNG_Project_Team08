@@ -51,7 +51,7 @@ public class US15TC02_InventoryMenusundeSKUIslemleri { // Inventory menusunde SK
         ReusableMethods.jsClick(vendorProductManagerPage.artsCheckBoxRs);
         ReusableMethods.jsClick(vendorProductManagerPage.inventoryMenuRs);
         ReusableMethods.jsClick(vendorProductManagerPage.skuTextboxRs);
-        vendorProductManagerPage.skuTextboxRs.sendKeys("Art-144");
+        vendorProductManagerPage.skuTextboxRs.sendKeys("Art-145");
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği kontrol edildi.");
 
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
