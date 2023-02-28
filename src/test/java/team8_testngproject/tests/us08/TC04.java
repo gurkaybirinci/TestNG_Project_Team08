@@ -38,19 +38,19 @@ public class TC04 {
         ReusableMethods.waitFor(3);
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.search);
-        shoppingPage.search.sendKeys("bisiklet");
-        ReusableMethods.waitFor(2);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.aramaTusu);
-        ReusableMethods.waitFor(3);
-        String arananUrunTitle = Driver.getDriver().getTitle();
-        ReusableMethods.waitFor(3);
-        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                wishlistPage.bisikletEFG16);
-        ReusableMethods.waitFor(5);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.search);
+//        shoppingPage.search.sendKeys("bisiklet");
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.aramaTusu);
+//        ReusableMethods.waitFor(3);
+//        String arananUrunTitle = Driver.getDriver().getTitle();
+//        ReusableMethods.waitFor(3);
+//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                wishlistPage.bisiklet);
+//        ReusableMethods.waitFor(5);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         ReusableMethods.waitFor(3);

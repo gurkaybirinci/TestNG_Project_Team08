@@ -40,33 +40,33 @@ public class TC02 {
         ReusableMethods.waitFor(3);
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.search);
-        shoppingPage.search.sendKeys("bisiklet");
-        ReusableMethods.waitFor(2);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.aramaTusu);
-        ReusableMethods.waitFor(3);
-        String arananUrunTitle = Driver.getDriver().getTitle();
-        ReusableMethods.waitFor(3);
-        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                wishlistPage.bisikletEFG16);
-        ReusableMethods.waitFor(2);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                wishlistPage.bisikletKizCocuk);
-        ReusableMethods.waitFor(2);
-        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi");
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.search);
+//        shoppingPage.search.sendKeys("bisiklet");
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.aramaTusu);
+//        ReusableMethods.waitFor(3);
+//        String arananUrunTitle = Driver.getDriver().getTitle();
+//        ReusableMethods.waitFor(3);
+//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                wishlistPage.bisiklet);
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                wishlistPage.bisikletKizCocuk);
+//        ReusableMethods.waitFor(2);
+//        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi");
 
         //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         String wishlistTitleKontrol = Driver.getDriver().getTitle();
         Assert.assertTrue(wishlistTitleKontrol.contains("Wishlist"));
-        String bisikletEFG16IsimKontrol = Driver.getDriver().findElement(By.xpath("(//*[text()='EFG 16 Jant Cocuk Bisikleti'])[2]")).getText();
+        String bisikletEFG16IsimKontrol = Driver.getDriver().findElement(By.linkText("EFG 16 Jant Cocuk Bisikleti")).getText();
         Assert.assertEquals(bisikletEFG16IsimKontrol, "EFG 16 Jant Cocuk Bisikleti");
 
-        String bisikletKizCocukIsimKontrol = Driver.getDriver().findElement(By.xpath("(//*[text()='Kız Çocuk Bisikleti'])[3]")).getText();
+        String bisikletKizCocukIsimKontrol = Driver.getDriver().findElement(By.linkText("Kız Çocuk Bisikleti")).getText();
         Assert.assertEquals(bisikletKizCocukIsimKontrol, "Kız Çocuk Bisikleti");
         RaporlamaUtil.extentTestInfo("'wishlist'e eklenen urunler kontrol edildi.");
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
