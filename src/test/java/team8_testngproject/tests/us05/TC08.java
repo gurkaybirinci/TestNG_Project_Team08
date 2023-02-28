@@ -77,6 +77,7 @@ public class TC08 {
         prop.store(output,null);
         output.close();
 
+        Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
