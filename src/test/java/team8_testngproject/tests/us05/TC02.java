@@ -14,7 +14,6 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -25,7 +24,6 @@ public class TC02 {
     private final String raporMesaji = "Kullanıcının hesap detayları değiştirdiği doğrulanmıştır.";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01() throws IOException {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 

@@ -33,11 +33,13 @@ public class TC15 {
 
 
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
-
-        Assert.assertEquals(p04_myAccountPage.dash_followingsVendor_Es.getText(), "followings");
-        Driver.closeDriver();
-
-        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        try{
+            Assert.assertEquals(p04_myAccountPage.dash_followingsVendor_Es.getText(), "followings");
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
 
     }
 }

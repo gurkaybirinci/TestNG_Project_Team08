@@ -31,11 +31,13 @@ public class TC07 {
         p01_homePage.signOut_Es.click();
 
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
-
-        Assert.assertEquals(p04_myAccountPage.logoutVendor_Es.getText(),"Logout");
-        Driver.closeDriver();
-
-        RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        try{
+            Assert.assertEquals(p04_myAccountPage.logoutVendor_Es.getText(),"Logout");
+        }catch (AssertionError e){
+            throw e;
+        } finally {
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
 
     }
 }
