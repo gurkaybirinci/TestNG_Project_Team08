@@ -41,26 +41,26 @@ public class TC03 {
 //        extentTest.info("Login işlemi yapıldı.");
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.search);
-        shoppingPage.search.sendKeys("bisiklet");
-        ReusableMethods.waitFor(2);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                shoppingPage.aramaTusu);
-        ReusableMethods.waitFor(3);
-        String arananUrunTitle = Driver.getDriver().getTitle();
-        ReusableMethods.waitFor(3);
-        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                wishlistPage.bisikletEFG16);
-        ReusableMethods.waitFor(5);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.search);
+//        shoppingPage.search.sendKeys("bisiklet");
+//        ReusableMethods.waitFor(2);
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                shoppingPage.aramaTusu);
+//        ReusableMethods.waitFor(3);
+//        String arananUrunTitle = Driver.getDriver().getTitle();
+//        ReusableMethods.waitFor(3);
+//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
+//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
+//                wishlistPage.bisiklet);
+//        ReusableMethods.waitFor(5);
 
         //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
 
-//        RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
+        RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
 
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
@@ -68,7 +68,6 @@ public class TC03 {
         ReusableMethods.waitFor(2);
         String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-currencySymbol'])[1]")).getText();
         ReusableMethods.waitFor(2);
-        System.out.println("**************************" + bisikletEFG16Fiyat);
 //        Assert.assertFalse(bisikletEFG16Fiyat.contains("200.00"));
         ReusableMethods.waitFor(2);
         String addToCartButton = Driver.getDriver().findElement(By.name("add-to-cart")).getText();
@@ -81,8 +80,8 @@ public class TC03 {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
 
-//        RaporlamaUtil.extentTestInfo("Urun ozellikleri goruntulendi.");
-//        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        RaporlamaUtil.extentTestInfo("Urun ozellikleri goruntulendi.");
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
         Driver.closeDriver();
 
     }

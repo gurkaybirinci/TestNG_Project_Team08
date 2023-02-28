@@ -48,7 +48,7 @@ public class TC01 {
         String arananUrunTitle = Driver.getDriver().getTitle();
         Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-                wishlistPage.bisikletEFG16);
+                wishlistPage.bisiklet);
         ReusableMethods.waitFor(2);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.bisikletKizCocuk);
