@@ -79,23 +79,23 @@ public class P07_ShoppingPage {
 
     // 80.Satır --> Gonca
 
-    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[1]")
-    public WebElement urunSunnyBabyXButonu;
-
-    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[2]")
-    public WebElement urunWomenWhiteXButonu;
-
-    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[3]")
-    public WebElement urunWomenFashionXButonu;
-
-    @FindBy(xpath = "(//*[@class='w-icon-angle-right'])[4]")
-    public WebElement urunCoatPoolXButonu;
-
-    @FindBy(xpath = "//*[text()='No products added to the compare']")
-    public WebElement compareSilinenUrunler;
 
     @FindBy(xpath = "(//*[@class='form-control'])[1]")    public WebElement search;
     @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")    public WebElement aramaTusu;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

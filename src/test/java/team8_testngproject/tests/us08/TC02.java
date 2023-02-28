@@ -40,25 +40,6 @@ public class TC02 {
         ReusableMethods.waitFor(3);
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.search);
-//        shoppingPage.search.sendKeys("bisiklet");
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.aramaTusu);
-//        ReusableMethods.waitFor(3);
-//        String arananUrunTitle = Driver.getDriver().getTitle();
-//        ReusableMethods.waitFor(3);
-//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                wishlistPage.bisiklet);
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                wishlistPage.bisikletKizCocuk);
-//        ReusableMethods.waitFor(2);
-//        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi");
-
-        //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         String wishlistTitleKontrol = Driver.getDriver().getTitle();

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
 import team8_testngproject.pages.P07_ShoppingPage;
+import team8_testngproject.pages.P12_ComparePage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
@@ -20,7 +21,7 @@ import java.util.List;
 public class TC04 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
-    P07_ShoppingPage ShoppingPage;
+    P12_ComparePage comparePage;
     private final String testName = "US07 || TC04-Secilen urunlerin karsilastirilmasi";
     private final String description = "Compare sayfasinda urun karsilastirilmasi";
     private final String raporMesaji = "Compare sayfasinda urun silme.";
@@ -83,37 +84,37 @@ public class TC04 {
         String compareBaslik = Driver.getDriver().getTitle();
         Assert.assertTrue(compareBaslik.contains("Compare"));
 
-        String urunTheMonogram = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[1]")).getText();
+        String urunTheMonogram = comparePage.urunTheMonogram.getText();
         Assert.assertTrue(urunTheMonogram.contains("Sunny Baby Bebek Arabası"));
-        String urunWomenWhite = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[2]")).getText();
+        String urunWomenWhite = comparePage.urunWomenWhite.getText();
         Assert.assertTrue(urunWomenWhite.contains("Women’s White Handbag"));
-        String urunWomenFashion = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[3]")).getText();
+        String urunWomenFashion = comparePage.urunWomenFashion.getText();
         Assert.assertTrue(urunWomenFashion.contains("Women’s Fashion Handbag"));
-        String urunCoatPool = Driver.getDriver().findElement(By.xpath("(//*[@class='product-title'])[4]")).getText();
+        String urunCoatPool = comparePage.urunCoatPool.getText();
         Assert.assertTrue(urunCoatPool.contains("Coat Pool Comfort Jacket"));
 
-        String product = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[1]")).getText();
+        String product = comparePage.product.getText();
         Assert.assertTrue(product.contains("Product"));
-        String price = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[2]")).getText();
+        String price = comparePage.price.getText();
         Assert.assertTrue(price.contains("Price"));
-        String availability = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[3]")).getText();
+        String availability = comparePage.availability.getText();
         Assert.assertTrue(availability.contains("Availability"));
-        String description = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[4]")).getText();
+        String description = comparePage.description.getText();
         Assert.assertTrue(description.contains("Description"));
-        String ratingsReviews = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[5]")).getText();
+        String ratingsReviews = comparePage.ratingsReviews.getText();
         Assert.assertTrue(ratingsReviews.contains("Ratings & Reviews"));
-        String sKU = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[6]")).getText();
+        String sKU = comparePage.sKU.getText();
         Assert.assertTrue(sKU.contains("SKU"));
-        String size = Driver.getDriver().findElement(By.xpath("(//*[@class='compare-col compare-field'])[7]")).getText();
+        String size = comparePage.size.getText();
         Assert.assertTrue(size.contains("Size"));
         //*************************************************************************************
 
         ReusableMethods.waitFor(2);
-        String sunBabyXButonu = Driver.getDriver().findElement(By.xpath("(//*[text()='Sunny Baby Bebek Arabası'])[1]")).getText();
-        String womenWhiteXButon = Driver.getDriver().findElement(By.xpath("//*[text()='Women’s White Handbag']")).getText();
-        String womenFashionXButon = Driver.getDriver().findElement(By.xpath("//*[text()='Women’s Fashion Handbag']")).getText();
-        WebElement silinenCoatPoolXButon = Driver.getDriver().findElement(By.xpath("(//*[@class='w-icon-times-solid'])[4]"));
-        String silinenCoatPoolKontrol = Driver.getDriver().findElement(By.xpath("//*[text()='Coat Pool Comfort Jacket']")).getText();
+        String sunBabyXButonu = comparePage.sunBabyXButonu.getText();
+        String womenWhiteXButon = comparePage.womenWhiteXButon.getText();
+        String womenFashionXButon = comparePage.womenFashionXButon.getText();
+        WebElement silinenCoatPoolXButon = comparePage.silinenCoatPoolXButon;
+        String silinenCoatPoolKontrol = comparePage.silinenCoatPoolKontrol.getText();
 
 
         silinenCoatPoolXButon.click();

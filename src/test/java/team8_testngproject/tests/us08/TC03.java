@@ -41,32 +41,16 @@ public class TC03 {
 //        extentTest.info("Login işlemi yapıldı.");
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.search);
-//        shoppingPage.search.sendKeys("bisiklet");
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.aramaTusu);
-//        ReusableMethods.waitFor(3);
-//        String arananUrunTitle = Driver.getDriver().getTitle();
-//        ReusableMethods.waitFor(3);
-//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                wishlistPage.bisiklet);
-//        ReusableMethods.waitFor(5);
-
-        //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
 
         RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
-
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewButton);
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-currencySymbol'])[1]")).getText();
+        String bisikletEFG16Fiyat = wishlistPage.bisikletEFG16Fiyat.getText();
         ReusableMethods.waitFor(2);
 //        Assert.assertFalse(bisikletEFG16Fiyat.contains("200.00"));
         ReusableMethods.waitFor(2);
@@ -74,9 +58,9 @@ public class TC03 {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(addToCartButton.contains("ADD TO CART"));
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto1 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[1]")).getText();
+        String bisikletEFG16Foto1 = wishlistPage.bisikletEFG16Foto1.getText();
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[2]")).getText();
+        String bisikletEFG16Foto2 = wishlistPage.bisikletEFG16Foto2.getText();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
 
