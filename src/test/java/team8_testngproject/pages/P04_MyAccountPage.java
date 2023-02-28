@@ -18,12 +18,12 @@ public class P04_MyAccountPage { public P04_MyAccountPage() {
 
 
     // 20.Satır --> Ali
+@FindBy(xpath="//*[@class='page-title-bar']")
+public WebElement myAccountPageAli;
+
 
 @FindBy (linkText = "Addresses")
-public WebElement addAddressesLinkAli;
-
-
-
+public WebElement AddressesLinkAli;
 
 
 

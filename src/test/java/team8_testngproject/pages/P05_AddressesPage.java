@@ -18,32 +18,32 @@ public class P05_AddressesPage { public P05_AddressesPage() {
 
 
     // 20.Satır --> Ali
-@FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/billing/']")
-public WebElement editlinkAli;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/billing/']")
+    public WebElement billingaddButtonAli;
+    @FindBy(xpath = "//*[@class='edit btn btn-link btn-primary btn-underline mb-4']")
+    public WebElement addButtonAli;
+    @FindBy(id = "billing_first_name")
+    public WebElement firstNameAli;
+    @FindBy(id = "billing_country")
+    public WebElement countryAli;
+    @FindBy(xpath = "//span[text()='billing_country']")
+    public WebElement billingcountryAli;
+    @FindBy(xpath= "//*[@id='billing_address_1']")
+    public WebElement adreskutusuAli;
+    @FindBy(id="billing_address_2")
+    public WebElement adress2Ali;
+    @FindBy(id="billing_postcode")
+    public WebElement kutu2Ali;
+    @FindBy(id="billing_city")
+    public WebElement city2Ali;
+    @FindBy(id="billing_state")
+    public WebElement stateAli;
+    @FindBy(id="billing_email")
+    public WebElement emailAli;
+   @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm']")
+   public WebElement saveAdressButtonAli;
+    @FindBy(xpath = "//span[text()='following addresses']")
+    public WebElement kayitGorunmeAli;
 
 
 

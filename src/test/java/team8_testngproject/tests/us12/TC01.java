@@ -1,5 +1,10 @@
 package team8_testngproject.tests.us12;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
 import team8_testngproject.pages.P03_LoginPage;
@@ -7,28 +12,85 @@ import team8_testngproject.pages.P04_MyAccountPage;
 import team8_testngproject.pages.P05_AddressesPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
+import team8_testngproject.utilities.ReusableMethods;
+
 
 public class TC01 {
     @Test
     public void tc01(){
+        //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
+
+        //     2. Sing in butonuna tıklanir.
         P01_HomePage homePage = new P01_HomePage();
         homePage.signInButtonAli.click();
 
+        //     3. Username ya da Email inputuna veri girilir.
         P03_LoginPage loginPage= new P03_LoginPage();
         loginPage.usernameAli.sendKeys(ConfigReader.getProperty("vendorUserNameAli"));
 
+        //     4.  Password inputuna veri girilir.
         loginPage.passwordAli.sendKeys(ConfigReader.getProperty("vendorPasswordAli"));
 
+        //      5. signOut butonuna tıklar
         loginPage.loginAli.click();
 
+        //      6. signOut butonuna tıklar
         homePage.signOutButtonAli.click();
 
+        //      7. My Account sayfasına erişildiğini dogrulanir.
         P04_MyAccountPage myAccountPage= new P04_MyAccountPage();
-        myAccountPage.addAddressesLinkAli.click();
+        Assert.assertEquals(myAccountPage.myAccountPageAli.getText(), "My Account");
 
-        P05_AddressesPage addressesPage = new P05_AddressesPage();
-        addressesPage.editlinkAli.click();
+        //     8. Address butonuna tıklar.
+        myAccountPage.AddressesLinkAli.click();
+
+        //     9. Billilng (fatura) addressi add (edit your billing) butonuna tıklar
+        P05_AddressesPage addressesPageAli = new P05_AddressesPage();
+        ReusableMethods.jsClick(addressesPageAli.addButtonAli);
+
+        //     10.  First name inputuna veri girilir. //Last name inputuna veri girilir.
+        addressesPageAli.firstNameAli.sendKeys("Preto",
+                Keys.TAB, "MEX");
+
+        //    11.  Country/Region dropdown'indan secim yapilir.
+        Select select = new Select(addressesPageAli.countryAli);
+        select.selectByVisibleText("Mexico");
+
+        //     12. Street adress alanina veri girilir.
+        addressesPageAli.adreskutusuAli.sendKeys("060223");
+        addressesPageAli.adress2Ali.sendKeys(" Elsalvador Street");
+
+        //     13.  Town/City alanina veri girilir.
+        addressesPageAli.city2Ali.sendKeys("Mexcio City");
+
+        //     14.  State dropdown'undan secim yapilir.
+        Select selectState = new Select (addressesPageAli.stateAli);
+        select.selectByIndex(1);
+
+        //    15.  Postcode / ZIP alanina veri girilir.
+        addressesPageAli.kutu2Ali.sendKeys("123456");
+
+        //    16. Email adresinin otomatik olarak geldigi dogrulanir.
+        Assert.assertTrue(addressesPageAli.emailAli.isDisplayed());
+
+        //    17.Otomatik olarak gelen Email adresinin kayit olunan email adresiyle ayni oldugunu dogrulanir.
+        Assert.assertEquals(ConfigReader.getProperty("vendorUserNameAli"), "salinger.samari@foundtoo.com");
+
+       //     18. SAVE ADDRESS butonuna tiklanir.
+        ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
+
+        //    19. Kaydedilen adresin Billing Address olarak kayit edildigi dogrulanir
+
+
+
+
+
+
+
+
+
+
 
 
     }
