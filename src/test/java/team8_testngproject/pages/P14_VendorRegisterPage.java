@@ -247,7 +247,7 @@ public class P14_VendorRegisterPage {
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
     @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement kisaPwdMesaj;
     @FindBy(xpath = "//*[text()='Registration']") public WebElement dogrulamaRegistrationZb;
-    @FindBy(xpath = "//*[text()='Registration Successfully Completed.']") public WebElement succesMesajZb;
+    @FindBy(xpath = "//*[text()='Welcome to Hubcomfy!']") public WebElement succesMesajZb;
 
 
 
