@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="US05 Test Suite">
+<suite name="US08 Test Suite">
     <listeners>
         <listener class-name="team8_testngproject.utilities.ExtentReportsListener"/>
     </listeners>
-    <parameter name="reportTitle" value="TEAM-8 TestNG Otomasyon Raporu" />
-    <test name="US05 Test Suite">
+    <parameter name="reportTitle" value="TEAM-8 TestNG Otomasyon Raporu"/>
+    <test name="US08 Test Suite">
         <packages>
-            <package name="team8_testngproject.tests.us05.*" />
+            <package name="team8_testngproject.tests.us08.*"/>
         </packages>
     </test>
 </suite>

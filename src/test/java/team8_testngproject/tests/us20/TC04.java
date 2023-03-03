@@ -14,8 +14,9 @@ public class TC04 { // Discount Type menüsünden Fixed Product Discount seçene
     private final String testName = "US20 || TC04-Discount Type Menüsü";
     private final String description = "Discount Type menüsünden Fixed Product Discount seçeneği seçilebilmeli";
     private final String raporMesaji = "Discount Type menüsünden Fixed Product Discount seçeneğinin seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         ExtentTest extentTest = RaporlamaUtil.extentTest;
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();

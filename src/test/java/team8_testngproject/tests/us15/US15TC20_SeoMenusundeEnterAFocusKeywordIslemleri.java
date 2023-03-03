@@ -16,6 +16,7 @@ public class US15TC20_SeoMenusundeEnterAFocusKeywordIslemleri {// SEO menusunde 
     private final String testName = "US15 || TC20-SEO menusunde Enter a focus keyword işlemleri";
     private final String description = "Vendor SEO menusunde Enter a focus keyword işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak SEO menusunde Enter a focus keyword işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void seoMenusundeEnterAFocusKeywordIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

@@ -1,9 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,6 +13,7 @@ public class US15TC03_InventoryMenusundeSKUIslemleriUniqueOlmali { // Inventory 
     private final String testName = "US15 || TC03-Inventory menusunde SKU işlemleri";
     private final String description = "Vendor Inventory menusunde SKU Degeri Unique Olmali";
     private final String raporMesaji = "Vendor olarak SKU Degerinin Unique Olduğu doğrulanamamıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void inventoryMenuSKUDegeriUniqueOlmali() {
         P01_HomePage homePage = new P01_HomePage();

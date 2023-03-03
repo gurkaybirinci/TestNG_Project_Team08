@@ -14,6 +14,7 @@ public class US15TC30_AdvancedMenusuPurchaseNoteIslemleri {// Advanced menusunde
     private final String testName = "US15 || TC30-Advanced Purchase Note işlemleri";
     private final String description = "Vendor Advanced menusunde Purchase Note işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Advanced menusunde Purchase Note işlemleri gerçekleştirilmiştir..";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void advancedMenusuPurchaseNoteIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

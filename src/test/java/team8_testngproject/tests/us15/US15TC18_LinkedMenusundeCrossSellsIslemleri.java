@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us15;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -18,6 +16,7 @@ public class US15TC18_LinkedMenusundeCrossSellsIslemleri {// Linked menusunde Cr
     private final String testName = "US15 || TC18-Linked menusunde Cross-Sells işlemleri";
     private final String description = "Vendor Linked menusunde Cross-Sells işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Linked menusunde Cross-Sells işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void linkedMenuCrossSellsIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -57,9 +56,6 @@ public class US15TC18_LinkedMenusundeCrossSellsIslemleri {// Linked menusunde Cr
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(1);
-//        WebElement dropdown1= vendorProductManagerPage.linkedCrossCellsTexbox2Rs;
-//        String actual = ((JavascriptExecutor) Driver.getDriver()).executeScript("return arguments[0].value;", dropdown1).toString();
-//        Assert.assertTrue(actual.contains("Oyle"));
 
         RaporlamaUtil.extentTestInfo("Metin kutularına veri göndrilebildiği ve dropdown menuden seçim yapılabildiği doğrulandı.");
 

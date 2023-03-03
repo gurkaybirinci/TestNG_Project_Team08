@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us16;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -22,16 +21,15 @@ public class TC05 {
     private final String raporMesaji = "US14 ve US15 deki işlemler yapılabildiği ve ürün eklendiği doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-
-    public void US16_TC05(){
-        p01_homePage=new P01_HomePage();
-        p03_loginPage=new P03_LoginPage();
-        p16VendorStoreManagerPage=new P16_VendorStoreManagerPage();
-        p17_vendorProductsDashboardPage=new P17_VendorProductsDashboardPage();
-        p18_vendorProductManagerPage=new P18_VendorProductManagerPage();
+    public void US16_TC05() {
+        p01_homePage = new P01_HomePage();
+        p03_loginPage = new P03_LoginPage();
+        p16VendorStoreManagerPage = new P16_VendorStoreManagerPage();
+        p17_vendorProductsDashboardPage = new P17_VendorProductsDashboardPage();
+        p18_vendorProductManagerPage = new P18_VendorProductManagerPage();
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         p01_homePage.signInButtonKoz.click();
-        p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"),Keys.TAB,ConfigReader.getProperty("passwordkoz"));
+        p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"), Keys.TAB, ConfigReader.getProperty("passwordkoz"));
         p03_loginPage.signInButtonKoz.click();
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
@@ -41,7 +39,7 @@ public class TC05 {
         ReusableMethods.jsClick(p17_vendorProductsDashboardPage.addNewButtonKoz);
         RaporlamaUtil.extentTestInfo("Ürün ekleme sayfasına girildi.");
         Select select = new Select(p18_vendorProductManagerPage.dropdownKoz);
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"Simple Product");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Simple Product");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.virtualCheckKoz);
         p18_vendorProductManagerPage.productTitleInputKoz.sendKeys("Futbol Topu");
         p18_vendorProductManagerPage.priceInputKoz.sendKeys("10");
@@ -57,10 +55,10 @@ public class TC05 {
         ReusableMethods.jsClick(p18_vendorProductManagerPage.kozbulCheckBoxKoz);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.chooseTagsKoz);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.futbolTagKoz);
-        select=new Select(p18_vendorProductManagerPage.catalogVisibilityKoz);
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"Shop and search results");
+        select = new Select(p18_vendorProductManagerPage.catalogVisibilityKoz);
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Shop and search results");
         p18_vendorProductManagerPage.imageAddButtonKoz.click();
-        String path=System.getProperty("user.home")+ "\\Desktop\\top.jpg";
+        String path = System.getProperty("user.home") + "\\Desktop\\top.jpg";
         p18_vendorProductManagerPage.imageSendZoneKoz.click();
         ReusableMethods.waitFor(2);
         ReusableMethods.uploadFilePath(path);
@@ -73,7 +71,7 @@ public class TC05 {
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.imageSendZoneGalleryKoz.click();
         ReusableMethods.waitFor(2);
-        String path2=System.getProperty("user.home")+ "\\Desktop\\top2.jpg";
+        String path2 = System.getProperty("user.home") + "\\Desktop\\top2.jpg";
         ReusableMethods.uploadFilePath(path2);
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addToGalleryButtonKoz.click();

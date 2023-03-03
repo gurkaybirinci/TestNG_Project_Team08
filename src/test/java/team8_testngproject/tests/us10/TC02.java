@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us10;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -25,27 +24,24 @@ public class TC02 {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
         //Kullanıcı registor butonuna tıklar
-        homePage=new P01_HomePage();
+        homePage = new P01_HomePage();
         homePage.registerButonZb.click();
 
         //Kullanıcı Become a Vendor linkine tıklar
-        registerPage=new P02_RegisterPage();
+        registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
         RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
 
-
-
         //Kullanıcı kayıtlı olduğu mail adresini girer
-        vendorRegisterPage=new P14_VendorRegisterPage();
+        vendorRegisterPage = new P14_VendorRegisterPage();
         vendorRegisterPage.emailzb.sendKeys(ConfigReader.getProperty("vendor_mail"));
         RaporlamaUtil.extentTestInfo("Kullanıcı mail adresini girebildi.");
-
 
         //Kullanıcı  password kısmına 5 karakterden  büyük ve sadece rakam içeren şifre girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_weak_psw"));
         RaporlamaUtil.extentTestInfo("Kullanıcı girdiği şifrenin derecesinin Weak olduğunu belirten yazının görünürlüğü kontrol edildi");
 
-        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(),"Weak");
+        Assert.assertEquals(vendorRegisterPage.pswCommentZb.getText(), "Weak");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }

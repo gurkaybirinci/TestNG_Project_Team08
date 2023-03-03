@@ -16,6 +16,7 @@ public class US15TC21_SeoMenusundeMetaDescriptionIslemleri {// SEO menusunde Met
     private final String testName = "US15 || TC21-SEO menusunde Meta description işlemleri";
     private final String description = "Vendor SEO menusunde Meta description işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak SEO menusunde Meta description işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void seoMenusundeMetaDescriptionIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

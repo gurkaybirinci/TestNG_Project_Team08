@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC05_InventoryMenusundeManageStockIslemleriEksiDeger { // Inven
     private final String testName = "US15 || TC05-Inventory menusunde Manage Stock işlemleri";
     private final String description = "Vendor Inventory menusunde Manage Stock işlemleri Eksi Değer Amamali";
     private final String raporMesaji = "Inventory menusunde Manage Stock işlemleri eksi değer almaması gerektiği doğrulanamamıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void inventoryMenuManageStockIslemleriEksiDeger() {
         P01_HomePage homePage = new P01_HomePage();
@@ -65,9 +64,9 @@ public class US15TC05_InventoryMenusundeManageStockIslemleriEksiDeger { // Inven
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(0);
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

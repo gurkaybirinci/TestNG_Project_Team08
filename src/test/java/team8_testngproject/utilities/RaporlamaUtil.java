@@ -3,6 +3,7 @@ package team8_testngproject.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import java.io.File;
 
 public class RaporlamaUtil {
@@ -15,14 +16,14 @@ public class RaporlamaUtil {
     // Raporlama nesneleri oluşturulur
     public static void extentRaporOlustur() {
         if (extentReports == null) { // ExtentReports nesnesi oluşturulmamış ise
-            String raporAdi = "us05_html_report.html"; // Rapor dosyasının adı
+            String raporAdi = "us08_html_report.html"; // Rapor dosyasının adı
             extentHtmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/src/test/java/reports/" + raporAdi); // raporun HTML dosyası oluşturulur
             extentReports = new ExtentReports(); // ExtentReports nesnesi oluşturulur
             extentReports.attachReporter(extentHtmlReporter); // Rapor dosyası ExtentHtmlReporter'a bağlanır
 
             // HTML raporu yapılandırılır
             extentHtmlReporter.config().setDocumentTitle("TEAM-8 TestNG Otomasyon Raporu");
-            extentHtmlReporter.config().setReportName("US05 | Kullanıcı Account Details (Hesap Detaylarını) değiştirebilmeli.");
+            extentHtmlReporter.config().setReportName("US08 | Kullanıcı seçtiği ürünleri istek listesine ekleyebilmeli.");
 
             // Raporlama bilgileri girilir
             extentReports.setSystemInfo("Uygulama", "TestNG Projesi");
@@ -31,8 +32,8 @@ public class RaporlamaUtil {
             extentReports.setSystemInfo("Takım", "TEAM-8");
 
             // Raporlama bilgileri girilir (User Story ve QA kişisi bilgileri burada girilir)
-            extentReports.setSystemInfo("User Story", "US05 | Kullanıcı Account Details (Hesap Detaylarını) değiştirebilmeli.");
-            extentReports.setSystemInfo("QA", "Esra Birinci");
+            extentReports.setSystemInfo("User Story", "US08 | Kullanıcı seçtiği ürünleri istek listesine ekleyebilmeli.");
+            extentReports.setSystemInfo("QA", "Gonca Saygılı");
 
             // Ekran görüntüleri için klasör oluşturulur
             File ekranGoruntuleriKlasoru = new File(System.getProperty("user.dir") + "/src/test/java/reports/screenshots");

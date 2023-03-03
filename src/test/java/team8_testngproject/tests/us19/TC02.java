@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us19;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -10,11 +9,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 {
-
     private final String testName = "US19 || TC02-Sepet Bölümü";
     private final String description = "Chart - Chekout yapılarak alınacak ürün ve ürünler görülebilmeli";
     private final String raporMesaji = "Chart - Chekout yapılarak alınacak ürün ve ürünlerin görüntülendiği doğrulandı";
-
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;
@@ -25,9 +22,6 @@ public class TC02 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us19_tc02() {
-
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
         p04MyAccountPage = new P04_MyAccountPage();
@@ -47,7 +41,7 @@ public class TC02 {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
-        extentTest.info("Login işlemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -67,7 +61,7 @@ public class TC02 {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
-        extentTest.info("Shopping sayfasına gidildi");
+        RaporlamaUtil.extentTestInfo("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -87,7 +81,7 @@ public class TC02 {
 
         //Checkout butonuna tıklanır
         p08ProductPage.checkoutButton_Nt.click();
-        extentTest.info("Vendor olarak sepete eklenen ürünlerin görünürlüğü kontrol edildi");
+        RaporlamaUtil.extentTestInfo("Vendor olarak sepete eklenen ürünlerin görünürlüğü kontrol edildi");
 
         //Your order yazısının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p10CheckOutPage.yourOrderDisplayed_Nt);

@@ -16,6 +16,7 @@ public class US15TC17_LinkedMenusundeUpSellsIslemleri {// Linked menusunde Up-Se
     private final String testName = "US15 || TC17-Linked menusunde Up-Sells işlemleri";
     private final String description = "Vendor Linked menusunde Up-Sells işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Linked menusunde Up-Sells işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void linkedMenuUpSellsIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
