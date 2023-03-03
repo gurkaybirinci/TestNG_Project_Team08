@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us13;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -13,14 +11,14 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC01 {
-    private final String testName = "US13 || TC01-Shipping Adress POSITIVE senaryo";
-    private final String description = "Vendor Shipping Address kaydı tamamlanmalı";
-    private final String raporMesaji = "Vendor Shipping Adress kaydi tamamlanmistir.";
+public class TC08 {
+    private final String testName = "US13 || TC08-Shipping Adress 'postcode_zıp' alanı  özel karakter kabul etmemeli";
+    private final String description = "Vendor Shipping Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
+    private final String raporMesaji = "Vendor Shipping Address kaydi tamamlandı ve hata mesaji goruntulenmedi";
 
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01() {
+    public void tc8() {
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -54,41 +52,31 @@ public class TC01 {
         P05_AddressesPage addressesPageAli = new P05_AddressesPage();
         ReusableMethods.jsClick(addressesPageAli.shippingaddButtonAli);
 
-        //     10.  First name inputuna veri girilir. //Last name inputuna veri girilir.
+        //     10.  "firs name" alanına valid değer girer
         addressesPageAli.shippingfirstNameAli.clear();
+        addressesPageAli.shippingfirstNameAli.sendKeys("Mex");
+
+
+        //     11.  "last name" alanına valid deger girilir
         addressesPageAli.shippinglastNameAli.clear();
-        addressesPageAli.shippingfirstNameAli.sendKeys("Preto",
-                Keys.TAB, "MEX");
+        addressesPageAli.shippinglastNameAli.sendKeys("Proteo");
 
-        //    11.  Country/Region dropdown'indan secim yapilir.
-        Select select = new Select(addressesPageAli.shippingcountryAli);
-        select.selectByVisibleText("Turkey");
-
-        //     12. Street adress alanina veri girilir.
+        //     12.  "street address" alanına valid deger girilir
         addressesPageAli.shippingstreetAli.clear();
-        addressesPageAli.shippingstreetAli.sendKeys(" Mecburiyet Street");
+        addressesPageAli.shippingstreetAli.sendKeys("Ankara stree");
 
-        //     13.  Postcode / ZIP alanina veri girilir.
+        //     13.  "postcode_zıp" özel karakter içermemeli/PASS
+
         addressesPageAli.shippingpostcodeAli.clear();
-        addressesPageAli.shippingpostcodeAli.sendKeys("123456");
+        addressesPageAli.shippingpostcodeAli.sendKeys("*/?0");
+        ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
+        RaporlamaUtil.extentTestInfo("postcode_zıp alanının özel karakter içermediği kontrol edilmiştir..");
 
-        //     14.  Town/City alanina veri girilir.
-        addressesPageAli.shippingcityAli.sendKeys("Elbistan");
-
-        //     15.  Provience dropdown'undan secim yapilir.
-        Select selectProvience = new Select (addressesPageAli.shippingstateAli);
-        selectProvience.selectByIndex(5);
-
-        //     16.  SAVE ADDRESS butonuna tiklanir.
-        ReusableMethods.jsClick(addressesPageAli.saveAdressShippingButtonAli);
-
-        //     19. Kaydedilen adresin shipping Address olarak kayit edildigi dogrulanir
-       Assert.assertTrue(addressesPageAli.shippingaddreschangedsuccessfully.getText().contains("Address changed successfully."));
-        RaporlamaUtil.extentTestInfo("degişiklik shipping adrese eklendi.");
-
-      Driver.closeDriver();
-      RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        Assert.assertTrue(addressesPageAli.zipCoderequired.isDisplayed());
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
 
     }
-}
+
+    }
+

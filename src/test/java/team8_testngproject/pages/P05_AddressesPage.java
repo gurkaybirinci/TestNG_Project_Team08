@@ -18,33 +18,48 @@ public class P05_AddressesPage { public P05_AddressesPage() {
 
 
     // 20.Satır --> Ali
-    @FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/billing/']")
-    public WebElement billingaddButtonAli;
-    @FindBy(xpath = "//*[@class='edit btn btn-link btn-primary btn-underline mb-4']")
-    public WebElement addButtonAli;
-    @FindBy(id = "billing_first_name")
-    public WebElement firstNameAli;
-    @FindBy(id = "billing_country")
-    public WebElement countryAli;
-    @FindBy(xpath = "//span[text()='billing_country']")
-    public WebElement billingcountryAli;
-    @FindBy(xpath= "//*[@id='billing_address_1']")
-    public WebElement adreskutusuAli;
-    @FindBy(id="billing_address_2")
-    public WebElement adress2Ali;
-    @FindBy(id="billing_postcode")
-    public WebElement kutu2Ali;
-    @FindBy(id="billing_city")
-    public WebElement city2Ali;
-    @FindBy(id="billing_state")
-    public WebElement stateAli;
-    @FindBy(id="billing_email")
-    public WebElement emailAli;
-   @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm']")
-   public WebElement saveAdressButtonAli;
-    @FindBy(xpath = "//span[text()='following addresses']")
-    public WebElement kayitGorunmeAli;
+    @FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/billing/']")  public WebElement billingaddButtonAli;
+    @FindBy(xpath = "//a[@href='https://hubcomfy.com/my-account-2/edit-address/shipping/']")  public WebElement shippingaddButtonAli;
+    @FindBy(xpath = "//*[@class='edit btn btn-link btn-primary btn-underline mb-4']")  public WebElement addButtonAli;
+    @FindBy(id = "billing_first_name")  public WebElement firstNameAli;
+    @FindBy(id = "shipping_first_name")  public WebElement shippingfirstNameAli;
+    @FindBy(id = "shipping_last_name")  public WebElement shippinglastNameAli;
+    @FindBy(id = "billing_last_name") public WebElement lastnameAli;
+    @FindBy(id = "billing_country")     public WebElement countryAli;
+    @FindBy(id = "shipping_country")     public WebElement shippingcountryAli;
+    @FindBy(id = "shipping_address_1")     public WebElement shippingstreetAli;
+    @FindBy(id="shipping_state")     public WebElement shippingprovienceAli;
+    @FindBy(xpath= "//*[@id='billing_address_1']")    public WebElement adreskutusuAli;
+    @FindBy(id="billing_address_2") public WebElement adress2Ali;
+    @FindBy(id="billing_postcode") public WebElement kutu2Ali;
+    @FindBy(id="shipping_postcode") public WebElement shippingpostcodeAli;
+    @FindBy(id="billing_phone") public WebElement phoneAli;
+    @FindBy(id="billing_city")  public WebElement city2Ali;
+    @FindBy(id="shipping_city")  public WebElement shippingcityAli;
+    @FindBy(id="billing_state") public WebElement stateAli;
+    @FindBy(id="shipping_state") public WebElement shippingstateAli;
+    @FindBy(id="billing_email") public WebElement emailAli;
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm']")    public WebElement saveAdressButtonAli;
+    @FindBy(xpath = "//*[@class='btn btn-dark btn-rounded btn-sm']")    public WebElement saveAdressShippingButtonAli;
+     @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement addreschangedsuccessfully;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement shippingaddreschangedsuccessfully;
+    @FindBy(xpath = "//*[@class=' alert alert-simple alert-icon alert-close-top alert-danger']") public WebElement zipCoderequired;
+    @FindBy(xpath = "//*[@class=' alert alert-simple alert-icon alert-close-top alert-danger']") public WebElement phonerequired;
 
+    @FindBy(xpath = "//*[@data-id='billing_first_name']") public WebElement kayitGorunmeNameAli;
+    @FindBy(xpath = "//*[@data-id='shipping_first_name']") public WebElement shippingkayitGorunmeNameAli;
+    @FindBy(xpath = "//*[@data-id='billing_last_name']") public WebElement kayitGorunmeLastNameAli;
+    @FindBy(xpath = "//*[@data-id='shipping_last_name']") public WebElement shippingkayitGorunmeLastNameAli;
+    @FindBy(xpath = "//*[@data-id='billing_address_1']") public WebElement kayitGorunmeaddreskutuAli;
+    @FindBy(xpath = "//*[@data-id='shipping_address_1']") public WebElement shippingkayitGorunmeaddreskutuAli;
+    @FindBy(xpath = "//*[@data-id='billing_phone']")     public WebElement phoneUyari;
+
+    @FindBy(id = "billing_email") public WebElement billingEmailAli;
+    @FindBy(xpath = "//*[@data-id='billing_postcode']") public WebElement postcdeuyari;
+    @FindBy(xpath = "//*[@data-id='shipping_postcode']") public WebElement shippingpostcdeuyari;
+    @FindBy(xpath = "//*[@data-id='billing_city']") public WebElement townCityUyari;
 
 
     // 50.Satır --> Esra
