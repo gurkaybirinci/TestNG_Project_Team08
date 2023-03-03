@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us12;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,17 +13,16 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
+public class TC08 {
 
-public class TC01 {
+    private final String testName = "US12 || TC08-'Town/city alanı tek karakter ile save etmemeli";
+    private final String description = "Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
 
-
-    private final String testName = "US12 || TC01-Billing Adress POSITIVE senaryo";
-    private final String description = "Vendor Billing Address kaydı tamamlanmalı";
-    private final String raporMesaji = "Vendor Billing Adress kaydi tamamlanmistir.";
-
+    private final String raporMesaji = "Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc07(){
+
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -42,7 +39,7 @@ public class TC01 {
 
         //      5. signOut butonuna tıklar
         loginPage.loginAli.click();
-        RaporlamaUtil.extentTestInfo("Login islemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //      6. signOut butonuna tıklar
         homePage.signOutButtonAli.click();
@@ -59,54 +56,38 @@ public class TC01 {
         P05_AddressesPage addressesPageAli = new P05_AddressesPage();
         ReusableMethods.jsClick(addressesPageAli.addButtonAli);
 
-        //     10.  First name inputuna veri girilir. //Last name inputuna veri girilir.
+        //    10. "First name" ve "last name" alanına valid deger girilmeli
         addressesPageAli.firstNameAli.clear();
+        addressesPageAli.firstNameAli.sendKeys("Preto");
+
         addressesPageAli.lastnameAli.clear();
-        addressesPageAli.firstNameAli.sendKeys("Preto",
-                Keys.TAB, "MEX");
+        addressesPageAli.lastnameAli.sendKeys("MEX");
 
         //    11.  Country/Region dropdown'indan secim yapilir.
         Select select = new Select(addressesPageAli.countryAli);
         select.selectByVisibleText("Mexico");
 
-        //     12. Street adress alanina veri girilir.
+        //     12. "street address" alanına valid deger girilir
         addressesPageAli.adreskutusuAli.clear();
+        addressesPageAli.adreskutusuAli.sendKeys("Elsalvador street");
+
+        //     13.  "Town/city" alanı tek karakter ile save etmemeli/FAİL
         addressesPageAli.adress2Ali.clear();
-        addressesPageAli.adreskutusuAli.sendKeys("060223");
-        addressesPageAli.adress2Ali.sendKeys(" Elsalvador Street");
-
-        //     13.  Town/City alanina veri girilir.
-       addressesPageAli.city2Ali.sendKeys("Mexcio City");
-
-        //     14.  State dropdown'undan secim yapilir.
-        Select selectState = new Select (addressesPageAli.stateAli);
-        select.selectByIndex(1);
-
-        //    15.  Postcode / ZIP alanina veri girilir.
-        addressesPageAli.kutu2Ali.clear();
-        addressesPageAli.kutu2Ali.sendKeys("123456");
-
-        //    16. Email adresinin otomatik olarak geldigi dogrulanir.
-        Assert.assertTrue(addressesPageAli.emailAli.isDisplayed());
-
-        //    17.Otomatik olarak gelen Email adresinin kayit olunan email adresiyle ayni oldugunu dogrulanir.
-        Assert.assertEquals(ConfigReader.getProperty("vendorUserNameAli"), "salinger.samari@foundtoo.com");
-        RaporlamaUtil.extentTestInfo("mail adresinin kayit olunan email adresiyle ayni oldugunu dogrulandı.");
-
-       //     18. SAVE ADDRESS butonuna tiklanir.
+        addressesPageAli.adress2Ali.sendKeys("A");
         ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
 
-        //    19. Kaydedilen adresin Billing Address olarak kayit edildigi dogrulanir
-        Assert.assertTrue(addressesPageAli.addreschangedsuccessfully.getText().contains("Address changed successfully."));
-        RaporlamaUtil.extentTestInfo("degişiklik billing adrese eklendi.");
+        RaporlamaUtil.extentTestInfo("Town/city alanı tek karakter ile save dilip edilmediği kontrol edilmiştir.");
 
-        Driver.closeDriver();
+        try{
+            Assert.assertFalse(addressesPageAli.addreschangedsuccessfully.isDisplayed());
+        }catch (AssertionError e){
+            throw e;
+        } finally {
 
-        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
-
-
-
+            RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        }
     }
 
+
 }
+
