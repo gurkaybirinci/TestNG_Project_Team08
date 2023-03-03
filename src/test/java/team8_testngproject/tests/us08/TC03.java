@@ -45,21 +45,20 @@ public class TC03 {
         //*************************************************************************************************
 
         RaporlamaUtil.extentTestInfo("Begenilen urunler secildi.");
-
         ReusableMethods.waitFor(3);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewButton);
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Fiyat = Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-Price-currencySymbol'])[1]")).getText();
+        String bisikletEFG16Fiyat = wishlistPage.bisikletEFG16Fiyat.getText();
         ReusableMethods.waitFor(2);
         ReusableMethods.waitFor(2);
         String addToCartButton = Driver.getDriver().findElement(By.name("add-to-cart")).getText();
         ReusableMethods.waitFor(2);
         Assert.assertTrue(addToCartButton.contains("ADD TO CART"));
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto1 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[1]")).getText();
+        String bisikletEFG16Foto1 = wishlistPage.bisikletEFG16Foto1.getText();
         ReusableMethods.waitFor(2);
-        String bisikletEFG16Foto2 = Driver.getDriver().findElement(By.xpath("(//*[@style='width: 91.25px; margin-right: 10px;'])[2]")).getText();
+        String bisikletEFG16Foto2 = wishlistPage.bisikletEFG16Foto2.getText();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.quickViewCikis);
 
