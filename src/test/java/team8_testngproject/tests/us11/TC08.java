@@ -14,10 +14,9 @@ public class TC08 {
     private final String testName = "US11 || TC08 Store manager seçeneğini gör.";
     private final String description = "Dashboardın altında Store manager seçeneği görülmeli";
     private final String raporMesaji = "Dashboardın altında  Store manager  değil, Store Manager şeklinde görülmektedir";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test08() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
         P01_HomePage p01_homePage = new P01_HomePage();
@@ -30,17 +29,15 @@ public class TC08 {
         RaporlamaUtil.extentTestInfo("Login işlemi vendor olarak yapıldı.");
         p01_homePage.signOut_Es.click();
 
-
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
 
-        try{
+        try {
             Assert.assertEquals(p04_myAccountPage.dash_storeManagerVendor_Es.getText(), "Store manager");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
         }
-
 
 
     }

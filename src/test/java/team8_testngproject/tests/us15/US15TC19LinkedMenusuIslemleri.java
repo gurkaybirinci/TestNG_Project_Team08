@@ -16,6 +16,7 @@ public class US15TC19LinkedMenusuIslemleri {// Linked menusunde Cross-Sells işl
     private final String testName = "US15 || TC19-Linked menusunde Up-Sells ve Cross-Sells işlemleri";
     private final String description = "Vendor Linked menusunde Up-Sells veCross-Sells işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Linked menusunde Up-Sells ve Cross-Sells işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void linkedMenuIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -56,7 +57,6 @@ public class US15TC19LinkedMenusuIslemleri {// Linked menusunde Cross-Sells işl
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
         Assert.assertFalse(vendorProductManagerPage.linkedUpCellsTexboxRs.getText().contains("SoyleBoyleOyle"));
-//        ReusableMethods.jsClick(vendorProductManagerPage.linkedCrossCellsDropdownRs);
         vendorProductManagerPage.linkedCrossCellsDropdown2Rs.sendKeys("soyle");
         ReusableMethods.waitFor(4);
         actions.sendKeys(Keys.ENTER).release().perform();

@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us08;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,8 +20,9 @@ public class TC01 {
     private final String testName = "US08 || TC01-Beğenilen ürünlerin wishlist'e eklenmesi";
     private final String description = "Karsilastirma icin urunler secilebilmeli";
     private final String raporMesaji = "Karsilastirma icin urunler secilmistir.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void homePage(){
+    public void homePage() {
         homePageomePage = new P01_HomePage();
         loginPage = new P03_LoginPage();
         shoppingPage = new P07_ShoppingPage();

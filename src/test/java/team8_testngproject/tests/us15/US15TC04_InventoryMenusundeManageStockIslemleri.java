@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC04_InventoryMenusundeManageStockIslemleri { // Inventory menu
     private final String testName = "US15 || TC04-Inventory menusunde Manage Stock işlemleri";
     private final String description = "Vendor Inventory menusunde Manage Stock işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Manage Stock işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void inventoryMenuManageStockIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

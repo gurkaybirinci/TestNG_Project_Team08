@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us08;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -23,6 +22,7 @@ public class TC02 {
     private final String testName = "US08 || TC02-'wishlist'sayfasinda urun ekleme kontrolu";
     private final String description = "'wishlist' sayfasina gidilir";
     private final String raporMesaji = "'wishlist' sayfasinda begenilen urunler eklenmistir ";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void wishlistKontrolu() {
         homePage = new P01_HomePage();

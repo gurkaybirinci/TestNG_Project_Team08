@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -14,7 +12,6 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class US15TC11_ShippingMenusundeDimensionsIslemleriEksiDeger {// Shipping  menusunde Dimensions işlemleri Eksi Deger Almamali (FAIL)
-
     private final String testName = "US15 || TC11-Shipping menusunde Dimensions işlemleri Eksi deger girilmemeli";
     private final String description = "Vendor Shipping menusunde Dimensions işlemleri Eksi deger girilmemeli";
     private final String raporMesaji = "Vendor olarak Shipping menusunde Dimensions işlemleri Eksi değer girilmediği doğrulanamamıştır.";

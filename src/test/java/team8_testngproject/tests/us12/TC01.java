@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us12;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,10 +12,9 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.ReusableMethods;
 
-
 public class TC01 {
     @Test
-    public void tc01(){
+    public void tc01() {
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -26,7 +23,7 @@ public class TC01 {
         homePage.signInButtonAli.click();
 
         //     3. Username ya da Email inputuna veri girilir.
-        P03_LoginPage loginPage= new P03_LoginPage();
+        P03_LoginPage loginPage = new P03_LoginPage();
         loginPage.usernameAli.sendKeys(ConfigReader.getProperty("vendorUserNameAli"));
 
         //     4.  Password inputuna veri girilir.
@@ -39,7 +36,7 @@ public class TC01 {
         homePage.signOutButtonAli.click();
 
         //      7. My Account sayfasına erişildiğini dogrulanir.
-        P04_MyAccountPage myAccountPage= new P04_MyAccountPage();
+        P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         Assert.assertEquals(myAccountPage.myAccountPageAli.getText(), "My Account");
 
         //     8. Address butonuna tıklar.
@@ -65,7 +62,7 @@ public class TC01 {
         addressesPageAli.city2Ali.sendKeys("Mexcio City");
 
         //     14.  State dropdown'undan secim yapilir.
-        Select selectState = new Select (addressesPageAli.stateAli);
+        Select selectState = new Select(addressesPageAli.stateAli);
         select.selectByIndex(1);
 
         //    15.  Postcode / ZIP alanina veri girilir.
@@ -77,20 +74,10 @@ public class TC01 {
         //    17.Otomatik olarak gelen Email adresinin kayit olunan email adresiyle ayni oldugunu dogrulanir.
         Assert.assertEquals(ConfigReader.getProperty("vendorUserNameAli"), "salinger.samari@foundtoo.com");
 
-       //     18. SAVE ADDRESS butonuna tiklanir.
+        //     18. SAVE ADDRESS butonuna tiklanir.
         ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
 
         //    19. Kaydedilen adresin Billing Address olarak kayit edildigi dogrulanir
-
-
-
-
-
-
-
-
-
-
 
 
     }

@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC08_ShippingMenusundeWeightIslemleri {// Shipping  menusunde W
     private final String testName = "US15 || TC08-Shipping menusunde Weight işlemleri";
     private final String description = "Vendor Shipping menusunde Weight işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Shipping menusunde Weight işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void shippingMenuWeightIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC10_ShippingMenusundeDimensionsIslemleri {// Shipping menusund
     private final String testName = "US15 || TC10-Shipping menusunde Dimensions işlemleri";
     private final String description = "Vendor Shipping menusunde Dimensions işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Shipping menusunde Dimensions işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void shippingMenuDimensionsIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

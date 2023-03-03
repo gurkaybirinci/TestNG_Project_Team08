@@ -2,6 +2,7 @@ package team8_testngproject.utilities;
 
 import org.apache.poi.ss.usermodel.*;
 import org.testng.Assert;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -31,8 +32,8 @@ public class ExcelUtils {
         }
     }
 
-//    Excel deki verileri List olarak almamizi saglar
-//    Exceldeki verileri Test sinifinda kullanmak icin bu metotu kullanacaz
+    //    Excel deki verileri List olarak almamizi saglar
+    //    Exceldeki verileri Test sinifinda kullanmak icin bu metotu kullanacaz
     public List<Map<String, String>> getDataList() {
         // getting all columns
         List<String> columns = getColumnsNames();
@@ -44,7 +45,7 @@ public class ExcelUtils {
             // creating map of the row using the column and value
             // key=column, value=cell
             Map<String, String> rowMap = new HashMap<String, String>();
-            for (Cell cell :row) {
+            for (Cell cell : row) {
                 int columnIndex = cell.getColumnIndex();
                 rowMap.put(columns.get(columnIndex), cell.toString());
             }
@@ -61,7 +62,9 @@ public class ExcelUtils {
 
     //===============exceldeki satir sayisini return eder====================
     public int rowCount() {
-        return workSheet.getLastRowNum() + 1; }//adding 1 to get the actual count
+        return workSheet.getLastRowNum() + 1;
+    }//adding 1 to get the actual count
+
     //==============Satir ve sutun sayilari girildiginde, o hucredeki veriyi return eder==========
     public String getCellData(int rowNum, int colNum) {
         Cell cell;
@@ -124,11 +127,11 @@ public class ExcelUtils {
 
     //    Exceldeki datalari basliksiz olarak 2 boyurlu array seklinde return eder
     public String[][] getDataArrayWithoutFirstRow() {
-        String[][] data = new String[rowCount()-1][columnCount()];
+        String[][] data = new String[rowCount() - 1][columnCount()];
         for (int i = 1; i < rowCount(); i++) {
             for (int j = 0; j < columnCount(); j++) {
                 String value = getCellData(i, j);
-                data[i-1][j] = value;
+                data[i - 1][j] = value;
             }
         }
         return data;

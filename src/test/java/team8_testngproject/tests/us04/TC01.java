@@ -1,7 +1,6 @@
 package team8_testngproject.tests.us04;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,15 +14,12 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC01 {
-     private final String testName = "US04 || TC01-Shipping address kaydetme POSITIVE senaryo";
-
+    private final String testName = "US04 || TC01-Shipping address kaydetme POSITIVE senaryo";
     private final String description = "Doldurulmasi gereken zorunlu alanlar eksiksiz doldurulabilmeli";
-
-      private final String raporMesaji = "Shipping adress kaydi tamamlandi";
+    private final String raporMesaji = "Shipping adress kaydi tamamlandi";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void testTC01() {
-
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -43,7 +39,7 @@ public class TC01 {
         //     5. SIGN IN butonuna tiklanir.
         loginPage.signinsvd.click();
         loginPage.singoutsvd.click();
-          RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //      6. My Account sayfasına erişildiğini dogrulanir.
         Assert.assertEquals(myAccountPage.myAccountsvd.getText(), "My Account");
@@ -85,12 +81,12 @@ public class TC01 {
 
         //    16. SAVE ADDRESS butonuna tiklanir.
         ReusableMethods.jsClick(adressPage.savesvd);
-         RaporlamaUtil.extentTestInfo("Doldurulmasi gereken zorunlu alanlar eksiksiz dolduruldu.");
+        RaporlamaUtil.extentTestInfo("Doldurulmasi gereken zorunlu alanlar eksiksiz dolduruldu.");
 
         // 17.   Kaydedilen adresin Shipping address olarak kayit edildigi dogrulanir.
         Assert.assertTrue(adressPage.shippingsavesvd.getText().contains("Address changed successfully."));
         Driver.closeDriver();
-         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 }
 

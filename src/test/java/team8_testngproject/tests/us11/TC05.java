@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us11;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -14,11 +13,10 @@ public class TC05 {
     private final String testName = "US11 || TC05 account details seçeneğini gör.";
     private final String description = "My Account Sayfasında account details seçeneği görülmeli";
     private final String raporMesaji = "My Account sayfasında account details değil, ACCOUNT DETAILS şeklinde görülmektedir";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test05() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
-
 
         P01_HomePage p01_homePage = new P01_HomePage();
         p01_homePage.signIn_Es.click();
@@ -30,12 +28,11 @@ public class TC05 {
         RaporlamaUtil.extentTestInfo("Login işlemi vendor olarak yapıldı.");
         p01_homePage.signOut_Es.click();
 
-
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
 
-        try{
-            Assert.assertEquals(p04_myAccountPage.accountDetailsVendor_Es.getText(),"account details");
-        }catch (AssertionError e){
+        try {
+            Assert.assertEquals(p04_myAccountPage.accountDetailsVendor_Es.getText(), "account details");
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

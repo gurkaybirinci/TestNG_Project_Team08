@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us19;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -11,11 +10,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC06 {
-
     private final String testName = "US19 || TC06-Alışveriş Tamamlandı Bilgisi";
     private final String description = "Place Order'a tıklanarak alışverişin tamamlandığı görülebilmeli";
     private final String raporMesaji = "Place Order'a tıklanarak alışverişin tamamlandığının görülebildiği doğrulandı";
-
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;
@@ -27,9 +24,6 @@ public class TC06 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us19_tc06() {
-
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
         p04MyAccountPage = new P04_MyAccountPage();
@@ -49,7 +43,7 @@ public class TC06 {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
-        extentTest.info("Login işlemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -69,7 +63,7 @@ public class TC06 {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
-        extentTest.info("Shopping sayfasına gidildi");
+        RaporlamaUtil.extentTestInfo("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -112,7 +106,7 @@ public class TC06 {
 
         //Place Order butonuna tıklanır
         p10CheckOutPage.placeOrderButton_Nt.click();
-        extentTest.info("Vendor olarak alışverişin tamamlandığının görüntülenmesi kontrol edildi");
+        RaporlamaUtil.extentTestInfo("Vendor olarak alışverişin tamamlandığının görüntülenmesi kontrol edildi");
 
         //Thank you.Your order has been received yazısının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p10CheckOutPage.thankYouMessage_Nt);

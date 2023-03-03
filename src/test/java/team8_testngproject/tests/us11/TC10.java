@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us11;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -14,10 +13,9 @@ public class TC10 {
     private final String testName = "US11 || TC10 downloads seçeneğini gör.";
     private final String description = "Dashboardın altında downloads seçeneği görülmeli";
     private final String raporMesaji = "Dashboardın altında  downloads değil, Downloads şeklinde görülmektedir";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test10() {
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
         P01_HomePage p01_homePage = new P01_HomePage();
@@ -30,11 +28,10 @@ public class TC10 {
         RaporlamaUtil.extentTestInfo("Login işlemi vendor olarak yapıldı.");
         p01_homePage.signOut_Es.click();
 
-
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
-        try{
+        try {
             Assert.assertEquals(p04_myAccountPage.dash_downloadsVendor_Es.getText(), "downloads");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

@@ -16,6 +16,7 @@ public class US15TC23_SeoMenusuIslemleri {// SEO menusunde Enter a focus keyword
     private final String testName = "US15 || TC23-SEO menusunde Enter a focus keyword ve Meta description işlemleri";
     private final String description = "Vendor SEO menusunde Enter a focus keyword ve Meta description işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak SEO menusunde Enter a focus keyword ve Meta description işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void seoMenusundeEnterFocusVeMetaDescIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

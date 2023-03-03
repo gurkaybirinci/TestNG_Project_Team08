@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us15;
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -12,12 +11,12 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-
 public class US15TC06_InventoryMenusundeStockStatusIslemleri { // Inventory menusunde Stock Status Işlemleri (PASS)
 
     private final String testName = "US15 || TC06-Inventory menusunde Stock Status işlemleri";
     private final String description = "Vendor Inventory menusunde Stock Status işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Stock Status işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void inventoryMenuStockStatusIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

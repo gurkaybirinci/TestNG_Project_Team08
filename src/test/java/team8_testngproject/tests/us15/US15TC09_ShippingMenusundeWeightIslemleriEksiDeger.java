@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC09_ShippingMenusundeWeightIslemleriEksiDeger {// Shipping men
     private final String testName = "US15 || TC09-Shipping menusunde Weight işlemleri Eksi deger girilmemeli";
     private final String description = "Vendor Shipping menusunde Weight işlemleri Eksi deger girilmemeli";
     private final String raporMesaji = "Vendor olarak Shipping menusunde Weight işlemleri Eksi değer girilmediği doğrulanamamıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void shippingMenuWeightIslemleriEksiDeger() {
         P01_HomePage homePage = new P01_HomePage();
@@ -61,13 +60,14 @@ public class US15TC09_ShippingMenusundeWeightIslemleriEksiDeger {// Shipping men
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.skuErrorMessageRs.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-        }    }
+        }
+    }
 }
 
 

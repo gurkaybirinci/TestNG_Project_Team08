@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us20;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,8 +13,9 @@ public class TC03 { // Discount Type menüsünden Percentage discount seçeneği
     private final String testName = "US20 || TC03-Discount Type Menüsü";
     private final String description = "Discount Type menüsünden Percentage discount seçeneği seçilebilmeli";
     private final String raporMesaji = "Discount Type menüsünden Percentage discount seçeneğinin seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
     private final String testName = "US15 || TC14-Attributes menusunde Color işlemleri";
     private final String description = "Vendor Attributes menusunde Color işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Attributes menusunde Color işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void attributesMenuColorIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -68,9 +67,9 @@ public class US15TC14_AttributesMenusundeColorIslemleri {// Attributes menusunde
         ReusableMethods.jsClick(vendorProductManagerPage.colorVisibleCheckboxRs);
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
 
-        Select select1=new Select(vendorProductManagerPage.colorTextBoxKoz);
+        Select select1 = new Select(vendorProductManagerPage.colorTextBoxKoz);
         select1.selectByVisibleText("Morcivert");
-        Assert.assertEquals(select1.getAllSelectedOptions().get(0).getText(),vendorProductManagerPage.colorMorcivertRs.getText());
+        Assert.assertEquals(select1.getAllSelectedOptions().get(0).getText(), vendorProductManagerPage.colorMorcivertRs.getText());
         RaporlamaUtil.extentTestInfo("Code metin kutusuna veri girilebilirliği ve seçim yapılabildiği kontrol edildi.");
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);

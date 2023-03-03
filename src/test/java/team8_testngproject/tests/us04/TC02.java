@@ -1,7 +1,6 @@
 package team8_testngproject.tests.us04;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,17 +14,16 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC02 {
-      private final String testName = "US04 || TC02-Shipping address kaydetme NEGATIVE senaryo";
-      private final String description = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
-      private final String raporMesaji = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
-    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    private final String testName = "US04 || TC02-Shipping address kaydetme NEGATIVE senaryo";
+    private final String description = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
+    private final String raporMesaji = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
 
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void testTC02() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P05_AddressesPage adressPage = new P05_AddressesPage();
-
 
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -73,13 +71,12 @@ public class TC02 {
 
         //    10. SAVE ADDRESS butonuna tiklanir.
         ReusableMethods.jsClick(adressPage.savesvd);
-          RaporlamaUtil.extentTestInfo("Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli");
+        RaporlamaUtil.extentTestInfo("Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli");
 
         //  11.Kaydin tamamlanamadigina dair "First name is a required field." hata mesaji goruntulendigi dogrulanir.
         Assert.assertFalse(adressPage.savesvd.getText().contains("First name is a required field."));
-       // Driver.closeDriver();
+        // Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
 
     }
 

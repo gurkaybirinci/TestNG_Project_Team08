@@ -1,9 +1,6 @@
 package team8_testngproject.tests.us17;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,7 +22,6 @@ public class TC02 {
     private final String raporMesaji = "Variable Product kısmında Yeni color ve size ekleyebildiği doğrulanmıştır";
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US17_TC02(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
         p01_homePage=new P01_HomePage();
         p03_loginPage=new P03_LoginPage();
         p04_myAccountPage=new P04_MyAccountPage();
@@ -37,19 +33,19 @@ public class TC02 {
         p01_homePage.signInButtonKoz.click();
         p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"),Keys.TAB,ConfigReader.getProperty("passwordkoz"));
         p03_loginPage.signInButtonKoz.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
         assert p04_myAccountPage.myAccountTextKoz.isDisplayed();
         p16VendorStoreManagerPage.storeManagerButtonKoz.click();
         assert p16VendorStoreManagerPage.storeManagerTextKoz.isDisplayed();
-        extentTest.info("Store Manager sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Store Manager sayfasına girildi.");
         ReusableMethods.jsClick(p16VendorStoreManagerPage.productsButtonKoz);
         ReusableMethods.jsClick(p17_vendorProductsDashboardPage.addNewButtonKoz);
         assert p18_vendorProductManagerPage.addProductTextKoz.isDisplayed();
-        extentTest.info("Ürün ekleme sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Ürün ekleme sayfasına girildi.");
         Select select=new Select(p18_vendorProductManagerPage.dropdownKoz);
         select.selectByVisibleText("Variable Product");
-        extentTest.info("Dropdown içerisinde Variable Products seçildi.");
+        RaporlamaUtil.extentTestInfo("Dropdown içerisinde Variable Products seçildi.");
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.attributesButtonKoz);
         ReusableMethods.waitFor(2);

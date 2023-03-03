@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us03;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,18 +16,15 @@ import team8_testngproject.utilities.ReusableMethods;
 public class TC02 {
     private final String testName = "US03 || TC02-Billing Address kaydetme NEGATIVE senaryo";
     private final String description = "Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli";
-
     private final String raporMesaji = "Address kaydi tamamlanamadi ve hata mesaji goruntulendi";
 
-    @Test( testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void testTC02() {
-
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P05_AddressesPage adressPage = new P05_AddressesPage();
-
 
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -46,7 +41,7 @@ public class TC02 {
         //     5. SIGN IN butonuna tiklanir.
         loginPage.signinsvd.click();
         loginPage.singoutsvd.click();
-     //   RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
+        //   RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
         //      6. My Account sayfasına erişildiğini dogrulanir.
         Assert.assertEquals(myAccountPage.myAccountsvd.getText(), "My Account");
@@ -86,8 +81,7 @@ public class TC02 {
         //    11.  Kaydin tamamlanamadigina dair "Province is a required field." hata mesaji goruntulendigi dogrulanir.
         Assert.assertTrue(adressPage.msjsvd.getText().contains("First name is a required field."));
         Driver.closeDriver();
-      RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
-
 
 }

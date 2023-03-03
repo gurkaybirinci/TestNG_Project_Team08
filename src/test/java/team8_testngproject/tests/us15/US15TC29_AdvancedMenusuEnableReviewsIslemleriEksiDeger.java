@@ -14,6 +14,7 @@ public class US15TC29_AdvancedMenusuEnableReviewsIslemleriEksiDeger {// Advanced
     private final String testName = "US15 || TC29-Advanced Enable reviews ve Menu Order Quantity işlemleri";
     private final String description = "Vendor Advanced menusunde Enable reviews ve Menu Order Quantity işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Advanced menusunde Enable reviews ve Menu Order işlemleri gerçekleştirilmiştir..";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void advancedMenusuEnableReviewsIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -55,9 +56,9 @@ public class US15TC29_AdvancedMenusuEnableReviewsIslemleriEksiDeger {// Advanced
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

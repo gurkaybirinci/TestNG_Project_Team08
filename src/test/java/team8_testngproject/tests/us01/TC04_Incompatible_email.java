@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us01;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -8,16 +7,14 @@ import team8_testngproject.pages.P02_RegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
-
-import static team8_testngproject.utilities.ReusableMethods.waitFor;
+import team8_testngproject.utilities.ReusableMethods;
 
 public class TC04_Incompatible_email {
     private final String testName = "US01 || TC04-Valid Olmayan E-mail ";
     private final String description = "e-mail alanina valid olmayan e-mail girilmediginde, kayit islemi basarisiz olmali ";
     private final String raporMesaji = "Kullanıcı kayit olmamali ve uyari mesaji gormeli";
 
-
-    @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void UnsuccessfulRegistration_wrongEmail() {
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -34,7 +31,7 @@ public class TC04_Incompatible_email {
         RaporlamaUtil.extentTestInfo("Yanlis e-mail giridiginde, SignUp islemi olmamali");
 
         Assert.assertTrue(registerPage.userRegisterPage.isDisplayed());
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 

@@ -16,6 +16,7 @@ public class US15TC22_SeoMenusundeMetaDescriptionIslemleriFazlaKarakter {// SEO 
     private final String testName = "US15 || TC22-SEO menusunde Meta description işlemleri";
     private final String description = "Vendor SEO menusunde Meta description işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak SEO menusunde Meta description işlemleri yapabildiği doğrulanmıştır. 156 karakterden fazlası girilmemesi gerektiği şartı aşılmıştır";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void seoMenusundeMetaDescriptionIslemleriFazlaKAraktarSayisi() {
         P01_HomePage homePage = new P01_HomePage();

@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us03;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,18 +14,16 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC01 {
-     private final String testName = "US03 || TC01-Billing Adress POSITIVE senaryo";
-     private final String description = "Billing Address kaydı tamamlanmalı";
-     private final String raporMesaji = "Billing Adress kaydi tamamlanmistir.";
+    private final String testName = "US03 || TC01-Billing Adress POSITIVE senaryo";
+    private final String description = "Billing Address kaydı tamamlanmalı";
+    private final String raporMesaji = "Billing Adress kaydi tamamlanmistir.";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void testTC01() {
-
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
         P05_AddressesPage adressPage = new P05_AddressesPage();
-
 
         //     1. Belirtilen URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -62,7 +58,7 @@ public class TC01 {
         adressPage.firstNamesvd.sendKeys(faker.name().firstName());
 
         //  10. Last name inputuna veri girilir.
-       adressPage.lastNamesvd.clear();
+        adressPage.lastNamesvd.clear();
         adressPage.lastNamesvd.sendKeys(faker.name().lastName());
 
         //    11.  Country/Region dropdown'indan secim yapilir.

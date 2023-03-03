@@ -16,6 +16,7 @@ public class US15TC27_ToptanUrunGostMenusuIslemleriPieceTypeKosul {// Toptan Ür
     private final String testName = "US15 || TC27-Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri";
     private final String description = "Vendor Toptan Ürün Gösterme menusunde Piece type alanı zorunlu olarak doldurulmalı veUnits Per Piece ve Min Order Quantity işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Toptan Ürün Gösterme menusunde Piece type alanı zorunlu olarak doldurulmalı doğrulanamamıştır. İyileştirmeye dönüt bug ve düzetme önerisidir.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void toptanUrunGostMenusuIslemleriPieceTypeKosulu() {
         P01_HomePage homePage = new P01_HomePage();
@@ -64,9 +65,9 @@ public class US15TC27_ToptanUrunGostMenusuIslemleriPieceTypeKosul {// Toptan Ür
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

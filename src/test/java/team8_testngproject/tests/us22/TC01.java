@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us22;
 
-
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,11 +10,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC01 {
-
     private final String testName = "US22 || TC01-Ürün Seçimi";
     private final String description = "Ürün ve ürünler seçilip sepete eklenebilmeli";
     private final String raporMesaji = "Ürün ve ürünlerin seçilip sepete eklenebildiği doğrulandı";
-
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;
@@ -26,9 +22,6 @@ public class TC01 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us22_tc01() {
-
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
         p04MyAccountPage = new P04_MyAccountPage();
@@ -46,7 +39,7 @@ public class TC01 {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
-        extentTest.info("Login işlemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -66,7 +59,7 @@ public class TC01 {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
-        extentTest.info("Shopping sayfasına gidildi");
+        RaporlamaUtil.extentTestInfo("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -91,7 +84,7 @@ public class TC01 {
         //Add to cart butonuna tıklanır
         p08ProductPage.addToCartButton_Nt.click();
         ReusableMethods.waitFor(2);
-        extentTest.info("Vendor olarak sepete ürün eklenebilirliği kontrol edildi");
+        RaporlamaUtil.extentTestInfo("Vendor olarak sepete ürün eklenebilirliği kontrol edildi");
 
         //Pop-Up mesajının görünür olduğu doğrulanmalıdır
         Assert.assertTrue(p08ProductPage.cartPopUp_Nt.isDisplayed());

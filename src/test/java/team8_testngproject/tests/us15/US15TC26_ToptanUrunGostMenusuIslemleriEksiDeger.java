@@ -16,6 +16,7 @@ public class US15TC26_ToptanUrunGostMenusuIslemleriEksiDeger {// Toptan Ürün G
     private final String testName = "US15 || TC26-Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri";
     private final String description = "Vendor Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemlerinde eksi değer girilememeli";
     private final String raporMesaji = "Vendor olarak Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemlerinde eksi değer olmamasi gerektiği doğrulanamamıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void toptanUrunGostMenusuIslemleriEksiDeger() {
         P01_HomePage homePage = new P01_HomePage();
@@ -51,8 +52,8 @@ public class US15TC26_ToptanUrunGostMenusuIslemleriEksiDeger {// Toptan Ürün G
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        Select select1=new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
-        String pieceTypeDrDownOptionText=select1.getFirstSelectedOption().getText();
+        Select select1 = new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
+        String pieceTypeDrDownOptionText = select1.getFirstSelectedOption().getText();
         select1.selectByIndex(1);
         Assert.assertNotEquals(pieceTypeDrDownOptionText, vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.getText());
         ReusableMethods.waitFor(2);
@@ -68,9 +69,9 @@ public class US15TC26_ToptanUrunGostMenusuIslemleriEksiDeger {// Toptan Ürün G
         ReusableMethods.jsClick(vendorProductManagerPage.submitButtonMangProdRs);
         ReusableMethods.waitFor(2);
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.productAddedSuccessRs.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

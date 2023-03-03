@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us08;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,6 +19,7 @@ public class TC04 {
     private final String testName = "US08 || TC04-'wishlist'te urun sepete ekleme ve satin alma islemleri";
     private final String description = "Uurnler sepete eklenebilmelidir";
     private final String raporMesaji = "Sepete eklenen urunler satin alinmistir ";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void quickViewKontrolu() {
         homePage = new P01_HomePage();

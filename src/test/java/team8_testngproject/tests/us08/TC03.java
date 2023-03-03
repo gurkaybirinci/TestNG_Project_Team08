@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us08;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -15,7 +14,6 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
-
     P01_HomePage homePage;
     P03_LoginPage loginPage;
     P07_ShoppingPage shoppingPage;
@@ -23,6 +21,7 @@ public class TC03 {
     private final String testName = "US08 || TC03-'wishlist' sayfasinda urun ozellikleri";
     private final String description = "'wishlist' sayfasindaki urunlerin ozellikleri goruntulenebilmeli";
     private final String raporMesaji = "'wishlist' sayfasinda urun ozellikleri goruntulenir ";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void quickViewKontrolu() {
         homePage = new P01_HomePage();
@@ -38,9 +37,9 @@ public class TC03 {
         loginPage.password.sendKeys(ConfigReader.getProperty("user_password"));
         loginPage.login.click();
         ReusableMethods.waitFor(3);
-//        extentTest.info("Login işlemi yapıldı.");
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
+        //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         //*************************************************************************************************
@@ -52,7 +51,6 @@ public class TC03 {
         ReusableMethods.waitFor(2);
         String bisikletEFG16Fiyat = wishlistPage.bisikletEFG16Fiyat.getText();
         ReusableMethods.waitFor(2);
-//        Assert.assertFalse(bisikletEFG16Fiyat.contains("200.00"));
         ReusableMethods.waitFor(2);
         String addToCartButton = Driver.getDriver().findElement(By.name("add-to-cart")).getText();
         ReusableMethods.waitFor(2);

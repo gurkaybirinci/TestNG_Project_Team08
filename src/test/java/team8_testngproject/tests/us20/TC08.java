@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us20;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -13,8 +12,9 @@ public class TC08 { // Show on store checkbox kutusu seçilebilmeli (PASS)
     private final String testName = "US20 || TC08-Show On Store";
     private final String description = "Show on store checkbox kutusu seçilebilmeli";
     private final String raporMesaji = "Show on store checkbox kutusunun seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

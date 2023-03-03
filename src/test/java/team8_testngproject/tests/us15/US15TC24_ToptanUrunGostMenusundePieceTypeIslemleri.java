@@ -16,6 +16,7 @@ public class US15TC24_ToptanUrunGostMenusundePieceTypeIslemleri {// Toptan Ürü
     private final String testName = "US15 || TC24-Toptan Ürün Gösterme menusunde Piece Type işlemleri";
     private final String description = "Vendor Toptan Ürün Gösterme menusunde Piece Type işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Toptan Ürün Gösterme menusunde Piece Type işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void toptanUrunGostMenusundePieceTypeIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -51,7 +52,7 @@ public class US15TC24_ToptanUrunGostMenusundePieceTypeIslemleri {// Toptan Ürü
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        Select select1=new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
+        Select select1 = new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
         select1.selectByIndex(1);
         Assert.assertTrue(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.isDisplayed());
         ReusableMethods.waitFor(2);
