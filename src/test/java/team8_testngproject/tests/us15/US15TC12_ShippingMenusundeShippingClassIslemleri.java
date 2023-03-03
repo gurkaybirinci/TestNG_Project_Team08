@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;

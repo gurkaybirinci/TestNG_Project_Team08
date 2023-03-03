@@ -16,6 +16,7 @@ public class US15TC25_ToptanUrunGostMenusuIslemleri {// Toptan Ürün Gösterme 
     private final String testName = "US15 || TC24-Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri";
     private final String description = "Vendor Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Toptan Ürün Gösterme menusunde Units Per Piece ve Min Order Quantity işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void toptanUrunGostMenusuIslemleri() {
         P01_HomePage homePage = new P01_HomePage();
@@ -51,8 +52,8 @@ public class US15TC25_ToptanUrunGostMenusuIslemleri {// Toptan Ürün Gösterme 
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).release().perform();
         ReusableMethods.waitFor(2);
-        Select select1=new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
-        String pieceTypeDrDownOptionText=select1.getFirstSelectedOption().getText();
+        Select select1 = new Select(vendorProductManagerPage.toptanUrunPieceTypeDropdownRs);
+        String pieceTypeDrDownOptionText = select1.getFirstSelectedOption().getText();
         select1.selectByIndex(1);
         Assert.assertNotEquals(pieceTypeDrDownOptionText, vendorProductManagerPage.toptanUrunPieceTypeDropdownRs.getText());
         ReusableMethods.waitFor(2);

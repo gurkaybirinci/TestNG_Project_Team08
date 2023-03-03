@@ -12,8 +12,9 @@ public class TC07_Description_Kutusu { // Description kutusuna metin girilebilme
     private final String testName = "US14 || TC07-Description Kutusuna";
     private final String description = "Description kutusuna metin girilebilmeli";
     private final String raporMesaji = "Description kutusuna metin girilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

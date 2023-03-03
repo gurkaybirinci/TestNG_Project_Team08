@@ -14,11 +14,10 @@ public class TC11_BreachToSuccessIn_Registration {
     private final String description = "Password alani altinda uyarı mesajı çıkmalı ve kayıt işlemi gerçekleşmemeli.";
     private final String raporMesaji = "Home pagedeki Register sayfasinda, Password alani test edildiginde beklenen sonuc karsilanmamakta ve test fail olmaktadır";
 
-    @Test (testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void Registergarion() {
-
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
-        Faker faker=new Faker();
+        Faker faker = new Faker();
         P01_HomePage homePage = new P01_HomePage();
         homePage.userRegisterButton.click();
         RaporlamaUtil.extentTestInfo("Home page'den Register sayfasina gidildi.");
@@ -31,9 +30,9 @@ public class TC11_BreachToSuccessIn_Registration {
         registerPage.userSignUpButton.click();
         RaporlamaUtil.extentTestInfo("Password alani altinda uyarı mesajı çıkmalı ve kayıt işlemi gerçekleşmemeli.");
 
-        try{
+        try {
             Assert.assertFalse(registerPage.signOutButton.isEnabled());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -17,9 +18,7 @@ public class TC06_Verification_Code_text_kutusu {
     private final String raporMesaji = "Verification Code text kutusuna eksik code girildiğinde hata mesajı alındığı doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-
     public void us09_Tc06() {
-
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
@@ -32,7 +31,6 @@ public class TC06_Verification_Code_text_kutusu {
         //Kullanıcı Url gider
         ReusableMethods.switchToWindow(1); // Yeni sekmeye geçer
         Driver.getDriver().navigate().to("https://hubcomfy.com/vendor-register/");
-
 
         //Kullanıcı Register butonuna tıklar
         P01_HomePage homePage = new P01_HomePage();
@@ -58,14 +56,13 @@ public class TC06_Verification_Code_text_kutusu {
 
         String mailKod = vendorRegisterPage.mailVerivacitonCode.getText();
         String sadeceKod = mailKod.split(" ")[5];
-        sadeceKod=sadeceKod.substring(0,4);
+        sadeceKod = sadeceKod.substring(0, 4);
         System.out.println(sadeceKod);
-        Actions actions=new Actions(Driver.getDriver());
+        Actions actions = new Actions(Driver.getDriver());
 
         ReusableMethods.switchToWindow(1);
         vendorRegisterPage.verificationCodeClick.sendKeys(sadeceKod);
-       RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına eksik  veri girdiği doğrulanmışır");
-
+        RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına eksik  veri girdiği doğrulanmışır");
 
         //Kullanıcı geçerli Password girer
         vendorRegisterPage.vendorPassowordZb.sendKeys(ConfigReader.getProperty("vendor_strong_psw"));
@@ -78,7 +75,7 @@ public class TC06_Verification_Code_text_kutusu {
         RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına eksik veri girdiğinde hata mesajı aldığı görüntülendi.");
 
         Assert.assertEquals(vendorRegisterPage.vendorDogrulaZb.getText(), "Vendor Registration");
-        Assert.assertEquals(vendorRegisterPage.verivacitonInvalidMesajZb.getText(),"Email verification code invalid.");
+        Assert.assertEquals(vendorRegisterPage.verivacitonInvalidMesajZb.getText(), "Email verification code invalid.");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 

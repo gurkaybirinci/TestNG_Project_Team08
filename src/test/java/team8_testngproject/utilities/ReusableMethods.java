@@ -18,12 +18,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
+
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class ReusableMethods {
 
-    public static String getScreenshot(String str)  {
+    public static String getScreenshot(String str) {
 
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -85,7 +86,7 @@ public class ReusableMethods {
     }
 
     //   HARD WAIT WITH THREAD.SLEEP
-//   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
+    //   waitFor(5);  => waits for 5 second => Thread.sleep(5000)
     public static void waitFor(int sec) {
         try {
             Thread.sleep(sec * 1000);
@@ -160,6 +161,7 @@ public class ReusableMethods {
 
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public static void doubleClick(WebElement element) {
@@ -184,6 +186,7 @@ public class ReusableMethods {
 
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
@@ -227,6 +230,7 @@ public class ReusableMethods {
     /**
      * Verifies whether the element matching the provided WebElement is NOT displayed on page
      * fails if the element matching the WebElement is not found or not displayed
+     *
      * @paramWebElement
      */
     public static void verifyElementNotDisplayed(WebElement element) {
@@ -251,20 +255,21 @@ public class ReusableMethods {
         }
     }
 
-    public static void jsClick(By locator){
+    public static void jsClick(By locator) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
-        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.driver, Duration.ofSeconds(10));
         WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        js.executeScript("arguments[0].click();",elementName);
-    }
-    public static void jsClick(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
-        WebDriverWait wait = new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
-        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
-        js.executeScript("arguments[0].click();",elementName);
+        js.executeScript("arguments[0].click();", elementName);
     }
 
-    public static void switchToWindow(int windowNumber){
+    public static void jsClick(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.driver;
+        WebDriverWait wait = new WebDriverWait(Driver.driver, Duration.ofSeconds(10));
+        WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
+        js.executeScript("arguments[0].click();", elementName);
+    }
+
+    public static void switchToWindow(int windowNumber) {
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowNumber));
     }
@@ -280,19 +285,19 @@ public class ReusableMethods {
     }
 
     //   Js Executer Scroll Locator
-    public static void jsScroll(By locator){
+    public static void jsScroll(By locator) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         WebElement elementName = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+        js.executeScript("arguments[0].scrollIntoView(true);", elementName);
     }
 
     //   Js Executer Scroll WebElement
-    public static void jsScroll(WebElement element){
+    public static void jsScroll(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         WebElement elementName = wait.until(ExpectedConditions.visibilityOf(element));
-        js.executeScript("arguments[0].scrollIntoView(true);",elementName);
+        js.executeScript("arguments[0].scrollIntoView(true);", elementName);
     }
 
     public static void getScreenshot() {
@@ -310,11 +315,11 @@ public class ReusableMethods {
 
     }
 
-    public static void uploadFilePath(String filePath){
-        try{
+    public static void uploadFilePath(String filePath) {
+        try {
             ReusableMethods.waitFor(3);
             StringSelection stringSelection = new StringSelection(filePath);
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
             Robot robot = new Robot();
             //pressing ctrl+v
             robot.keyPress(KeyEvent.VK_CONTROL);
@@ -335,15 +340,10 @@ public class ReusableMethods {
             robot.keyRelease(KeyEvent.VK_ENTER);
             ReusableMethods.waitFor(3);
             System.out.println("ENTER");
-        }catch (Exception e){
+        } catch (Exception e) {
         }
     }
 
-    
-    
-
-
-  
 
 }
 

@@ -17,8 +17,9 @@ public class TC17_Product_Brands_Bolumune_Yeni_Marka_Eklenebilmeli { // Product 
     private final String testName = "US14 || TC17-Product Brands Ekleme";
     private final String description = "Product brands bölümüne yeni marka eklenebilmeli";
     private final String raporMesaji = "Product brands bölümüne yeni marka eklenebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -47,7 +48,7 @@ public class TC17_Product_Brands_Bolumune_Yeni_Marka_Eklenebilmeli { // Product 
         RaporlamaUtil.extentTestInfo("Product brands bölümüne yeni marka eklenip eklenemediği kontrol edilmiştir.");
 
         List<WebElement> brandList = vendorProductManagerPage.brandListGur;
-        boolean brandNameVarMi= false;
+        boolean brandNameVarMi = false;
         for (WebElement w : brandList) {
             if (w.getText().equals(categoryName)) {
                 brandNameVarMi = true;

@@ -19,8 +19,9 @@ public class TC20_Product_Brands { // Product brands bölümüne yeni marka ekle
     private final String description = "Product brands bölümüne yeni marka eklendiğinde, eklenen ürün Parent Taxonomy menüsünde görünmeli";
     private final String raporMesaji = "Eklenen yeni marka, sayfa yenilenmeden Parent taxonomy bölümünde görünmüyor. " +
             "Görünmesi için sayfanın yenilenmesi gerekiyor. Bu durumda kullanıcı teni brand'ın eklenmediğini düşünür.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -46,14 +47,14 @@ public class TC20_Product_Brands { // Product brands bölümüne yeni marka ekle
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addBrandButtonGur);
         List<WebElement> options = vendorProductManagerPage.brandTaxonomyGur.findElements(By.tagName("option"));
         List<String> optionTexts = new ArrayList<>();
-        for (WebElement w : options){
+        for (WebElement w : options) {
             optionTexts.add(w.getText());
         }
         RaporlamaUtil.extentTestInfo("Product brands bölümüne yeni marka eklendiğinde, eklenen ürün Parent Taxonomy menüsünde görünüp görünmediği kontrol edildi.");
 
-        try{
+        try {
             Assert.assertTrue(optionTexts.contains(categoryName));
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

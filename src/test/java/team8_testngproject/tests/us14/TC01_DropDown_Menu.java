@@ -15,8 +15,9 @@ public class TC01_DropDown_Menu { // Simple Product, Variable Product, Grouped P
     private final String testName = "US14 || TC01-DropDown Menü";
     private final String description = "Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri olmalı";
     private final String raporMesaji = "Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçeneklerinin olduğu doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

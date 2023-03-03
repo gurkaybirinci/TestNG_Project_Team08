@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us05;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -22,9 +21,10 @@ public class TC02_Kullanici_Hesap_Detaylarini_Gorme {
     private final String testName = "US05 || TC02 Kullanıcı hesap detaylarını görme ";
     private final String description = "First name, Last name, Display name ve Email address bilgilerini değiştirebilmeli";
     private final String raporMesaji = "Kullanıcının hesap detayları değiştirdiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void tc01() throws IOException {
-        Driver.getDriver().get(ConfigReader.getProperty("URL"));    
+        Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
         P01_HomePage p01_homePage = new P01_HomePage();
         p01_homePage.signIn_Es.click();
@@ -37,7 +37,7 @@ public class TC02_Kullanici_Hesap_Detaylarini_Gorme {
 
         p01_homePage.signOut_Es.click();
         Faker faker = new Faker();
-        
+
         P04_MyAccountPage p04_myAccountPage = new P04_MyAccountPage();
         p04_myAccountPage.accountDetails_Es.click();
 
@@ -61,15 +61,15 @@ public class TC02_Kullanici_Hesap_Detaylarini_Gorme {
         String newEmail = faker.internet().emailAddress();
         FileOutputStream output = new FileOutputStream("configuration.properties");
         prop.setProperty("usernameEs", newEmail);
-        prop.store(output,null);
+        prop.store(output, null);
         output.close();
 
         p06_accountDetailes.emailAdress_Es.clear();
         p06_accountDetailes.emailAdress_Es.sendKeys(newEmail,
-                                                    Keys.TAB,Keys.TAB, Keys.TAB,Keys.TAB,Keys.TAB,
-                                                    Keys.TAB,Keys.TAB,Keys.ENTER);
+                Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB,
+                Keys.TAB, Keys.TAB, Keys.ENTER);
         RaporlamaUtil.extentTestInfo("Kullanıcı bilgilerinin değiştiği görüldü");
-        Assert.assertEquals(p06_accountDetailes.saveSuccessYazisi_Es.getText(),"Account details changed successfully.");
+        Assert.assertEquals(p06_accountDetailes.saveSuccessYazisi_Es.getText(), "Account details changed successfully.");
         Driver.closeDriver();
 
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

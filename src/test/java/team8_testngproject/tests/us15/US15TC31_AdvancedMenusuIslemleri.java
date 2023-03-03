@@ -14,6 +14,7 @@ public class US15TC31_AdvancedMenusuIslemleri {// Advanced menusunde Enable revi
     private final String testName = "US15 || TC31-Advanced Enable reviews, Menu Order ve Purchase Note işlemleri";
     private final String description = "Vendor Advanced menusunde Enable reviews, Menu Order ve Purchase Note işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Advanced menusunde Enable reviews, Menu Order ve Purchase Note işlemleri gerçekleştirilmiştir..";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void advancedMenusuPurchaseNoteIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

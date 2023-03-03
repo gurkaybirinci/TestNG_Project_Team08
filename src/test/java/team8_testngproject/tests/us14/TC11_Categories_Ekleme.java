@@ -17,8 +17,9 @@ public class TC11_Categories_Ekleme { // Categories bölümüne yeni kategori ek
     private final String testName = "US14 || TC11-Categories Ekleme";
     private final String description = "Categories bölümüne yeni kategori eklenebilmeli";
     private final String raporMesaji = "Categories bölümüne yeni kategori eklenebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -47,7 +48,7 @@ public class TC11_Categories_Ekleme { // Categories bölümüne yeni kategori ek
         RaporlamaUtil.extentTestInfo("Categories bölümüne yeni kategori eklenip eklenemediği kontrol edilmiştir.");
 
         List<WebElement> categoryList = vendorProductManagerPage.categoryListGur;
-        boolean categoryNameVarMi= false;
+        boolean categoryNameVarMi = false;
         for (WebElement w : categoryList) {
             if (w.getText().equals(categoryName)) {
                 categoryNameVarMi = true;

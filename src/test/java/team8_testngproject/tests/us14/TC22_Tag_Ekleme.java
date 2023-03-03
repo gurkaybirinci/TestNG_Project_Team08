@@ -13,8 +13,9 @@ public class TC22_Tag_Ekleme {// Tags eklenebilmeli (PASS)
     private final String testName = "US14 || TC22-Tag Ekleme";
     private final String description = "Tags eklenebilmeli";
     private final String raporMesaji = "Tags eklenebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

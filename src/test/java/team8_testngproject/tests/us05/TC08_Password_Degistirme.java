@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us05;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -14,7 +13,6 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -23,6 +21,7 @@ public class TC08_Password_Degistirme {
     private final String testName = "US05 || TC08 Password değiştirme ";
     private final String description = "Kullanıcı Password'ü değiştirebilmeli";
     private final String raporMesaji = "Kullanıcının passwordü değiştirdiği görülmüştür.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test08() throws IOException {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -60,17 +59,17 @@ public class TC08_Password_Degistirme {
 
         p06_accountDetailes.currentPassword_Es.sendKeys(ConfigReader.getProperty("passwordEs"));
         p06_accountDetailes.newPassword_Es.sendKeys(ConfigReader.getProperty("newPasswordEs"));
-        p06_accountDetailes.newPasswordTekrar_Es.sendKeys(ConfigReader.getProperty("newPasswordEs"),Keys.ENTER);
+        p06_accountDetailes.newPasswordTekrar_Es.sendKeys(ConfigReader.getProperty("newPasswordEs"), Keys.ENTER);
 
         RaporlamaUtil.extentTestInfo("Passwordün değiştirildiği görüldü");
 
         // Aşağıdaki kod configuration.properties dosyasının içeriğindeki userNameEs değişkeninin değerini değiştirmeyi sağlar
         String currentPassword = ConfigReader.getProperty("newPasswordEs");
-        String newPassword = faker.internet().password(12,15,true,true,true);
+        String newPassword = faker.internet().password(12, 15, true, true, true);
         FileOutputStream output = new FileOutputStream("configuration.properties");
         prop.setProperty("passwordEs", currentPassword);
         prop.setProperty("newPasswordEs", newPassword);
-        prop.store(output,null);
+        prop.store(output, null);
         output.close();
 
         Driver.closeDriver();

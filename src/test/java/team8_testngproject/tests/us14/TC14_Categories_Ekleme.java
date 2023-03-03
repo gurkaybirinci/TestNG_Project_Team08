@@ -19,8 +19,9 @@ public class TC14_Categories_Ekleme { // Categories bölümüne yeni kategori ek
     private final String description = "Categories bölümüne yeni kategori eklendiğinde, eklenen kategori Parent Category menüsünde görünmeli";
     private final String raporMesaji = "Eklenen yeni kategori, sayfa yenilenmeden Parent category bölümünde görünmüyor. " +
             "Görünmesi için sayfanın yenilenmesi gerekiyor. Bu durumda kullanıcı eklediği kategorinin eklenmediğini düşünür.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -46,14 +47,14 @@ public class TC14_Categories_Ekleme { // Categories bölümüne yeni kategori ek
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", vendorProductManagerPage.addButtonGur);
         List<WebElement> options = vendorProductManagerPage.parentCategoryGur.findElements(By.tagName("option"));
         List<String> optionTexts = new ArrayList<>();
-        for (WebElement w : options){
+        for (WebElement w : options) {
             optionTexts.add(w.getText());
         }
         RaporlamaUtil.extentTestInfo("Categories bölümüne yeni kategori eklendiğinde, eklenen kategorinin Parent Category menüsünde görünüp görünmediği kontrol edilmiştir.");
 
-        try{
+        try {
             Assert.assertTrue(optionTexts.contains(categoryName));
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

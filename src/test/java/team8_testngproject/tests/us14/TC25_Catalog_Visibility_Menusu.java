@@ -13,8 +13,9 @@ public class TC25_Catalog_Visibility_Menusu {// Catalog visibility; Shop and sea
     private final String testName = "US14 || TC25-Catalog Visibility Menüsü";
     private final String description = "Catalog visibility; Shop and search results olarak seçilebilmeli";
     private final String raporMesaji = "Catalog visibility; Shop and search results olarak seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us18;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -10,7 +9,6 @@ import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
-
 
 public class TC01_Dropdown_Menu {
     private final String testName = "US18 || TC01-Dropdown Menü";
@@ -22,7 +20,6 @@ public class TC01_Dropdown_Menu {
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US18_TC01() {
@@ -48,7 +45,7 @@ public class TC01_Dropdown_Menu {
         Select select = new Select(p18_vendorProductManagerPage.dropdownHus);
         select.selectByVisibleText("External/Affiliate Product");
         ReusableMethods.waitFor(2);
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"External/Affiliate Product");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "External/Affiliate Product");
         RaporlamaUtil.extentTestInfo("Eklenecek ürün dropdow menüsünde 'External/Affiliate Product' seçili olduğu kontrol edildi.");
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

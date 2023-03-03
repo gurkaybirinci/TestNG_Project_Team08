@@ -20,8 +20,9 @@ public class TC13_Categories_Bolumunun_Alfabetik_Siralanmasi { // Categories bö
     private final String description = "Categories bölümüne yeni kategori eklerken Parent category menüsündeki seçenekler alfabetik sırada görünmeli";
     private final String raporMesaji = "Parent category bölümündeki seçenekler alfabetik olarak sıralanmadığı için karmaşık görünüyor ve aranan seçeneğin bulunması zor oluyor. " +
             "Sıralama, ekleme sırasına göre gerçekleşiyor. Alfabetik olarak sıralanması yararlı olur.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -47,13 +48,13 @@ public class TC13_Categories_Bolumunun_Alfabetik_Siralanmasi { // Categories bö
         options.remove(0);
         List<WebElement> optionsToRemove = new ArrayList<>();
         for (WebElement option : options) {
-            if (option.getText().substring(0,1).contains(" ")) {
+            if (option.getText().substring(0, 1).contains(" ")) {
                 optionsToRemove.add(option);
             }
         }
         options.removeAll(optionsToRemove);
         List<String> optionTexts = new ArrayList<>();
-        for (WebElement w : options){
+        for (WebElement w : options) {
             optionTexts.add(w.getText());
         }
         System.out.println(optionTexts);
@@ -62,9 +63,9 @@ public class TC13_Categories_Bolumunun_Alfabetik_Siralanmasi { // Categories bö
         System.out.println(sortedOptionTexts);
         RaporlamaUtil.extentTestInfo("Categories bölümüne yeni kategori eklerken Parent category menüsündeki seçeneklerin alfabetik sırada görünüp görünmediği kontrol edilmiştir.");
 
-        try{
+        try {
             Assert.assertEquals(sortedOptionTexts, optionTexts);
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

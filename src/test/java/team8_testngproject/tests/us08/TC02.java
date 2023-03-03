@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us08;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
@@ -23,6 +22,7 @@ public class TC02 {
     private final String testName = "US08 || TC02-'wishlist'sayfasinda urun ekleme kontrolu";
     private final String description = "'wishlist' sayfasina gidilir";
     private final String raporMesaji = "'wishlist' sayfasinda begenilen urunler eklenmistir ";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void wishlistKontrolu() {
         homePage = new P01_HomePage();
@@ -40,25 +40,6 @@ public class TC02 {
         ReusableMethods.waitFor(3);
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
 
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.search);
-//        shoppingPage.search.sendKeys("bisiklet");
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                shoppingPage.aramaTusu);
-//        ReusableMethods.waitFor(3);
-//        String arananUrunTitle = Driver.getDriver().getTitle();
-//        ReusableMethods.waitFor(3);
-//        Assert.assertTrue(arananUrunTitle.contains("bisiklet"));
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                wishlistPage.bisiklet);
-//        ReusableMethods.waitFor(2);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
-//                wishlistPage.bisikletKizCocuk);
-//        ReusableMethods.waitFor(2);
-//        RaporlamaUtil.extentTestInfo("Begenilen urunler 'wishlist'e eklendi");
-
-        //*************************************************************************************************
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();",
                 wishlistPage.wishlistButton);
         String wishlistTitleKontrol = Driver.getDriver().getTitle();

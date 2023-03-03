@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -7,7 +8,6 @@ import team8_testngproject.pages.P14_VendorRegisterPage;
 import team8_testngproject.utilities.ConfigReader;
 import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
-
 
 public class TC01_Become_a_Vendor_Giris {
     P01_HomePage homePage;
@@ -19,7 +19,6 @@ public class TC01_Become_a_Vendor_Giris {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us09_Tc01() {
-
         //Kullanıcı url'e gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
@@ -28,7 +27,7 @@ public class TC01_Become_a_Vendor_Giris {
         homePage.registerButonZb.click();
 
         //Kullanıcı Sign Up ekranından Become a Vendor linkine tıklar
-        registerPage=new P02_RegisterPage();
+        registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
         RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
 

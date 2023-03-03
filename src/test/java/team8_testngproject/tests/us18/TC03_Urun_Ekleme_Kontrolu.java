@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us18;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -21,16 +20,17 @@ public class TC03_Urun_Ekleme_Kontrolu {
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US18_TC03() {
-        p01_homePage=new P01_HomePage();
-        p03_loginPage=new P03_LoginPage();
-        p16VendorStoreManagerPage=new P16_VendorStoreManagerPage();
-        p17_vendorProductsDashboardPage=new P17_VendorProductsDashboardPage();
-        p18_vendorProductManagerPage=new P18_VendorProductManagerPage();
+        p01_homePage = new P01_HomePage();
+        p03_loginPage = new P03_LoginPage();
+        p16VendorStoreManagerPage = new P16_VendorStoreManagerPage();
+        p17_vendorProductsDashboardPage = new P17_VendorProductsDashboardPage();
+        p18_vendorProductManagerPage = new P18_VendorProductManagerPage();
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         p01_homePage.signInButtonKoz.click();
-        p03_loginPage.usernameKoz.sendKeys("mehmetkozak46@gmail.com", Keys.TAB,"Koz.ak46");
+        p03_loginPage.usernameKoz.sendKeys("mehmetkozak46@gmail.com", Keys.TAB, "Koz.ak46");
         p03_loginPage.signInButtonKoz.click();
         RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
@@ -45,8 +45,8 @@ public class TC03_Urun_Ekleme_Kontrolu {
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.selectButtonHus.click();
         ReusableMethods.waitFor(2);
-        String userHome =System.getProperty("user.home");
-        String dosyaYolu = System.getProperty("user.home")+ "\\Desktop\\top.jpg";
+        String userHome = System.getProperty("user.home");
+        String dosyaYolu = System.getProperty("user.home") + "\\Desktop\\top.jpg";
         ReusableMethods.uploadFilePath(dosyaYolu);
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.select2ButtonHus.click();
@@ -57,13 +57,13 @@ public class TC03_Urun_Ekleme_Kontrolu {
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addSelectButtonHus.click();
         ReusableMethods.waitFor(2);
-        String dosyaYolu2=System.getProperty("user.home")+ "\\Desktop\\top2.jpg";
+        String dosyaYolu2 = System.getProperty("user.home") + "\\Desktop\\top2.jpg";
         ReusableMethods.uploadFilePath(dosyaYolu2);
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.addToGalleryButtonHus.click();
         ReusableMethods.waitFor(2);
         p18_vendorProductManagerPage.productTitleInputKoz.sendKeys("Futbol Topu2");
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"External/Affiliate Product");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "External/Affiliate Product");
         p18_vendorProductManagerPage.urlBoxHus.sendKeys("https://www.trendyol.com/nike/nk-academy-team-futbol-topu-3-numara-cu8047-720-p-314404212?boutiqueId=61&merchantId=107283&storefrontId=1&countryCode=TR&language=tr&gads=true");
         assert p18_vendorProductManagerPage.urlBoxHus.getAttribute("type").equals("text");
         p18_vendorProductManagerPage.buttonTextBoxHus.sendKeys("Team Futbol Topu");
@@ -81,8 +81,8 @@ public class TC03_Urun_Ekleme_Kontrolu {
         ReusableMethods.jsClick(p18_vendorProductManagerPage.sportsCheckBoxKoz);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.kozbulCheckBoxKoz);
         p18_vendorProductManagerPage.tagsHus.sendKeys("Futbol,Top,Nike");
-        select=new Select(p18_vendorProductManagerPage.catalogVisibilityKoz);
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"Shop and search results");
+        select = new Select(p18_vendorProductManagerPage.catalogVisibilityKoz);
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Shop and search results");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.submitButtonHus);
         ReusableMethods.waitFor(2);
         assert p18_vendorProductManagerPage.publishedTextHus.isDisplayed();

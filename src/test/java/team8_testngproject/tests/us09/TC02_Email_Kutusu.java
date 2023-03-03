@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -17,14 +18,14 @@ public class TC02_Email_Kutusu {
     private final String testName = "US09 || TC02-E-mail Kutusu ";
     private final String description = "e-mail adresi girmeli ";
     private final String raporMesaji = "Kullanıcı sadece e-mail bilgilerini girdiğinde e-mail ile ilgili hata mesajı almadığı doğrulandı";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void us09_Tc02() throws InterruptedException {
-
         //Kullanıcı fake url gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
-        vendorRegisterPage=new P14_VendorRegisterPage();
-        String mailAdresi=vendorRegisterPage.fakeMailKutuZb.getText();
+        vendorRegisterPage = new P14_VendorRegisterPage();
+        String mailAdresi = vendorRegisterPage.fakeMailKutuZb.getText();
         RaporlamaUtil.extentTestInfo("Kullanıcının fake mail adresi alabilirliği kontrol edildi");
         System.out.println(mailAdresi);
 
@@ -36,7 +37,7 @@ public class TC02_Email_Kutusu {
         homePage.registerButonZb.click();
 
         //Kullanıcı Sign Up ekranından Become a Vendor linkine tıklar
-        registerPage=new P02_RegisterPage();
+        registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
         RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
 

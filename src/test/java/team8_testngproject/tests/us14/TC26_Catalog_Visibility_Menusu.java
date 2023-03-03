@@ -13,8 +13,9 @@ public class TC26_Catalog_Visibility_Menusu { // Catalog visibility; Shop only o
     private final String testName = "US14 || TC26-Catalog Visibility Menüsü";
     private final String description = "Catalog visibility; Shop only olarak seçilebilmeli";
     private final String raporMesaji = "Catalog visibility; Shop only olarak seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

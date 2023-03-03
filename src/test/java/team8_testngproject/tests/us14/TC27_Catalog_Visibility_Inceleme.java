@@ -15,8 +15,9 @@ public class TC27_Catalog_Visibility_Inceleme { // Catalog visibility; Shop only
     private final String description = "Catalog visibility; Shop only olarak seçilediğinde ürüne arama motorundan ulaşılamamalı";
     private final String raporMesaji = "Shop only seçeneği seçildiğinde, ürüne arama motorundan da ulaşılabilmektedir. " +
             "Halbuki bu seçenek seçildiğinde arama motorundan bulunamaması gerekir.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -51,9 +52,9 @@ public class TC27_Catalog_Visibility_Inceleme { // Catalog visibility; Shop only
         vendorProductManagerPage.searchBoxGur.sendKeys("Steteskop");
         RaporlamaUtil.extentTestInfo("Catalog visibility; Shop only olarak seçilediğinde ürüne arama motorundan ulaşılıp ulaşılamadığı kontrol edilmiştir.");
 
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.liveSearchAreaGur.isDisplayed());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

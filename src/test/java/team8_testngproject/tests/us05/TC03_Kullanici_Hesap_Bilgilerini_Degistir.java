@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us05;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -17,6 +16,7 @@ public class TC03_Kullanici_Hesap_Bilgilerini_Degistir {
     private final String testName = "US05 || TC03 Kullanıcı hesap bilgilerini değiştir ";
     private final String description = "Kullanıcı first name alanı boş iken kayıt yapamamalı";
     private final String raporMesaji = "Kullanıcının kayıt yapamadığı görülmüştür.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void t03() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -48,8 +48,8 @@ public class TC03_Kullanici_Hesap_Bilgilerini_Degistir {
         p06_accountDetailes.emailAdress_Es.clear();
 
         p06_accountDetailes.emailAdress_Es.sendKeys(faker.internet().emailAddress(),
-                Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,
-                Keys.TAB,Keys.TAB,Keys.ENTER);
+                Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB,
+                Keys.TAB, Keys.TAB, Keys.ENTER);
         RaporlamaUtil.extentTestInfo("First name hariç , last name, display name, e mail verileri girildi ve SAVE işleminin gerçekleşmediği görüldü.");
 
         Assert.assertTrue(p06_accountDetailes.saveFailYazisi_Es.isDisplayed());

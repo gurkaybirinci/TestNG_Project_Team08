@@ -1,4 +1,5 @@
 package team8_testngproject.tests.us09;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,15 +18,13 @@ public class TC05_Verification_Code_text_kutusu {
     private final String raporMesaji = "Mail adresine gelen Verification Code, code text kutusuna girildiği doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-
     public void us09_Tc05() {
-
         //Kullanıcı fake URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
 
         //Kullanıcı fake mail adresi alır
-        P14_VendorRegisterPage vendorRegisterPage=new P14_VendorRegisterPage();
-        String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
+        P14_VendorRegisterPage vendorRegisterPage = new P14_VendorRegisterPage();
+        String fakeMail = vendorRegisterPage.fakeMailKutuZb.getText();
 
         ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open()"); //Yeni sekme açar
 
@@ -33,16 +32,14 @@ public class TC05_Verification_Code_text_kutusu {
         ReusableMethods.switchToWindow(1); // Yeni sekmeye geçer
         Driver.getDriver().navigate().to("https://hubcomfy.com/vendor-register/"); // Yeni sekmede URL'yi açar
 
-
         //Kullanıcı Register butonuna tıklar
-        P01_HomePage homePage=new P01_HomePage();
+        P01_HomePage homePage = new P01_HomePage();
         homePage.registerButonZb.click();
 
         //Kullanıcı Become a Vendor linkine tıklar
-        P02_RegisterPage registerPage=new P02_RegisterPage();
+        P02_RegisterPage registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
         RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
-
 
         //Kullanıcı fake Url den aldığı  Email bilgileri girer
         vendorRegisterPage.emailzb.sendKeys(fakeMail);
@@ -56,8 +53,8 @@ public class TC05_Verification_Code_text_kutusu {
         ReusableMethods.waitFor(10);
         vendorRegisterPage.fakeMailTiklamaZb.click();
 
-        String mailKod=vendorRegisterPage.mailVerivacitonCode.getText();
-        String[] sadeceKod=mailKod.split(" ");
+        String mailKod = vendorRegisterPage.mailVerivacitonCode.getText();
+        String[] sadeceKod = mailKod.split(" ");
         RaporlamaUtil.extentTestInfo("Kullanıcı Verification Code kısmına veri girdiği doğrulanmışır");
 
         ReusableMethods.switchToWindow(1);

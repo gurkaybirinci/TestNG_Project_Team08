@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us05;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -18,6 +17,7 @@ public class TC07_Kullanici_Biography_Bölümünü_Doldurma {
     private final String testName = "US05 || TC07 Kullanıcı Biography bölümünü doldurma ";
     private final String description = "Kullanıcı Biography bölümünü doldurabilmeli";
     private final String raporMesaji = "Kullanıcının kayıt yaptığı görülmüştür.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void test07() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -42,19 +42,14 @@ public class TC07_Kullanici_Biography_Bölümünü_Doldurma {
         Assert.assertEquals(p06_accountDetailes.accountDetailsSayfasindamisin_Es.getText(), "Account Details");
         ReusableMethods.waitFor(5);
         Driver.getDriver().switchTo().frame(p06_accountDetailes.biography_Es);
-//        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].value = '';",p06_accountDetailes.bodyID_Es);
         p06_accountDetailes.bodyID_Es.clear();
-//        p06_accountDetailes.biographyPTag_Es.clear();
         p06_accountDetailes.bodyID_Es.sendKeys("Bu bir deneme yazısıdır. Biography yazısı değil.",
-                                                  Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.ENTER);
+                Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.ENTER);
 
-//        Driver.getDriver().switchTo().defaultContent();
         RaporlamaUtil.extentTestInfo("Biography bölümüne yazının yazıldığı ve SAVE işleminin yapıldığı görüldü");
 
-        Assert.assertEquals(p06_accountDetailes.saveSuccessYazisi_Es.getText(),"Account details changed successfully.");
-
+        Assert.assertEquals(p06_accountDetailes.saveSuccessYazisi_Es.getText(), "Account details changed successfully.");
         Driver.closeDriver();
-
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }

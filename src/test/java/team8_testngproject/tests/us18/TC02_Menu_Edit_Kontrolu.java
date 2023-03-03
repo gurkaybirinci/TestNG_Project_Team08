@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us18;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -21,7 +20,6 @@ public class TC02_Menu_Edit_Kontrolu {
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US18_TC02() {
@@ -47,7 +45,7 @@ public class TC02_Menu_Edit_Kontrolu {
         Select select = new Select(p18_vendorProductManagerPage.dropdownHus);
         select.selectByVisibleText("External/Affiliate Product");
         ReusableMethods.waitFor(2);
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"External/Affiliate Product");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "External/Affiliate Product");
         p18_vendorProductManagerPage.urlBoxHus.sendKeys("https://www.trendyol.com/yenteks/icardi-cocuk-formasi-3-lu-set-corap-forma-sort-sari-kirmizi-p-411398212?boutiqueId=61&merchantId=517322");
         assert p18_vendorProductManagerPage.urlBoxHus.getAttribute("type").equals("text");
         p18_vendorProductManagerPage.buttonTextBoxHus.sendKeys("İcardi Çocuk Forması");

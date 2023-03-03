@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us05;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -15,6 +14,7 @@ public class TC01_Kullanici_Hesap_Detaylarini_Gorme {
     private final String testName = "US05 || TC01 Kullanıcı hesap detaylarını görme";
     private final String description = "Kullanıcı hesap detaylarını (Account Details) görebilmeli";
     private final String raporMesaji = "Kullanıcının hesap detaylarını görüdüğü doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
     public void tc01() {

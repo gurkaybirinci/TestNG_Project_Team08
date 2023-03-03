@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us20;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -13,8 +12,9 @@ public class TC07 { // Allow free shipping checkbox kutusu seçilebilmeli (PASS)
     private final String testName = "US20 || TC07-Allow Free Shipping";
     private final String description = "Allow free shipping checkbox kutusu seçilebilmeli";
     private final String raporMesaji = "Allow free shipping checkbox kutusunun seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

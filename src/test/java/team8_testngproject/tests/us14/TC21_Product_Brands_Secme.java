@@ -14,8 +14,9 @@ public class TC21_Product_Brands_Secme { // Product brands bölümünde sadece b
     private final String description = "Product brands bölümünde sadece bir seçenek seçilebilmeli";
     private final String raporMesaji = "Marka seçeneği unique olmalı, ama bu bölümden birden fazla seçenek seçilebilmekte " +
             "ve seçilen markalar ürün sayfasında alt alta sıralanmaktadır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -41,9 +42,9 @@ public class TC21_Product_Brands_Secme { // Product brands bölümünde sadece b
         RaporlamaUtil.extentTestInfo("Product brands bölümünde sadece bir seçenek seçilebildiği kontrol edilmiştir.");
 
         Assert.assertTrue(vendorProductManagerPage.brandAppleGur.isSelected());
-        try{
+        try {
             Assert.assertFalse(vendorProductManagerPage.brandAdidasGur.isSelected());
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

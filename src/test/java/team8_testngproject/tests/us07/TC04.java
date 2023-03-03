@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us07;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -24,6 +23,7 @@ public class TC04 {
     private final String testName = "US07 || TC04-Secilen urunlerin karsilastirilmasi";
     private final String description = "Compare sayfasinda urun karsilastirilmasi";
     private final String raporMesaji = "Compare sayfasinda urun silme.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void compareUrunSilme() {
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
@@ -126,9 +126,9 @@ public class TC04 {
         kalanUrunler.add(silinenCoatPoolKontrol);
 
         for (String urunKontrol : kalanUrunler) {
-            if (kalanUrunler.contains(urunKontrol)){
-            Assert.assertTrue(kalanUrunler.contains(urunKontrol));
-            }else {
+            if (kalanUrunler.contains(urunKontrol)) {
+                Assert.assertTrue(kalanUrunler.contains(urunKontrol));
+            } else {
                 System.out.println(kalanUrunler + " adli urun silinmistir");
             }
         }

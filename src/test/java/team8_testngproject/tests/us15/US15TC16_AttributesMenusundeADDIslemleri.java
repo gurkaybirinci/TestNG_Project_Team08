@@ -1,7 +1,5 @@
 package team8_testngproject.tests.us15;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +16,7 @@ public class US15TC16_AttributesMenusundeADDIslemleri {// Attributes menusunde A
     private final String testName = "US15 || TC16-Attributes menusunde ADD işlemleri";
     private final String description = "Vendor Attributes menusunde ADD işlemleri yapabilmeli";
     private final String raporMesaji = "Vendor olarak Attributes menusunde ADD işlemleri yapabildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void attributesMenuADDIslemleri() {
         P01_HomePage homePage = new P01_HomePage();

@@ -1,8 +1,6 @@
 package team8_testngproject.tests.us16;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
 import team8_testngproject.utilities.ConfigReader;
@@ -20,7 +18,6 @@ public class TC04 {
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US16_TC04() {
@@ -46,10 +43,10 @@ public class TC04 {
         p18_vendorProductManagerPage.priceBoxHus.sendKeys("abc");
         assert p18_vendorProductManagerPage.priceBoxHus.getAttribute("type").equals("number");
         p18_vendorProductManagerPage.salePriceBoxHus.sendKeys(".20");
-        try{
+        try {
             assert p18_vendorProductManagerPage.salePriceBoxHus.getText().contains("Hata");
             RaporlamaUtil.extentTestInfo("Price ve Sale Price kutularının seçilebildiği kontrol edildi.");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

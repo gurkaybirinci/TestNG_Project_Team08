@@ -9,12 +9,13 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class TC10_Categories_Secme{ // Categories bölümünde birden fazla kategori seçilebilmeli (PASS)
+public class TC10_Categories_Secme { // Categories bölümünde birden fazla kategori seçilebilmeli (PASS)
     private final String testName = "US14 || TC10-Categories Seçme";
     private final String description = "Categories bölümünde birden fazla kategori seçilebilmeli";
     private final String raporMesaji = "Categories bölümünde birden fazla kategorinin seçilebilmeli doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

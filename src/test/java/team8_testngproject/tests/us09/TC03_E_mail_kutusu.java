@@ -17,33 +17,31 @@ public class TC03_E_mail_kutusu {
     private final String testName = "US09 || TC03-Email kutusu";
     private final String description = "e-mail adresine invalid değer girmeli";
     private final String raporMesaji = "Kullanıcı invalid mail girdiğinde hata mesajı aldığı doğrulanmıştır";
-    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
 
+    @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us09_Tc03() {
         //Kullanıcı fake Url gider
         Driver.getDriver().get(ConfigReader.getProperty("URL_Fake"));
-        vendorRegisterPage=new P14_VendorRegisterPage();
-        String fakeMail=vendorRegisterPage.fakeMailKutuZb.getText();
-        String yeniMail=fakeMail.replace(".com"," ");
+        vendorRegisterPage = new P14_VendorRegisterPage();
+        String fakeMail = vendorRegisterPage.fakeMailKutuZb.getText();
+        String yeniMail = fakeMail.replace(".com", " ");
 
         //Kullanıcı URL gider
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
 
         //Kullanıcı Register butonuna tıklar
-        homePage=new P01_HomePage();
+        homePage = new P01_HomePage();
         homePage.registerButonZb.click();
 
         //Kullanıcı Sign Up ekranından Become a Vendor linkine tıklar
-        registerPage=new P02_RegisterPage();
+        registerPage = new P02_RegisterPage();
         registerPage.becomeVendorZb.click();
         RaporlamaUtil.extentTestInfo("Become a Vendor linki ile giriş yapabildi.");
 
-
         //Kullanıcı fake email'i eksik girer
-        vendorRegisterPage=new P14_VendorRegisterPage();
+        vendorRegisterPage = new P14_VendorRegisterPage();
         vendorRegisterPage.emailzb.sendKeys(yeniMail);
         RaporlamaUtil.extentTestInfo("Kullanıcı email kutusuna  invalid değer girdiği doğrulanmışır");
-
 
         //Kullanıcı verificationCode kutusuna tıklar (Please provide a valid email address.)
         vendorRegisterPage.verificationCodeClick.click();

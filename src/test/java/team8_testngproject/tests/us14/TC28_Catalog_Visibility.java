@@ -13,8 +13,9 @@ public class TC28_Catalog_Visibility { // Catalog visibility; Search results onl
     private final String testName = "US14 || TC28-Catalog Visibility";
     private final String description = "Catalog visibility; Search results only olarak seçilebilmeli";
     private final String raporMesaji = "Catalog visibility; Search results only olarak seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

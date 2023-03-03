@@ -12,8 +12,9 @@ public class TC05_Product_Title { // Product Title kutusuna metin girilebilmeli 
     private final String testName = "US14 || TC05-Product Title";
     private final String description = "Product Title kutusuna metin girilebilmeli";
     private final String raporMesaji = "Product Title kutusuna metin girilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

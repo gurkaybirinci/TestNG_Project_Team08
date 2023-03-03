@@ -12,8 +12,9 @@ public class TC02_Urun_Fotografi_Ekleme { // Ürün fotoğrafı (büyük olan-Fe
     private final String testName = "US14 || TC02-Ürün Fotoğrafı Ekleme";
     private final String description = "Ürün fotoğrafı (büyük olan-Featured Img) eklenebilmeli";
     private final String raporMesaji = "Ürün fotoğrafı (büyük olan-Featured Img) eklenebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

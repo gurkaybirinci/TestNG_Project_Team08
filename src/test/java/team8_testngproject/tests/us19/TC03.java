@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us19;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -11,11 +10,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC03 {
-
     private final String testName = "US19 || TC03-Fatura Ayrıntıları";
     private final String description = "Fatura ayrıntıları (BILLING DETAILS) doldurulabilmeli";
     private final String raporMesaji = "Fatura ayrıntılarının (BILLING DETAILS) doldurulabildiği doğrulandı";
-
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;
@@ -27,9 +24,6 @@ public class TC03 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us19_tc03() {
-
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
         p04MyAccountPage = new P04_MyAccountPage();
@@ -49,7 +43,7 @@ public class TC03 {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
-        extentTest.info("Login işlemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -69,7 +63,7 @@ public class TC03 {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
-        extentTest.info("Shopping sayfasına gidildi");
+        RaporlamaUtil.extentTestInfo("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -109,7 +103,7 @@ public class TC03 {
 
         Select province = new Select(p15VendorAddressesPage.provinceBox_Nt);
         province.selectByVisibleText(ConfigReader.getProperty("billingProvince_Nt"));
-        extentTest.info("Vendor olarak fatura ayrıntılarının doldurulabilirliği kontrol edildi");
+        RaporlamaUtil.extentTestInfo("Vendor olarak fatura ayrıntılarının doldurulabilirliği kontrol edildi");
 
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

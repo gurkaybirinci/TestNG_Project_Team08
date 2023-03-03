@@ -19,8 +19,9 @@ public class TC04_Urun_Fotografi_Ekleme { // Ürüne ait bir tane küçük (Gall
     private final String raporMesaji = "Ürüne ait Featured image ve Gallery image eklendiğinde, ürün sayfasında gallery image'a ait resim iki kez gösteriliyor. " +
             "Gallery image bölümüne Featured image'dan farklı bir resim eklenince sorun olmuyor, " +
             "ama sadece bir resim eklemek isteyen birisinin ürün sayfası düzgün görüntülenmemiş oluyor";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
@@ -56,9 +57,9 @@ public class TC04_Urun_Fotografi_Ekleme { // Ürüne ait bir tane küçük (Gall
         List<WebElement> imgElements = vendorProductManagerPage.galleryImgDivGur.findElements(By.tagName("img"));
         RaporlamaUtil.extentTestInfo("Ürüne ait bir tane küçük (Gallery Images) resim eklendiğinde, bu resimden ürün sayfasında bir tane olup olmadığı kontrol edilmiştir.");
 
-        try{
+        try {
             Assert.assertEquals(imgElements.size(), 1);
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             throw e;
         } finally {
             RaporlamaUtil.message = "<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

@@ -32,7 +32,7 @@ public class UserStory_21 {
     }
 
 
-    @Test (testName = "US21 || TC01-Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
+    @Test(testName = "US21 || TC01-Search Box Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Search Box inputunun kullanılabilmesi")
     public void us21_Tc01() {
 
         //Belirtilen URL'e gidilir.
@@ -53,7 +53,7 @@ public class UserStory_21 {
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
     }
 
-    @Test (testName = "US21 || TC02-ADD TO CART Buton Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "ADD TO CART butonunun islevsel kontrolu")
+    @Test(testName = "US21 || TC02-ADD TO CART Buton Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "ADD TO CART butonunun islevsel kontrolu")
     public void us21_Tc02() {
 
         //Belirtilen URL'e gidilir.
@@ -76,7 +76,7 @@ public class UserStory_21 {
         RaporlamaUtil.extentTestInfo("Sepete ürün eklemesine dair popup mesajı görüntülendi.");
     }
 
-    @Test (testName = "US21 || TC03-ADD TO CART Products Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepete eklenen urunlerin goruntulenmesi")
+    @Test(testName = "US21 || TC03-ADD TO CART Products Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepete eklenen urunlerin goruntulenmesi")
     public void us21_Tc03() {
 
         //Belirtilen URL'e gidilir.
@@ -99,7 +99,7 @@ public class UserStory_21 {
         RaporlamaUtil.extentTestInfo("Sepete eklenen ürünler görüntülendi.");
     }
 
-    @Test (testName = "US21 || TC04-Product Plus and Minus Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepetteki urun mıktarında artirma ve azaltma yapilabilmesi")
+    @Test(testName = "US21 || TC04-Product Plus and Minus Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Sepetteki urun mıktarında artirma ve azaltma yapilabilmesi")
     public void us21_Tc04() {
 
         //Belirtilen URL'e gidilir.
@@ -127,7 +127,7 @@ public class UserStory_21 {
         RaporlamaUtil.extentTestInfo("Sepete eklenen ürünleri artırma ve azaltma durumları kontrol edildi.");
     }
 
-    @Test (testName = "US21 || TC05-Shopping With Coupon Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "User olarak oluşturulan kupon ile alısveris yapilabilmesi")
+    @Test(testName = "US21 || TC05-Shopping With Coupon Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "User olarak oluşturulan kupon ile alısveris yapilabilmesi")
     public void us21_Tc05() {
 
         //Belirtilen URL'e gidilir.
@@ -158,10 +158,9 @@ public class UserStory_21 {
         RaporlamaUtil.extentTestInfo("Indirim kuponunun uygulanabildiği kontrol edildi ve kupon silindi");
 
 
-
     }
 
-    @Test (testName = "US21 || TC06-End to Shopping Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Fatura adresi eksiksiz girilerek alisverisin tamamlanmasi ")
+    @Test(testName = "US21 || TC06-End to Shopping Test", description = "<span style='font-weight:bold'>Amaç:</span> " + "Fatura adresi eksiksiz girilerek alisverisin tamamlanmasi ")
     public void us21_Tc06() {
 
         //Belirtilen URL'e gidilir.

@@ -13,8 +13,9 @@ public class TC23_Tags_Ekleme { // Tags bölümüne birden fazla tag eklenebilme
     private final String testName = "US14 || TC23-Tags Ekleme";
     private final String description = "Tags bölümüne birden fazla tag eklenebilmeli";
     private final String raporMesaji = "Tags bölümüne birden fazla tag eklenebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();

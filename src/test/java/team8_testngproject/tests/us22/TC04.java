@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us22;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -10,11 +9,9 @@ import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
 public class TC04 {
-
     private final String testName = "US22 || TC04-Toplam Ödenecek Rakam";
     private final String description = "Toplam ödenecek rakam görüntülebilmeli";
     private final String raporMesaji = "Toplam ödenecek rakamın görüntülendiği doğrulandı";
-
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;
@@ -26,9 +23,6 @@ public class TC04 {
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void us22_tc04() {
-
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-
         p01HomePage = new P01_HomePage();
         p03LoginPage = new P03_LoginPage();
         p04MyAccountPage = new P04_MyAccountPage();
@@ -48,7 +42,7 @@ public class TC04 {
         p03LoginPage.emailBox_Nt.sendKeys(ConfigReader.getProperty("vendorMail_Nt"));
         p03LoginPage.passwordBox_Nt.sendKeys(ConfigReader.getProperty("vendorPassword_Nt"));
         p03LoginPage.signInButton_Nt.click();
-        extentTest.info("Login işlemi yapıldı");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı");
 
         //Sign Out butonuna tıklanır
         p01HomePage.signOutButton_Nt.click();
@@ -68,7 +62,7 @@ public class TC04 {
         } catch (Exception e) {
             p19OrdersPage.browseProductsLink_Nt.click();
         }
-        extentTest.info("Shopping sayfasına gidildi");
+        RaporlamaUtil.extentTestInfo("Shopping sayfasına gidildi");
 
         //Shop sayfasının görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p07ShoppingPage.shoppingPageDisplayed_Nt);
@@ -88,7 +82,7 @@ public class TC04 {
 
         //Checkout butonuna tıklanır
         p08ProductPage.checkoutButton_Nt.click();
-        extentTest.info("Vendor olarak toplam ödenecek rakamın görünürlüğü kontrol edildi");
+        RaporlamaUtil.extentTestInfo("Vendor olarak toplam ödenecek rakamın görünürlüğü kontrol edildi");
 
         //Toplam ödemecek rakamın  görünür olduğu doğrulanmalıdır
         ReusableMethods.verifyElementDisplayed(p10CheckOutPage.totalAmountDisplayed_Nt);

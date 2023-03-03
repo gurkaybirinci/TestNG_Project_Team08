@@ -23,32 +23,31 @@ public class TC04 {
     private final String raporMesaji = "Eklenen Attribute'ün Variations'a tıklanarak görülebildiği doğrulanmıştır";
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void US17_TC04(){
-        ExtentTest extentTest = RaporlamaUtil.extentTest;
-        p01_homePage=new P01_HomePage();
-        p03_loginPage=new P03_LoginPage();
-        p04_myAccountPage=new P04_MyAccountPage();
-        p16VendorStoreManagerPage=new P16_VendorStoreManagerPage();
-        p17_vendorProductsDashboardPage=new P17_VendorProductsDashboardPage();
-        p18_vendorProductManagerPage=new P18_VendorProductManagerPage();
+    public void US17_TC04() {
+        p01_homePage = new P01_HomePage();
+        p03_loginPage = new P03_LoginPage();
+        p04_myAccountPage = new P04_MyAccountPage();
+        p16VendorStoreManagerPage = new P16_VendorStoreManagerPage();
+        p17_vendorProductsDashboardPage = new P17_VendorProductsDashboardPage();
+        p18_vendorProductManagerPage = new P18_VendorProductManagerPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("URL"));
         p01_homePage.signInButtonKoz.click();
-        p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"),Keys.TAB,ConfigReader.getProperty("passwordkoz"));
+        p03_loginPage.usernameKoz.sendKeys(ConfigReader.getProperty("usermailkoz"), Keys.TAB, ConfigReader.getProperty("passwordkoz"));
         p03_loginPage.signInButtonKoz.click();
-        extentTest.info("Login işlemi yapıldı.");
+        RaporlamaUtil.extentTestInfo("Login işlemi yapıldı.");
         p01_homePage.signOutButtonKoz.click();
         assert p04_myAccountPage.myAccountTextKoz.isDisplayed();
         p16VendorStoreManagerPage.storeManagerButtonKoz.click();
         assert p16VendorStoreManagerPage.storeManagerTextKoz.isDisplayed();
-        extentTest.info("Store Manager sayfasına girildi.");
+        RaporlamaUtil.extentTestInfo("Store Manager sayfasına girildi.");
         ReusableMethods.jsClick(p16VendorStoreManagerPage.productsButtonKoz);
         ReusableMethods.jsClick(p17_vendorProductsDashboardPage.addNewButtonKoz);
         assert p18_vendorProductManagerPage.addProductTextKoz.isDisplayed();
-        extentTest.info("Ürün ekleme sayfasına girildi.");
-        Select select=new Select(p18_vendorProductManagerPage.dropdownKoz);
+        RaporlamaUtil.extentTestInfo("Ürün ekleme sayfasına girildi.");
+        Select select = new Select(p18_vendorProductManagerPage.dropdownKoz);
         select.selectByVisibleText("Variable Product");
-        extentTest.info("Dropdown içerisinde Variable Products seçildi.");
+        RaporlamaUtil.extentTestInfo("Dropdown içerisinde Variable Products seçildi.");
         ReusableMethods.waitFor(2);
         ReusableMethods.jsClick(p18_vendorProductManagerPage.attributesButtonKoz);
         ReusableMethods.waitFor(5);
@@ -56,7 +55,7 @@ public class TC04 {
         p18_vendorProductManagerPage.attributeNameKoz.sendKeys("Made in");
         p18_vendorProductManagerPage.attributeValueKoz.sendKeys("Turkey | Usa | China | Germany | Paraguay");
         ReusableMethods.jsClick(p18_vendorProductManagerPage.variatonsButtonKoz);
-        Select select1=new Select(p18_vendorProductManagerPage.defaultFormValuesKoz);
+        Select select1 = new Select(p18_vendorProductManagerPage.defaultFormValuesKoz);
         Assert.assertTrue(select1.getFirstSelectedOption().getText().contains("Made in"));
         Driver.closeDriver();
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";

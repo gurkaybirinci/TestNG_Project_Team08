@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us07;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;

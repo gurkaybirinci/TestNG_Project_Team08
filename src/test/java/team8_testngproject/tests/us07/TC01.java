@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us07;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.P01_HomePage;
@@ -10,7 +9,7 @@ import team8_testngproject.utilities.Driver;
 import team8_testngproject.utilities.RaporlamaUtil;
 import team8_testngproject.utilities.ReusableMethods;
 
-public class  TC01 {
+public class TC01 {
     P01_HomePage homePage;
     P03_LoginPage loginPage;
     private final String testName = "US07 || TC01-Karsilastirma icin urun secimi";

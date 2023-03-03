@@ -1,6 +1,5 @@
 package team8_testngproject.tests.us18;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import team8_testngproject.pages.*;
@@ -19,7 +18,6 @@ public class TC04_Eklenen_urunu_gorme {
     P16_VendorStoreManagerPage p16VendorStoreManagerPage;
     P17_VendorProductsDashboardPage p17_vendorProductsDashboardPage;
     P18_VendorProductManagerPage p18_vendorProductManagerPage;
-
 
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
     public void US18_TC04() {

@@ -13,8 +13,9 @@ public class TC08_Categories_Secme { // Categories seçenekleri kontrol kutusuna
     private final String testName = "US14 || TC08-Categories Seçme";
     private final String description = "Categories seçenekleri kontrol kutusuna tıklandığında seçilebilmeli";
     private final String raporMesaji = "Categories seçenekleri kontrol kutusuna tıklandığında seçilebildiği doğrulanmıştır.";
+
     @Test(testName = testName, description = "<span style='font-weight:bold'>Amaç:</span> " + description)
-    public void tc01(){
+    public void tc01() {
         P01_HomePage homePage = new P01_HomePage();
         P03_LoginPage loginPage = new P03_LoginPage();
         P04_MyAccountPage myAccountPage = new P04_MyAccountPage();
