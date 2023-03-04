@@ -71,6 +71,7 @@ public class TC09 {
         addressesPageAli.shippingpostcodeAli.sendKeys("Abc");
         ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
         RaporlamaUtil.extentTestInfo("postcode_zıp alanının alfabetik karakter içermediği kontrol edilmiştir..");
+
         try{
             Assert.assertFalse(addressesPageAli.addreschangedsuccessfully.isDisplayed());
         }catch (AssertionError e){
@@ -81,5 +82,5 @@ public class TC09 {
 
     }
 
-    }
+}
 

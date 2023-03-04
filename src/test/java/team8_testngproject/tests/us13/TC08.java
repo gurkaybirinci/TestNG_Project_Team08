@@ -74,9 +74,9 @@ public class TC08 {
 
         Assert.assertTrue(addressesPageAli.zipCoderequired.isDisplayed());
         RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
-
-
-    }
+        Driver.closeDriver();
 
     }
+
+}
 

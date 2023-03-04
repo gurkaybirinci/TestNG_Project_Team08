@@ -77,12 +77,17 @@ public class TC11 {
 
         //    15. Save address butonuna tıklayarak shipping address e (sipariş adresi) eklenmeli
         ReusableMethods.jsClick(addressesPageAli.saveAdressButtonAli);
-        RaporlamaUtil.extentTestInfo("degişiklik shipping adrese eklendi.");
+        RaporlamaUtil.extentTestInfo("Degişiklik shipping adrese eklendi.");
 
+        //    16.
+        Assert.assertTrue(addressesPageAli.shippingaddreschangedsuccessfully.getText().contains("Address changed successfully."));
+        RaporlamaUtil.extentTestInfo("Degişiklik shipping adrese eklendi.");
         Driver.closeDriver();
-        }
+        RaporlamaUtil.message = "<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>" + raporMesaji + "</span>";
 
     }
+
+}
 
 
 
