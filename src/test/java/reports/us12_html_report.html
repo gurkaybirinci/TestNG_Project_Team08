@@ -38,13 +38,13 @@
 						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
-		<span class='report-name'>US11 | Vendor sign in, Vendor olarak Sign in yapılabilmeli.</span>
+		<span class='report-name'>US12 | Vendor Billing Address (Fatura Adresi) ekleyebilmeli.</span>
 		<!-- report headline -->
 		<span class='report-headline'></span>
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Feb 28, 2023 02:32:49 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Mar 4, 2023 02:17:21 AM</span>
 			</a>
 		</ul>
 	</div>
@@ -103,10 +103,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='6.25%'><span class='strong'>1</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='46.154%'><span class='strong'>6</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='93.75%'>15</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='53.846%'>7</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -126,17 +126,17 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC01 Kullanıcı Vendor giriş yapmalı.</span>
-						<span class='test-time'>Feb 28, 2023 02:32:50 PM</span>
+						<span class='test-name'>US12 || TC01-Billing Adress POSITIVE senaryo</span>
+						<span class='test-time'>Mar 4, 2023 02:17:21 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:32:50 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:33:12 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+722ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:17:21 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:18:03 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 41s+504ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor olarak email ve şifre girilmeli ve sistemde My Account görünmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Billing Address kaydı tamamlanmalı </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -149,7 +149,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:32:50 PM</td>
+				<td class='timestamp'>2:17:21 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -157,23 +157,39 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:03 PM</td>
+				<td class='timestamp'>2:17:37 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login islemi yapıldı
 					
 				</td>
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:12 PM</td>
+				<td class='timestamp'>2:17:48 AM</td>
 				<td class='step-details'>
-						My Account sayfasında olduğu doğrulandı.
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:17:57 AM</td>
+				<td class='step-details'>
+						mail adresinin kayit olunan email adresiyle ayni oldugunu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:18:03 AM</td>
+				<td class='step-details'>
+						degişiklik billing adrese eklendi.
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:33:12 PM</td>
+				<td class='timestamp'>2:18:03 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
 					
@@ -181,9 +197,9 @@
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:33:12 PM</td>
+				<td class='timestamp'>2:18:03 AM</td>
 				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Açılan sayfanın başlığının My Account olduğu görülmeli</span>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Billing Adress kaydi tamamlanmistir.</span>
 					
 				</td>
 			</tr>
@@ -192,19 +208,19 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC02 Orders seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:33:12 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>US12 || TC02-Vendor Shipping Address Doldurulması Gereken Alanların Boş Bırakılması</span>
+						<span class='test-time'>Mar 4, 2023 02:18:03 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:33:12 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:33:31 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+290ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:18:03 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:18:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+437ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında Orders seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -217,7 +233,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:12 PM</td>
+				<td class='timestamp'>2:18:03 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -225,34 +241,42 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:21 PM</td>
+				<td class='timestamp'>2:18:13 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:31 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:18:24 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
+						MyAccount sayfasında oldugu dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:31 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:18:36 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında Orders değil, ORDERS şeklinde görülmektedir</span>
+						Vendor Billing Address kaydi tamamlanamadi ve hata mesaji goruntulendi.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:31 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:18:36 AM</td>
 				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023331image.png' src='./screenshots/20230228023331image.png' data-src='./screenshots/20230228023331image.png'>
+						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:18:36 AM</td>
+				<td class='step-details'>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlanamadi ve hata mesaji goruntulendi</span>
+					
 				</td>
 			</tr>
 		</tbody>
@@ -262,17 +286,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC03 Downloads seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:33:31 PM</span>
+						<span class='test-name'>US12 || TC03-'first name' alanı alfabetik karakter dışında değer kabul etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:18:36 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:33:31 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:33:50 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+737ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:18:36 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:19:04 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 27s+926ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında Downloads seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -285,7 +309,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:31 PM</td>
+				<td class='timestamp'>2:18:36 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -293,15 +317,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:40 PM</td>
+				<td class='timestamp'>2:18:46 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:18:56 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:19:04 AM</td>
+				<td class='step-details'>
+						First name alanına alfabetik karakter dışında deger girildiğinde bu alanda bir uyarı mesajı çıkıp çıkmadığı kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:50 PM</td>
+				<td class='timestamp'>2:19:04 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -309,18 +349,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:50 PM</td>
+				<td class='timestamp'>2:19:04 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında Downloads değil, DOWNLOADS şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:33:50 PM</td>
+				<td class='timestamp'>2:19:04 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023350image.png' src='./screenshots/20230228023350image.png' data-src='./screenshots/20230228023350image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304021904image.png' src='./screenshots/20230304021904image.png' data-src='./screenshots/20230304021904image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -330,17 +370,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC04 adresses seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:33:50 PM</span>
+						<span class='test-name'>US12 || TC04-'first name' alanı alfabetik tek karakter kabul etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:19:05 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:33:50 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:34:08 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+76ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:19:05 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:19:39 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 34s+260ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında adresses seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -353,7 +393,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:50 PM</td>
+				<td class='timestamp'>2:19:05 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -361,15 +401,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:33:59 PM</td>
+				<td class='timestamp'>2:19:15 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:19:26 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:19:39 AM</td>
+				<td class='step-details'>
+						First name alanına alfabetik tek karakter girildiğinde bu alanda bir uyarı mesajı çıkıp çıkmadığı kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:08 PM</td>
+				<td class='timestamp'>2:19:39 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -377,18 +433,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:08 PM</td>
+				<td class='timestamp'>2:19:39 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında adresses değil, ADDRESSES şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:08 PM</td>
+				<td class='timestamp'>2:19:39 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023408image.png' src='./screenshots/20230228023408image.png' data-src='./screenshots/20230228023408image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304021939image.png' src='./screenshots/20230304021939image.png' data-src='./screenshots/20230304021939image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -398,17 +454,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC05 account details seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:34:08 PM</span>
+						<span class='test-name'>US12 || TC05-'last name' alanı alfabetik karakter dışında değer kabul etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:19:39 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:34:08 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:34:27 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+37ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:19:39 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:20:09 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+734ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında account details seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -421,7 +477,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:08 PM</td>
+				<td class='timestamp'>2:19:39 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -429,15 +485,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:17 PM</td>
+				<td class='timestamp'>2:19:50 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:19:50 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:20:09 AM</td>
+				<td class='step-details'>
+						Last name alanına alfabetik karakter dışında deger girildiğinde bu alanda bir uyarı mesajı çıkıp çıkmadığı kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:27 PM</td>
+				<td class='timestamp'>2:20:09 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -445,18 +517,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:27 PM</td>
+				<td class='timestamp'>2:20:09 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında account details değil, ACCOUNT DETAILS şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:27 PM</td>
+				<td class='timestamp'>2:20:09 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023427image.png' src='./screenshots/20230228023427image.png' data-src='./screenshots/20230228023427image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304022009image.png' src='./screenshots/20230304022009image.png' data-src='./screenshots/20230304022009image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -466,17 +538,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='6'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC06 whislist  seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:34:28 PM</span>
+						<span class='test-name'>US12 || TC06-'last name' alanı alfabetik tek karakter kabul etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:20:09 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:34:28 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:34:47 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+213ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:20:09 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:20:43 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+285ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında whislist  seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -489,7 +561,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:28 PM</td>
+				<td class='timestamp'>2:20:09 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -497,15 +569,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:37 PM</td>
+				<td class='timestamp'>2:20:19 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:20:29 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:20:42 AM</td>
+				<td class='step-details'>
+						Last name alanına alfabetik tek karakter girildiğinde bu alanda bir uyarı mesajı çıkıp çıkmadığı kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:47 PM</td>
+				<td class='timestamp'>2:20:43 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -513,18 +601,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:47 PM</td>
+				<td class='timestamp'>2:20:43 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında whislist değil, WISHLIST şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:34:47 PM</td>
+				<td class='timestamp'>2:20:43 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023447image.png' src='./screenshots/20230228023447image.png' data-src='./screenshots/20230228023447image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304022043image.png' src='./screenshots/20230304022043image.png' data-src='./screenshots/20230304022043image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -534,17 +622,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='7'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC07 Logout   seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:34:47 PM</span>
+						<span class='test-name'>US12 || TC07-'street address' alanı tek karakter kabul etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:20:43 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:34:47 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:35:06 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+304ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:20:43 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:21:18 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+57ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> My Account Sayfasında Logout   seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -557,7 +645,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:47 PM</td>
+				<td class='timestamp'>2:20:43 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -565,15 +653,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:34:56 PM</td>
+				<td class='timestamp'>2:20:53 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:21:04 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:21:18 AM</td>
+				<td class='step-details'>
+						street address alanına alfabetik tek karakter girildiğinde bu alanda bir uyarı mesajı çıkıp çıkmadığı kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:06 PM</td>
+				<td class='timestamp'>2:21:18 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -581,18 +685,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:06 PM</td>
+				<td class='timestamp'>2:21:18 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>My Account sayfasında Logout  değil, LOGOUT şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:06 PM</td>
+				<td class='timestamp'>2:21:18 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023506image.png' src='./screenshots/20230228023506image.png' data-src='./screenshots/20230228023506image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304022118image.png' src='./screenshots/20230304022118image.png' data-src='./screenshots/20230304022118image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -602,17 +706,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC08 Store manager seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:35:07 PM</span>
+						<span class='test-name'>US12 || TC08-'Town/city alanı tek karakter ile save etmemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:21:19 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:35:07 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:35:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+294ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:21:19 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:21:53 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+940ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında Store manager seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -625,7 +729,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:07 PM</td>
+				<td class='timestamp'>2:21:19 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -633,15 +737,31 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:15 PM</td>
+				<td class='timestamp'>2:21:28 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:21:39 AM</td>
+				<td class='step-details'>
+						MyAccount sayfasında oldugu dogrulandı.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:21:52 AM</td>
+				<td class='step-details'>
+						Town/city alanı tek karakter ile save dilip edilmediği kontrol edilmiştir.
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:25 PM</td>
+				<td class='timestamp'>2:21:53 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -649,18 +769,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:25 PM</td>
+				<td class='timestamp'>2:21:53 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  Store manager  değil, Store Manager şeklinde görülmektedir</span>
+						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:25 PM</td>
+				<td class='timestamp'>2:21:53 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023525image.png' src='./screenshots/20230228023525image.png' data-src='./screenshots/20230228023525image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304022153image.png' src='./screenshots/20230304022153image.png' data-src='./screenshots/20230304022153image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -668,19 +788,19 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='9'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC09 orders seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:35:25 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>US12 || TC09-'Postcode/zip alanı özel karakter içermemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:21:53 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:35:25 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:35:44 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+506ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:21:53 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:22:25 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 32s+277ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında orders seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -693,7 +813,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:25 PM</td>
+				<td class='timestamp'>2:21:53 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -701,34 +821,42 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:34 PM</td>
+				<td class='timestamp'>2:22:03 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:44 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:22:13 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
+						MyAccount sayfasında oldugu dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:44 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:22:25 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  orders değil, Orders şeklinde görülmektedir</span>
+						postcode_zıp alanının özel karakter içermediği kontrol edilmiştir..
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:35:44 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:22:25 AM</td>
 				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023544image.png' src='./screenshots/20230228023544image.png' data-src='./screenshots/20230228023544image.png'>
+						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:22:25 AM</td>
+				<td class='step-details'>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
+					
 				</td>
 			</tr>
 		</tbody>
@@ -738,17 +866,17 @@
 				</li>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC10 downloads seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:35:44 PM</span>
+						<span class='test-name'>US12 || TC10-'Postcode/zip alanı alfabetik karakter içermemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:22:25 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:35:44 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:36:04 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+184ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:22:25 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:23:00 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 34s+796ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında downloads seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -761,23 +889,15 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:44 PM</td>
+				<td class='timestamp'>2:22:25 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:35:54 PM</td>
-				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
-					
-				</td>
-			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:04 PM</td>
+				<td class='timestamp'>2:23:00 AM</td>
 				<td class='step-details'>
 						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
 					
@@ -785,18 +905,18 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:04 PM</td>
+				<td class='timestamp'>2:23:00 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  downloads değil, Downloads şeklinde görülmektedir</span>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:04 PM</td>
+				<td class='timestamp'>2:23:00 AM</td>
 				<td class='step-details'>
 						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023604image.png' src='./screenshots/20230228023604image.png' data-src='./screenshots/20230228023604image.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230304022300image.png' src='./screenshots/20230304022300image.png' data-src='./screenshots/20230304022300image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -804,19 +924,19 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC11 adresses seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:36:05 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>US12 || TC11-'Phone alanı numeric karakter dısında karakter içermemeli</span>
+						<span class='test-time'>Mar 4, 2023 02:23:00 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:36:05 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:36:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+218ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:23:00 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:23:33 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 32s+517ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında adresses  seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -829,7 +949,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:05 PM</td>
+				<td class='timestamp'>2:23:00 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -837,34 +957,42 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:14 PM</td>
+				<td class='timestamp'>2:23:10 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:25 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:23:20 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
+						MyAccount sayfasında oldugu dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:25 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:23:33 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  adresses  değil, Addresses şeklinde görülmektedir</span>
+						phone alanı numeric karakter dısında deger almadığı dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:25 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:23:33 AM</td>
 				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023625image.png' src='./screenshots/20230228023625image.png' data-src='./screenshots/20230228023625image.png'>
+						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:23:33 AM</td>
+				<td class='step-details'>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
+					
 				</td>
 			</tr>
 		</tbody>
@@ -872,19 +1000,19 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC12 account details  seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:36:25 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>US12 || TC12-'Email adresinin otomatik olarak gelmeli</span>
+						<span class='test-time'>Mar 4, 2023 02:23:33 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:36:25 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:36:44 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+979ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:23:33 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:24:02 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+641ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında account details   seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -897,7 +1025,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:25 PM</td>
+				<td class='timestamp'>2:23:33 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -905,34 +1033,42 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:35 PM</td>
+				<td class='timestamp'>2:23:42 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						Login işlemi yapıldı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:44 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:23:52 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
+						MyAccount sayfasında oldugu dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:44 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:24:01 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  account details   değil, Account details şeklinde görülmektedir</span>
+						mail adresinin kayit olunan email adresiyle ayni oldugunu dogrulandı.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:36:44 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:24:02 AM</td>
 				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023644image.png' src='./screenshots/20230228023644image.png' data-src='./screenshots/20230228023644image.png'>
+						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:24:02 AM</td>
+				<td class='step-details'>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
+					
 				</td>
 			</tr>
 		</tbody>
@@ -940,19 +1076,19 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
 					<div class='test-heading'>
-						<span class='test-name'>US11 || TC13 wishlist  seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:36:45 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>US12 || TC13-'Save address butonuna tıklayarak billing addrese (fatura adresine) eklenmeli</span>
+						<span class='test-time'>Mar 4, 2023 02:24:02 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:36:45 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:37:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+547ms</span>
+	<span class='label start-time'>Mar 4, 2023 02:24:02 AM</span>
+	<span class='label end-time'>Mar 4, 2023 02:24:34 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 32s+918ms</span>
 </div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında wishlist seçeneği görülmeli </div>
+<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Vendor Address kaydi tamamlanamamali ve hata mesaji goruntulenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -965,7 +1101,7 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:45 PM</td>
+				<td class='timestamp'>2:24:02 AM</td>
 				<td class='step-details'>
 						Test başladı.
 					
@@ -973,238 +1109,50 @@
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:36:54 PM</td>
+				<td class='timestamp'>2:24:10 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:03 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:03 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  wishlist değil, Wishlist şeklinde görülmektedir</span>
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:03 PM</td>
-				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023703image.png' src='./screenshots/20230228023703image.png' data-src='./screenshots/20230228023703image.png'>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
-					<div class='test-heading'>
-						<span class='test-name'>US11 || TC14 Support tickets seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:37:03 PM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:37:03 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:37:23 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+544ms</span>
-</div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında Support tickets seçeneği görülmeli </div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:03 PM</td>
-				<td class='step-details'>
-						Test başladı.
+						Login işlemi yapıldı.
 					
 				</td>
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:12 PM</td>
+				<td class='timestamp'>2:24:21 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:23 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:23 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  Support tickets değil, Support Tickets şeklinde görülmektedir</span>
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:23 PM</td>
-				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023723image.png' src='./screenshots/20230228023723image.png' data-src='./screenshots/20230228023723image.png'>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
-					<div class='test-heading'>
-						<span class='test-name'>US11 || TC15 followings  seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:37:23 PM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:37:23 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:37:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+201ms</span>
-</div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında followings  seçeneği görülmeli </div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:23 PM</td>
-				<td class='step-details'>
-						Test başladı.
+						MyAccount sayfasında oldugu dogrulandı.
 					
 				</td>
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:33 PM</td>
+				<td class='timestamp'>2:24:29 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:43 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:43 PM</td>
-				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  followings  değil, Followings şeklinde görülmektedir</span>
-					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:37:43 PM</td>
-				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023743image.png' src='./screenshots/20230228023743image.png' data-src='./screenshots/20230228023743image.png'>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
-					<div class='test-heading'>
-						<span class='test-name'>US11 || TC16 logout   seçeneğini gör.</span>
-						<span class='test-time'>Feb 28, 2023 02:37:43 PM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Feb 28, 2023 02:37:43 PM</span>
-	<span class='label end-time'>Feb 28, 2023 02:38:01 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+954ms</span>
-</div>
-<div class='test-desc'><span style='font-weight:bold'>Amaç:</span> Dashboardın altında logout   seçeneği görülmeli </div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:43 PM</td>
-				<td class='step-details'>
-						Test başladı.
+						mail adresinin kayit olunan email adresiyle ayni oldugunu dogrulandı.
 					
 				</td>
 			</tr>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:37:52 PM</td>
+				<td class='timestamp'>2:24:34 AM</td>
 				<td class='step-details'>
-						Login işlemi vendor olarak yapıldı.
+						degişiklik billing adrese eklendi.
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:38:01 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:24:34 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold'>Test başarısız oldu! </span>&#10060
+						<span style='color:green; font-weight:bold'>Test başarıyla tamamlandı. </span>&#9989
 					
 				</td>
 			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:38:01 PM</td>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:24:34 AM</td>
 				<td class='step-details'>
-						<span style='color:red; font-weight:bold; font-size: 16px'>BUG BULUNDU: &#x1F41E</span><br><span style='color:purple; font-size: 16px'>Dashboardın altında  logout   değil, Logout şeklinde görülmektedir</span>
+						<span style='color:green; font-weight:bold; font-size: 14px'>TEST SONUCU: </span><br><span style='color:purple; font-size: 16px'>Vendor Address kaydi tamamlandı ve hata mesaji goruntulenmedi</span>
 					
-				</td>
-			</tr>
-			<tr class='log' status='fail'>
-				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>2:38:01 PM</td>
-				<td class='step-details'>
-						<span style='color:green; font-weight:bold; font-size: 16px'>EKRAN GÖRÜNTÜSÜ</span><br>(Resmi büyütmek için üzerine tıklayınız.)
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='./screenshots/20230228023801image.png' src='./screenshots/20230228023801image.png' data-src='./screenshots/20230228023801image.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -1240,7 +1188,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>16</div>
+					<div class='panel-lead'>13</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -1252,19 +1200,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 28, 2023 02:32:49 PM</div>
+					<div class='panel-lead'>Mar 4, 2023 02:17:21 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 28, 2023 02:38:01 PM</div>
+			 		<div class='panel-lead'>Mar 4, 2023 02:24:34 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 5m 11s+727ms</div>
+					<div class='panel-lead'>0h 7m 13s+282ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -1294,11 +1242,11 @@
 							</tr>
 							<tr>
 								<td>User Story</td>
-								<td>US11 | Vendor sign in, Vendor olarak Sign in yapılabilmeli.</td>
+								<td>US12 | Vendor Billing Address (Fatura Adresi) ekleyebilmeli.</td>
 							</tr>
 							<tr>
 								<td>QA</td>
-								<td>Esra Birinci</td>
+								<td>Ali Sıcak</td>
 							</tr>
 					</table>
 				</div>
@@ -1311,14 +1259,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 16,
-				passParent: 1,
-				failParent: 15,
+                parentCount: 13,
+				passParent: 6,
+				failParent: 7,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 15,
+				exceptionsParent: 7,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -1343,7 +1291,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "US11 || TC01 Kullanıcı Vendor giriş yapmalı.":22.722,"US11 || TC02 Orders seçeneğini gör.":18.29,"US11 || TC03 Downloads seçeneğini gör.":18.737,"US11 || TC04 adresses seçeneğini gör.":18.076,"US11 || TC05 account details seçeneğini gör.":19.037,"US11 || TC06 whislist  seçeneğini gör.":19.213,"US11 || TC07 Logout   seçeneğini gör.":19.304,"US11 || TC08 Store manager seçeneğini gör.":18.294,"US11 || TC09 orders seçeneğini gör.":18.506,"US11 || TC10 downloads seçeneğini gör.":20.184,"US11 || TC11 adresses seçeneğini gör.":20.218,"US11 || TC12 account details  seçeneğini gör.":18.979,"US11 || TC13 wishlist  seçeneğini gör.":18.547,"US11 || TC14 Support tickets seçeneğini gör.":19.544,"US11 || TC15 followings  seçeneğini gör.":19.201,"US11 || TC16 logout   seçeneğini gör.":17.954
+			        "US12 || TC01-Billing Adress POSITIVE senaryo":41.504,"US12 || TC02-Vendor Shipping Address Doldurulması Gereken Alanların Boş Bırakılması":33.437,"US12 || TC03-'first name' alanı alfabetik karakter dışında değer kabul etmemeli":27.926,"US12 || TC04-'first name' alanı alfabetik tek karakter kabul etmemeli":34.26,"US12 || TC05-'last name' alanı alfabetik karakter dışında değer kabul etmemeli":29.734,"US12 || TC06-'last name' alanı alfabetik tek karakter kabul etmemeli":33.285,"US12 || TC07-'street address' alanı tek karakter kabul etmemeli":35.057,"US12 || TC08-'Town/city alanı tek karakter ile save etmemeli":33.94,"US12 || TC09-'Postcode/zip alanı özel karakter içermemeli":32.277,"US12 || TC10-'Postcode/zip alanı alfabetik karakter içermemeli":34.796,"US12 || TC11-'Phone alanı numeric karakter dısında karakter içermemeli":32.517,"US12 || TC12-'Email adresinin otomatik olarak gelmeli":28.641,"US12 || TC13-'Save address butonuna tıklayarak billing addrese (fatura adresine) eklenmeli":32.918
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

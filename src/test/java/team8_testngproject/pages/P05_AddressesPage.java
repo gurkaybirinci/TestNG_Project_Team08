@@ -47,7 +47,7 @@ public class P05_AddressesPage { public P05_AddressesPage() {
     public WebElement shippingaddreschangedsuccessfully;
     @FindBy(xpath = "//*[@class=' alert alert-simple alert-icon alert-close-top alert-danger']") public WebElement zipCoderequired;
     @FindBy(xpath = "//*[@class=' alert alert-simple alert-icon alert-close-top alert-danger']") public WebElement phonerequired;
-
+    // 50.Satır --> Esra
     @FindBy(xpath = "//*[@data-id='billing_first_name']") public WebElement kayitGorunmeNameAli;
     @FindBy(xpath = "//*[@data-id='shipping_first_name']") public WebElement shippingkayitGorunmeNameAli;
     @FindBy(xpath = "//*[@data-id='billing_last_name']") public WebElement kayitGorunmeLastNameAli;
@@ -60,21 +60,6 @@ public class P05_AddressesPage { public P05_AddressesPage() {
     @FindBy(xpath = "//*[@data-id='billing_postcode']") public WebElement postcdeuyari;
     @FindBy(xpath = "//*[@data-id='shipping_postcode']") public WebElement shippingpostcdeuyari;
     @FindBy(xpath = "//*[@data-id='billing_city']") public WebElement townCityUyari;
-
-
-    // 50.Satır --> Esra
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
